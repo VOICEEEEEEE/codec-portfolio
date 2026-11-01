@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODEC • Веб-разработка | Сайты для сферы услуг в Казани</title>
+    <meta name="description" content="Премиальная разработка сайтов для барбершопов, салонов красоты, студий дизайна и сферы услуг в Казани. Адаптив под 100% смартфонов, онлайн-запись, оплата строго по факту.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #08090d;
+            --bg-card: #0f1118;
+            --bg-card-hover: #151822;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.3);
+            --gold: #d4af37;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(59, 130, 246, 0.4);
+            --radius-lg: 22px;
+            --radius-md: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html, body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-body); }
+        ::-webkit-scrollbar-thumb { background: #1e2230; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(8, 9, 13, 0.88);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: #fff;
+            box-shadow: 0 4px 14px var(--accent-glow);
+        }
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+        }
+        .logo-sub {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            display: block;
+        }
+
+        .btn-tg {
+            background: #229ed9;
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s;
+            box-shadow: 0 4px 15px rgba(34, 158, 217, 0.3);
+        }
+        .btn-tg:hover {
+            background: #1e8dc2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(34, 158, 217, 0.45);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 50px;
+            text-align: center;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 650px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.18) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(60px);
+        }
+        .badge-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 18px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 30px;
+            color: #60a5fa;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .badge-hero span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #3b82f6;
+            box-shadow: 0 0 10px #3b82f6;
+        }
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 auto 36px;
+            font-weight: 300;
+        }
+
+        /* Guarantees Row */
+        .guarantees-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+        .guarantee-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-align: left;
+        }
+        .guarantee-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+        .guarantee-text h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .guarantee-text p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Filter Tabs */
+        .filter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 45px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: #2563eb;
+            color: #fff;
+            border-color: #2563eb;
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        /* Cases Grid */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 32px;
+            margin-bottom: 90px;
+        }
+        .case-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.3s;
+        }
+        .case-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+        }
+
+        .case-preview {
+            position: relative;
+            height: 260px;
+            background: #090a0f;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+        .case-preview iframe {
+            width: 140%;
+            height: 140%;
+            border: none;
+            pointer-events: none;
+            transform: scale(0.714);
+            transform-origin: top left;
+            background: #090a0f;
+        }
+        .case-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(15, 17, 24, 0.96) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            pointer-events: none;
+        }
+        .case-badge {
+            background: rgba(37, 99, 235, 0.85);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .case-body {
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .case-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+        .case-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .case-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            font-weight: 500;
+        }
+
+        .case-actions {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 12px;
+        }
+        .btn-live {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #fff;
+            padding: 13px 18px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.92rem;
+            text-align: center;
+            transition: all 0.2s;
+            box-shadow: 0 4px 14px var(--accent-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .btn-live:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+        }
+        .btn-modal {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 13px 18px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.92rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .btn-modal:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+        }
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+        .price-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 34px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all 0.3s;
+        }
+        .price-card.featured {
+            border-color: #3b82f6;
+            box-shadow: 0 0 35px rgba(59, 130, 246, 0.15);
+        }
+        .price-card.featured::before {
+            content: 'ХИТ В КАЗАНИ';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2563eb;
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 14px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+        .price-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .price-amount {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .price-time {
+            font-size: 0.85rem;
+            color: #60a5fa;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .price-features {
+            list-style: none;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+        .price-features li {
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .price-features li span {
+            color: #10b981;
+            font-weight: bold;
+        }
+        .btn-price {
+            width: 100%;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border);
+            color: #fff;
+            transition: all 0.2s;
+        }
+        .price-card.featured .btn-price {
+            background: #2563eb;
+            border-color: #2563eb;
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+        .btn-price:hover {
+            transform: translateY(-2px);
+            background: #3b82f6;
+            color: #fff;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            margin: 60px 0 90px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            border-radius: var(--radius-lg);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+        }
+        .cta-banner h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .cta-banner p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ═══════════════════════════════════════════════
+           MODAL DEVICE STUDIO (FLAWLESS & ZERO NOTCH OVERLAP)
+           ═══════════════════════════════════════════════ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 5, 8, 0.92);
+            backdrop-filter: blur(18px);
+            z-index: 9999;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+        .modal-overlay.active { display: flex; }
+
+        /* Modal Toolbar */
+        .modal-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 920px;
+            margin-bottom: 16px;
+            gap: 16px;
+        }
+        .modal-title-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .modal-project-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #fff;
+        }
+        .modal-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .view-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .view-btn.active, .view-btn:hover {
+            background: #2563eb;
+            color: #fff;
+            border-color: #2563eb;
+        }
+        .btn-open-external {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #60a5fa;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-open-external:hover {
+            background: rgba(59, 130, 246, 0.25);
+            color: #fff;
+        }
+        .modal-close-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+        }
+        .modal-close-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: rotate(90deg);
+        }
+
+        /* Phone Device Shell */
+        .device-container {
+            width: 395px;
+            height: 760px;
+            max-height: calc(100vh - 90px);
+            background: #090a0f;
+            border-radius: 44px;
+            border: 4px solid #272a36;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 40px rgba(37, 99, 235, 0.15);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.35s;
+        }
+        .device-container.mode-tablet {
+            width: 860px;
+            border-radius: 22px;
+        }
+
+        /* Top Clean Status Bar (OUTSIDE the iframe - NEVER covers content!) */
+        .device-status-bar {
+            height: 30px;
+            background: #090a0f;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            flex-shrink: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            user-select: none;
+        }
+        .status-pill {
+            width: 48px;
+            height: 4px;
+            background: #232632;
+            border-radius: 2px;
+        }
+        .status-icons {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10px;
+        }
+
+        /* Iframe Frame */
+        .device-screen {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: #090a0f;
+            overflow: hidden;
+        }
+        .device-screen iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #090a0f;
+            display: block;
+        }
+
+        /* Bottom Home Indicator */
+        .device-home-bar {
+            height: 18px;
+            background: #090a0f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .home-pill {
+            width: 110px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .cases-grid { grid-template-columns: 1fr; }
+            .case-actions { grid-template-columns: 1fr; }
+            .device-container {
+                width: 100%;
+                height: 85vh;
+                border-radius: 24px;
+                border-width: 2px;
+            }
+            .modal-toolbar {
+                flex-wrap: wrap;
+            }
+            .view-btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo-box">
+                <div class="logo-icon">C</div>
+                <div>
+                    <span class="logo-text">CODEC</span>
+                    <span class="logo-sub">Веб-разработка • Казань</span>
+                </div>
+            </a>
+            <a href="https://t.me/codec_web" class="btn-tg" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.95-1.28 4.92-2.13 5.91-2.55 2.81-1.2 3.4.45 3.39 1.43z"/>
+                </svg>
+                Написать в Telegram
+            </a>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="badge-hero">
+                <span></span> Портфолио готовых решений в Казани
+            </div>
+            <h1>Сайты для сферы услуг, которые превращают просмотры <span>в реальные записи</span></h1>
+            <p>Упаковываем казанский бизнес: барбершопы, бьюти-сферу, студии ремонта и дизайн интерьеров. 100% мобильная конверсия, интеграция онлайн-записи и оплата строго по факту сдачи.</p>
+        </section>
+
+        <!-- Guarantees Row -->
+        <div class="guarantees-row">
+            <div class="guarantee-card">
+                <div class="guarantee-icon">⚡</div>
+                <div class="guarantee-text">
+                    <h4>Запуск за 48 часов</h4>
+                    <p>Никаких месяцев ожидания. Готовый сайт работает уже на этой неделе.</p>
+                </div>
+            </div>
+            <div class="guarantee-card">
+                <div class="guarantee-icon">📱</div>
+                <div class="guarantee-text">
+                    <h4>Идеально на смартфонах</h4>
+                    <p>85% клиентов заходят с телефонов. Верстка оптимизирована под один палец.</p>
+                </div>
+            </div>
+            <div class="guarantee-card">
+                <div class="guarantee-icon">🛡️</div>
+                <div class="guarantee-text">
+                    <h4>Оплата строго по факту</h4>
+                    <p>Сначала вы тестируете готовый сайт на своём телефоне — оплата только после этого.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-nav">
+            <button class="filter-btn active" onclick="filterCases('all', this)">Все работы</button>
+            <button class="filter-btn" onclick="filterCases('barber', this)">Барбершопы</button>
+            <button class="filter-btn" onclick="filterCases('beauty', this)">Салоны красоты</button>
+            <button class="filter-btn" onclick="filterCases('remont', this)">Ремонт & Интерьер</button>
+        </div>
+
+        <!-- Cases Grid -->
+        <section class="cases-grid">
+            <!-- Case 1: Osman -->
+            <div class="case-card" data-cat="barber">
+                <div class="case-preview">
+                    <iframe src="./osman/index.html" loading="lazy"></iframe>
+                    <div class="case-overlay">
+                        <span class="case-badge">Барбершоп • Казань</span>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <h3 class="case-title">OSMAN • Турецкий барбершоп</h3>
+                    <p class="case-desc">Классический мужской сайт-визитка с темной премиальной эстетикой. Интерактивный прайс с реальными ценами, кнопки онлайн-записи через DIKIDI и Telegram, карточки мастеров и Яндекс Карта.</p>
+                    <div class="case-tags">
+                        <span class="tag">Бари Галеева, 8А</span>
+                        <span class="tag">DIKIDI Онлайн</span>
+                        <span class="tag">Прайс услуг</span>
+                    </div>
+                    <div class="case-actions">
+                        <a href="./osman/index.html" target="_blank" class="btn-live">Открыть сайт ➔</a>
+                        <button class="btn-modal" onclick="openDeviceStudio('./osman/index.html', 'OSMAN • Турецкий барбершоп')">📱 Смартфон</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case 2: Lumiere -->
+            <div class="case-card" data-cat="beauty">
+                <div class="case-preview">
+                    <iframe src="./lumiere/index.html" loading="lazy"></iframe>
+                    <div class="case-overlay">
+                        <span class="case-badge">Бьюти-премиум • Эстетика</span>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <h3 class="case-title">LUMIÈRE • Ателье эстетики</h3>
+                    <p class="case-desc">Изящный сайт для премиального салона красоты. Воздушная бежево-золотая палитра, каталог процедур, запись к ведущим топ-мастерам, галерея интерьера и безупречная мобильная верстка.</p>
+                    <div class="case-tags">
+                        <span class="tag">Салон красоты</span>
+                        <span class="tag">Каталог услуг</span>
+                        <span class="tag">Премиум-дизайн</span>
+                    </div>
+                    <div class="case-actions">
+                        <a href="./lumiere/index.html" target="_blank" class="btn-live">Открыть сайт ➔</a>
+                        <button class="btn-modal" onclick="openDeviceStudio('./lumiere/index.html', 'LUMIÈRE • Ателье эстетики')">📱 Смартфон</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case 3: Lumen -->
+            <div class="case-card" data-cat="remont">
+                <div class="case-preview">
+                    <iframe src="./lumen/index.html" loading="lazy"></iframe>
+                    <div class="case-overlay">
+                        <span class="case-badge">Ремонт & Интерьер • Смета</span>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <h3 class="case-title">LUMEN • Ремонт и дизайн квартир</h3>
+                    <p class="case-desc">Высококонверсионный лендинг для строительной компании и дизайн-студии. Интерактивный калькулятор стоимости ремонта по площади, портфолио сданных объектов и этапы прозрачной сметы.</p>
+                    <div class="case-tags">
+                        <span class="tag">Калькулятор сметы</span>
+                        <span class="tag">Квиз-заявка</span>
+                        <span class="tag">Высокий чек</span>
+                    </div>
+                    <div class="case-actions">
+                        <a href="./lumen/index.html" target="_blank" class="btn-live">Открыть сайт ➔</a>
+                        <button class="btn-modal" onclick="openDeviceStudio('./lumen/index.html', 'LUMEN • Ремонт и дизайн квартир')">📱 Смартфон</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <div class="section-header">
+                <h2>Прозрачные тарифы под ключ</h2>
+                <p>Фиксированные цены без скрытых платежей. Работаем с договором и оплатой строго по факту.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3 class="price-title">Сайт-визитка / Меню</h3>
+                    <div class="price-amount">5 000 ₽</div>
+                    <div class="price-time">Срок: 1–2 дня</div>
+                    <ul class="price-features">
+                        <li><span>✓</span> Адаптив под 100% смартфонов</li>
+                        <li><span>✓</span> Электронный прайс и список услуг</li>
+                        <li><span>✓</span> Кнопки записи в WhatsApp и Telegram</li>
+                        <li><span>✓</span> Интеграция с Яндекс Картами и 2ГИС</li>
+                        <li><span>✓</span> Базовая SEO-настройка</li>
+                    </ul>
+                    <a href="https://t.me/codec_web" target="_blank" class="btn-price">Заказать сайт</a>
+                </div>
+
+                <div class="price-card featured">
+                    <h3 class="price-title">Бизнес-лендинг с записью</h3>
+                    <div class="price-amount">9 000 ₽</div>
+                    <div class="price-time">Срок: 2–3 дня</div>
+                    <ul class="price-features">
+                        <li><span>✓</span> Всё из тарифа «Визитка»</li>
+                        <li><span>✓</span> Полная интеграция с DIKIDI / YClients</li>
+                        <li><span>✓</span> Карточки мастеров и галерея работ</li>
+                        <li><span>✓</span> Блок реальных отзывов клиентов</li>
+                        <li><span>✓</span> Всплывающие формы спецпредложений</li>
+                        <li><span>✓</span> Помощь с регистрацией домена</li>
+                    </ul>
+                    <a href="https://t.me/codec_web" target="_blank" class="btn-price">Выбрать тариф</a>
+                </div>
+
+                <div class="price-card">
+                    <h3 class="price-title">Премиум-проект</h3>
+                    <div class="price-amount">15 000 ₽</div>
+                    <div class="price-time">Срок: 3–5 дней</div>
+                    <ul class="price-features">
+                        <li><span>✓</span> Индивидуальный дизайн под ваш бренд</li>
+                        <li><span>✓</span> Интерактивный калькулятор сметы/услуг</li>
+                        <li><span>✓</span> Пошаговый квиз для сбора заявок</li>
+                        <li><span>✓</span> Telegram-бот для уведомлений о заявках</li>
+                        <li><span>✓</span> Премиальные микро-анимации</li>
+                        <li><span>✓</span> 1 месяц бесплатного сопровождения</li>
+                    </ul>
+                    <a href="https://t.me/codec_web" target="_blank" class="btn-price">Обсудить проект</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="cta-banner">
+            <h2>Хотите протестировать сайт для вашего бизнеса?</h2>
+            <p>Напишите нам в Telegram — подготовим интерактивный черновик сайта с вашим логотипом, прайсом и адресом в Казани абсолютно бесплатно.</p>
+            <a href="https://t.me/codec_web" target="_blank" class="btn-tg" style="font-size: 1.05rem; padding: 14px 32px;">
+                Написать в Telegram @codec_web ➔
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>CODEC WEB STUDIO</strong> • Разработка сайтов для сферы услуг в Казани</p>
+            <p style="margin-top: 8px;">Telegram: <a href="https://t.me/codec_web" style="color: #60a5fa; text-decoration: none;">@codec_web</a> • Телефон: +7 (986) 976-18-93</p>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════
+         FLAWLESS DEVICE STUDIO MODAL
+         ═══════════════════════════════════════════════ -->
+    <div class="modal-overlay" id="deviceModal" onclick="closeModalOnBackdrop(event)">
+        <!-- Toolbar -->
+        <div class="modal-toolbar" onclick="event.stopPropagation()">
+            <div class="modal-title-box">
+                <span style="font-size: 1.2rem;">📱</span>
+                <span class="modal-project-title" id="modalProjectTitle">Просмотр проекта</span>
+            </div>
+            <div class="modal-controls">
+                <button class="view-btn active" id="btnPhoneView" onclick="setDeviceMode('phone')">Смартфон (390px)</button>
+                <button class="view-btn" id="btnTabletView" onclick="setDeviceMode('tablet')">Планшет (860px)</button>
+                <a href="#" target="_blank" class="btn-open-external" id="btnExternalLink">Открыть сайт ↗</a>
+                <button class="modal-close-btn" onclick="closeDeviceStudio()">✕</button>
+            </div>
+        </div>
+
+        <!-- Device Container (No overlapping fake notch!) -->
+        <div class="device-container" id="deviceContainer" onclick="event.stopPropagation()">
+            <!-- Clean Status Bar (Outside iframe!) -->
+            <div class="device-status-bar">
+                <span>9:41</span>
+                <div class="status-pill"></div>
+                <div class="status-icons">
+                    <span>5G</span>
+                    <span>100%</span>
+                </div>
+            </div>
+
+            <!-- Iframe (Uncut, 100% visible headers) -->
+            <div class="device-screen">
+                <iframe id="deviceIframe" src=""></iframe>
+            </div>
+
+            <!-- Bottom Home Indicator -->
+            <div class="device-home-bar">
+                <div class="home-pill"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterCases(cat, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cards = document.querySelectorAll('.case-card');
+            cards.forEach(card => {
+                if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        let currentActiveUrl = '';
+
+        function openDeviceStudio(url, title) {
+            // If on mobile device, open directly in full screen for best UX!
+            if (window.innerWidth <= 768) {
+                window.open(url, '_blank');
+                return;
+            }
+
+            currentActiveUrl = url;
+            const modal = document.getElementById('deviceModal');
+            const iframe = document.getElementById('deviceIframe');
+            const titleEl = document.getElementById('modalProjectTitle');
+            const extLink = document.getElementById('btnExternalLink');
+
+            titleEl.textContent = title || 'Интерактивный тест';
+            extLink.href = url;
+            iframe.src = url;
+
+            setDeviceMode('phone');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function setDeviceMode(mode) {
+            const container = document.getElementById('deviceContainer');
+            const btnPhone = document.getElementById('btnPhoneView');
+            const btnTablet = document.getElementById('btnTabletView');
+
+            if (mode === 'tablet') {
+                container.classList.add('mode-tablet');
+                btnTablet.classList.add('active');
+                btnPhone.classList.remove('active');
+            } else {
+                container.classList.remove('mode-tablet');
+                btnPhone.classList.add('active');
+                btnTablet.classList.remove('active');
+            }
+        }
+
+        function closeModalOnBackdrop(e) {
+            if (e.target.id === 'deviceModal') {
+                closeDeviceStudio();
+            }
+        }
+
+        function closeDeviceStudio() {
+            const modal = document.getElementById('deviceModal');
+            const iframe = document.getElementById('deviceIframe');
+            modal.classList.remove('active');
+            iframe.src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeDeviceStudio();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMIÈRE CRM — Панель администратора</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💅</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="crm-header">
+        <div class="crm-header-inner">
+            <div class="brand">
+                <div class="brand-badge">L</div>
+                <div>
+                    <span class="brand-title">LUMIÈRE</span>
+                    <span class="brand-sub">CRM • Панель управления</span>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <a href="/" target="_blank" class="btn-crm btn-crm-ghost">
+                    <i class="ph ph-arrow-square-out"></i>
+                    <span>Открыть сайт</span>
+                </a>
+                <button type="button" onclick="openAddModal()" class="btn-crm btn-crm-gold">
+                    <i class="ph ph-plus-circle"></i>
+                    <span>Новая запись</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="crm-container">
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-info">
+                    <div class="stat-label">Всего записей</div>
+                    <div class="stat-value" id="stat-total">0</div>
+                </div>
+                <div class="stat-icon">
+                    <i class="ph ph-calendar-check"></i>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-info">
+                    <div class="stat-label">Новых заявок</div>
+                    <div class="stat-value" id="stat-new" style="color: #facc15">0</div>
+                </div>
+                <div class="stat-icon" style="color: #facc15">
+                    <i class="ph ph-bell-ringing"></i>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-info">
+                    <div class="stat-label">Ожидаемая выручка</div>
+                    <div class="stat-value" id="stat-revenue">0 ₽</div>
+                </div>
+                <div class="stat-icon">
+                    <i class="ph ph-currency-rub"></i>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-info">
+                    <div class="stat-label">Топ-стилист</div>
+                    <div class="stat-value" id="stat-master" style="font-size: 1.5rem">—</div>
+                </div>
+                <div class="stat-icon">
+                    <i class="ph ph-crown"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls: Filters & Search -->
+        <div class="control-bar">
+            <div class="filter-tabs">
+                <button type="button" class="filter-tab active" onclick="setFilter('all', this)">Все</button>
+                <button type="button" class="filter-tab" onclick="setFilter('new', this)">🟡 Новые</button>
+                <button type="button" class="filter-tab" onclick="setFilter('confirmed', this)">🔵 Подтверждённые</button>
+                <button type="button" class="filter-tab" onclick="setFilter('completed', this)">🟢 Завершённые</button>
+                <button type="button" class="filter-tab" onclick="setFilter('cancelled', this)">🔴 Отменённые</button>
+            </div>
+
+            <div class="search-box">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="text" placeholder="Поиск по имени, телефону или коду..." oninput="handleSearch(this.value)">
+            </div>
+        </div>
+
+        <!-- Bookings Table -->
+        <div class="table-card">
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Код</th>
+                            <th>Гость</th>
+                            <th>Дата & Время</th>
+                            <th>Мастер</th>
+                            <th>Услуги & Пожелания</th>
+                            <th>Сумма</th>
+                            <th>Статус</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookings-tbody">
+                        <tr>
+                            <td colspan="7" style="text-align: center; padding: 2rem; color: rgba(253,251,249,0.5)">
+                                Загрузка записей...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal: Add Booking Manually -->
+    <div id="modal-add" class="modal-backdrop" onclick="if(event.target === this) closeAddModal()">
+        <div class="modal-card">
+            <div class="modal-head">
+                <h3>Записать гостя</h3>
+                <button type="button" onclick="closeAddModal()" style="background: none; border: none; color: white; cursor: pointer; font-size: 1.25rem">
+                    <i class="ph ph-x"></i>
+                </button>
+            </div>
+            <form onsubmit="handleAddSubmit(event)">
+                <div class="form-group">
+                    <label>Имя гостя *</label>
+                    <input type="text" id="add-name" required placeholder="Например, Екатерина">
+                </div>
+                <div class="form-group">
+                    <label>Телефон *</label>
+                    <input type="tel" id="add-phone" required placeholder="+7 (999) 000-00-00">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem">
+                    <div class="form-group">
+                        <label>Дата</label>
+                        <input type="date" id="add-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Время</label>
+                        <select id="add-time">
+                            <option value="11:00">11:00</option>
+                            <option value="13:30" selected>13:30</option>
+                            <option value="16:00">16:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:30">19:30</option>
+                            <option value="20:30">20:30</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Мастер</label>
+                    <select id="add-master">
+                        <option value="Алина Романова (Топ-стилист)">Алина Романова (Топ-стилист)</option>
+                        <option value="Элина Вересова (Арт-директор)">Элина Вересова (Арт-директор)</option>
+                        <option value="Маргарита К. (Ведущий подолог)">Маргарита К. (Ведущий подолог)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Услуги</label>
+                    <input type="text" id="add-services" placeholder="Комплекс «LUMIÈRE Signature»">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem">
+                    <div class="form-group">
+                        <label>Стоимость (₽)</label>
+                        <input type="number" id="add-price" value="3600">
+                    </div>
+                    <div class="form-group">
+                        <label>Напиток</label>
+                        <select id="add-drink">
+                            <option value="Prosecco Brut">Prosecco Brut</option>
+                            <option value="Айс-матча">Айс-матча</option>
+                            <option value="Капучино / Раф">Капучино / Раф</option>
+                            <option value="Травяной сбор">Травяной сбор</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem">
+                    <input type="checkbox" id="add-four-hands" style="width: auto">
+                    <label for="add-four-hands" style="margin: 0; text-transform: none">👑 Услуга в 4 руки (+15%)</label>
+                </div>
+                <button type="submit" class="btn-crm btn-crm-gold" style="width: 100%; justify-content: center; margin-top: 1.25rem; padding: 0.8rem">
+                    Создать запись
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="js/admin.js"></script>
+</body>
+</html>

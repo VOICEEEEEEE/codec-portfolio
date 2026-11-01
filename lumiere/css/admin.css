@@ -1,0 +1,498 @@
+/* ============================================
+   LUMIÈRE CRM — Admin Panel Styles
+   ============================================ */
+
+:root {
+    --cream: #FDFBF9;
+    --blush-50: #FBF6F4;
+    --blush-100: #F5E9E4;
+    --blush-200: #EAD3C9;
+    --blush-300: #DFB9A9;
+    --gold: #C5A059;
+    --gold-light: #DFC592;
+    --gold-dark: #9E7B36;
+    --obsidian: #181617;
+    --charcoal: #252223;
+    --surface: #1F1D1E;
+    --surface-light: #2A2728;
+    --border: rgba(197, 160, 89, 0.2);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+
+    --status-new: #eab308;
+    --status-confirmed: #3b82f6;
+    --status-completed: #10b981;
+    --status-cancelled: #ef4444;
+
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--obsidian);
+    color: var(--cream);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    min-height: 100vh;
+    padding-bottom: 3rem;
+}
+
+/* Header */
+.crm-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.crm-header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+}
+
+.brand-badge {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--obsidian);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.brand-title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.brand-sub {
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--gold-light);
+    display: block;
+    margin-top: 2px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-crm {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.btn-crm-gold {
+    background: var(--gold);
+    color: var(--obsidian);
+    font-weight: 600;
+}
+.btn-crm-gold:hover {
+    background: var(--gold-light);
+}
+
+.btn-crm-ghost {
+    background: var(--surface-light);
+    color: var(--cream);
+    border-color: var(--border-subtle);
+}
+.btn-crm-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+}
+
+/* Container */
+.crm-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.stat-card:hover {
+    border-color: var(--border);
+    transform: translateY(-2px);
+}
+
+.stat-info .stat-label {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(253, 251, 249, 0.6);
+    margin-bottom: 0.35rem;
+}
+
+.stat-info .stat-value {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1;
+}
+
+.stat-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1rem;
+    background: var(--surface-light);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+/* Control Bar */
+.control-bar {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 1.25rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--surface-light);
+    color: rgba(253, 251, 249, 0.7);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-tab:hover {
+    color: var(--cream);
+    background: rgba(255,255,255,0.08);
+}
+
+.filter-tab.active {
+    background: var(--gold);
+    color: var(--obsidian);
+    font-weight: 600;
+}
+
+.search-box {
+    position: relative;
+    min-width: 250px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.55rem 1rem 0.55rem 2.25rem;
+    border-radius: 9999px;
+    background: var(--surface-light);
+    border: 1px solid var(--border-subtle);
+    color: var(--cream);
+    font-size: 0.75rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+    border-color: var(--gold);
+}
+
+.search-box i {
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(253, 251, 249, 0.4);
+    font-size: 0.875rem;
+}
+
+/* Table Card */
+.table-card {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.8125rem;
+}
+
+thead {
+    background: var(--surface-light);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+th {
+    padding: 1rem 1.25rem;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gold-light);
+    font-weight: 600;
+}
+
+td {
+    padding: 1.1rem 1.25rem;
+    border-bottom: 1px solid var(--border-subtle);
+    color: rgba(253, 251, 249, 0.9);
+    vertical-align: middle;
+}
+
+tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Status Badges */
+.badge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.badge-new {
+    background: rgba(234, 179, 8, 0.15);
+    color: #facc15;
+    border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.badge-confirmed {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.badge-completed {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-cancelled {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.status-select {
+    background: var(--surface-light);
+    border: 1px solid var(--border-subtle);
+    color: var(--cream);
+    padding: 0.35rem 0.65rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.status-select:focus {
+    border-color: var(--gold);
+}
+
+.client-name {
+    font-weight: 600;
+    color: var(--cream);
+    display: block;
+}
+
+.client-phone {
+    font-size: 0.75rem;
+    color: var(--gold-light);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 0.2rem;
+}
+.client-phone:hover {
+    text-decoration: underline;
+}
+
+.booking-code {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: rgba(253, 251, 249, 0.5);
+    background: rgba(255,255,255,0.04);
+    padding: 0.15rem 0.45rem;
+    border-radius: 0.3rem;
+}
+
+.price-cell {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.btn-action {
+    background: transparent;
+    border: none;
+    color: rgba(253, 251, 249, 0.4);
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.btn-action:hover {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+/* Modal */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal-backdrop.open {
+    display: flex;
+}
+
+.modal-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+    padding: 1.75rem;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+
+.modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-head h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--cream);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gold-light);
+    margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    background: var(--surface-light);
+    border: 1px solid var(--border-subtle);
+    border-radius: 0.65rem;
+    color: var(--cream);
+    font-size: 0.8125rem;
+    font-family: var(--font-sans);
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+}

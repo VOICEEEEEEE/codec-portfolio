@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMIÈRE — Премиальное ателье маникюра и эстетики | Москва, Патриаршие</title>
+    <meta name="description" content="Премиальный маникюр и педикюр в Москве. Гели LUXIO & BANDI, медицинская стерильность, SPA-ритуалы. Запись онлайн.">
+    <meta name="keywords" content="маникюр москва, педикюр, nail art, SPA, LUXIO, премиальный маникюр, Патриаршие пруды">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="LUMIÈRE — Премиальное ателье маникюра">
+    <meta property="og:description" content="Искусство безупречных деталей на кончиках пальцев. Запись онлайн.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💅</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-logo">LUMIÈRE</div>
+        <div class="preloader-bar">
+            <div class="preloader-bar-inner"></div>
+        </div>
+    </div>
+
+    <!-- Top Promo Banner -->
+    <div class="promo-banner">
+        <span class="highlight">Специальное предложение:</span> Скидка 15% и SPA-уход La Sultane de Saba в подарок при первом визите •
+        <button type="button" onclick="window.LumiereApp.openBookingModal()" class="promo-link">Забронировать</button>
+    </div>
+
+    <!-- Navigation -->
+    <header id="navbar" class="navbar glass">
+        <div class="navbar-inner">
+            <!-- Logo -->
+            <a href="#" class="logo-link">
+                <div class="logo-circle">
+                    <span class="logo-letter font-serif">L</span>
+                </div>
+                <div>
+                    <span class="logo-text font-serif">LUMIÈRE</span>
+                    <span class="logo-subtext">Nail & Spa Atelier</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="nav-links">
+                <a href="#services">Услуги и цены</a>
+                <a href="#portfolio">Портфолио</a>
+                <a href="#atmosphere">Атмосфера</a>
+                <a href="#reviews">Отзывы</a>
+            </nav>
+
+            <!-- CTA & Contacts -->
+            <div class="nav-right">
+                <div class="nav-contact">
+                    <a href="tel:+79998452210" class="nav-phone">+7 (999) 845-22-10</a>
+                    <span class="nav-location">
+                        <span class="pulse-dot"></span> Патриаршие пруды, МСК
+                    </span>
+                </div>
+                <button type="button" onclick="window.LumiereApp.openBookingModal()" class="btn btn-primary">
+                    <span>Онлайн-запись</span>
+                    <i class="ph ph-arrow-up-right"></i>
+                </button>
+                <!-- Mobile Menu Button -->
+                <button type="button" id="mobile-menu-btn" onclick="window.LumiereApp.toggleMobileMenu()" aria-label="Меню" class="mobile-menu-btn">
+                    <i id="mobile-menu-icon" class="ph ph-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="mobile-menu glass">
+            <a href="#services">Услуги и калькулятор</a>
+            <a href="#portfolio">Галерея работ</a>
+            <a href="#atmosphere">Стандарты и сервис</a>
+            <a href="#reviews">Отзывы гостей</a>
+            <div class="mobile-menu-footer">
+                <span>Ежедневно 09:00 – 22:00 • Патриаршие пруды</span>
+                <a href="tel:+79998452210" class="mobile-phone">+7 (999) 845-22-10</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- HERO SECTION                           -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="hero">
+        <div class="hero-blob-1"></div>
+        <div class="hero-blob-2"></div>
+
+        <div class="container">
+            <div class="hero-grid">
+
+                <!-- Left Column -->
+                <div class="hero-content animate-fade-in-up">
+                    <div class="hero-badge">
+                        <i class="ph-fill ph-star"></i>
+                        <span>Высокая эстетика ногтевого сервиса</span>
+                    </div>
+
+                    <h1>
+                        Искусство <span class="italic-gold text-gold-gradient">безупречных</span> деталей на кончиках пальцев
+                    </h1>
+
+                    <p class="hero-description">
+                        Пространство красоты, где маникюр превращается в гедонистический ритуал. Медицинская стерильность, премиальные гели <strong>LUXIO & BANDI</strong>, кресла-реклайнеры и шампанское каждому гостю.
+                    </p>
+
+                    <div class="hero-actions">
+                        <button type="button" onclick="window.LumiereApp.openBookingModal()" class="btn btn-primary btn-lg">
+                            <span>Записаться на визит</span>
+                            <i class="ph ph-calendar-check" style="font-size:1.125rem"></i>
+                        </button>
+                        <a href="#services" class="btn btn-secondary btn-lg">
+                            <span>Рассчитать стоимость</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Metrics -->
+                    <div class="trust-metrics">
+                        <div class="trust-metric">
+                            <div class="number font-serif">7 дней</div>
+                            <div class="label">Гарантия на покрытие</div>
+                        </div>
+                        <div class="trust-metric">
+                            <div class="number font-serif">100%</div>
+                            <div class="label">Стерильность СанПиН</div>
+                        </div>
+                        <div class="trust-metric">
+                            <div class="number font-serif">4.9 ★</div>
+                            <div class="label">1 400+ отзывов гостей</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Visual -->
+                <div class="hero-visual">
+                    <div class="hero-visual-inner">
+                        <!-- Main Arch Image -->
+                        <div class="hero-arch">
+                            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1000&q=85"
+                                 onerror="this.src='https://placehold.co/800x1000/F5E9E4/181617?text=Lumiere+Atelier'"
+                                 alt="Премиальный маникюр в LUMIÈRE">
+                            <div class="hero-arch-overlay"></div>
+                            <div class="hero-arch-content">
+                                <span class="hero-trend-badge">Тренд сезона 2026</span>
+                                <p class="hero-trend-title font-serif">«Жемчужная глазурь & Микро-френч»</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Card 1 -->
+                        <div class="floating-card-1 glass animate-float">
+                            <div class="floating-card-1-inner">
+                                <div class="card-icon">
+                                    <i class="ph-fill ph-champagne" style="font-size:1.25rem"></i>
+                                </div>
+                                <div>
+                                    <div class="card-title">Sensory Lounge Bar</div>
+                                    <div class="card-desc">Матча на кокосовом, Prosecco и спешелти кофе бесплатно</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Card 2 -->
+                        <div class="floating-card-2 glass">
+                            <div class="avatar-stack">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" onerror="this.src='https://placehold.co/100x100/EAD3C9/181617?text=A'" alt="Мастер">
+                                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" onerror="this.src='https://placehold.co/100x100/EAD3C9/181617?text=M'" alt="Мастер">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" onerror="this.src='https://placehold.co/100x100/EAD3C9/181617?text=E'" alt="Мастер">
+                            </div>
+                            <div>
+                                <span class="card-title" style="font-size:0.75rem">Топ-стилисты</span>
+                                <span class="card-subtitle">Опыт от 5 лет</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SERVICES & CALCULATOR                  -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="services" class="section services-section">
+        <div class="container">
+
+            <div class="section-header reveal">
+                <span class="section-label">Прозрачное ценообразование</span>
+                <h2 class="section-title">Каталог услуг & Конструктор визита</h2>
+                <p class="section-subtitle">
+                    Выберите желаемые процедуры в меню ниже, чтобы мгновенно рассчитать точную стоимость и длительность вашего визита.
+                </p>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="service-tabs" id="service-tabs">
+                <button type="button" onclick="window.LumiereApp.switchServiceCategory('manicure')" id="tab-manicure" class="service-tab active">
+                    Маникюр
+                </button>
+                <button type="button" onclick="window.LumiereApp.switchServiceCategory('pedicure')" id="tab-pedicure" class="service-tab">
+                    Педикюр
+                </button>
+                <button type="button" onclick="window.LumiereApp.switchServiceCategory('design')" id="tab-design" class="service-tab">
+                    Nail Art & Дизайн
+                </button>
+                <button type="button" onclick="window.LumiereApp.switchServiceCategory('spa')" id="tab-spa" class="service-tab">
+                    SPA-ритуалы
+                </button>
+            </div>
+
+            <div class="services-layout">
+
+                <!-- Services List -->
+                <div id="services-list-container">
+                    <!-- Dynamic via JS -->
+                </div>
+
+                <!-- Calculator Basket -->
+                <div class="calculator-card-wrapper" id="calculator-basket-card">
+                    <div class="calculator-card glass">
+                        <div class="calculator-glow"></div>
+
+                        <div class="calc-header">
+                            <div>
+                                <h3 class="calc-title font-serif">Ваш Beauty-сет</h3>
+                                <p class="calc-subtitle">Калькулятор стоимости и времени</p>
+                            </div>
+                            <span id="calc-count-badge" class="calc-badge">0</span>
+                        </div>
+
+                        <!-- Selected Items -->
+                        <div id="calc-selected-list" class="calc-items">
+                            <!-- Dynamic via JS -->
+                        </div>
+
+                        <!-- Four-Hands Toggle -->
+                        <div class="four-hands-box">
+                            <div>
+                                <div class="four-hands-label">
+                                    <i class="ph-fill ph-crown" style="color:var(--gold)"></i> Сервис в 4 руки
+                                </div>
+                                <div class="four-hands-desc">Маникюр + педикюр параллельно (экономия времени в 2 раза, +15% к чеку)</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="four-hands-toggle">
+                                <div class="toggle-slider"></div>
+                            </label>
+                        </div>
+
+                        <!-- Totals -->
+                        <div class="calc-totals">
+                            <div class="calc-total-row">
+                                <span>Ориентировочное время:</span>
+                                <span id="calc-total-time" class="value">0 мин</span>
+                            </div>
+                            <div class="calc-price-row">
+                                <span class="calc-price-label">Итого к оплате:</span>
+                                <span id="calc-total-price" class="calc-price-value font-serif">0 ₽</span>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="window.LumiereApp.openBookingWithSelected()" class="btn btn-primary btn-lg" style="width:100%;margin-top:1.5rem">
+                            <span>Записаться на выбранное</span>
+                            <i class="ph ph-arrow-right"></i>
+                        </button>
+
+                        <button type="button" onclick="window.LumiereApp.clearCalculator()" id="calc-clear-btn" class="calc-clear-btn">
+                            Очистить выбор
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- PORTFOLIO GALLERY                      -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="portfolio" class="section portfolio-section">
+        <div class="container">
+            <div class="portfolio-header reveal">
+                <div>
+                    <span class="section-label">Эстетика в каждом миллиметре</span>
+                    <h2 class="section-title" style="color:var(--cream)">Галерея наших работ</h2>
+                </div>
+                <div class="gallery-filters">
+                    <button type="button" onclick="window.LumiereApp.filterGallery('all', this)" class="gallery-filter active">Все работы</button>
+                    <button type="button" onclick="window.LumiereApp.filterGallery('nude', this)" class="gallery-filter">Clean Girl & Nude</button>
+                    <button type="button" onclick="window.LumiereApp.filterGallery('art', this)" class="gallery-filter">Авторский Art</button>
+                    <button type="button" onclick="window.LumiereApp.filterGallery('french', this)" class="gallery-filter">Микро-френч</button>
+                </div>
+            </div>
+
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Dynamic via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- ATMOSPHERE & STANDARDS                 -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="atmosphere" class="section atmosphere-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Философия LUMIÈRE</span>
+                <h2 class="section-title">Безупречный комфорт и безопасность</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="ph ph-shield-check"></i>
+                    </div>
+                    <h3 class="feature-title font-serif">Госпитальная стерильность</h3>
+                    <p class="feature-desc">
+                        4 этапа очистки инструментов в автоклавах Melag (Германия). Индивидуальные одноразовые пилки и бафы дарим вам после процедуры.
+                    </p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="ph ph-armchair"></i>
+                    </div>
+                    <h3 class="feature-title font-serif">VIP-реклайнеры</h3>
+                    <p class="feature-desc">
+                        Педикюр и услуги в 4 руки проходят в анатомических креслах-облаках с подогревом, мягкими пледами и просмотром любимого кино.
+                    </p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="ph ph-drop"></i>
+                    </div>
+                    <h3 class="feature-title font-serif">Палитра 450+ оттенков</h3>
+                    <p class="feature-desc">
+                        Работаем исключительно на гипоаллергенных бескислотных базах: Luxio, Bandi, Fedua, Christina Fitzgerald и La Sultane de Saba.
+                    </p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i class="ph ph-wine"></i>
+                    </div>
+                    <h3 class="feature-title font-serif">Авторский Гастро-бар</h3>
+                    <p class="feature-desc">
+                        Игристое Crémant, лавандовый раф на овсяном молоке, церемониальная матча и бельгийский шоколад без сахара для каждого гостя.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- CUSTOMER REVIEWS                       -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="reviews" class="section reviews-section">
+        <div class="container">
+            <div class="reviews-header reveal">
+                <div>
+                    <span class="section-label">Отзывы гостей</span>
+                    <h2 class="section-title">Любовь с первого прикосновения</h2>
+                </div>
+                <div class="rating-badge">
+                    <div class="rating-stars">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <span class="rating-text">Яндекс Карты 5.0</span>
+                </div>
+            </div>
+
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card reveal">
+                    <div>
+                        <div class="review-top">
+                            <div class="review-stars">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                            <span class="review-master">Топ-стилист Алина</span>
+                        </div>
+                        <p class="review-text">
+                            «Идеально тонкое покрытие без "пирожков" на ногтях! Кутикула выглядит так, будто я только вышла из салона даже спустя 3 недели. А свеча для массажа рук с ароматом амбры и ванили в конце процедуры — это чистый восторг».
+                        </p>
+                    </div>
+                    <div class="review-author">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" onerror="this.src='https://placehold.co/100x100/F5E9E4/181617?text=В'" alt="Валерия">
+                        <div>
+                            <div class="review-author-name">Валерия Соколова</div>
+                            <div class="review-author-info">Постоянный гость • Комплекс в 4 руки</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card reveal">
+                    <div>
+                        <div class="review-top">
+                            <div class="review-stars">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                            <span class="review-master">Арт-директор Элина</span>
+                        </div>
+                        <p class="review-text">
+                            «Наконец-то нашла салон, где делают настоящий микро-френч и архитектуру четкого квадрата, у которого не скалываются углы. Сервис на уровне пятизвездочного отеля: подали бокал холодного розе и вкуснейшую голубику».
+                        </p>
+                    </div>
+                    <div class="review-author">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80" onerror="this.src='https://placehold.co/100x100/F5E9E4/181617?text=К'" alt="Ксения">
+                        <div>
+                            <div class="review-author-name">Ксения Романова</div>
+                            <div class="review-author-info">Fashion-стилист • Архитектура гелем</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card reveal">
+                    <div>
+                        <div class="review-top">
+                            <div class="review-stars">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                            <span class="review-master">Подолог Маргарита</span>
+                        </div>
+                        <p class="review-text">
+                            «Педикюр Golden Trace в кресле-реклайнере — это мой ежемесячный побег от городской суеты. Засыпаю каждый раз! Пяточки остаются шелковыми больше месяца. Очень красивая и продуманная студия».
+                        </p>
+                    </div>
+                    <div class="review-author">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" onerror="this.src='https://placehold.co/100x100/F5E9E4/181617?text=Д'" alt="Дарья">
+                        <div>
+                            <div class="review-author-name">Дарья Волкова</div>
+                            <div class="review-author-info">Гость • Ферментативный педикюр</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- FOOTER                                 -->
+    <!-- ═══════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <div class="logo-circle">
+                            <span class="logo-letter font-serif" style="color:var(--obsidian)">L</span>
+                        </div>
+                        <span class="logo-text font-serif" style="color:var(--cream)">LUMIÈRE</span>
+                    </div>
+                    <p class="footer-desc">
+                        Флагманское ателье маникюра, педикюра и SPA-эстетики. Забота о здоровье и красоте ваших рук в атмосфере камерной роскоши.
+                    </p>
+                    <div style="padding-top:0.75rem">
+                        <button type="button" onclick="window.LumiereApp.openBookingModal()" class="btn btn-gold">
+                            Записаться онлайн
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Локация и контакты</h4>
+                    <p class="footer-contact-item">
+                        <i class="ph ph-map-pin"></i>
+                        <span>Москва, Малый Патриарший пер., 5 (Собственный паркинг для гостей салона)</span>
+                    </p>
+                    <p class="footer-contact-item">
+                        <i class="ph ph-clock"></i>
+                        <span>Ежедневно с 09:00 до 22:00</span>
+                    </p>
+                    <p class="footer-contact-item">
+                        <i class="ph ph-phone"></i>
+                        <a href="tel:+79998452210">+7 (999) 845-22-10</a>
+                    </p>
+                </div>
+
+                <div class="footer-nav">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="#services">Прайс-лист и калькулятор</a></li>
+                        <li><a href="#portfolio">Портфолио работ</a></li>
+                        <li><a href="#atmosphere">Стандарты стерильности</a></li>
+                        <li><a href="#reviews">Отзывы гостей</a></li>
+                        <li><a href="/admin" target="_blank" style="color:var(--gold-light)"><i class="ph ph-lock-key"></i> Панель администратора</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 LUMIÈRE Nail & Spa Atelier. Все права защищены.</p>
+                <p>Политика конфиденциальности • Медицинская лицензия № ЛО-77-01-021459</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- MOBILE STICKY BAR                      -->
+    <!-- ═══════════════════════════════════════ -->
+    <div id="mobile-sticky-bar" class="mobile-sticky-bar">
+        <div class="mobile-sticky-inner glass-dark">
+            <div onclick="document.getElementById('calculator-basket-card').scrollIntoView({behavior:'smooth'})" style="cursor:pointer">
+                <span class="mobile-bar-label" id="mobile-bar-count">Выбрано: 1 услуга</span>
+                <div style="display:flex;align-items:baseline;gap:0.5rem">
+                    <span class="mobile-bar-price" id="mobile-bar-price">3 600 ₽</span>
+                    <span class="mobile-bar-time" id="mobile-bar-time">• 1 ч 30 мин</span>
+                </div>
+            </div>
+            <button type="button" onclick="window.LumiereApp.openBookingWithSelected()" class="btn btn-gold" style="font-size:0.625rem;padding:0.625rem 1.25rem">
+                Записаться
+            </button>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- BOOKING MODAL                          -->
+    <!-- ═══════════════════════════════════════ -->
+    <div id="booking-modal" onclick="window.LumiereApp.handleBackdropClick(event)" class="modal-backdrop">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <div>
+                    <span class="modal-header-label">Консьерж-сервис</span>
+                    <h3 class="modal-header-title font-serif">Онлайн-запись в LUMIÈRE</h3>
+                </div>
+                <button type="button" onclick="window.LumiereApp.closeBookingModal()" aria-label="Закрыть" class="modal-close-btn">
+                    <i class="ph ph-x" style="font-size:1.125rem"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body" id="booking-form-content">
+
+                <!-- Pre-selected Summary -->
+                <div class="booking-summary">
+                    <div class="booking-summary-top">
+                        <span>Выбранный визит:</span>
+                        <span id="modal-summary-price" class="booking-summary-price font-serif">3 600 ₽</span>
+                    </div>
+                    <p id="modal-summary-items" class="booking-summary-items">Комплекс «LUMIÈRE Signature»</p>
+                    <p id="modal-summary-look" class="booking-summary-look"></p>
+                </div>
+
+                <!-- Step 1: Select Master -->
+                <div>
+                    <label class="form-label">1. Выберите эксперта</label>
+                    <div class="masters-grid" id="masters-grid">
+                        <div onclick="window.LumiereApp.selectMaster('Алина Романова', 'Топ-стилист', this)" class="master-card active">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" onerror="this.src='https://placehold.co/100x100/F5E9E4/181617?text=А'" alt="Алина">
+                            <div>
+                                <div class="master-card-name">Алина Р.</div>
+                                <div class="master-card-role">Топ-стилист ★ 5.0</div>
+                                <div class="master-card-exp">Опыт 6 лет</div>
+                            </div>
+                        </div>
+                        <div onclick="window.LumiereApp.selectMaster('Элина Вересова', 'Арт-директор', this)" class="master-card">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80" onerror="this.src='https://placehold.co/100x100/F5E9E4/181617?text=Э'" alt="Элина">
+                            <div>
+                                <div class="master-card-name">Элина В.</div>
+                                <div class="master-card-role">Арт-директор ★ 5.0</div>
+                                <div class="master-card-exp">Сложная архитектура</div>
+                            </div>
+                        </div>
+                        <div onclick="window.LumiereApp.selectMaster('Маргарита К.', 'Ведущий подолог', this)" class="master-card">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" onerror="this.src='https://placehold.co/100x100/F5E9E4/181617?text=М'" alt="Маргарита">
+                            <div>
+                                <div class="master-card-name">Маргарита К.</div>
+                                <div class="master-card-role">VIP-мастер ★ 4.9</div>
+                                <div class="master-card-exp">Маникюр и подология</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Date & Time -->
+                <div class="form-row">
+                    <div>
+                        <label class="form-label">2. Дата визита</label>
+                        <input type="date" id="booking-date" class="form-input">
+                    </div>
+                    <div>
+                        <label class="form-label">3. Свободные слоты</label>
+                        <div class="time-slots" id="time-slots">
+                            <button type="button" onclick="window.LumiereApp.selectTimeSlot('11:00', this)" class="time-slot">11:00</button>
+                            <button type="button" onclick="window.LumiereApp.selectTimeSlot('13:30', this)" class="time-slot active">13:30</button>
+                            <button type="button" onclick="window.LumiereApp.selectTimeSlot('16:00', this)" class="time-slot">16:00</button>
+                            <button type="button" onclick="window.LumiereApp.selectTimeSlot('18:00', this)" class="time-slot">18:00</button>
+                            <button type="button" onclick="window.LumiereApp.selectTimeSlot('19:30', this)" class="time-slot">19:30</button>
+                            <button type="button" onclick="window.LumiereApp.selectTimeSlot('20:30', this)" class="time-slot">20:30</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Guest Details -->
+                <div class="form-row">
+                    <div>
+                        <label class="form-label-sm">Ваше имя *</label>
+                        <input type="text" id="guest-name" placeholder="Например, Анастасия" class="form-input">
+                    </div>
+                    <div>
+                        <label class="form-label-sm">Телефон (для SMS-пропуска) *</label>
+                        <input type="tel" id="guest-phone" placeholder="+7 (999) 000-00-00" class="form-input">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="form-label-sm">Какой напиток подготовить к вашему приходу? (Комплимент)</label>
+                    <select id="guest-drink" class="form-select">
+                        <option value="Бокал охлажденного Prosecco Brut">🥂 Бокал охлажденного Prosecco Brut</option>
+                        <option value="Айс-матча на кокосовом молоке">🍵 Церемониальная Матча на кокосовом молоке</option>
+                        <option value="Капучино / Лавандовый раф">☕ Капучино или авторский Лавандовый раф</option>
+                        <option value="Травяной сбор с чабрецом и ягодами">🫖 Алтайский травяной сбор с ягодами</option>
+                    </select>
+                </div>
+
+                <div id="booking-error" class="form-error">
+                    Пожалуйста, укажите ваше имя и номер телефона для подтверждения бронирования.
+                </div>
+
+                <button type="button" onclick="window.LumiereApp.submitBooking()" class="btn btn-primary btn-lg" style="width:100%">
+                    Подтвердить бронирование визита
+                </button>
+            </div>
+
+            <!-- Success State -->
+            <div id="booking-success-content" class="booking-success">
+                <div class="success-icon">
+                    <i class="ph-fill ph-check-circle"></i>
+                </div>
+                <h4 class="success-title font-serif">Ждем вас в LUMIÈRE!</h4>
+                <p id="success-details-text" class="success-details"></p>
+                <div class="success-note">
+                    Мы уже отправили подтверждение и QR-пропуск для парковки в ваш WhatsApp / Telegram.
+                </div>
+                <button type="button" onclick="window.LumiereApp.closeBookingModal()" class="btn btn-primary">
+                    Вернуться на сайт
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Наверх">
+        <i class="ph ph-arrow-up" style="font-size:1.25rem"></i>
+    </button>
+
+    <!-- Application Script -->
+    <script type="module" src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSMAN | Турецкий барбершоп в Казани</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --gold: #d4af37;
+      --gold-hover: #b89728;
+      --gold-glow: rgba(212, 175, 55, 0.25);
+      --bg-dark: #0f0f10;
+      --bg-surface: #171719;
+      --bg-card: #1f1f23;
+      --border: #2c2c32;
+      --border-gold: rgba(212, 175, 55, 0.35);
+      --text-main: #f0f0f2;
+      --text-muted: #9c9ca6;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      --font-title: 'Cinzel', 'Times New Roman', serif;
+      --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Custom dark scrollbar - no white native scrollbar on Windows */
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0b0d;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2a2c33;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c5a059;
+    }
+
+    html, body {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+      scrollbar-width: thin;
+      scrollbar-color: #2a2c33 #0a0b0d;
+      background-color: var(--bg-dark);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--text-main);
+      background-color: var(--bg-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* SCROLL ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 15, 16, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+
+    .logo-title {
+      font-family: var(--font-title);
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      color: var(--gold);
+      line-height: 1.1;
+    }
+
+    .logo-sub {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      list-style: none;
+      margin: 0 auto 0 40px;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--text-muted);
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-contacts {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .btn-tg-circle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 30px;
+      background: rgba(34, 158, 217, 0.12);
+      border: 1px solid rgba(34, 158, 217, 0.4);
+      color: #2eb5f5;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.25s;
+    }
+
+    .btn-tg-circle:hover {
+      background: #229ED9;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(34, 158, 217, 0.35);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #d4af37 0%, #b89728 100%);
+      color: #0f0f10;
+      box-shadow: 0 4px 20px var(--gold-glow);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-telegram {
+      background: #229ED9;
+      color: #fff;
+    }
+
+    .btn-telegram:hover {
+      background: #1e8ec3;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      background: var(--bg-surface);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 70px 0 90px;
+      position: relative;
+      background: radial-gradient(circle at 75% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 30px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--border-gold);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: var(--font-title);
+      font-size: 48px;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .hero-title span {
+      color: var(--gold);
+      text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+
+    .hero-features {
+      display: flex;
+      gap: 36px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .hf-item h4 {
+      font-family: var(--font-title);
+      font-size: 32px;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .hf-item p {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      bottom: -20px;
+      left: -25px;
+      background: var(--bg-surface);
+      padding: 18px 24px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border: 1px solid var(--border-gold);
+    }
+
+    .rating-stars {
+      color: #f5a623;
+      font-size: 15px;
+    }
+
+    /* SECTION BASE */
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 55px;
+    }
+
+    .section-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: var(--font-title);
+      font-size: 38px;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .service-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+
+    .service-badge {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      background: var(--gold);
+      color: #000;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+    }
+
+    .sc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+
+    .sc-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .sc-price {
+      font-family: var(--font-title);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .sc-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .sc-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .sc-time {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .sc-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .sc-btn {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--gold);
+      padding: 6px 12px;
+      border: 1px solid var(--border-gold);
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .sc-btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* TURKISH TRADITIONS */
+    .features-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .feat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .feat-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+    }
+
+    .feat-icon {
+      font-size: 32px;
+      margin-bottom: 18px;
+      display: inline-block;
+    }
+
+    .feat-title {
+      font-family: var(--font-title);
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .feat-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-item {
+      height: 300px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--border);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(15, 15, 16, 0.95), transparent);
+    }
+
+    .gallery-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .gallery-sub {
+      font-size: 11px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* REVIEWS */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .review-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .rev-quote {
+      font-size: 14px;
+      color: #d1d1d6;
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .rev-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .rev-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .rev-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .rev-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* CONTACTS */
+    .contacts-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+    }
+
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 24px;
+      align-items: flex-start;
+    }
+
+    .ci-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .ci-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .ci-value {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .map-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #09090a;
+      border-top: 1px solid #1c1c20;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* MODAL CHOOSER */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-gold);
+      border-radius: 20px;
+      max-width: 480px;
+      width: 100%;
+      padding: 36px;
+      position: relative;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: var(--text-muted);
+      font-size: 22px;
+    }
+
+    .modal-title {
+      font-family: var(--font-title);
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .modal-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .booking-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .bc-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.25s;
+    }
+
+    .bc-dikidi {
+      background: linear-gradient(135deg, #d4af37 0%, #b89728 100%);
+      color: #000;
+    }
+
+    .bc-dikidi:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--gold-glow);
+    }
+
+    .bc-tg {
+      background: #229ED9;
+      color: #fff;
+    }
+
+    .bc-tg:hover {
+      background: #1c88bb;
+      transform: translateY(-2px);
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-floating-card { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .contacts-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero-title { font-size: 34px; line-height: 1.2; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-wrapper {
+        height: 64px;
+        gap: 10px;
+      }
+      .logo-title {
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+      .logo-sub {
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+      .nav-contacts {
+        gap: 8px;
+      }
+      .btn-tg-circle {
+        padding: 7px 10px;
+        font-size: 10px;
+      }
+      .btn-tg-circle span.tg-text {
+        display: none;
+      }
+      .nav-contacts .btn-gold {
+        padding: 8px 14px;
+        font-size: 11px;
+      }
+      .container {
+        padding: 0 16px;
+      }
+      .hero {
+        padding: 40px 0 60px;
+      }
+      .hero-actions {
+        flex-direction: column;
+      }
+      .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+      }
+      .hero-features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        text-align: center;
+        padding-top: 24px;
+      }
+      .hf-item h4 {
+        font-size: 22px;
+      }
+      .hf-item p {
+        font-size: 9px;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .section {
+        padding: 60px 0;
+      }
+      .section-title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">
+        <span class="logo-title">OSMAN</span>
+        <span class="logo-sub">Турецкий барбершоп · Казань</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#services">Услуги и цены</a></li>
+        <li><a href="#traditions">Традиции</a></li>
+        <li><a href="#gallery">Фото</a></li>
+        <li><a href="#reviews">Отзывы (5.0)</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+
+      <div class="nav-contacts">
+        <button class="btn-tg-circle" onclick="openChannel('tg')" title="Написать в Telegram">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block; vertical-align:middle;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg> <span class="tg-text">Telegram</span>
+        </button>
+        <button class="btn btn-gold" onclick="openModal('Быстрая запись')">
+          Запись
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content reveal active">
+          <div class="badge-pill">
+            <span>⚔</span> Традиционный турецкий барберинг в Казани
+          </div>
+          <h1 class="hero-title">
+            Мужской стиль и <span>восточное</span> гостеприимство
+          </h1>
+          <p class="hero-desc">
+            Классические и трендовые мужские стрижки, королевское бритьё опасной бритвой, моделирование бороды и детские стрижки. На Бари Галеева, 8А. Традиционный турецкий чай каждому гостю.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-gold" onclick="openChannel('dikidi')" style="padding: 14px 28px;">
+              Записаться через DIKIDI
+            </button>
+            <button class="btn btn-telegram" onclick="openChannel('tg')" style="padding: 14px 28px;">
+              <span>✈</span> Записаться в Telegram
+            </button>
+          </div>
+
+          <div class="hero-features">
+            <div class="hf-item">
+              <h4>5.0</h4>
+              <p>Рейтинг Яндекс (94 отзыва)</p>
+            </div>
+            <div class="hf-item">
+              <h4>100%</h4>
+              <p>Турецкий сервис</p>
+            </div>
+            <div class="hf-item">
+              <h4>☕</h4>
+              <p>Чай в армудах бесплатно</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap reveal active delay-1">
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=80" alt="Барбершоп Осман Казань" class="hero-img">
+          
+          <div class="hero-floating-card">
+            <div style="font-size: 28px;">⭐</div>
+            <div>
+              <div class="rating-stars">★★★★★</div>
+              <strong style="font-size: 14px; color: #fff;">Лучший барбершоп района</strong>
+              <div style="font-size: 11px; color: var(--text-muted);">ул. Бари Галеева, 8А, Казань</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES (EXACT PRICES FROM OSMAN'S YANDEX CARD) -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Честные цены</span>
+        <h2 class="section-title">Услуги и стоимость</h2>
+        <p class="section-sub">Никаких скрытых доплат. Мытьё головы и укладка входят в стоимость</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card reveal delay-1">
+          <div>
+            <div class="sc-header">
+              <h3 class="sc-title">Мужская стрижка</h3>
+              <div class="sc-price">800 ₽</div>
+            </div>
+            <p class="sc-desc">Классика, Fade или удлиненная стрижка. Подбор идеальной формы под анатомию лица, мытье головы и укладка профессиональной косметикой.</p>
+          </div>
+          <div class="sc-footer">
+            <span class="sc-time">⏱ 45 минут</span>
+            <div class="sc-actions">
+              <button class="sc-btn" onclick="openChannel('dikidi')">DIKIDI</button>
+              <button class="sc-btn" onclick="openChannel('tg')" style="border-color:#229ED9; color:#229ED9;">TG</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card reveal delay-2">
+          <span class="service-badge">Хит продаж</span>
+          <div>
+            <div class="sc-header">
+              <h3 class="sc-title">Комбо: Стрижка + Борода</h3>
+              <div class="sc-price">1 200 ₽</div>
+            </div>
+            <p class="sc-desc">Полный комплекс для уверенного образа. Стрижка волос + оформление и распаривание бороды с обработкой четких контуров.</p>
+          </div>
+          <div class="sc-footer">
+            <span class="sc-time">⏱ 1 час 15 мин</span>
+            <div class="sc-actions">
+              <button class="sc-btn" onclick="openChannel('dikidi')">DIKIDI</button>
+              <button class="sc-btn" onclick="openChannel('tg')" style="border-color:#229ED9; color:#229ED9;">TG</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card reveal delay-3">
+          <div>
+            <div class="sc-header">
+              <h3 class="sc-title">Оформление бороды</h3>
+              <div class="sc-price">600 ₽</div>
+            </div>
+            <p class="sc-desc">Моделирование формы, бритье опасной бритвой, удаление нежелательных волосков нитью и уход питательным турецким маслом.</p>
+          </div>
+          <div class="sc-footer">
+            <span class="sc-time">⏱ 35 минут</span>
+            <div class="sc-actions">
+              <button class="sc-btn" onclick="openChannel('dikidi')">DIKIDI</button>
+              <button class="sc-btn" onclick="openChannel('tg')" style="border-color:#229ED9; color:#229ED9;">TG</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card reveal delay-1">
+          <span class="service-badge" style="background:#555; color:#fff;">Кресло-лошадка</span>
+          <div>
+            <div class="sc-header">
+              <h3 class="sc-title">Детская стрижка</h3>
+              <div class="sc-price">700 ₽</div>
+            </div>
+            <p class="sc-desc">Стрижка для юных джентльменов. У нас есть специальное кресло-лошадка и терпеливые мастера, которые найдут подход к ребенку.</p>
+          </div>
+          <div class="sc-footer">
+            <span class="sc-time">⏱ 40 минут</span>
+            <div class="sc-actions">
+              <button class="sc-btn" onclick="openChannel('dikidi')">DIKIDI</button>
+              <button class="sc-btn" onclick="openChannel('tg')" style="border-color:#229ED9; color:#229ED9;">TG</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card reveal delay-2">
+          <div>
+            <div class="sc-header">
+              <h3 class="sc-title">Королевское бритьё</h3>
+              <div class="sc-price">900 ₽</div>
+            </div>
+            <p class="sc-desc">Традиционный ритуал: распаривание горячим полотенцем, нанесение пены помазком, безупречно чистое бритье и массаж лица с одеколоном.</p>
+          </div>
+          <div class="sc-footer">
+            <span class="sc-time">⏱ 45 минут</span>
+            <div class="sc-actions">
+              <button class="sc-btn" onclick="openChannel('dikidi')">DIKIDI</button>
+              <button class="sc-btn" onclick="openChannel('tg')" style="border-color:#229ED9; color:#229ED9;">TG</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card reveal delay-3">
+          <div>
+            <div class="sc-header">
+              <h3 class="sc-title">Комплекс «Отец + Сын»</h3>
+              <div class="sc-price">1 400 ₽</div>
+            </div>
+            <p class="sc-desc">Совместный поход в барбершоп по специальной цене. Проведите время вместе за чашечкой чая и стильной стрижкой.</p>
+          </div>
+          <div class="sc-footer">
+            <span class="sc-time">⏱ 1 час 20 мин</span>
+            <div class="sc-actions">
+              <button class="sc-btn" onclick="openChannel('dikidi')">DIKIDI</button>
+              <button class="sc-btn" onclick="openChannel('tg')" style="border-color:#229ED9; color:#229ED9;">TG</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TURKISH TRADITIONS -->
+  <section class="section features-section" id="traditions">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Традиции качества</span>
+        <h2 class="section-title">Почему выбирают OSMAN</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feat-card reveal delay-1">
+          <div class="feat-icon">☕</div>
+          <h3 class="feat-title">Турецкий чай</h3>
+          <p class="feat-text">Завариваем настоящий турецкий чай в двухъярусном самоваре и подаём в традиционных армудах каждому клиенту.</p>
+        </div>
+
+        <div class="feat-card reveal delay-2">
+          <div class="feat-icon">🔥</div>
+          <h3 class="feat-title">Удаление огнём и нитью</h3>
+          <p class="feat-text">Классическая техника барберинга: удаление мелких волосков на ушах и щеках безболезненно и чисто.</p>
+        </div>
+
+        <div class="feat-card reveal delay-3">
+          <div class="feat-icon">🎠</div>
+          <h3 class="feat-title">Кресло-лошадка для детей</h3>
+          <p class="feat-text">Ваш ребёнок не будет капризничать — стрижка в форме увлекательной игры в нашем фирменном кресле.</p>
+        </div>
+
+        <div class="feat-card reveal delay-4">
+          <div class="feat-icon">⭐</div>
+          <h3 class="feat-title">Рейтинг 5.0 из 5.0</h3>
+          <p class="feat-text">Более 90 положительных отзывов на Яндекс Картах от постоянных гостей со всей Казани.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Наши работы</span>
+        <h2 class="section-title">Атмосфера и стрижки</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal delay-1">
+          <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80" alt="Мужская стрижка Fade">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Четкий Fade и контуры</div>
+            <div class="gallery-sub">Мужская стрижка</div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal delay-2">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80" alt="Борода и стрижка">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Моделирование бороды</div>
+            <div class="gallery-sub">Комбо комплекс</div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal delay-3">
+          <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=80" alt="Интерьер барбершопа">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Мужская атмосфера</div>
+            <div class="gallery-sub">Интерьер зала</div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal delay-4">
+          <img src="https://images.unsplash.com/photo-1517832606589-7929c392f566?auto=format&fit=crop&w=600&q=80" alt="Опасное бритье">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Королевское бритьё</div>
+            <div class="gallery-sub">Традиционный ритуал</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section" id="reviews" style="background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Отзывы клиентов</span>
+        <h2 class="section-title">Что говорят о нас на Яндекс Картах</h2>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card reveal delay-1">
+          <div class="rating-stars" style="margin-bottom: 14px;">★★★★★</div>
+          <p class="rev-quote">«Отличный турецкий барбершоп! Стригусь здесь постоянно. Всегда предложат настоящий турецкий чай, атмосфера шикарная. Контуры делают идеально острыми.»</p>
+          <div class="rev-author">
+            <div class="rev-avatar">И</div>
+            <div>
+              <div class="rev-name">Ильдар Хасанов</div>
+              <div class="rev-meta">Стрижка + Борода · Казань</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal delay-2">
+          <div class="rating-stars" style="margin-bottom: 14px;">★★★★★</div>
+          <p class="rev-quote">«Привёл сына на стрижку, ребенок в восторге от кресла-лошадки! Барбер очень аккуратный и дружелюбный. Теперь только к вам на Бари Галеева.»</p>
+          <div class="rev-author">
+            <div class="rev-avatar">Р</div>
+            <div>
+              <div class="rev-name">Рустем Газизов</div>
+              <div class="rev-meta">Детская стрижка · Советский р-н</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal delay-3">
+          <div class="rating-stars" style="margin-bottom: 14px;">★★★★★</div>
+          <p class="rev-quote">«Лучшее соотношение цены и премиум-качества в Казани. 1200 ₽ за полный комплекс стрижки с бородой — это просто подарок для такого уровня сервиса.»</p>
+          <div class="rev-author">
+            <div class="rev-avatar">М</div>
+            <div>
+              <div class="rev-name">Марат Ш.</div>
+              <div class="rev-meta">Постоянный клиент · Казань</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="section contacts-section" id="contacts">
+    <div class="container">
+      <div class="contacts-grid">
+        <div class="reveal">
+          <span class="section-tag">Ждем вас</span>
+          <h2 class="section-title" style="margin-bottom: 28px;">Адрес и контакты</h2>
+
+          <div class="contact-item">
+            <div class="ci-icon">📍</div>
+            <div>
+              <div class="ci-label">Локация</div>
+              <div class="ci-value">г. Казань, ул. Бари Галеева, 8А, корп. 4</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Советский район, ост. Новаторов (530 м)</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="ci-icon">⏱</div>
+            <div>
+              <div class="ci-label">Режим работы</div>
+              <div class="ci-value">Ежедневно: 10:00 — 21:00</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="ci-icon">📞</div>
+            <div>
+              <div class="ci-label">Прямой телефон</div>
+              <div class="ci-value"><a href="tel:+79178895643" style="color: var(--gold);">+7 (917) 889-56-43</a></div>
+            </div>
+          </div>
+
+          <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px;">
+            <button class="btn btn-gold" onclick="openChannel('dikidi')">Запись через DIKIDI</button>
+            <button class="btn btn-telegram" onclick="openChannel('tg')">Чат в Telegram</button>
+            <a href="https://yandex.ru/maps/org/osman/198925813819/" target="_blank" class="btn btn-outline">Яндекс Карты</a>
+          </div>
+        </div>
+
+        <div class="map-box reveal delay-2">
+          <div style="font-size: 36px; margin-bottom: 12px;">⚔</div>
+          <h3 style="font-family: var(--font-title); font-size: 24px; color: var(--gold); margin-bottom: 8px;">OSMAN BARBERSHOP</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 24px;">Казань, ул. Бари Галеева, 8А, корп. 4<br>Удобный подъезд и парковка у входа</p>
+          <a href="https://yandex.ru/maps/org/osman/198925813819/" target="_blank" class="btn btn-gold" style="font-size: 12px; padding: 12px 24px;">Построить маршрут</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div style="font-family: var(--font-title); font-size: 20px; color: var(--gold); letter-spacing: 3px; margin-bottom: 6px;">OSMAN BARBER</div>
+      <p>© 2026 Турецкий барбершоп OSMAN в Казани. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL CHOOSER -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h3 class="modal-title">Онлайн-запись</h3>
+      <p class="modal-sub">Выберите удобный для вас способ записи в барбершоп OSMAN:</p>
+      
+      <div class="booking-channels">
+        <button class="bc-btn bc-dikidi" onclick="openChannel('dikidi')">
+          Записаться через DIKIDI
+        </button>
+        <button class="bc-btn bc-tg" onclick="openChannel('tg')">
+          <span>✈</span> Написать напрямую в Telegram
+        </button>
+        <a href="tel:+79178895643" class="btn btn-outline" style="padding: 14px; text-align: center;">
+          Позвонить: +7 (917) 889-56-43
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // SCROLL ANIMATIONS
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // BOOKING CHANNELS
+    function openModal(serviceName) {
+      document.getElementById('bookingModal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('bookingModal').classList.remove('open');
+    }
+
+    document.getElementById('bookingModal').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeModal();
+    });
+
+    function openChannel(type) {
+      if (type === 'dikidi') {
+        alert('Переход в форму онлайн-записи DIKIDI (в боевой версии откроется ваш прямой профиль в DIKIDI)');
+      } else if (type === 'tg') {
+        alert('Переход в чат Telegram (в боевой версии откроется диалог с вами)');
+      }
+      closeModal();
+    }
+  </script>
+</body>
+</html>

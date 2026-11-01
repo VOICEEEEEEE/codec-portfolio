@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMEN — Премиальный ремонт квартир и дизайн интерьеров под ключ в Москве</title>
+    <meta name="description" content="Дизайнерский и капитальный ремонт квартир под ключ в Москве и МО с гарантией 5 лет. Фиксированная смета, оплата по факту выполнения этапов, 3D дизайн-проект в подарок.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                        },
+                        dark: {
+                            900: '#0B0F19',
+                            800: '#111827',
+                            700: '#1F2937',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-[#0B0F19] text-gray-200 antialiased selection:bg-amber-500 selection:text-black">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 text-gray-950 text-xs sm:text-sm font-semibold py-2 px-4 text-center">
+        <span>⚡ Спецпредложение октября: Авторский 3D дизайн-проект и смета — <strong class="underline decoration-2">бесплатно</strong> при заказе ремонта до конца месяца!</span>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-gray-950 font-heading font-black text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+                        L
+                    </div>
+                    <div>
+                        <span class="font-heading font-extrabold text-xl tracking-wider text-white flex items-center">
+                            <span class="cfg-company-name">LUMEN</span>
+                            <span class="ml-1 text-amber-500">.</span>
+                        </span>
+                        <p class="text-[10px] text-gray-400 uppercase tracking-widest">Design & Renovation</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                    <a href="#calculator" class="hover:text-amber-400 transition-colors">Калькулятор</a>
+                    <a href="#quiz" class="hover:text-amber-400 transition-colors">Квиз со скидкой</a>
+                    <a href="#portfolio" class="hover:text-amber-400 transition-colors">До / После</a>
+                    <a href="#prices" class="hover:text-amber-400 transition-colors">Цены и тарифы</a>
+                    <a href="#process" class="hover:text-amber-400 transition-colors">Этапы</a>
+                    <a href="#faq" class="hover:text-amber-400 transition-colors">Вопросы</a>
+                </nav>
+
+                <!-- Phone & Callback Button -->
+                <div class="hidden lg:flex items-center space-x-6">
+                    <div class="text-right">
+                        <a href="tel:+74958904215" class="cfg-phone-link font-heading font-bold text-white hover:text-amber-400 transition-colors block text-base cfg-phone">
+                            +7 (495) 890-42-15
+                        </a>
+                        <span class="text-[11px] text-emerald-400 flex items-center justify-end">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse mr-1.5"></span>
+                            Отвечаем за 1 минуту
+                        </span>
+                    </div>
+                    <button onclick="openModal('callbackModal')" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 shadow-lg shadow-amber-500/20 hover:scale-105">
+                        Заказать звонок
+                    </button>
+                </div>
+
+                <!-- Mobile Burger -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" aria-label="Открыть меню" class="p-2 text-gray-400 hover:text-white focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden glass-panel border-b border-gray-800 px-6 py-6 space-y-4">
+            <a href="#calculator" class="mobile-nav-link block text-lg font-medium text-gray-200 hover:text-amber-400">Калькулятор стоимости</a>
+            <a href="#quiz" class="mobile-nav-link block text-lg font-medium text-gray-200 hover:text-amber-400">Квиз (скидка 10%)</a>
+            <a href="#portfolio" class="mobile-nav-link block text-lg font-medium text-gray-200 hover:text-amber-400">Галерея До / После</a>
+            <a href="#prices" class="mobile-nav-link block text-lg font-medium text-gray-200 hover:text-amber-400">Тарифы на ремонт</a>
+            <a href="#faq" class="mobile-nav-link block text-lg font-medium text-gray-200 hover:text-amber-400">Частые вопросы</a>
+            <div class="pt-4 border-t border-gray-800">
+                <a href="tel:+74958904215" class="cfg-phone-link block font-heading font-bold text-xl text-amber-400 mb-3 cfg-phone">
+                    +7 (495) 890-42-15
+                </a>
+                <button onclick="openModal('callbackModal')" class="w-full bg-amber-500 text-gray-950 font-bold py-3 rounded-xl">
+                    Заказать обратный звонок
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16 sm:py-24">
+        <!-- Background Gradient Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute -top-24 right-0 w-[450px] h-[450px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Value Proposition -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs sm:text-sm font-medium">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                        <span>Ремонт и дизайн под ключ в <span class="cfg-city">Москве и МО</span></span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-[1.15] tracking-tight">
+                        Создаем интерьеры для жизни с гарантией <span class="gold-gradient-text">5 лет</span> и фиксацией цены
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-gray-300 max-w-2xl font-light leading-relaxed">
+                        Комплексный ремонт квартир от 45 м²: от детального 3D дизайн-проекта до клининга и расстановки мебели. Оплата строго по факту выполненных этапов.
+                    </p>
+
+                    <!-- Trust Points / Bullets -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                        <div class="flex items-center space-x-3 text-left">
+                            <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 font-bold">✓</div>
+                            <span class="text-sm text-gray-300">Смета не вырастет в процессе</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-left">
+                            <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 font-bold">✓</div>
+                            <span class="text-sm text-gray-300">Оплата по факту этапов</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-left">
+                            <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 font-bold">✓</div>
+                            <span class="text-sm text-gray-300">Видеонаблюдение на объекте 24/7</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#calculator" class="w-full sm:w-auto px-8 py-4 bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold rounded-xl text-base transition-all shadow-xl shadow-amber-500/25 text-center btn-glow hover:scale-105">
+                            Рассчитать стоимость ремонта
+                        </a>
+                        <a href="#quiz" class="w-full sm:w-auto px-8 py-4 glass-card hover:bg-gray-800 text-white font-medium rounded-xl text-base transition-all border border-gray-700 text-center hover:border-amber-500/50">
+                            Пройти квиз (скидка 10%)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Visual Card / Highlights -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-800 group">
+                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80" alt="Премиальный интерьер" class="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent"></div>
+                        
+                        <!-- Floating Hero Stat Badge -->
+                        <div class="absolute bottom-6 left-6 right-6 glass-panel rounded-2xl p-5 border border-white/10">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs uppercase text-amber-400 tracking-wider font-bold">ЖК «Пресня Сити», 98 м²</p>
+                                    <h4 class="text-white font-heading font-bold text-lg mt-0.5">Дизайнерский ремонт с меблировкой</h4>
+                                </div>
+                                <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded-full">Сдан в срок</span>
+                            </div>
+                            <div class="mt-3 pt-3 border-t border-gray-700/60 flex items-center justify-between text-xs text-gray-300">
+                                <span>Срок: <strong>85 дней</strong></span>
+                                <span>Экономия по смете: <strong>140 000 ₽</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Numbers Counter Bar -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-gray-800/80">
+                <div class="text-center md:text-left">
+                    <span class="block font-heading font-extrabold text-3xl sm:text-4xl text-amber-400">420+</span>
+                    <span class="text-xs sm:text-sm text-gray-400">Завершенных объектов с 2014 г.</span>
+                </div>
+                <div class="text-center md:text-left">
+                    <span class="block font-heading font-extrabold text-3xl sm:text-4xl text-white">5 лет</span>
+                    <span class="text-xs sm:text-sm text-gray-400">Официальная гарантия по договору</span>
+                </div>
+                <div class="text-center md:text-left">
+                    <span class="block font-heading font-extrabold text-3xl sm:text-4xl text-amber-400">0 ₽</span>
+                    <span class="text-xs sm:text-sm text-gray-400">Скрытых платежей и переплат</span>
+                </div>
+                <div class="text-center md:text-left">
+                    <span class="block font-heading font-extrabold text-3xl sm:text-4xl text-white">24/7</span>
+                    <span class="text-xs sm:text-sm text-gray-400">Онлайн-контроль и личный прораб</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Interactive Calculator -->
+    <section id="calculator" class="py-20 bg-[#0E1322] relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-amber-400 text-xs uppercase tracking-widest font-bold">Интерактивный расчет</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-2">
+                    Калькулятор стоимости ремонта и материалов
+                </h2>
+                <p class="text-gray-400 mt-3 text-base">
+                    Укажите параметры вашей квартиры и моментально узнайте предварительную стоимость, сроки и размер персональной скидки.
+                </p>
+            </div>
+
+            <!-- Calculator Component Card -->
+            <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-gray-800 shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    
+                    <!-- Left: Controls -->
+                    <div class="lg:col-span-7 space-y-8">
+                        
+                        <!-- 1. Type of Property -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-300 uppercase tracking-wider mb-3">1. Тип недвижимости</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="calcType" value="new" checked class="peer sr-only">
+                                    <div class="p-3 text-center rounded-xl bg-gray-800/80 border border-gray-700 peer-checked:border-amber-500 peer-checked:bg-amber-500/10 peer-checked:text-amber-400 text-xs sm:text-sm font-medium transition-all">
+                                        Новостройка
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="calcType" value="secondary" class="peer sr-only">
+                                    <div class="p-3 text-center rounded-xl bg-gray-800/80 border border-gray-700 peer-checked:border-amber-500 peer-checked:bg-amber-500/10 peer-checked:text-amber-400 text-xs sm:text-sm font-medium transition-all">
+                                        Вторичка
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="calcType" value="cottage" class="peer sr-only">
+                                    <div class="p-3 text-center rounded-xl bg-gray-800/80 border border-gray-700 peer-checked:border-amber-500 peer-checked:bg-amber-500/10 peer-checked:text-amber-400 text-xs sm:text-sm font-medium transition-all">
+                                        Коттедж
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 2. Area Range Slider -->
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <label class="text-sm font-semibold text-gray-300 uppercase tracking-wider">2. Площадь помещения</label>
+                                <span id="calcAreaVal" class="text-xl font-heading font-extrabold text-amber-400 bg-amber-500/10 px-3 py-1 rounded-lg border border-amber-500/20">65 м²</span>
+                            </div>
+                            <input id="calcArea" type="range" min="20" max="220" value="65" step="1">
+                            <div class="flex justify-between text-xs text-gray-500 mt-2">
+                                <span>20 м²</span>
+                                <span>80 м²</span>
+                                <span>150 м²</span>
+                                <span>220+ м²</span>
+                            </div>
+                        </div>
+
+                        <!-- 3. Renovation Style -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-300 uppercase tracking-wider mb-3">3. Класс ремонта</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="calcStyle" value="capital" class="peer sr-only">
+                                    <div class="p-3.5 rounded-xl bg-gray-800/80 border border-gray-700 peer-checked:border-amber-500 peer-checked:bg-amber-500/10 peer-checked:text-amber-400 transition-all text-left">
+                                        <div class="font-bold text-sm">Капитальный</div>
+                                        <div class="text-[11px] text-gray-400 mt-0.5">Базовая отделка и электрика</div>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="calcStyle" value="design" checked class="peer sr-only">
+                                    <div class="p-3.5 rounded-xl bg-gray-800/80 border border-gray-700 peer-checked:border-amber-500 peer-checked:bg-amber-500/10 peer-checked:text-amber-400 transition-all text-left">
+                                        <div class="font-bold text-sm">Дизайнерский</div>
+                                        <div class="text-[11px] text-gray-400 mt-0.5">По индивидуальному проекту</div>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="calcStyle" value="premium" class="peer sr-only">
+                                    <div class="p-3.5 rounded-xl bg-gray-800/80 border border-gray-700 peer-checked:border-amber-500 peer-checked:bg-amber-500/10 peer-checked:text-amber-400 transition-all text-left">
+                                        <div class="font-bold text-sm">Премиум / Люкс</div>
+                                        <div class="text-[11px] text-gray-400 mt-0.5">Сложная инженерия и камень</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 4. Additional Options -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-300 uppercase tracking-wider mb-3">4. Дополнительные опции</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <label class="flex items-center space-x-3 p-3 rounded-xl bg-gray-800/60 border border-gray-700/80 cursor-pointer hover:border-gray-600 transition-colors">
+                                    <input type="checkbox" value="designProject" class="calc-extra-option w-4 h-4 accent-amber-500 rounded">
+                                    <span class="text-xs text-gray-200">3D Дизайн-проект (+1 800 ₽/м²)</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-3 rounded-xl bg-gray-800/60 border border-gray-700/80 cursor-pointer hover:border-gray-600 transition-colors">
+                                    <input type="checkbox" value="roughMaterials" checked class="calc-extra-option w-4 h-4 accent-amber-500 rounded">
+                                    <span class="text-xs text-gray-200">Черновые материалы с доставкой</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-3 rounded-xl bg-gray-800/60 border border-gray-700/80 cursor-pointer hover:border-gray-600 transition-colors">
+                                    <input type="checkbox" value="smartHome" class="calc-extra-option w-4 h-4 accent-amber-500 rounded">
+                                    <span class="text-xs text-gray-200">Система «Умный дом»</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-3 rounded-xl bg-gray-800/60 border border-gray-700/80 cursor-pointer hover:border-gray-600 transition-colors">
+                                    <input type="checkbox" value="supervision" checked class="calc-extra-option w-4 h-4 accent-amber-500 rounded">
+                                    <span class="text-xs text-gray-200">Авторский надзор архитектора</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right: Results Card -->
+                    <div class="lg:col-span-5 flex flex-col justify-between bg-gray-900/90 rounded-2xl p-6 sm:p-8 border border-amber-500/30 shadow-xl relative overflow-hidden">
+                        <div class="absolute -top-12 -right-12 w-44 h-44 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                        
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold mb-4 border border-emerald-500/20">
+                                Онлайн-расчет актуален на сегодня
+                            </span>
+                            <div class="text-xs text-gray-400 uppercase tracking-wider">Ориентировочная стоимость:</div>
+                            <div id="calcTotalCost" class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-1 text-amber-400">
+                                1 450 000 ₽
+                            </div>
+
+                            <div class="space-y-3 mt-6 pt-6 border-t border-gray-800 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-400">Стоимость за 1 м²:</span>
+                                    <span id="calcPricePerSqM" class="font-bold text-gray-200">22 300 ₽/м²</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-400">Срок выполнения:</span>
+                                    <span id="calcDuration" class="font-bold text-gray-200">~ 65 дней (2.2 мес.)</span>
+                                </div>
+                                <div class="flex justify-between text-emerald-400 font-semibold">
+                                    <span>Ваша скидка онлайн (8%):</span>
+                                    <span id="calcDiscount">116 000 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lock In Estimate CTA -->
+                        <div class="mt-8 pt-6 border-t border-gray-800">
+                            <button id="lockCalcBtn" class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold rounded-xl text-sm uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20 hover:scale-[1.02]">
+                                Зафиксировать смету и получить PDF
+                            </button>
+                            <p class="text-[11px] text-gray-400 text-center mt-3">
+                                🔒 Фиксация не обязывает к покупке. Мы пришлем подробную смету в PDF.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Interactive Multi-Step Quiz -->
+    <section id="quiz" class="py-20 bg-[#0B0F19] relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-amber-400 text-xs uppercase tracking-widest font-bold">Быстрый опросник за 1 минуту</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-2">
+                    Ответьте на 3 вопроса и получите скидку 10% + 3D планировку
+                </h2>
+                <p class="text-gray-400 text-sm mt-2">
+                    Пройдите тест и забронируйте персональные бонусы к вашему ремонту
+                </p>
+            </div>
+
+            <!-- Quiz Box -->
+            <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-gray-800 shadow-2xl relative">
+                
+                <!-- Progress Bar -->
+                <div class="mb-8">
+                    <div class="flex justify-between text-xs font-semibold text-gray-400 mb-2">
+                        <span>Шаг <span id="quizCurrentStep">1 из 4</span></span>
+                        <span class="text-amber-400 font-bold">+ Подарок за прохождение</span>
+                    </div>
+                    <div class="w-full bg-gray-800 h-2.5 rounded-full overflow-hidden">
+                        <div id="quizProgressBar" class="h-full bg-gradient-to-r from-amber-500 to-amber-400 transition-all duration-300 w-1/4"></div>
+                    </div>
+                </div>
+
+                <!-- STEP 1 -->
+                <div class="quiz-step space-y-6" data-step="1">
+                    <h3 class="text-xl font-heading font-bold text-white text-center sm:text-left">
+                        1. Какой тип объекта планируете ремонтировать?
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="quiz-option p-5 rounded-2xl bg-gray-900/60" data-key="propertyType" data-val="Новостройка без отделки">
+                            <span class="text-2xl block mb-2">🏢</span>
+                            <h4 class="font-bold text-white text-base">Новостройка (бетон / без отделки)</h4>
+                            <p class="text-xs text-gray-400 mt-1">Требуется полный цикл разводки коммуникаций и чистовой ремонт</p>
+                        </div>
+                        <div class="quiz-option p-5 rounded-2xl bg-gray-900/60" data-key="propertyType" data-val="Вторичное жилье">
+                            <span class="text-2xl block mb-2">🏠</span>
+                            <h4 class="font-bold text-white text-base">Вторичное жилье</h4>
+                            <p class="text-xs text-gray-400 mt-1">Требуется демонтаж старой отделки и капитальная замена сетей</p>
+                        </div>
+                        <div class="quiz-option p-5 rounded-2xl bg-gray-900/60" data-key="propertyType" data-val="Загородный дом / Таунхаус">
+                            <span class="text-2xl block mb-2">🏡</span>
+                            <h4 class="font-bold text-white text-base">Коттедж или таунхаус</h4>
+                            <p class="text-xs text-gray-400 mt-1">Большая площадь, котельная, сложные инженерные узлы</p>
+                        </div>
+                        <div class="quiz-option p-5 rounded-2xl bg-gray-900/60" data-key="propertyType" data-val="Коммерческое помещение">
+                            <span class="text-2xl block mb-2">🏬</span>
+                            <h4 class="font-bold text-white text-base">Офис или салон красоты</h4>
+                            <p class="text-xs text-gray-400 mt-1">Высокая износостойкость материалов, сжатые сроки</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="quiz-step hidden space-y-6" data-step="2">
+                    <h3 class="text-xl font-heading font-bold text-white text-center sm:text-left">
+                        2. Какова примерная площадь вашего помещения?
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div class="quiz-option p-5 rounded-2xl bg-gray-900/60 text-center" data-key="areaRange" data-val="До 45 м²">
+                            <span class="text-xl font-heading font-extrabold text-amber-400 block mb-1">До 45 м²</span>
+                            <span class="text-xs text-gray-400">Студия / 1-комн.</span>
+                        </div>
+                        <div class="quiz-option p-5 rounded-2xl bg-gray-900/60 text-center" data-key="areaRange" data-val="45 - 75 м²">
+                            <span class="text-xl font-heading font-extrabold text-amber-400 block mb-1">45 - 75 м²</span>
+                            <span class="text-xs text-gray-400">2-комнатная</span>
+                        </div>
+                        <div class="quiz-option p-5 rounded-2xl bg-gray-900/60 text-center" data-key="areaRange" data-val="75 - 120 м²">
+                            <span class="text-xl font-heading font-extrabold text-amber-400 block mb-1">75 - 120 м²</span>
+                            <span class="text-xs text-gray-400">3-4 комнатная</span>
+                        </div>
+                        <div class="quiz-option p-5 rounded-2xl bg-gray-900/60 text-center" data-key="areaRange" data-val="Более 120 м²">
+                            <span class="text-xl font-heading font-extrabold text-amber-400 block mb-1">120+ м²</span>
+                            <span class="text-xs text-gray-400">Пентхаус / Дом</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="quiz-step hidden space-y-6" data-step="3">
+                    <h3 class="text-xl font-heading font-bold text-white text-center sm:text-left">
+                        3. Когда планируете начать ремонтные работы?
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="quiz-option p-5 rounded-2xl bg-gray-900/60 text-center" data-key="timeline" data-val="Срочно (в этом месяце)">
+                            <span class="text-2xl block mb-2">🚀</span>
+                            <h4 class="font-bold text-white text-base">Срочно</h4>
+                            <p class="text-xs text-gray-400 mt-1">Ключи на руках, готовы стартовать</p>
+                        </div>
+                        <div class="quiz-option p-5 rounded-2xl bg-gray-900/60 text-center" data-key="timeline" data-val="Через 1-2 месяца">
+                            <span class="text-2xl block mb-2">📅</span>
+                            <h4 class="font-bold text-white text-base">Через 1-2 месяца</h4>
+                            <p class="text-xs text-gray-400 mt-1">Ждем ключи или готовим дизайн-проект</p>
+                        </div>
+                        <div class="quiz-option p-5 rounded-2xl bg-gray-900/60 text-center" data-key="timeline" data-val="Просто прицениваюсь">
+                            <span class="text-2xl block mb-2">🔍</span>
+                            <h4 class="font-bold text-white text-base">Прицениваюсь</h4>
+                            <p class="text-xs text-gray-400 mt-1">Планирую на перспективу</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 4 (Final Form) -->
+                <div class="quiz-step hidden space-y-6" data-step="4">
+                    <div class="text-center max-w-lg mx-auto">
+                        <div class="w-14 h-14 bg-amber-500/20 text-amber-400 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl font-bold">🎁</div>
+                        <h3 class="text-2xl font-heading font-bold text-white">Тест пройден! Ваши бонусы готовы</h3>
+                        <p class="text-xs text-gray-300 mt-1">
+                            Мы закрепили за вами скидку <strong>10%</strong> и авторский чек-лист приемки квартиры. Куда отправить расчет?
+                        </p>
+                    </div>
+
+                    <form id="quizSubmitForm" class="max-w-md mx-auto space-y-4">
+                        <div>
+                            <label class="block text-xs uppercase text-gray-400 font-semibold mb-1.5">Ваш номер телефона</label>
+                            <input type="tel" name="phone" required placeholder="+7 (999) 000-00-00" class="w-full bg-gray-900 border border-gray-700 text-white px-4 py-3.5 rounded-xl focus:border-amber-500 focus:outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase text-gray-400 font-semibold mb-2">Куда прислать расчет и подарки?</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="messenger" value="WhatsApp" checked class="peer sr-only">
+                                    <div class="py-2.5 text-center rounded-xl bg-gray-800 border border-gray-700 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 text-xs font-semibold text-gray-300 peer-checked:text-emerald-400">
+                                        WhatsApp
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="messenger" value="Telegram" class="peer sr-only">
+                                    <div class="py-2.5 text-center rounded-xl bg-gray-800 border border-gray-700 peer-checked:border-sky-500 peer-checked:bg-sky-500/10 text-xs font-semibold text-gray-300 peer-checked:text-sky-400">
+                                        Telegram
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="messenger" value="Звонок" class="peer sr-only">
+                                    <div class="py-2.5 text-center rounded-xl bg-gray-800 border border-gray-700 peer-checked:border-amber-500 peer-checked:bg-amber-500/10 text-xs font-semibold text-gray-300 peer-checked:text-amber-400">
+                                        Звонок
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold rounded-xl text-sm uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20 hover:scale-[1.02]">
+                            Получить смету и закрепить скидку 10%
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-800">
+                    <button id="quizPrevBtn" class="hidden text-sm text-gray-400 hover:text-white px-4 py-2 rounded-lg transition-colors">
+                        ← Назад
+                    </button>
+                    <div class="ml-auto">
+                        <button id="quizNextBtn" class="bg-gray-800 hover:bg-gray-700 text-white font-medium text-sm px-6 py-2.5 rounded-xl transition-colors border border-gray-700">
+                            Далее →
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Interactive Before / After Comparison Slider -->
+    <section id="portfolio" class="py-20 bg-[#0E1322] relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-400 text-xs uppercase tracking-widest font-bold">Портфолио в реальности</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-2">
+                    Интерактивное сравнение «До и После»
+                </h2>
+                <p class="text-gray-400 text-sm mt-2">
+                    Потяните ползунок по центру фотографии, чтобы увидеть преображение объекта
+                </p>
+            </div>
+
+            <!-- Portfolio Style Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <button class="portfolio-tab-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-amber-500 text-gray-900" 
+                        data-after="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80" 
+                        data-before="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80"
+                        data-title="ЖК «Сердце Столицы», 85 м²"
+                        data-meta="Стиль: Нео-минимализм | Срок: 74 дня | Бюджет: 1.85 млн ₽">
+                    Нео-минимализм (85 м²)
+                </button>
+                <button class="portfolio-tab-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-gray-800 text-gray-300 hover:bg-gray-700" 
+                        data-after="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" 
+                        data-before="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80"
+                        data-title="ЖК «Пресня Сити», 115 м²"
+                        data-meta="Стиль: Современная классика | Срок: 90 дней | Бюджет: 2.4 млн ₽">
+                    Современная классика (115 м²)
+                </button>
+                <button class="portfolio-tab-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-gray-800 text-gray-300 hover:bg-gray-700" 
+                        data-after="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80" 
+                        data-before="https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=1200&q=80"
+                        data-title="Таунхаус Новая Рига, 160 м²"
+                        data-meta="Стиль: Скандинавский лофт | Срок: 110 дней | Бюджет: 3.1 млн ₽">
+                    Таунхаус (160 м²)
+                </button>
+            </div>
+
+            <!-- Before/After Slider Container -->
+            <div class="glass-panel p-4 rounded-3xl max-w-4xl mx-auto shadow-2xl">
+                <div id="beforeAfterContainer" class="ba-container aspect-[16/9] w-full cursor-ew-resize">
+                    <!-- AFTER Image (Background - right side) -->
+                    <img id="baAfterImg" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80" alt="После ремонта" class="ba-base-img">
+                    <span id="baBadgeAfter" class="ba-badge ba-badge-after">ПОСЛЕ</span>
+
+                    <!-- BEFORE Image (Overlay with clip-path - left side) -->
+                    <div id="baBeforeWrapper" class="ba-overlay-wrapper">
+                        <img id="baBeforeImg" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80" alt="До ремонта" class="ba-base-img">
+                    </div>
+                    <span id="baBadgeBefore" class="ba-badge ba-badge-before">ДО</span>
+
+                    <!-- Draggable Handle Bar -->
+                    <div id="baHandle" class="ba-slider-handle" style="left: 50%;">
+                        <div class="ba-slider-button">
+                            <span>↔</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Object Info Box -->
+                <div class="mt-4 px-3 py-2 flex flex-col sm:flex-row justify-between items-center text-sm">
+                    <div>
+                        <h4 id="baProjectTitle" class="font-heading font-bold text-white text-base">ЖК «Сердце Столицы», 85 м²</h4>
+                        <p id="baProjectMeta" class="text-xs text-gray-400 mt-0.5">Стиль: Нео-минимализм | Срок: 74 дня | Бюджет: 1.85 млн ₽</p>
+                    </div>
+                    <button onclick="openModal('callbackModal')" class="mt-3 sm:mt-0 text-amber-400 hover:text-amber-300 text-xs font-bold uppercase tracking-wider underline">
+                        Хочу такой же интерьер →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Packages & Pricing -->
+    <section id="prices" class="py-20 bg-[#0B0F19] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-400 text-xs uppercase tracking-widest font-bold">Прозрачная стоимость</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-2">
+                    Тарифы на ремонт под ключ
+                </h2>
+                <p class="text-gray-400 text-sm mt-2">
+                    Фиксируем стоимость работ и график оплат в договоре. Никаких внезапных доплат.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Package 1: Comfort -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border border-gray-800">
+                    <div>
+                        <span class="text-xs uppercase font-bold tracking-widest text-gray-400">Базовый вариант</span>
+                        <h3 class="text-2xl font-heading font-bold text-white mt-1">«Комфорт»</h3>
+                        <p class="text-xs text-gray-400 mt-1">Качественный ремонт для сдачи в аренду или быстрого заезда</p>
+                        
+                        <div class="mt-6 mb-8 pb-6 border-b border-gray-800">
+                            <span class="text-xs text-gray-400 block">Стоимость работ:</span>
+                            <span class="text-3xl font-heading font-extrabold text-white">от 11 500 ₽</span>
+                            <span class="text-sm text-gray-400">/ м²</span>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-gray-300">
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Базовый план расстановки мебели</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Выравнивание стен и полов</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Разводка электрики и сантехники</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Укладка ламината/плитки и покраска/обои</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Уборка после ремонта</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8">
+                        <button onclick="openModal('callbackModal')" class="w-full py-3.5 bg-gray-800 hover:bg-gray-700 text-white font-bold rounded-xl text-sm transition-colors border border-gray-700">
+                            Выбрать «Комфорт»
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 2: Business (HIT) -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-2 border-amber-500 shadow-2xl shadow-amber-500/10 relative">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-500 text-gray-950 font-bold text-xs uppercase tracking-wider py-1 px-4 rounded-full shadow-lg">
+                        Хит продаж • 74% заказчиков
+                    </div>
+                    
+                    <div>
+                        <span class="text-xs uppercase font-bold tracking-widest text-amber-400">Оптимальный выбор</span>
+                        <h3 class="text-2xl font-heading font-bold text-white mt-1">«Дизайнерский»</h3>
+                        <p class="text-xs text-gray-400 mt-1">Индивидуальный интерьер с полной реализацией проекта</p>
+                        
+                        <div class="mt-6 mb-8 pb-6 border-b border-gray-800">
+                            <span class="text-xs text-gray-400 block">Стоимость работ:</span>
+                            <span class="text-3xl font-heading font-extrabold text-amber-400">от 16 500 ₽</span>
+                            <span class="text-sm text-gray-400">/ м²</span>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-gray-300">
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span><strong>Полный 3D дизайн-проект в подарок</strong></span></li>
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Перепланировка и согласование</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Теневой плинтус, скрытые двери, треки</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Сложная сантехническая разводка Rehau</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Авторский надзор ведущего дизайнера</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Видеонаблюдение на объекте 24/7</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8">
+                        <button onclick="openModal('callbackModal')" class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold rounded-xl text-sm transition-all shadow-lg shadow-amber-500/20 btn-glow">
+                            Выбрать «Дизайнерский»
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 3: Premium / Luxury -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border border-gray-800">
+                    <div>
+                        <span class="text-xs uppercase font-bold tracking-widest text-gray-400">Эксклюзив</span>
+                        <h3 class="text-2xl font-heading font-bold text-white mt-1">«Премиум / Люкс»</h3>
+                        <p class="text-xs text-gray-400 mt-1">Премиальные отделочные материалы, керамогранит 120х280, умный дом</p>
+                        
+                        <div class="mt-6 mb-8 pb-6 border-b border-gray-800">
+                            <span class="text-xs text-gray-400 block">Стоимость работ:</span>
+                            <span class="text-3xl font-heading font-extrabold text-white">от 24 000 ₽</span>
+                            <span class="text-sm text-gray-400">/ м²</span>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-gray-300">
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Все опции пакета «Дизайнерский»</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Монтаж крупноформатного керамогранита</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Интеграция системы «Умный дом»</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Премиальная шумоизоляция Acoustic Group</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-amber-400 font-bold">✓</span><span>Комплектация мебелью и сантехникой из ЕС</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8">
+                        <button onclick="openModal('callbackModal')" class="w-full py-3.5 bg-gray-800 hover:bg-gray-700 text-white font-bold rounded-xl text-sm transition-colors border border-gray-700">
+                            Выбрать «Премиум»
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Work Process (How We Work) -->
+    <section id="process" class="py-20 bg-[#0E1322] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-400 text-xs uppercase tracking-widest font-bold">Прозрачность и контроль</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-2">
+                    5 простых шагов к вашей идеальной квартире
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                
+                <div class="glass-panel p-6 rounded-2xl relative">
+                    <span class="font-heading font-extrabold text-4xl text-amber-500/30">01</span>
+                    <h4 class="font-bold text-white text-base mt-2">Выезд и замер</h4>
+                    <p class="text-xs text-gray-400 mt-2">Инженер приезжает в удобное время с лазерным оборудованием. Бесплатно.</p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl relative">
+                    <span class="font-heading font-extrabold text-4xl text-amber-500/30">02</span>
+                    <h4 class="font-bold text-white text-base mt-2">Точная смета</h4>
+                    <p class="text-xs text-gray-400 mt-2">Составляем подробную смету до копейки без скрытых коэффициентов.</p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl relative">
+                    <span class="font-heading font-extrabold text-4xl text-amber-500/30">03</span>
+                    <h4 class="font-bold text-white text-base mt-2">Договор и сроки</h4>
+                    <p class="text-xs text-gray-400 mt-2">Фиксируем цену, график оплат и штрафы за просрочку в официальном договоре.</p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl relative">
+                    <span class="font-heading font-extrabold text-4xl text-amber-500/30">04</span>
+                    <h4 class="font-bold text-white text-base mt-2">Поэтапная работа</h4>
+                    <p class="text-xs text-gray-400 mt-2">Фото- и видеоотчеты каждые 3 дня. Приемка и оплата только за готовые этапы.</p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl relative">
+                    <span class="font-heading font-extrabold text-4xl text-amber-500/30">05</span>
+                    <h4 class="font-bold text-white text-base mt-2">Сдача и гарантия</h4>
+                    <p class="text-xs text-gray-400 mt-2">Генеральный клининг, подписание акта и вручение гарантийного сертификата на 5 лет.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: FAQ Accordion -->
+    <section id="faq" class="py-20 bg-[#0B0F19] relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="text-amber-400 text-xs uppercase tracking-widest font-bold">Ответы на главные вопросы</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-2">
+                    Часто задаваемые вопросы
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                
+                <div class="faq-item glass-panel rounded-2xl p-6 cursor-pointer">
+                    <div class="faq-header flex justify-between items-center">
+                        <h4 class="text-base sm:text-lg font-bold text-white">Может ли смета вырасти в процессе ремонта?</h4>
+                        <span class="faq-icon text-amber-400 text-xl font-bold transition-transform">▼</span>
+                    </div>
+                    <div class="faq-content text-sm text-gray-300 mt-3">
+                        Нет. Мы фиксируем итоговую сумму в официальном договоре. Любые непредвиденные расходы, связанные с нашей оценкой, мы покрываем за свой счет. Изменение сметы возможно только в том случае, если вы сами решите добавить новые работы или заменить материалы.
+                    </div>
+                </div>
+
+                <div class="faq-item glass-panel rounded-2xl p-6 cursor-pointer">
+                    <div class="faq-header flex justify-between items-center">
+                        <h4 class="text-base sm:text-lg font-bold text-white">Кто закупает и доставляет черновые материалы?</h4>
+                        <span class="faq-icon text-amber-400 text-xl font-bold transition-transform">▼</span>
+                    </div>
+                    <div class="faq-content text-sm text-gray-300 mt-3">
+                        Мы берем все хлопоты на себя. Закупаем сертифицированные материалы (Knauf, Rehau, ABB) напрямую у производителей со скидкой до 20%, организуем доставку, разгрузку и подъем на этаж. Вам не нужно тратить время на поездки по строительным рынкам.
+                    </div>
+                </div>
+
+                <div class="faq-item glass-panel rounded-2xl p-6 cursor-pointer">
+                    <div class="faq-header flex justify-between items-center">
+                        <h4 class="text-base sm:text-lg font-bold text-white">Как организован контроль, если я живу в другом городе?</h4>
+                        <span class="faq-icon text-amber-400 text-xl font-bold transition-transform">▼</span>
+                    </div>
+                    <div class="faq-content text-sm text-gray-300 mt-3">
+                        Мы устанавливаем на объекте IP-камеры видеонаблюдения, к которым у вас есть доступ 24/7 с телефона. Прораб ведет закрытый чат в Telegram/WhatsApp, где каждые 2–3 дня публикует подробные фото- и видеоотчеты с замерами.
+                    </div>
+                </div>
+
+                <div class="faq-item glass-panel rounded-2xl p-6 cursor-pointer">
+                    <div class="faq-header flex justify-between items-center">
+                        <h4 class="text-base sm:text-lg font-bold text-white">Какая форма оплаты и есть ли предоплата?</h4>
+                        <span class="faq-icon text-amber-400 text-xl font-bold transition-transform">▼</span>
+                    </div>
+                    <div class="faq-content text-sm text-gray-300 mt-3">
+                        Мы работаем БЕЗ 100% предоплаты за работы. Оплата разбивается на 4–6 этапов: вы принимаете этап работ по акту, проверяете качество — и только потом производите оплату за завершенный этап.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Lead Capture / Contacts & Footer -->
+    <section class="py-20 bg-gradient-to-b from-[#0E1322] to-[#070A10] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-gray-800 shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    
+                    <!-- Contacts & Info -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="text-amber-400 text-xs uppercase tracking-widest font-bold">Остались вопросы?</span>
+                        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">
+                            Пригласите инженера на замер и расчет точной сметы
+                        </h2>
+                        <p class="text-gray-400 text-sm">
+                            Инженер приедет в удобное время с образцами материалов и каталогами, замерит помещение и составит подробную смету в 3 вариантах бюджета. Это бесплатно и ни к чему вас не обязывает.
+                        </p>
+
+                        <div class="space-y-4 pt-4 border-t border-gray-800 text-sm">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-amber-400 text-lg">📍</span>
+                                <span class="cfg-address">г. Москва, Пресненская наб., 12, башня Федерация Восток</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-amber-400 text-lg">📞</span>
+                                <a href="tel:+74958904215" class="cfg-phone-link text-white font-bold hover:text-amber-400 transition-colors cfg-phone">+7 (495) 890-42-15</a>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-amber-400 text-lg">🕒</span>
+                                <span class="cfg-workhours">Ежедневно с 9:00 до 21:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-6 bg-gray-900/90 rounded-2xl p-6 sm:p-8 border border-gray-800">
+                        <h3 class="text-xl font-heading font-bold text-white mb-2">Записаться на бесплатный замер</h3>
+                        <p class="text-xs text-gray-400 mb-6">Получите скидку 8% и дизайн-проект при вызове инженера сегодня</p>
+
+                        <form id="footerContactForm" class="space-y-4">
+                            <div>
+                                <label class="block text-xs uppercase text-gray-400 font-semibold mb-1">Ваше имя</label>
+                                <input type="text" name="name" required placeholder="Константин" class="w-full bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-xl focus:border-amber-500 focus:outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase text-gray-400 font-semibold mb-1">Телефон для связи</label>
+                                <input type="tel" name="phone" required placeholder="+7 (999) 000-00-00" class="w-full bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-xl focus:border-amber-500 focus:outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase text-gray-400 font-semibold mb-1">Комментарий / ЖК / Площадь (необязательно)</label>
+                                <textarea name="comment" rows="2" placeholder="Например: ЖК Символ, 78 м², нужен дизайн-проект" class="w-full bg-gray-800 border border-gray-700 text-white px-4 py-2.5 rounded-xl focus:border-amber-500 focus:outline-none text-sm"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold rounded-xl text-sm uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20 btn-glow">
+                                Вызвать инженера на замер (бесплатно)
+                            </button>
+                            <p class="text-[10px] text-gray-500 text-center">
+                                Нажимая кнопку, вы соглашаетесь на обработку персональных данных
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+                <p>© 2014–2026 <span class="cfg-company-name">LUMEN GROUP</span>. Все права защищены.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="javascript:void(0)" onclick="openModal('privacyModal')" class="hover:text-gray-300">Политика конфиденциальности</a>
+                    <a href="javascript:void(0)" class="hover:text-gray-300">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL: Callback Request -->
+    <div id="callbackModal" class="modal-overlay fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-gray-900 border border-gray-800 rounded-3xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl">
+            <button class="modal-close-btn absolute top-5 right-5 text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
+            <h3 class="text-2xl font-heading font-bold text-white mb-2">Заказать обратный звонок</h3>
+            <p class="text-xs text-gray-400 mb-6">Оставьте номер телефона, дежурный инженер свяжется с вами в течение 5 минут.</p>
+
+            <form id="callbackModalForm" class="space-y-4">
+                <div>
+                    <label class="block text-xs uppercase text-gray-400 font-semibold mb-1">Ваше имя</label>
+                    <input type="text" name="name" required placeholder="Константин" class="w-full bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-xl focus:border-amber-500 focus:outline-none text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase text-gray-400 font-semibold mb-1">Номер телефона</label>
+                    <input type="tel" name="phone" required placeholder="+7 (999) 000-00-00" class="w-full bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-xl focus:border-amber-500 focus:outline-none text-sm">
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold rounded-xl text-sm uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20">
+                    Жду звонка
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: Calculator Lead Capture -->
+    <div id="calcLeadModal" class="modal-overlay fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-gray-900 border border-gray-800 rounded-3xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl">
+            <button class="modal-close-btn absolute top-5 right-5 text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
+            <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-2xl flex items-center justify-center mb-4 text-xl font-bold">📄</div>
+            <h3 class="text-xl font-heading font-bold text-white mb-1">Зафиксировать смету</h3>
+            <div id="calcModalSummary" class="text-xs text-amber-400 mb-4 bg-amber-500/10 p-3 rounded-xl border border-amber-500/20"></div>
+            <p class="text-xs text-gray-400 mb-4">Укажите номер телефона, чтобы мы отправили файл с детальным расчетом и закрепили за вами скидку:</p>
+
+            <form id="calcModalForm" class="space-y-4">
+                <div>
+                    <label class="block text-xs uppercase text-gray-400 font-semibold mb-1">Номер телефона для WhatsApp/Telegram</label>
+                    <input type="tel" name="phone" required placeholder="+7 (999) 000-00-00" class="w-full bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-xl focus:border-amber-500 focus:outline-none text-sm">
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold rounded-xl text-sm uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20">
+                    Получить расчет в PDF
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: Privacy Policy -->
+    <div id="privacyModal" class="modal-overlay fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-gray-900 border border-gray-800 rounded-3xl p-6 sm:p-8 max-w-2xl w-full relative max-h-[80vh] overflow-y-auto">
+            <button class="modal-close-btn absolute top-5 right-5 text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
+            <h3 class="text-xl font-heading font-bold text-white mb-4">Политика обработки персональных данных</h3>
+            <div class="text-xs text-gray-400 space-y-3 leading-relaxed">
+                <p>Настоящая Политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных.</p>
+                <p>1. Мы собираем только те данные, которые необходимы для связи с вами и предоставления расчета сметы (имя, номер телефона, параметры объекта).</p>
+                <p>2. Ваши данные никогда не передаются третьим лицам и используются исключительно для коммуникации по вопросам ремонта.</p>
+                <p>3. Вы можете в любой момент отозвать свое согласие на обработку данных, связавшись с нами по указанным контактам.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Proof Toast Notification -->
+    <div id="socialProofToast" class="toast-notice bg-gray-900/95 border border-amber-500/30 text-white px-4 py-3 rounded-2xl shadow-2xl flex items-center space-x-3.5 max-w-sm">
+        <div class="w-3 h-3 rounded-full bg-emerald-400 animate-ping shrink-0"></div>
+        <p id="socialProofText" class="text-xs text-gray-300 font-medium leading-snug">
+            Алексей из Москвы только что рассчитал стоимость ремонта 85 м²
+        </p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
