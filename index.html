@@ -100,6 +100,32 @@
             display: block;
         }
 
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-wa {
+            background: #25d366;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .btn-wa:hover {
+            background: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45);
+        }
+
         .btn-tg {
             background: #229ed9;
             color: #fff;
@@ -724,12 +750,20 @@
                     <span class="logo-sub">Веб-разработка • Digital Studio</span>
                 </div>
             </a>
-            <a href="https://t.me/codec_web" class="btn-tg" target="_blank">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.95-1.28 4.92-2.13 5.91-2.55 2.81-1.2 3.4.45 3.39 1.43z"/>
-                </svg>
-                Написать в Telegram
-            </a>
+            <div class="header-actions">
+                <a href="https://wa.me/79869761893?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%B4%D0%BB%D1%8F%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0" class="btn-wa" target="_blank">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                    WhatsApp
+                </a>
+                <a href="https://t.me/codec_web" class="btn-tg" target="_blank">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.95-1.28 4.92-2.13 5.91-2.55 2.81-1.2 3.4.45 3.39 1.43z"/>
+                    </svg>
+                    Telegram
+                </a>
+            </div>
         </div>
     </header>
 
@@ -875,52 +909,55 @@
         <!-- Pricing Section -->
         <section class="pricing-section">
             <div class="section-header">
-                <h2>Прозрачные тарифы под ключ</h2>
-                <p>Фиксированные цены без скрытых платежей. Работаем с договором и оплатой строго по факту.</p>
+                <h2>Любой сайт под ключ — 5 500 ₽</h2>
+                <p>Спецпредложение пока я нарабатываю портфолио: премиальная мобильная разработка по фиксированной цене. Оплата строго по факту после тестирования готового сайта на вашем смартфоне.</p>
             </div>
             <div class="pricing-grid">
                 <div class="price-card">
-                    <h3 class="price-title">Сайт-визитка / Меню</h3>
-                    <div class="price-amount">5 000 ₽</div>
+                    <h3 class="price-title">Сайт-визитка & Прайс</h3>
+                    <div class="price-amount">5 500 ₽</div>
                     <div class="price-time">Срок: 1–2 дня</div>
                     <ul class="price-features">
-                        <li><span>✓</span> Адаптив под 100% смартфонов</li>
-                        <li><span>✓</span> Электронный прайс и список услуг</li>
-                        <li><span>✓</span> Кнопки записи в WhatsApp и Telegram</li>
+                        <li><span>✓</span> Адаптив под 100% смартфонов (iOS/Android)</li>
+                        <li><span>✓</span> Электронный прайс и структурированные услуги</li>
+                        <li><span>✓</span> Прямая быстрая запись в WhatsApp / Telegram</li>
                         <li><span>✓</span> Интеграция с Яндекс Картами и 2ГИС</li>
-                        <li><span>✓</span> Базовая SEO-настройка</li>
+                        <li><span>✓</span> Базовая SEO-настройка для поисковиков</li>
+                        <li><span>✓</span> Оплата строго после приёмки готового сайта</li>
                     </ul>
-                    <a href="https://t.me/codec_web" target="_blank" class="btn-price">Заказать сайт</a>
+                    <a href="https://wa.me/79869761893?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82-%D0%B2%D0%B8%D0%B7%D0%B8%D1%82%D0%BA%D1%83%20%D0%B7%D0%B0%205%20500%20%D1%80%D1%83%D0%B1%D0%BB%D0%B5%D0%B9" target="_blank" class="btn-price">Заказать за 5 500 ₽</a>
                 </div>
 
                 <div class="price-card featured">
                     <h3 class="price-title">Бизнес-лендинг с записью</h3>
-                    <div class="price-amount">9 000 ₽</div>
-                    <div class="price-time">Срок: 2–3 дня</div>
+                    <div class="price-amount">5 500 ₽ <span style="font-size: 1rem; color: #94a3b8; text-decoration: line-through; font-weight: normal; margin-left: 6px;">12 000 ₽</span></div>
+                    <div class="price-time">Срок: 2 дня • <strong>ХИТ ДЛЯ ПОРТФОЛИО</strong></div>
                     <ul class="price-features">
-                        <li><span>✓</span> Всё из тарифа «Визитка»</li>
-                        <li><span>✓</span> Полная интеграция с DIKIDI / YClients</li>
-                        <li><span>✓</span> Карточки мастеров и галерея работ</li>
-                        <li><span>✓</span> Блок реальных отзывов клиентов</li>
-                        <li><span>✓</span> Всплывающие формы спецпредложений</li>
-                        <li><span>✓</span> Помощь с регистрацией домена</li>
+                        <li><span>✓</span> Всё из базового тарифа</li>
+                        <li><span>✓</span> Интеграция с вашей онлайн-записью (DIKIDI / YClients / WhatsApp)</li>
+                        <li><span>✓</span> Карточки мастеров и фотогалерея интерьера</li>
+                        <li><span>✓</span> Блок реальных отзывов с Яндекс Карт</li>
+                        <li><span>✓</span> Всплывающее окно спецпредложений</li>
+                        <li><span>✓</span> Помощь с привязкой домена</li>
+                        <li><span>✓</span> Оплата строго по факту готовности</li>
                     </ul>
-                    <a href="https://t.me/codec_web" target="_blank" class="btn-price">Выбрать тариф</a>
+                    <a href="https://wa.me/79869761893?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D0%BB%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3%20%D0%BF%D0%BE%20%D0%B0%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B7%D0%B0%205%20500%20%D1%80%D1%83%D0%B1%D0%BB%D0%B5%D0%B9" target="_blank" class="btn-price">Выбрать за 5 500 ₽</a>
                 </div>
 
                 <div class="price-card">
-                    <h3 class="price-title">Премиум-проект</h3>
-                    <div class="price-amount">15 000 ₽</div>
-                    <div class="price-time">Срок: 3–5 дней</div>
+                    <h3 class="price-title">Премиум-концепт</h3>
+                    <div class="price-amount">5 500 ₽ <span style="font-size: 1rem; color: #94a3b8; text-decoration: line-through; font-weight: normal; margin-left: 6px;">18 000 ₽</span></div>
+                    <div class="price-time">Срок: 2–3 дня</div>
                     <ul class="price-features">
-                        <li><span>✓</span> Индивидуальный дизайн под ваш бренд</li>
-                        <li><span>✓</span> Интерактивный калькулятор сметы/услуг</li>
-                        <li><span>✓</span> Пошаговый квиз для сбора заявок</li>
-                        <li><span>✓</span> Telegram-бот для уведомлений о заявках</li>
+                        <li><span>✓</span> Персональный брутальный или эстетичный дизайн</li>
+                        <li><span>✓</span> Интерактивный калькулятор сметы или квиз-заявка</li>
+                        <li><span>✓</span> Быстрые кнопки связи в WhatsApp и Telegram</li>
                         <li><span>✓</span> Премиальные микро-анимации</li>
+                        <li><span>✓</span> Видео-презентация сайта перед сдачей</li>
                         <li><span>✓</span> 1 месяц бесплатного сопровождения</li>
+                        <li><span>✓</span> Оплата строго после полного теста</li>
                     </ul>
-                    <a href="https://t.me/codec_web" target="_blank" class="btn-price">Обсудить проект</a>
+                    <a href="https://wa.me/79869761893?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%B5%D0%BC%D0%B8%D1%83%D0%BC-%D1%81%D0%B0%D0%B9%D1%82%20%D0%BF%D0%BE%20%D0%B0%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B7%D0%B0%205%20500%20%D1%80%D1%83%D0%B1%D0%BB%D0%B5%D0%B9" target="_blank" class="btn-price">Обсудить за 5 500 ₽</a>
                 </div>
             </div>
         </section>
@@ -928,10 +965,15 @@
         <!-- CTA Banner -->
         <section class="cta-banner">
             <h2>Хотите протестировать сайт для вашего бизнеса?</h2>
-            <p>Напишите нам в Telegram или WhatsApp — подготовим интерактивный концепт сайта с вашим логотипом, прайсом и адресом совершенно бесплатно.</p>
-            <a href="https://t.me/codec_web" target="_blank" class="btn-tg" style="font-size: 1.05rem; padding: 14px 32px;">
-                Написать в Telegram @codec_web ➔
-            </a>
+            <p>Напишите нам в WhatsApp или Telegram — подготовим персональный мобильный концепт сайта с вашим логотипом, прайсом и адресом совершенно бесплатно.</p>
+            <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
+                <a href="https://wa.me/79869761893?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%D0%BE%D0%B2" target="_blank" class="btn-wa" style="font-size: 1.05rem; padding: 14px 28px;">
+                    Написать в WhatsApp ➔
+                </a>
+                <a href="https://t.me/codec_web" target="_blank" class="btn-tg" style="font-size: 1.05rem; padding: 14px 28px;">
+                    Написать в Telegram @codec_web ➔
+                </a>
+            </div>
         </section>
     </main>
 
@@ -939,7 +981,7 @@
     <footer>
         <div class="container">
             <p><strong>CODEC WEB STUDIO</strong> • Разработка мобильных сайтов для сферы услуг по всей России</p>
-            <p style="margin-top: 8px;">Telegram: <a href="https://t.me/codec_web" style="color: #60a5fa; text-decoration: none;">@codec_web</a> • Телефон: +7 (986) 976-18-93</p>
+            <p style="margin-top: 8px;">WhatsApp: <a href="https://wa.me/79869761893" style="color: #25d366; text-decoration: none;">+7 (986) 976-18-93</a> • Telegram: <a href="https://t.me/codec_web" style="color: #60a5fa; text-decoration: none;">@codec_web</a></p>
         </div>
     </footer>
 
