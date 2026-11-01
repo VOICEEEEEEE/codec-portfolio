@@ -434,8 +434,12 @@ h1, h2, h3, h4, h5, h6,
     color: var(--charcoal);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .nav-links { display: flex; }
+}
+
+@media (max-width: 640px) {
+    .nav-right .btn-primary { display: none; }
 }
 
 .nav-links a:hover {
@@ -504,7 +508,7 @@ h1, h2, h3, h4, h5, h6,
     color: var(--gold);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .mobile-menu-btn { display: none; }
 }
 
@@ -516,7 +520,7 @@ h1, h2, h3, h4, h5, h6,
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .mobile-menu { display: none !important; }
 }
 
@@ -1239,14 +1243,15 @@ h1, h2, h3, h4, h5, h6,
 
 .calculator-glow {
     position: absolute;
-    top: -3rem;
-    right: -3rem;
+    top: 0;
+    right: 0;
     width: 8rem;
     height: 8rem;
     background: rgba(197, 160, 89, 0.1);
     border-radius: 50%;
     filter: blur(24px);
     pointer-events: none;
+    max-width: 100%;
 }
 
 .calc-header {
