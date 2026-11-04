@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Студия маникюра и педикюра «ЛАККИ» | Казань, БЦ ФРАНТ</title>
+  <meta name="description" content="Профессиональный маникюр, педикюр и наращивание ногтей в Казани. БЦ ФРАНТ, офис 809. Онлайн-запись 24/7.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0e0d0f;
+      --bg-card: #171518;
+      --bg-card-hover: #201c22;
+      --rose-gold: #e2a89d;
+      --rose-glow: rgba(226, 168, 157, 0.25);
+      --rose-light: #f7ded9;
+      --text-main: #f5f2f4;
+      --text-muted: #9e969d;
+      --border: rgba(226, 168, 157, 0.15);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+      padding-bottom: 110px;
+    }
+
+    h1, h2, h3, .font-serif {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Header */
+    header {
+      padding: 14px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(14, 13, 15, 0.94);
+      backdrop-filter: blur(16px);
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e2a89d 0%, #b87a6f 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0e0d0f;
+      font-weight: 700;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      box-shadow: 0 4px 15px var(--rose-glow);
+    }
+
+    .brand-text h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+
+    .brand-text p {
+      font-size: 11px;
+      color: var(--rose-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .header-rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(226, 168, 157, 0.1);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--rose-light);
+      border: 1px solid var(--border);
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 22px 0 16px;
+      text-align: center;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(226, 168, 157, 0.12);
+      color: var(--rose-gold);
+      padding: 5px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .badge-pill span.dot {
+      width: 6px;
+      height: 6px;
+      background: #4ade80;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #4ade80;
+    }
+
+    .hero-title {
+      font-size: 38px;
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--rose-gold);
+      font-weight: 500;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 20px;
+      padding: 0 6px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 15px 22px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #e2a89d 0%, #c48377 100%);
+      color: #0e0d0f;
+      box-shadow: 0 8px 24px var(--rose-glow);
+    }
+
+    .btn-primary:active {
+      transform: scale(0.98);
+      filter: brightness(0.95);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      margin-top: 10px;
+    }
+
+    .btn-outline:active {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Highlights row */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 20px 0 28px;
+    }
+
+    .highlight-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 6px;
+      text-align: center;
+    }
+
+    .highlight-val {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--rose-gold);
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1.1;
+    }
+
+    .highlight-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.2;
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    /* Calculator Widget */
+    .calc-card {
+      background: linear-gradient(180deg, #181519 0%, #131114 100%);
+      border: 1px solid rgba(226, 168, 157, 0.25);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+      scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 7px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn.active {
+      background: var(--rose-gold);
+      color: #0e0d0f;
+      font-weight: 600;
+      border-color: var(--rose-gold);
+    }
+
+    .service-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 12px;
+      margin-bottom: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .service-row:hover, .service-row.selected {
+      background: rgba(226, 168, 157, 0.08);
+      border-color: rgba(226, 168, 157, 0.35);
+    }
+
+    .service-info {
+      flex: 1;
+      padding-right: 12px;
+    }
+
+    .service-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 2px;
+    }
+
+    .service-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .service-price {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--rose-gold);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .check-box {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      transition: all 0.2s ease;
+      font-size: 12px;
+      color: transparent;
+      font-weight: bold;
+    }
+
+    .service-row.selected .check-box {
+      background: var(--rose-gold);
+      border-color: var(--rose-gold);
+      color: #0e0d0f;
+    }
+
+    /* Calc summary bar */
+    .calc-summary {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .calc-sum-text {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .calc-sum-val {
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .calc-sum-val span {
+      color: var(--rose-gold);
+    }
+
+    /* Specialists */
+    .specialists-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .master-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+
+    .master-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2b2427 0%, #1a1617 100%);
+      border: 2px solid var(--rose-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: var(--rose-gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+    }
+
+    .master-details {
+      flex: 1;
+    }
+
+    .master-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .master-role {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .master-score {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #fbbf24;
+    }
+
+    .master-score span {
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .btn-sm {
+      padding: 8px 14px;
+      font-size: 12px;
+      border-radius: 10px;
+      background: rgba(226, 168, 157, 0.15);
+      color: var(--rose-light);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(0deg, rgba(14, 13, 15, 0.85) 0%, transparent 100%);
+      padding: 10px 8px 6px;
+      font-size: 11px;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* Advantages */
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .feature-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: rgba(226, 168, 157, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--rose-gold);
+      flex-shrink: 0;
+    }
+
+    .feature-text h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .feature-text p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Reviews */
+    .reviews-scroll {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      margin: 0 -16px 30px;
+      padding: 0 16px 10px;
+      scrollbar-width: none;
+    }
+    .reviews-scroll::-webkit-scrollbar { display: none; }
+
+    .review-card {
+      min-width: 280px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      flex-shrink: 0;
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .review-user {
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .review-date {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .review-text {
+      font-size: 13px;
+      color: #ddd;
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+
+    .review-tag {
+      display: inline-block;
+      font-size: 11px;
+      background: rgba(226, 168, 157, 0.1);
+      color: var(--rose-gold);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    /* Location & Contacts */
+    .contacts-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
+    .contact-line a {
+      color: var(--rose-gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Sticky Bottom Mobile Bar */
+    .mobile-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(14, 13, 15, 0.95);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
+      display: flex;
+      gap: 10px;
+      z-index: 999;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .mobile-bar .btn {
+      padding: 14px;
+      font-size: 14px;
+    }
+
+    .btn-wa {
+      background: #25D366;
+      color: #fff;
+      flex: 1;
+    }
+
+    .btn-dikidi {
+      background: linear-gradient(135deg, #e2a89d 0%, #c48377 100%);
+      color: #0e0d0f;
+      flex: 2;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 0 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    footer a {
+      color: var(--rose-gold);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; width:100%;">
+      <a href="#" class="brand">
+        <div class="brand-logo">Л</div>
+        <div class="brand-text">
+          <h1>ЛАККИ</h1>
+          <p>Маникюр & Педикюр</p>
+        </div>
+      </a>
+      <a href="https://dikidi.net/2052264" target="_blank" class="header-rating">
+        ⭐️ 4.8 <span>(90)</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- Hero -->
+    <section class="hero">
+      <div class="badge-pill">
+        <span class="dot"></span>
+        Казань • БЦ «ФРАНТ» • Офис 809
+      </div>
+      
+      <h2 class="hero-title">
+        Студия эстетики <em>рук и ног</em> в Казани
+      </h2>
+      
+      <p class="hero-subtitle">
+        Работаем на премиальных материалах без экономии на качестве. 100% стерильный инструмент, кофе, кино и стойкость покрытия от 4 недель.
+      </p>
+
+      <a href="https://dikidi.net/2052264" target="_blank" class="btn btn-primary">
+        💅 Записаться онлайн 24/7
+      </a>
+      
+      <a href="https://wa.me/79600464537?text=Здравствуйте!%20Хочу%20записаться%20в%20студию%20ЛАККИ" target="_blank" class="btn btn-outline">
+        💬 Написать в WhatsApp
+      </a>
+
+      <!-- Highlights -->
+      <div class="highlights">
+        <div class="highlight-card">
+          <div class="highlight-val">4.8★</div>
+          <div class="highlight-label">90+ отзывов гостей</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-val">4 нед.</div>
+          <div class="highlight-label">Стойкость покрытия</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-val">100%</div>
+          <div class="highlight-label">Стерильность СанПиН</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Price & Calculator -->
+    <section>
+      <h3 class="section-title">Прайс-лист & Расчёт</h3>
+      <p class="section-sub">Нажмите на нужные услуги, чтобы рассчитать сумму и записаться:</p>
+
+      <div class="calc-card">
+        <!-- Tabs -->
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchCategory('hits')">🔥 Хиты</button>
+          <button class="tab-btn" onclick="switchCategory('manicure')">Маникюр</button>
+          <button class="tab-btn" onclick="switchCategory('pedicure')">Педикюр</button>
+          <button class="tab-btn" onclick="switchCategory('extensions')">Наращивание</button>
+        </div>
+
+        <!-- Service Items Container -->
+        <div id="services-container">
+          <!-- Dynamically filled by JS -->
+        </div>
+
+        <!-- Summary & Book -->
+        <div class="calc-summary">
+          <div>
+            <div class="calc-sum-text">Выбрано услуг: <span id="selected-count">0</span></div>
+            <div class="calc-sum-val"><span id="total-price">0</span> ₽</div>
+          </div>
+          <button onclick="bookSelected()" class="btn btn-sm" style="padding:12px 18px; font-size:13px; background:var(--rose-gold); color:#0e0d0f; border:none; cursor:pointer;">
+            Записаться на эту сумму →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Specialists -->
+    <section>
+      <h3 class="section-title">Наши мастера</h3>
+      <p class="section-sub">Опытные специалисты ногтевого сервиса студии ЛАККИ:</p>
+
+      <div class="specialists-list">
+        <div class="master-card">
+          <div class="master-avatar">С</div>
+          <div class="master-details">
+            <div class="master-name">София</div>
+            <div class="master-role">Топ-мастер ногтевого сервиса</div>
+            <div class="master-score">★ 4.8 <span>(43 отзыва)</span></div>
+          </div>
+          <a href="https://dikidi.net/en/profile/lakki_2052264/master/4498964" target="_blank" class="btn-sm">Запись</a>
+        </div>
+
+        <div class="master-card">
+          <div class="master-avatar">Г</div>
+          <div class="master-details">
+            <div class="master-name">Гузель</div>
+            <div class="master-role">Мастер ногтевого сервиса</div>
+            <div class="master-score">★ 4.8 <span>(40 отзывов)</span></div>
+          </div>
+          <a href="https://dikidi.net/en/profile/lakki_2052264/master/4407465" target="_blank" class="btn-sm">Запись</a>
+        </div>
+
+        <div class="master-card">
+          <div class="master-avatar">А</div>
+          <div class="master-details">
+            <div class="master-name">Алина</div>
+            <div class="master-role">Мастер ногтевого сервиса</div>
+            <div class="master-score">★ 5.0 <span>(3 отзыва)</span></div>
+          </div>
+          <a href="https://dikidi.net/en/profile/lakki_2052264/master/4648029" target="_blank" class="btn-sm">Запись</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery of Aesthetic Works -->
+    <section>
+      <h3 class="section-title">Работы студии</h3>
+      <p class="section-sub">Примеры дизайна, покрытия гель-лак и педикюра:</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=600&q=80" alt="Французский маникюр">
+          <div class="gallery-caption">Трендовый френч & глянец</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80" alt="Покрытие гель-лак">
+          <div class="gallery-caption">Идеальное выравнивание</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=600&q=80" alt="Нюдовый маникюр">
+          <div class="gallery-caption">Стойкий нюд (4+ недели)</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1599305090598-fe179d501227?auto=format&fit=crop&w=600&q=80" alt="Эстетический педикюр">
+          <div class="gallery-caption">Эстетический Smart-педикюр</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advantages -->
+    <section>
+      <h3 class="section-title">Стандарты качества</h3>
+      <p class="section-sub">Почему 90% гостей возвращаются к нам снова:</p>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon">✨</div>
+          <div class="feature-text">
+            <h4>Премиальные материалы</h4>
+            <p>Не экономим на базах и топах. Никаких отслоек, сколов и истончения ногтевой пластины.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-text">
+            <h4>Стерилизация по СанПиН</h4>
+            <p>Инструменты проходят 3 этапа очистки и сухожар. Крафт-пакет вскрывается строго при вас.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">☕</div>
+          <div class="feature-text">
+            <h4>Комфорт & Забота</h4>
+            <p>Свежесваренный зерновой кофе, чай, сладости и ваши любимые фильмы во время процедуры.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section>
+      <h3 class="section-title">Отзывы гостей</h3>
+      <p class="section-sub">Честные впечатления с сервиса онлайн-записи DIKIDI:</p>
+
+      <div class="reviews-scroll">
+        <div class="review-card">
+          <div class="review-header">
+            <span class="review-user">Тамара</span>
+            <span class="review-date">3 ноя 2026</span>
+          </div>
+          <p class="review-text">«Огромное спасибо мастеру Софии и студии ЛАККИ за прекрасную работу! Наконец-то нашла специалиста, которому можно доверить руки без тени сомнения. Маникюр держится больше месяца!»</p>
+          <span class="review-tag">Мастер София • 5.0 ★</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <span class="review-user">Алиса</span>
+            <span class="review-date">26 окт 2026</span>
+          </div>
+          <p class="review-text">«Замечательный мастер Гузель, согласилась сделать сложный дизайн и получилось очень здорово! Каждый шаг согласовывала. Мастера советую!»</p>
+          <span class="review-tag">Мастер Гузель • 5.0 ★</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <span class="review-user">Лариса</span>
+            <span class="review-date">23 окт 2026</span>
+          </div>
+          <p class="review-text">«Просто восторг! И цвет и качество. Всегда довольна, как мастер делает покрытие гель-лаком. Атмосфера очень душевная.»</p>
+          <span class="review-tag">Мастер София • 5.0 ★</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacts & Map -->
+    <section class="contacts-card">
+      <h3 class="section-title" style="font-size:24px;">Ждём вас в гости</h3>
+      <p class="section-sub">Удобное расположение в Приволжском районе Казани:</p>
+
+      <div class="contact-line">
+        📍 <span>г. Казань, ул. Юлиуса Фучика, д. 90а<br><strong>БЦ «ФРАНТ», этаж 8, офис 809</strong></span>
+      </div>
+
+      <div class="contact-line">
+        ⏰ <span>Ежедневно с <strong>09:00 до 22:00</strong></span>
+      </div>
+
+      <div class="contact-line">
+        📞 <a href="tel:+79655891833">+7 (965) 589-18-33</a>
+      </div>
+
+      <div class="contact-line">
+        💬 <a href="https://wa.me/79600464537" target="_blank">WhatsApp: +7 (960) 046-45-37</a>
+      </div>
+
+      <a href="https://yandex.ru/maps/?text=Казань+Юлиуса+Фучика+90а" target="_blank" class="btn btn-outline" style="margin-top:14px;">
+        🗺️ Маршрут в Яндекс Картах
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Sticky Bottom Bar -->
+  <div class="mobile-bar">
+    <a href="https://wa.me/79600464537?text=Здравствуйте!%20Хочу%20записаться%20в%20студию%20ЛАККИ" target="_blank" class="btn btn-wa">
+      💬 WhatsApp
+    </a>
+    <a href="https://dikidi.net/2052264" target="_blank" class="btn btn-dikidi">
+      💅 Онлайн-запись DIKIDI
+    </a>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Студия маникюра и педикюра «ЛАККИ» Казань</p>
+      <p style="margin-top:4px; opacity:0.6;">Разработка концепта: <a href="https://voiceeeeeee.github.io/codec-portfolio/" target="_blank">CODEC Studio (Дима)</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Real services database from Dikidi
+    const SERVICES_DATA = {
+      hits: [
+        { id: 1, name: "Комплекс: Маникюр + Педикюр полный (всё включено)", time: "3 ч", price: 3800 },
+        { id: 2, name: "Комплекс: Маникюр с покрытием + Педикюр (без пяточек)", time: "2 ч 40 мин", price: 3300 },
+        { id: 3, name: "Маникюр с однотонным покрытием гель-лак", time: "1 ч 30 мин", price: 1700 },
+        { id: 4, name: "Маникюр Френч (классика / цветной)", time: "2 ч", price: 2000 }
+      ],
+      manicure: [
+        { id: 5, name: "Маникюр комбинированный / аппаратный без покрытия", time: "1 ч", price: 1100 },
+        { id: 6, name: "Маникюр с однотонным покрытием", time: "1 ч 30 мин", price: 1700 },
+        { id: 7, name: "Маникюр с укреплением + гель-лак", time: "1 ч 30 мин", price: 1900 },
+        { id: 8, name: "Маникюр с эффектом «Кошачий глаз»", time: "1 ч 30 мин", price: 1900 },
+        { id: 9, name: "Японский эко-маникюр (глянцевание ногтей)", time: "1 ч", price: 1400 },
+        { id: 10, name: "Мужской гигиенический маникюр", time: "1 ч", price: 1300 }
+      ],
+      pedicure: [
+        { id: 11, name: "Педикюр «Всё включено» (покрытие + стопы)", time: "2 ч", price: 2300 },
+        { id: 12, name: "Педикюр полный Френч", time: "1 ч 40 мин", price: 2500 },
+        { id: 13, name: "Педикюр с покрытием (без обработки стопы)", time: "1 ч 20 мин", price: 1800 },
+        { id: 14, name: "Педикюр гигиенический без покрытия + стопы", time: "1 ч 30 мин", price: 2100 },
+        { id: 15, name: "Обработка пальчиков и пяточек", time: "1 ч 30 мин", price: 2000 }
+      ],
+      extensions: [
+        { id: 16, name: "Наращивание ногтей с однотонным покрытием (длина 1–4)", time: "2 ч 30 мин", price: 2500 },
+        { id: 17, name: "Наращивание ногтей Френч", time: "2 ч 30 мин", price: 2700 },
+        { id: 18, name: "Наращивание длинных ногтей (длина 4–6)", time: "2 ч 30 мин", price: 2800 },
+        { id: 19, name: "Коррекция нарощенных ногтей с покрытием", time: "2 ч 15 мин", price: 2200 }
+      ]
+    };
+
+    let selectedServiceIds = new Set([1]); // Default 1 selected
+
+    function renderServices(cat) {
+      const list = SERVICES_DATA[cat] || [];
+      const container = document.getElementById('services-container');
+      container.innerHTML = list.map(item => {
+        const isSel = selectedServiceIds.has(item.id);
+        return `
+          <div class="service-row ${isSel ? 'selected' : ''}" onclick="toggleService(${item.id})">
+            <div class="check-box">${isSel ? '✓' : ''}</div>
+            <div class="service-info">
+              <div class="service-name">${item.name}</div>
+              <div class="service-meta">⏱ ${item.time}</div>
+            </div>
+            <div class="service-price">${item.price.toLocaleString('ru-RU')} ₽</div>
+          </div>
+        `;
+      }).join('');
+      updateSummary();
+    }
+
+    function toggleService(id) {
+      if (selectedServiceIds.has(id)) {
+        selectedServiceIds.delete(id);
+      } else {
+        selectedServiceIds.add(id);
+      }
+      const activeBtn = document.querySelector('.tab-btn.active');
+      const onclickAttr = activeBtn ? activeBtn.getAttribute('onclick') : '';
+      const match = onclickAttr.match(/'([^']+)'/);
+      renderServices(match ? match[1] : 'hits');
+    }
+
+    function updateSummary() {
+      let total = 0;
+      let count = 0;
+      
+      Object.values(SERVICES_DATA).forEach(catList => {
+        catList.forEach(item => {
+          if (selectedServiceIds.has(item.id)) {
+            total += item.price;
+            count++;
+          }
+        });
+      });
+
+      document.getElementById('selected-count').innerText = count;
+      document.getElementById('total-price').innerText = total.toLocaleString('ru-RU');
+    }
+
+    function switchCategory(cat) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      renderServices(cat);
+    }
+
+    function bookSelected() {
+      // Find selected names
+      const selectedNames = [];
+      let total = 0;
+      Object.values(SERVICES_DATA).forEach(catList => {
+        catList.forEach(item => {
+          if (selectedServiceIds.has(item.id)) {
+            selectedNames.push(item.name);
+            total += item.price;
+          }
+        });
+      });
+
+      if (selectedNames.length === 0) {
+        window.open('https://dikidi.net/2052264', '_blank');
+        return;
+      }
+
+      const text = `Здравствуйте! Хочу записаться в студию ЛАККИ на услуги:%0A• ${selectedNames.join('%0A• ')}%0AИтого: ${total.toLocaleString('ru-RU')} ₽`;
+      window.open(`https://wa.me/79600464537?text=${text}`, '_blank');
+    }
+
+    // Init
+    renderServices('hits');
+  </script>
+</body>
+</html>
