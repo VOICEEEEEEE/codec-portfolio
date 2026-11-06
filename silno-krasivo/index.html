@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  
   <title>Салон красоты «Сильно Красиво» | Ростов-на-Дону, Текучёва 121</title>
   <meta name="description" content="Салон эстетики и колористики волос «Сильно Красиво» в Ростове-на-Дону. Сложное окрашивание, Airtouch, безупречный блонд, авторские стрижки и премиальный уход. Текучёва, 121. Онлайн-запись 24/7.">
   
@@ -49,7 +53,7 @@
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.5;
       overflow-x: hidden;
-      padding-bottom: 110px;
+      padding-bottom: 40px;
     }
 
     h1, h2, h3, h4, .font-serif {
@@ -78,12 +82,13 @@
 
     /* Header */
     header {
-      padding: 14px 0;
+      padding: 12px 0;
       border-bottom: 1px solid var(--border-subtle);
       position: sticky;
       top: 0;
       background: rgba(10, 9, 12, 0.94);
       backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       z-index: 100;
     }
 
@@ -101,8 +106,8 @@
     }
 
     .brand-crest {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: linear-gradient(135deg, #d4af37 0%, #8c6d16 100%);
       display: flex;
@@ -118,7 +123,7 @@
     }
 
     .brand-info h1 {
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 700;
       letter-spacing: 0.5px;
       color: var(--text-main);
@@ -133,13 +138,19 @@
       margin-top: 1px;
     }
 
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     .status-badge {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       background: rgba(212, 175, 55, 0.1);
       border: 1px solid var(--gold-border);
-      padding: 6px 12px;
+      padding: 5px 10px;
       border-radius: 20px;
       font-size: 11px;
       color: var(--gold-light);
@@ -147,17 +158,36 @@
     }
 
     .status-dot {
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       background-color: #22c55e;
       border-radius: 50%;
       box-shadow: 0 0 8px #22c55e;
     }
 
+    .header-wa-btn {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(37, 211, 102, 0.12);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      color: #4ade80;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .header-wa-btn:hover {
+      background: rgba(37, 211, 102, 0.2);
+    }
+
     /* Hero Section */
     .hero {
       position: relative;
-      padding: 22px 0 16px;
+      padding: 20px 0 16px;
       z-index: 1;
     }
 
@@ -180,7 +210,7 @@
     }
 
     .hero-title {
-      font-size: 33px;
+      font-size: 32px;
       font-weight: 600;
       line-height: 1.15;
       margin-bottom: 10px;
@@ -215,13 +245,13 @@
       height: 270px;
       object-fit: cover;
       display: block;
-      filter: brightness(0.92);
+      filter: brightness(0.95);
     }
 
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(10, 9, 12, 0.05) 0%, rgba(10, 9, 12, 0.88) 100%);
+      background: linear-gradient(180deg, rgba(10, 9, 12, 0.02) 0%, rgba(10, 9, 12, 0.88) 100%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -343,6 +373,52 @@
       line-height: 1.2;
     }
 
+    /* Works Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      height: 160px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-label {
+      position: absolute;
+      bottom: 0;
+      inset-x: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(180deg, transparent, rgba(10, 9, 12, 0.95));
+      padding: 8px 10px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    /* Price Section */
+    #prices {
+      scroll-margin-top: 80px;
+    }
+
     /* Price Tabs */
     .price-tabs {
       display: flex;
@@ -381,7 +457,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 26px;
+      margin-bottom: 28px;
       animation: fadeIn 0.25s ease-in-out;
     }
 
@@ -462,51 +538,12 @@
       cursor: pointer;
     }
 
-    /* Works Gallery Grid */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-bottom: 26px;
-    }
-
-    .gallery-item {
-      position: relative;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid var(--border-subtle);
-      height: 160px;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.04);
-    }
-
-    .gallery-label {
-      position: absolute;
-      bottom: 0;
-      inset-x: 0;
-      background: linear-gradient(180deg, transparent, rgba(10, 9, 12, 0.95));
-      padding: 8px 10px;
-      font-size: 11px;
-      font-weight: 500;
-      color: #fff;
-    }
-
     /* FAQ Section */
     .faq-list {
       display: flex;
       flex-direction: column;
       gap: 8px;
-      margin-bottom: 26px;
+      margin-bottom: 28px;
     }
 
     .faq-item {
@@ -555,7 +592,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 26px;
+      margin-bottom: 28px;
     }
 
     .review-card {
@@ -595,7 +632,7 @@
       border: 1px solid var(--gold-border);
       border-radius: var(--radius-lg);
       padding: 18px;
-      margin-bottom: 26px;
+      margin-bottom: 22px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
 
@@ -645,6 +682,36 @@
       background: rgba(212, 175, 55, 0.1);
     }
 
+    /* Big Bottom CTA Banner */
+    .cta-banner-card {
+      background: linear-gradient(135deg, #1b1720 0%, #110f14 100%);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      padding: 22px 18px;
+      margin-bottom: 24px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .cta-banner-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .cta-banner-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.45;
+    }
+
+    .cta-banner-btns {
+      display: flex;
+      gap: 10px;
+    }
+
     /* Demo Badge Footer */
     .codec-badge {
       background: rgba(20, 18, 24, 0.95);
@@ -673,67 +740,13 @@
       text-decoration: underline;
     }
 
-    /* Fixed Bottom Action Bar */
-    .sticky-bar {
-      position: fixed;
-      bottom: 0;
-      inset-x: 0;
-      background: rgba(10, 9, 12, 0.96);
-      backdrop-filter: blur(20px);
-      border-top: 1px solid var(--gold-border);
-      padding: 12px 16px;
-      padding-bottom: max(14px, env(safe-area-inset-bottom));
-      z-index: 200;
-      box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.7);
-    }
-
-    .sticky-bar-inner {
-      max-width: 480px;
-      margin: 0 auto;
-      display: flex;
-      gap: 10px;
-    }
-
-    .btn-wa {
-      background: #25d366;
-      color: #fff;
-      font-weight: 600;
-      flex: 1;
-      padding: 13px 12px;
-      border-radius: var(--radius-md);
-      font-size: 13px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      text-decoration: none;
-      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
-    }
-
-    .btn-main-cta {
-      background: linear-gradient(135deg, #e3c46b 0%, #b88619 100%);
-      color: #0c0a0e;
-      font-weight: 700;
-      flex: 1.3;
-      padding: 13px 12px;
-      border-radius: var(--radius-md);
-      font-size: 13px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      text-decoration: none;
-      box-shadow: 0 4px 18px var(--gold-glow);
-      cursor: pointer;
-      border: none;
-    }
-
     /* Interactive Booking Calculator Modal */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       z-index: 999;
       display: none;
       align-items: flex-end;
@@ -855,9 +868,14 @@
           <p>Ростов-на-Дону</p>
         </div>
       </a>
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        <span>До 21:00</span>
+      <div class="header-right">
+        <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20в%20салон%20«Сильно%20Красиво»" class="header-wa-btn">
+          <span>WhatsApp</span>
+        </a>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>До 21:00</span>
+        </div>
       </div>
     </div>
   </header>
@@ -881,7 +899,7 @@
 
       <!-- Hero Visual -->
       <div class="hero-visual">
-        <img src="images/hero_blonde.jpg" alt="Блонд салон Сильно Красиво" class="hero-img">
+        <img src="images/hero_blonde_v3.jpg?v=3" alt="Блонд салон Сильно Красиво" class="hero-img">
         <div class="hero-overlay">
           <div class="hero-tags">
             <span class="hero-tag">✨ Сложное окрашивание</span>
@@ -893,12 +911,12 @@
 
       <!-- Quick Action Buttons -->
       <div class="cta-group">
-        <button onclick="openBookingModal('Airtouch / Сложное окрашивание')" class="btn btn-gold">
+        <button onclick="openBookingModal('Airtouch / Сложное окрашивание', 7500)" class="btn btn-gold">
           <span>✨ Рассчитать стоимость & Записаться</span>
         </button>
-        <a href="#prices" class="btn btn-secondary">
-          <span>Посмотреть прайс-лист & уходы</span>
-        </a>
+        <button onclick="scrollToPrices()" class="btn btn-secondary">
+          <span>Посмотреть прайс-лист & уходы ↓</span>
+        </button>
       </div>
 
       <!-- Trust Stats Grid -->
@@ -923,7 +941,7 @@
     </section>
 
     <!-- Works Gallery Preview -->
-    <section style="margin-bottom: 26px;">
+    <section style="margin-bottom: 28px;">
       <div class="section-header">
         <div class="section-tag">Портфолио мастеров</div>
         <h3 class="section-title">Примеры работ</h3>
@@ -931,26 +949,26 @@
 
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="images/airtouch.jpg" alt="Airtouch Сильно Красиво">
+          <img src="images/airtouch.jpg?v=3" alt="Airtouch Сильно Красиво">
           <div class="gallery-label">Airtouch & Рельефный блонд</div>
         </div>
         <div class="gallery-item">
-          <img src="images/styling.jpg" alt="Стрижки и укладки">
+          <img src="images/styling.jpg?v=3" alt="Стрижки и укладки">
           <div class="gallery-label">Стрижка & Текстурные локоны</div>
         </div>
         <div class="gallery-item">
-          <img src="images/care_treatment.jpg" alt="Уход за волосами">
+          <img src="images/care_treatment.jpg?v=3" alt="Уход за волосами">
           <div class="gallery-label">Глубокая реконструкция</div>
         </div>
         <div class="gallery-item">
-          <img src="images/salon_interior.jpg" alt="Интерьер салона">
+          <img src="images/salon_interior.jpg?v=3" alt="Интерьер салона">
           <div class="gallery-label">Атмосфера заботы и уюта</div>
         </div>
       </div>
     </section>
 
     <!-- Price Section with Interactive Tabs -->
-    <section id="prices" style="margin-bottom: 26px;">
+    <section id="prices" style="margin-bottom: 28px;">
       <div class="section-header">
         <div class="section-tag">Прозрачный прайс</div>
         <h3 class="section-title">Услуги & Стоимость</h3>
@@ -1121,7 +1139,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section style="margin-bottom: 26px;">
+    <section style="margin-bottom: 28px;">
       <div class="section-header">
         <div class="section-tag">Частые вопросы</div>
         <h3 class="section-title">Всё, что важно знать</h3>
@@ -1161,7 +1179,7 @@
     </section>
 
     <!-- Reviews from Real Guests -->
-    <section style="margin-bottom: 26px;">
+    <section style="margin-bottom: 28px;">
       <div class="section-header">
         <div class="section-tag">Яндекс Карты • 570+ отзывов</div>
         <h3 class="section-title">Что говорят гости</h3>
@@ -1213,6 +1231,20 @@
       </div>
     </section>
 
+    <!-- Bottom Action CTA Banner -->
+    <section class="cta-banner-card">
+      <h3 class="cta-banner-title">Мечтаете об идеальном блонде?</h3>
+      <p class="cta-banner-desc">Запишитесь на бережное окрашивание или бесплатную консультацию колориста</p>
+      <div class="cta-banner-btns">
+        <button onclick="openBookingModal('Airtouch / Окрашивание', 7500)" class="btn btn-gold" style="flex: 1.2;">
+          <span>✨ Онлайн-запись</span>
+        </button>
+        <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20в%20салон%20«Сильно%20Красиво»" class="btn btn-secondary" style="flex: 1;">
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </section>
+
     <!-- Demo Project Notice -->
     <div class="codec-badge">
       <h5>Концепт-проект студии CODEC</h5>
@@ -1226,18 +1258,6 @@
     </div>
 
   </main>
-
-  <!-- Sticky Mobile Action Bar -->
-  <div class="sticky-bar">
-    <div class="sticky-bar-inner">
-      <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20в%20салон%20«Сильно%20Красиво»" class="btn-wa">
-        <span>WhatsApp</span>
-      </a>
-      <button onclick="openBookingModal('Airtouch / Окрашивание')" class="btn-main-cta">
-        <span>Записаться онлайн</span>
-      </button>
-    </div>
-  </div>
 
   <!-- Interactive Booking Sheet Modal -->
   <div id="bookingModal" class="modal-overlay" onclick="closeModalOnBackdrop(event)">
@@ -1285,7 +1305,21 @@
   </div>
 
   <script>
-    // Tab switching with smooth fade
+    // Bulletproof smooth scroll to prices
+    function scrollToPrices() {
+      const el = document.getElementById('prices');
+      if (el) {
+        const headerOffset = 65;
+        const elementPosition = el.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    // Tab switching
     function switchCategory(catId, btn) {
       document.querySelectorAll('.price-list').forEach(el => el.style.display = 'none');
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1305,7 +1339,7 @@
     // Modal & Calculator State
     let currentService = 'Airtouch / Балаяж';
     let currentBasePrice = 7500;
-    let currentLength = 'До плеч (короткие)';
+    let currentLength = 'До плеч';
     let currentLengthMult = 1.0;
 
     function openBookingModal(serviceName, basePrice) {
@@ -1313,7 +1347,6 @@
         currentService = serviceName;
         if (basePrice) currentBasePrice = basePrice;
         
-        // Update pill active state
         document.querySelectorAll('#servicePills .pill-opt').forEach(p => {
           if (p.innerText.includes(serviceName.split(' ')[0])) {
             p.classList.add('active');
