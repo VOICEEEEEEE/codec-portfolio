@@ -2,10 +2,13 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Салон красоты «Сильно Красиво» | Ростов-на-Дону, Текучёва 121</title>
-  <meta name="description" content="Салон эстетики и колористики волос «Сильно Красиво» в Ростове-на-Дону. Сложное окрашивание, Airtouch, безупречный блонд, стрижки и премиальный уход. Текучёва, 121. Онлайн-запись.">
+  <meta name="description" content="Салон эстетики и колористики волос «Сильно Красиво» в Ростове-на-Дону. Сложное окрашивание, Airtouch, безупречный блонд, авторские стрижки и премиальный уход. Текучёва, 121. Онлайн-запись 24/7.">
   
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230a090c' stroke='%23d4af37' stroke-width='4'/><text x='50%' y='58%' text-anchor='middle' font-family='serif' font-weight='bold' font-size='42' fill='%23d4af37'>СК</text></svg>">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,18 +18,22 @@
     :root {
       --bg-dark: #0a090c;
       --bg-card: #131116;
-      --bg-card-hover: #1c1920;
+      --bg-card-hover: #1a171f;
       --gold-primary: #d4af37;
       --gold-light: #f7e7b4;
       --gold-glow: rgba(212, 175, 55, 0.22);
-      --gold-border: rgba(212, 175, 55, 0.25);
+      --gold-border: rgba(212, 175, 55, 0.28);
       --text-main: #fdfcfb;
       --text-muted: #9f97a5;
       --border-subtle: rgba(255, 255, 255, 0.08);
       --radius-sm: 10px;
       --radius-md: 16px;
       --radius-lg: 22px;
-      --transition: all 0.25s ease;
+      --transition: all 0.22s ease-in-out;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     * {
@@ -42,7 +49,7 @@
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.5;
       overflow-x: hidden;
-      padding-bottom: 105px;
+      padding-bottom: 110px;
     }
 
     h1, h2, h3, h4, .font-serif {
@@ -75,7 +82,7 @@
       border-bottom: 1px solid var(--border-subtle);
       position: sticky;
       top: 0;
-      background: rgba(10, 9, 12, 0.92);
+      background: rgba(10, 9, 12, 0.94);
       backdrop-filter: blur(16px);
       z-index: 100;
     }
@@ -129,10 +136,10 @@
     .status-badge {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       background: rgba(212, 175, 55, 0.1);
       border: 1px solid var(--gold-border);
-      padding: 5px 10px;
+      padding: 6px 12px;
       border-radius: 20px;
       font-size: 11px;
       color: var(--gold-light);
@@ -140,8 +147,8 @@
     }
 
     .status-dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       background-color: #22c55e;
       border-radius: 50%;
       box-shadow: 0 0 8px #22c55e;
@@ -150,7 +157,7 @@
     /* Hero Section */
     .hero {
       position: relative;
-      padding: 24px 0 16px;
+      padding: 22px 0 16px;
       z-index: 1;
     }
 
@@ -159,12 +166,12 @@
       align-items: center;
       gap: 6px;
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--gold-border);
       padding: 6px 12px;
       border-radius: 30px;
       font-size: 12px;
       color: var(--gold-light);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .rating-badge span.stars {
@@ -173,10 +180,10 @@
     }
 
     .hero-title {
-      font-size: 34px;
+      font-size: 33px;
       font-weight: 600;
       line-height: 1.15;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       color: #fff;
     }
 
@@ -190,7 +197,7 @@
       font-size: 14px;
       color: var(--text-muted);
       line-height: 1.55;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     /* Hero Card Visual */
@@ -199,22 +206,22 @@
       border-radius: var(--radius-lg);
       overflow: hidden;
       border: 1px solid var(--gold-border);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
     }
 
     .hero-img {
       width: 100%;
-      height: 260px;
+      height: 270px;
       object-fit: cover;
       display: block;
-      filter: brightness(0.88);
+      filter: brightness(0.92);
     }
 
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(10, 9, 12, 0.05) 0%, rgba(10, 9, 12, 0.85) 100%);
+      background: linear-gradient(180deg, rgba(10, 9, 12, 0.05) 0%, rgba(10, 9, 12, 0.88) 100%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -228,7 +235,7 @@
     }
 
     .hero-tag {
-      background: rgba(19, 17, 22, 0.85);
+      background: rgba(19, 17, 22, 0.9);
       backdrop-filter: blur(10px);
       border: 1px solid var(--gold-border);
       color: var(--gold-light);
@@ -243,7 +250,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .btn {
@@ -281,7 +288,7 @@
 
     .btn-secondary:hover, .btn-secondary:active {
       background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(212, 175, 55, 0.3);
+      border-color: rgba(212, 175, 55, 0.35);
     }
 
     /* Trust Stats Grid */
@@ -289,7 +296,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
     .stat-card {
@@ -317,7 +324,7 @@
 
     /* Section Headers */
     .section-header {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .section-tag {
@@ -326,7 +333,7 @@
       text-transform: uppercase;
       letter-spacing: 1.2px;
       font-weight: 600;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .section-title {
@@ -374,7 +381,13 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 30px;
+      margin-bottom: 26px;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .price-item {
@@ -442,18 +455,19 @@
       color: var(--gold-light);
       background: rgba(212, 175, 55, 0.12);
       border: 1px solid var(--gold-border);
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
+      cursor: pointer;
     }
 
-    /* Works Gallery Carousel */
+    /* Works Gallery Grid */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
     .gallery-item {
@@ -469,17 +483,71 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
     }
 
     .gallery-label {
       position: absolute;
       bottom: 0;
       inset-x: 0;
-      background: linear-gradient(180deg, transparent, rgba(10, 9, 12, 0.9));
+      background: linear-gradient(180deg, transparent, rgba(10, 9, 12, 0.95));
       padding: 8px 10px;
       font-size: 11px;
       font-weight: 500;
       color: #fff;
+    }
+
+    /* FAQ Section */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 26px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-header {
+      padding: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .faq-icon {
+      color: var(--gold-primary);
+      font-size: 16px;
+      transition: transform 0.2s ease;
+    }
+
+    .faq-body {
+      padding: 0 14px 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      display: none;
+    }
+
+    .faq-item.open .faq-body {
+      display: block;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
     }
 
     /* Reviews Section */
@@ -487,7 +555,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 30px;
+      margin-bottom: 26px;
     }
 
     .review-card {
@@ -527,7 +595,7 @@
       border: 1px solid var(--gold-border);
       border-radius: var(--radius-lg);
       padding: 18px;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
 
@@ -541,7 +609,7 @@
     .location-address {
       font-size: 13px;
       color: var(--gold-light);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -550,7 +618,7 @@
     .location-hours {
       font-size: 12px;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .location-actions {
@@ -560,7 +628,7 @@
 
     .location-btn {
       flex: 1;
-      padding: 10px;
+      padding: 10px 6px;
       font-size: 12px;
       font-weight: 600;
       border-radius: 10px;
@@ -579,7 +647,7 @@
 
     /* Demo Badge Footer */
     .codec-badge {
-      background: rgba(20, 18, 24, 0.9);
+      background: rgba(20, 18, 24, 0.95);
       border: 1px dashed var(--gold-border);
       border-radius: var(--radius-md);
       padding: 14px;
@@ -597,7 +665,7 @@
     .codec-badge p {
       font-size: 11px;
       color: var(--text-muted);
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
     .codec-badge a {
@@ -610,11 +678,13 @@
       position: fixed;
       bottom: 0;
       inset-x: 0;
-      background: rgba(10, 9, 12, 0.95);
+      background: rgba(10, 9, 12, 0.96);
       backdrop-filter: blur(20px);
-      border-top: 1px solid var(--border-subtle);
+      border-top: 1px solid var(--gold-border);
       padding: 12px 16px;
+      padding-bottom: max(14px, env(safe-area-inset-bottom));
       z-index: 200;
+      box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.7);
     }
 
     .sticky-bar-inner {
@@ -629,7 +699,7 @@
       color: #fff;
       font-weight: 600;
       flex: 1;
-      padding: 13px 14px;
+      padding: 13px 12px;
       border-radius: var(--radius-md);
       font-size: 13px;
       display: flex;
@@ -645,7 +715,7 @@
       color: #0c0a0e;
       font-weight: 700;
       flex: 1.3;
-      padding: 13px 14px;
+      padding: 13px 12px;
       border-radius: var(--radius-md);
       font-size: 13px;
       display: flex;
@@ -654,6 +724,120 @@
       gap: 6px;
       text-decoration: none;
       box-shadow: 0 4px 18px var(--gold-glow);
+      cursor: pointer;
+      border: none;
+    }
+
+    /* Interactive Booking Calculator Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 999;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    .modal-sheet {
+      background: #141217;
+      border-top: 1px solid var(--gold-border);
+      border-radius: 24px 24px 0 0;
+      width: 100%;
+      max-width: 480px;
+      padding: 20px 18px;
+      padding-bottom: max(24px, env(safe-area-inset-bottom));
+      max-height: 88vh;
+      overflow-y: auto;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .modal-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .modal-close {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .pill-select {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill-opt {
+      padding: 8px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .pill-opt.active {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .calc-result-box {
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .calc-lbl {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .calc-price {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold-primary);
+      font-family: 'Cormorant Garamond', serif;
     }
   </style>
 </head>
@@ -692,7 +876,7 @@
       </h2>
 
       <p class="hero-desc">
-        Airtouch, Шатуш, Балаяж и бережное восстановление структуры волос в Ростове-на-Дону. Сохраняем качество каждого волоса.
+        Airtouch, Шатуш, Балаяж и бережное восстановление структуры волос в Ростове-на-Дону. Сохраняем качество и блеск каждого волоса.
       </p>
 
       <!-- Hero Visual -->
@@ -709,9 +893,9 @@
 
       <!-- Quick Action Buttons -->
       <div class="cta-group">
-        <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20в%20салон%20«Сильно%20Красиво»" class="btn btn-gold">
-          <span>✨ Записаться на окрашивание</span>
-        </a>
+        <button onclick="openBookingModal('Airtouch / Сложное окрашивание')" class="btn btn-gold">
+          <span>✨ Рассчитать стоимость & Записаться</span>
+        </button>
         <a href="#prices" class="btn btn-secondary">
           <span>Посмотреть прайс-лист & уходы</span>
         </a>
@@ -725,7 +909,7 @@
         </div>
         <div class="stat-card">
           <div class="stat-val">100%</div>
-          <div class="stat-lbl">Бережный подход к качеству и блеску волос</div>
+          <div class="stat-lbl">Бережный уход и защита кутикулы волоса</div>
         </div>
         <div class="stat-card">
           <div class="stat-val">4.5 ч</div>
@@ -766,7 +950,7 @@
     </section>
 
     <!-- Price Section with Interactive Tabs -->
-    <section id="prices" style="margin-bottom: 28px;">
+    <section id="prices" style="margin-bottom: 26px;">
       <div class="section-header">
         <div class="section-tag">Прозрачный прайс</div>
         <h3 class="section-title">Услуги & Стоимость</h3>
@@ -789,7 +973,7 @@
           <div class="price-item-desc">Сложная техника с плавным отрастанием до 6–8 месяцев. Включает осветление, защитный комплекс и тонирование.</div>
           <div class="price-item-meta">
             <span class="price-item-time">⏱ 3.5 – 4.5 часа</span>
-            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20Airtouch%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+            <button onclick="openBookingModal('Airtouch / Балаяж', 7500)" class="price-item-btn">Записаться</button>
           </div>
         </div>
 
@@ -801,7 +985,7 @@
           <div class="price-item-desc">Чистый ровный блонд без желтизны с максимальной защитой липидного слоя волос.</div>
           <div class="price-item-meta">
             <span class="price-item-time">⏱ 3 – 3.5 часа</span>
-            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20Тотал%20Блонд%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+            <button onclick="openBookingModal('Тотал Блонд', 5800)" class="price-item-btn">Записаться</button>
           </div>
         </div>
 
@@ -813,7 +997,7 @@
           <div class="price-item-desc">Обновление оттенка, глубокое питание и зеркальный блеск без повреждения структуры.</div>
           <div class="price-item-meta">
             <span class="price-item-time">⏱ 1.5 часа</span>
-            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20тонирование%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+            <button onclick="openBookingModal('Тонирование Gloss', 2900)" class="price-item-btn">Записаться</button>
           </div>
         </div>
 
@@ -825,7 +1009,7 @@
           <div class="price-item-desc">Стойкое покрытие седины, насыщенный глубокий цвет и шелковистость.</div>
           <div class="price-item-meta">
             <span class="price-item-time">⏱ 2 часа</span>
-            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20окрашивание%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+            <button onclick="openBookingModal('Окрашивание корней', 3800)" class="price-item-btn">Записаться</button>
           </div>
         </div>
       </div>
@@ -840,7 +1024,7 @@
           <div class="price-item-desc">Подбор формы под геометрию лица, мытье головы с уходом и стайлинг.</div>
           <div class="price-item-meta">
             <span class="price-item-time">⏱ 1 – 1.2 часа</span>
-            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20стрижку%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+            <button onclick="openBookingModal('Авторская стрижка', 2000)" class="price-item-btn">Записаться</button>
           </div>
         </div>
 
@@ -852,7 +1036,7 @@
           <div class="price-item-desc">Ровный срез или текстурирование для сохранения здоровой густоты.</div>
           <div class="price-item-meta">
             <span class="price-item-time">⏱ 45 минут</span>
-            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20стрижку%20кончиков%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+            <button onclick="openBookingModal('Стрижка кончиков', 1400)" class="price-item-btn">Записаться</button>
           </div>
         </div>
 
@@ -864,7 +1048,7 @@
           <div class="price-item-desc">Стойкая праздничная укладка для любого мероприятия без эффекта склеенных волос.</div>
           <div class="price-item-meta">
             <span class="price-item-time">⏱ 1.5 часа</span>
-            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20укладку%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+            <button onclick="openBookingModal('Вечерняя укладка', 2500)" class="price-item-btn">Записаться</button>
           </div>
         </div>
       </div>
@@ -879,7 +1063,7 @@
           <div class="price-item-desc">Многоступенчатое восстановление аминокислотного баланса и плотности пористых волос.</div>
           <div class="price-item-meta">
             <span class="price-item-time">⏱ 1.5 часа</span>
-            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20уход%20Tokio%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+            <button onclick="openBookingModal('Реконструкция Tokio Inkarami', 4200)" class="price-item-btn">Записаться</button>
           </div>
         </div>
 
@@ -891,7 +1075,7 @@
           <div class="price-item-desc">Устранение пушистости, разглаживание кутикулы и зеркальный глянец.</div>
           <div class="price-item-meta">
             <span class="price-item-time">⏱ 2 часа</span>
-            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20коллаген%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+            <button onclick="openBookingModal('Холодный коллаген', 3500)" class="price-item-btn">Записаться</button>
           </div>
         </div>
 
@@ -903,7 +1087,7 @@
           <div class="price-item-desc">Глубокое очищение пор, стимуляция роста волос и невероятное ощущение свежести.</div>
           <div class="price-item-meta">
             <span class="price-item-time">⏱ 45 минут</span>
-            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20пилинг%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+            <button onclick="openBookingModal('Пилинг кожи головы', 1900)" class="price-item-btn">Записаться</button>
           </div>
         </div>
       </div>
@@ -918,7 +1102,7 @@
           <div class="price-item-desc">Коррекция пинцетом/воском, моделирование формы и стойкое окрашивание.</div>
           <div class="price-item-meta">
             <span class="price-item-time">⏱ 45 минут</span>
-            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20брови%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+            <button onclick="openBookingModal('Архитектура бровей', 1100)" class="price-item-btn">Записаться</button>
           </div>
         </div>
 
@@ -930,14 +1114,54 @@
           <div class="price-item-desc">Долговременная укладка непослушных волосков с бережным уходом.</div>
           <div class="price-item-meta">
             <span class="price-item-time">⏱ 1 час</span>
-            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20ламинирование%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+            <button onclick="openBookingModal('Ламинирование бровей', 2000)" class="price-item-btn">Записаться</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="margin-bottom: 26px;">
+      <div class="section-header">
+        <div class="section-tag">Частые вопросы</div>
+        <h3 class="section-title">Всё, что важно знать</h3>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-header">
+            <span>Как долго носится окрашивание Airtouch?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Благодаря выдуванию подпушка феном граница между осветлёнными и своими волосами получается максимально мягкой. Airtouch отрастает плавно, поэтому обновлять рисунок нужно всего раз в 6–8 месяцев, а между ними достаточно лишь освежать тонирование раз в 2 месяца.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-header">
+            <span>Испортится ли качество волос при переходе в блонд?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Мы работаем на бережных осветляющих составах с добавлением защитных комплексов (bond-builder), контролируем температурный режим и степень повреждения пористых участков. Волосы сохраняют эластичность и блеск.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-header">
+            <span>Нужно ли мыть голову перед визитом на окрашивание?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            Специально мыть голову перед сложным окрашиванием не обязательно. Главное — чтобы на волосах не было обильного сухого шампуня или лака сильной фиксации.
           </div>
         </div>
       </div>
     </section>
 
     <!-- Reviews from Real Guests -->
-    <section style="margin-bottom: 28px;">
+    <section style="margin-bottom: 26px;">
       <div class="section-header">
         <div class="section-tag">Яндекс Карты • 570+ отзывов</div>
         <h3 class="section-title">Что говорят гости</h3>
@@ -977,7 +1201,7 @@
       </div>
 
       <div class="location-actions">
-        <a href="https://yandex.ru/maps/?text=Сильно+Красиво+Ростов+Текучева+121" target="_blank" class="location-btn">
+        <a href="https://yandex.ru/maps/org/silno_krasivo/13069115626/" target="_blank" class="location-btn">
           Яндекс Карты
         </a>
         <a href="https://2gis.ru/rostov/search/Текучева%20121" target="_blank" class="location-btn">
@@ -1009,20 +1233,139 @@
       <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20в%20салон%20«Сильно%20Красиво»" class="btn-wa">
         <span>WhatsApp</span>
       </a>
-      <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20окрашивание%20в%20салон%20«Сильно%20Красиво»" class="btn-main-cta">
+      <button onclick="openBookingModal('Airtouch / Окрашивание')" class="btn-main-cta">
         <span>Записаться онлайн</span>
-      </a>
+      </button>
+    </div>
+  </div>
+
+  <!-- Interactive Booking Sheet Modal -->
+  <div id="bookingModal" class="modal-overlay" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-sheet">
+      <div class="modal-top">
+        <h3 class="modal-title">Онлайн-запись & Расчёт</h3>
+        <button class="modal-close" onclick="closeBookingModal()">✕</button>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Выберите услугу:</label>
+        <div class="pill-select" id="servicePills">
+          <div class="pill-opt active" data-base="7500" onclick="selectService(this, 'Airtouch / Балаяж', 7500)">Airtouch (от 7 500 ₽)</div>
+          <div class="pill-opt" data-base="5800" onclick="selectService(this, 'Тотал Блонд', 5800)">Тотал Блонд (от 5 800 ₽)</div>
+          <div class="pill-opt" data-base="3800" onclick="selectService(this, 'Окрашивание корней/в тон', 3800)">Окрашивание корней (от 3 800 ₽)</div>
+          <div class="pill-opt" data-base="2000" onclick="selectService(this, 'Авторская стрижка', 2000)">Стрижка + укладка (от 2 000 ₽)</div>
+          <div class="pill-opt" data-base="4200" onclick="selectService(this, 'Реконструкция Tokio Inkarami', 4200)">Уход Tokio Inkarami (от 4 200 ₽)</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Длина волос:</label>
+        <div class="pill-select" id="lengthPills">
+          <div class="pill-opt active" data-mult="1.0" onclick="selectLength(this, 'До плеч', 1.0)">До плеч</div>
+          <div class="pill-opt" data-mult="1.15" onclick="selectLength(this, 'По лопатки', 1.15)">По лопатки</div>
+          <div class="pill-opt" data-mult="1.3" onclick="selectLength(this, 'Ниже лопаток', 1.3)">Ниже лопаток</div>
+        </div>
+      </div>
+
+      <div class="calc-result-box">
+        <div>
+          <div class="calc-lbl">Ориентировочная стоимость:</div>
+          <div style="font-size: 11px; color: var(--gold-light); margin-top: 2px;" id="selectedSummary">Airtouch • До плеч</div>
+        </div>
+        <div class="calc-price" id="calcPrice">7 500 ₽</div>
+      </div>
+
+      <button onclick="submitToWhatsApp()" class="btn btn-gold">
+        <span>Отправить запись в WhatsApp ➔</span>
+      </button>
+      <p style="font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 8px;">
+        Менеджер салона мгновенно ответит и подтвердит удобное время визита
+      </p>
     </div>
   </div>
 
   <script>
+    // Tab switching with smooth fade
     function switchCategory(catId, btn) {
       document.querySelectorAll('.price-list').forEach(el => el.style.display = 'none');
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       
       const target = document.getElementById('cat-' + catId);
-      if (target) target.style.display = 'flex';
+      if (target) {
+        target.style.display = 'flex';
+      }
       btn.classList.add('active');
+    }
+
+    // FAQ Accordion
+    function toggleFaq(item) {
+      item.classList.toggle('open');
+    }
+
+    // Modal & Calculator State
+    let currentService = 'Airtouch / Балаяж';
+    let currentBasePrice = 7500;
+    let currentLength = 'До плеч (короткие)';
+    let currentLengthMult = 1.0;
+
+    function openBookingModal(serviceName, basePrice) {
+      if (serviceName) {
+        currentService = serviceName;
+        if (basePrice) currentBasePrice = basePrice;
+        
+        // Update pill active state
+        document.querySelectorAll('#servicePills .pill-opt').forEach(p => {
+          if (p.innerText.includes(serviceName.split(' ')[0])) {
+            p.classList.add('active');
+          } else {
+            p.classList.remove('active');
+          }
+        });
+      }
+      updateCalc();
+      document.getElementById('bookingModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBookingModal() {
+      document.getElementById('bookingModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeModalOnBackdrop(e) {
+      if (e.target.id === 'bookingModal') {
+        closeBookingModal();
+      }
+    }
+
+    function selectService(btn, name, price) {
+      document.querySelectorAll('#servicePills .pill-opt').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      currentService = name;
+      currentBasePrice = price;
+      updateCalc();
+    }
+
+    function selectLength(btn, name, mult) {
+      document.querySelectorAll('#lengthPills .pill-opt').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      currentLength = name;
+      currentLengthMult = mult;
+      updateCalc();
+    }
+
+    function updateCalc() {
+      const total = Math.round((currentBasePrice * currentLengthMult) / 100) * 100;
+      document.getElementById('calcPrice').innerText = total.toLocaleString('ru-RU') + ' ₽';
+      document.getElementById('selectedSummary').innerText = `${currentService} • ${currentLength}`;
+    }
+
+    function submitToWhatsApp() {
+      const priceText = document.getElementById('calcPrice').innerText;
+      const msg = `Здравствуйте! Хочу записаться в салон «Сильно Красиво» на Текучёва 121.\n\nУслуга: ${currentService}\nДлина волос: ${currentLength}\nПредварительный расчёт: ${priceText}\n\nПодскажите, какие есть свободные окошки?`;
+      const url = `https://wa.me/79381621629?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+      closeBookingModal();
     }
   </script>
 
