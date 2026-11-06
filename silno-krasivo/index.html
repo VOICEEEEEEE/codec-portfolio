@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Салон красоты «Сильно Красиво» | Ростов-на-Дону, Текучёва 121</title>
+  <meta name="description" content="Салон эстетики и колористики волос «Сильно Красиво» в Ростове-на-Дону. Сложное окрашивание, Airtouch, безупречный блонд, стрижки и премиальный уход. Текучёва, 121. Онлайн-запись.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0a090c;
+      --bg-card: #131116;
+      --bg-card-hover: #1c1920;
+      --gold-primary: #d4af37;
+      --gold-light: #f7e7b4;
+      --gold-glow: rgba(212, 175, 55, 0.22);
+      --gold-border: rgba(212, 175, 55, 0.25);
+      --text-main: #fdfcfb;
+      --text-muted: #9f97a5;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --transition: all 0.25s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+      padding-bottom: 105px;
+    }
+
+    h1, h2, h3, h4, .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Ambient background glow */
+    .ambient-glow {
+      position: fixed;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(10, 9, 12, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Header */
+    header {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      background: rgba(10, 9, 12, 0.92);
+      backdrop-filter: blur(16px);
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-crest {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d4af37 0%, #8c6d16 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0a090c;
+      font-weight: 700;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      box-shadow: 0 4px 18px var(--gold-glow);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      flex-shrink: 0;
+    }
+
+    .brand-info h1 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+
+    .brand-info p {
+      font-size: 11px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 1px;
+    }
+
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--gold-border);
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 24px 0 16px;
+      z-index: 1;
+    }
+
+    .rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 12px;
+      color: var(--gold-light);
+      margin-bottom: 14px;
+    }
+
+    .rating-badge span.stars {
+      color: #fbbf24;
+      font-size: 13px;
+    }
+
+    .hero-title {
+      font-size: 34px;
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-primary);
+      font-weight: 500;
+    }
+
+    .hero-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    /* Hero Card Visual */
+    .hero-visual {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--gold-border);
+      margin-bottom: 22px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.88);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10, 9, 12, 0.05) 0%, rgba(10, 9, 12, 0.85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .hero-tag {
+      background: rgba(19, 17, 22, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--gold-border);
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+
+    /* CTA Buttons */
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #e3c46b 0%, #b88619 100%);
+      color: #0c0a0e;
+      box-shadow: 0 8px 24px var(--gold-glow);
+    }
+
+    .btn-gold:hover, .btn-gold:active {
+      transform: translateY(-1px);
+      filter: brightness(1.08);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .btn-secondary:hover, .btn-secondary:active {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(212, 175, 55, 0.3);
+    }
+
+    /* Trust Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      position: relative;
+    }
+
+    .stat-val {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold-primary);
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-lbl {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-bottom: 16px;
+    }
+
+    .section-tag {
+      font-size: 11px;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-size: 26px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    /* Price Tabs */
+    .price-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+      scrollbar-width: none;
+    }
+
+    .price-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      padding: 9px 15px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .tab-btn.active {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+    }
+
+    /* Price Items */
+    .price-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .price-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .price-item:hover {
+      border-color: var(--gold-border);
+      background: var(--bg-card-hover);
+    }
+
+    .price-item-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .price-item-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .price-item-cost {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold-primary);
+      font-family: 'Cormorant Garamond', serif;
+      white-space: nowrap;
+    }
+
+    .price-item-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .price-item-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .price-item-time {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .price-item-btn {
+      font-size: 11px;
+      color: var(--gold-light);
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--gold-border);
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Works Gallery Carousel */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      height: 160px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-label {
+      position: absolute;
+      bottom: 0;
+      inset-x: 0;
+      background: linear-gradient(180deg, transparent, rgba(10, 9, 12, 0.9));
+      padding: 8px 10px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    /* Reviews Section */
+    .reviews-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px;
+    }
+
+    .review-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .review-author {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .review-stars {
+      color: #fbbf24;
+      font-size: 12px;
+    }
+
+    .review-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Location Card */
+    .location-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .location-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .location-address {
+      font-size: 13px;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .location-hours {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .location-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .location-btn {
+      flex: 1;
+      padding: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+      transition: var(--transition);
+    }
+
+    .location-btn:hover {
+      border-color: var(--gold-primary);
+      background: rgba(212, 175, 55, 0.1);
+    }
+
+    /* Demo Badge Footer */
+    .codec-badge {
+      background: rgba(20, 18, 24, 0.9);
+      border: 1px dashed var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .codec-badge h5 {
+      font-size: 13px;
+      color: var(--gold-primary);
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .codec-badge p {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .codec-badge a {
+      color: var(--gold-light);
+      text-decoration: underline;
+    }
+
+    /* Fixed Bottom Action Bar */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      inset-x: 0;
+      background: rgba(10, 9, 12, 0.95);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid var(--border-subtle);
+      padding: 12px 16px;
+      z-index: 200;
+    }
+
+    .sticky-bar-inner {
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-wa {
+      background: #25d366;
+      color: #fff;
+      font-weight: 600;
+      flex: 1;
+      padding: 13px 14px;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-main-cta {
+      background: linear-gradient(135deg, #e3c46b 0%, #b88619 100%);
+      color: #0c0a0e;
+      font-weight: 700;
+      flex: 1.3;
+      padding: 13px 14px;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+      box-shadow: 0 4px 18px var(--gold-glow);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-glow"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <div class="brand-crest">СК</div>
+        <div class="brand-info">
+          <h1>Сильно Красиво</h1>
+          <p>Ростов-на-Дону</p>
+        </div>
+      </a>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>До 21:00</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="rating-badge">
+        <span class="stars">★★★★★</span>
+        <span>5.0 • «Хорошее место 2026»</span>
+      </div>
+
+      <h2 class="hero-title">
+        Искусство <em>безупречного блонда</em> и сложных техник окрашивания
+      </h2>
+
+      <p class="hero-desc">
+        Airtouch, Шатуш, Балаяж и бережное восстановление структуры волос в Ростове-на-Дону. Сохраняем качество каждого волоса.
+      </p>
+
+      <!-- Hero Visual -->
+      <div class="hero-visual">
+        <img src="images/hero_blonde.jpg" alt="Блонд салон Сильно Красиво" class="hero-img">
+        <div class="hero-overlay">
+          <div class="hero-tags">
+            <span class="hero-tag">✨ Сложное окрашивание</span>
+            <span class="hero-tag">💎 570+ отзывов</span>
+            <span class="hero-tag">📍 Текучёва, 121</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="cta-group">
+        <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20в%20салон%20«Сильно%20Красиво»" class="btn btn-gold">
+          <span>✨ Записаться на окрашивание</span>
+        </a>
+        <a href="#prices" class="btn btn-secondary">
+          <span>Посмотреть прайс-лист & уходы</span>
+        </a>
+      </div>
+
+      <!-- Trust Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-val">5.0 ★</div>
+          <div class="stat-lbl">Рейтинг на Яндекс Картах (570+ отзывов)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">100%</div>
+          <div class="stat-lbl">Бережный подход к качеству и блеску волос</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">4.5 ч</div>
+          <div class="stat-lbl">Сложный Airtouch с мягким отрастанием до 8 мес</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">Текучёва 121</div>
+          <div class="stat-lbl">Уютное пространство с собственной парковкой</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Works Gallery Preview -->
+    <section style="margin-bottom: 26px;">
+      <div class="section-header">
+        <div class="section-tag">Портфолио мастеров</div>
+        <h3 class="section-title">Примеры работ</h3>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/airtouch.jpg" alt="Airtouch Сильно Красиво">
+          <div class="gallery-label">Airtouch & Рельефный блонд</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/styling.jpg" alt="Стрижки и укладки">
+          <div class="gallery-label">Стрижка & Текстурные локоны</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/care_treatment.jpg" alt="Уход за волосами">
+          <div class="gallery-label">Глубокая реконструкция</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/salon_interior.jpg" alt="Интерьер салона">
+          <div class="gallery-label">Атмосфера заботы и уюта</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Price Section with Interactive Tabs -->
+    <section id="prices" style="margin-bottom: 28px;">
+      <div class="section-header">
+        <div class="section-tag">Прозрачный прайс</div>
+        <h3 class="section-title">Услуги & Стоимость</h3>
+      </div>
+
+      <div class="price-tabs">
+        <button class="tab-btn active" onclick="switchCategory('coloring', this)">Окрашивание</button>
+        <button class="tab-btn" onclick="switchCategory('haircuts', this)">Стрижки & Укладки</button>
+        <button class="tab-btn" onclick="switchCategory('care', this)">SPA-Уход</button>
+        <button class="tab-btn" onclick="switchCategory('brows', this)">Брови</button>
+      </div>
+
+      <!-- Coloring Category -->
+      <div id="cat-coloring" class="price-list">
+        <div class="price-item">
+          <div class="price-item-top">
+            <span class="price-item-title">Airtouch / Шатуш / Балаяж</span>
+            <span class="price-item-cost">от 7 500 ₽</span>
+          </div>
+          <div class="price-item-desc">Сложная техника с плавным отрастанием до 6–8 месяцев. Включает осветление, защитный комплекс и тонирование.</div>
+          <div class="price-item-meta">
+            <span class="price-item-time">⏱ 3.5 – 4.5 часа</span>
+            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20Airtouch%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+          </div>
+        </div>
+
+        <div class="price-item">
+          <div class="price-item-top">
+            <span class="price-item-title">Тотал Блонд (обесцвечивание + тонирование)</span>
+            <span class="price-item-cost">от 5 800 ₽</span>
+          </div>
+          <div class="price-item-desc">Чистый ровный блонд без желтизны с максимальной защитой липидного слоя волос.</div>
+          <div class="price-item-meta">
+            <span class="price-item-time">⏱ 3 – 3.5 часа</span>
+            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20Тотал%20Блонд%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+          </div>
+        </div>
+
+        <div class="price-item">
+          <div class="price-item-top">
+            <span class="price-item-title">Тонирование волос Gloss & Блеск</span>
+            <span class="price-item-cost">от 2 900 ₽</span>
+          </div>
+          <div class="price-item-desc">Обновление оттенка, глубокое питание и зеркальный блеск без повреждения структуры.</div>
+          <div class="price-item-meta">
+            <span class="price-item-time">⏱ 1.5 часа</span>
+            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20тонирование%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+          </div>
+        </div>
+
+        <div class="price-item">
+          <div class="price-item-top">
+            <span class="price-item-title">Окрашивание в один тон / Корни</span>
+            <span class="price-item-cost">от 3 800 ₽</span>
+          </div>
+          <div class="price-item-desc">Стойкое покрытие седины, насыщенный глубокий цвет и шелковистость.</div>
+          <div class="price-item-meta">
+            <span class="price-item-time">⏱ 2 часа</span>
+            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20окрашивание%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Haircuts Category -->
+      <div id="cat-haircuts" class="price-list" style="display: none;">
+        <div class="price-item">
+          <div class="price-item-top">
+            <span class="price-item-title">Авторская стрижка & Легкая укладка</span>
+            <span class="price-item-cost">от 2 000 ₽</span>
+          </div>
+          <div class="price-item-desc">Подбор формы под геометрию лица, мытье головы с уходом и стайлинг.</div>
+          <div class="price-item-meta">
+            <span class="price-item-time">⏱ 1 – 1.2 часа</span>
+            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20стрижку%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+          </div>
+        </div>
+
+        <div class="price-item">
+          <div class="price-item-top">
+            <span class="price-item-title">Стрижка кончиков / Освежение длины</span>
+            <span class="price-item-cost">от 1 400 ₽</span>
+          </div>
+          <div class="price-item-desc">Ровный срез или текстурирование для сохранения здоровой густоты.</div>
+          <div class="price-item-meta">
+            <span class="price-item-time">⏱ 45 минут</span>
+            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20стрижку%20кончиков%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+          </div>
+        </div>
+
+        <div class="price-item">
+          <div class="price-item-top">
+            <span class="price-item-title">Вечерняя укладка / Текстурные локоны</span>
+            <span class="price-item-cost">от 2 500 ₽</span>
+          </div>
+          <div class="price-item-desc">Стойкая праздничная укладка для любого мероприятия без эффекта склеенных волос.</div>
+          <div class="price-item-meta">
+            <span class="price-item-time">⏱ 1.5 часа</span>
+            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20укладку%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Care Category -->
+      <div id="cat-care" class="price-list" style="display: none;">
+        <div class="price-item">
+          <div class="price-item-top">
+            <span class="price-item-title">Глубокая реконструкция Tokio Inkarami / Lebel</span>
+            <span class="price-item-cost">от 4 200 ₽</span>
+          </div>
+          <div class="price-item-desc">Многоступенчатое восстановление аминокислотного баланса и плотности пористых волос.</div>
+          <div class="price-item-meta">
+            <span class="price-item-time">⏱ 1.5 часа</span>
+            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20уход%20Tokio%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+          </div>
+        </div>
+
+        <div class="price-item">
+          <div class="price-item-top">
+            <span class="price-item-title">Холодный коллаген / Ботокс для волос</span>
+            <span class="price-item-cost">от 3 500 ₽</span>
+          </div>
+          <div class="price-item-desc">Устранение пушистости, разглаживание кутикулы и зеркальный глянец.</div>
+          <div class="price-item-meta">
+            <span class="price-item-time">⏱ 2 часа</span>
+            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20коллаген%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+          </div>
+        </div>
+
+        <div class="price-item">
+          <div class="price-item-top">
+            <span class="price-item-title">Пилинг кожи головы + SPA-массаж</span>
+            <span class="price-item-cost">от 1 900 ₽</span>
+          </div>
+          <div class="price-item-desc">Глубокое очищение пор, стимуляция роста волос и невероятное ощущение свежести.</div>
+          <div class="price-item-meta">
+            <span class="price-item-time">⏱ 45 минут</span>
+            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20пилинг%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brows Category -->
+      <div id="cat-brows" class="price-list" style="display: none;">
+        <div class="price-item">
+          <div class="price-item-top">
+            <span class="price-item-title">Архитектура & Окрашивание бровей</span>
+            <span class="price-item-cost">от 1 100 ₽</span>
+          </div>
+          <div class="price-item-desc">Коррекция пинцетом/воском, моделирование формы и стойкое окрашивание.</div>
+          <div class="price-item-meta">
+            <span class="price-item-time">⏱ 45 минут</span>
+            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20брови%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+          </div>
+        </div>
+
+        <div class="price-item">
+          <div class="price-item-top">
+            <span class="price-item-title">Ламинирование бровей + Коррекция</span>
+            <span class="price-item-cost">от 2 000 ₽</span>
+          </div>
+          <div class="price-item-desc">Долговременная укладка непослушных волосков с бережным уходом.</div>
+          <div class="price-item-meta">
+            <span class="price-item-time">⏱ 1 час</span>
+            <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20ламинирование%20в%20«Сильно%20Красиво»" class="price-item-btn">Записаться</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews from Real Guests -->
+    <section style="margin-bottom: 28px;">
+      <div class="section-header">
+        <div class="section-tag">Яндекс Карты • 570+ отзывов</div>
+        <h3 class="section-title">Что говорят гости</h3>
+      </div>
+
+      <div class="reviews-list">
+        <div class="review-card">
+          <div class="review-top">
+            <span class="review-author">Екатерина М.</span>
+            <span class="review-stars">★★★★★</span>
+          </div>
+          <div class="review-text">
+            «Лучший салон по блонду в Ростове! Делала Airtouch — цвет получился чистейший, мягкий переход, волосы после окрашивания живые и блестящие. Отдельный кайф — кофе и отношение мастеров!»
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-top">
+            <span class="review-author">Алина С.</span>
+            <span class="review-stars">★★★★★</span>
+          </div>
+          <div class="review-text">
+            «Хожу на Текучёва уже второй год. Нигде больше моим пористым волосам не могли сделать такой ровный тон без пережигания. Атмосфера потрясающая, очень рекомендую!»
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location & Route -->
+    <section class="location-card">
+      <h3 class="location-title">Салон «Сильно Красиво»</h3>
+      <div class="location-address">
+        <span>📍 г. Ростов-на-Дону, ул. Текучёва, 121</span>
+      </div>
+      <div class="location-hours">
+        Ежедневно: с 10:00 до 21:00 • Парковка у входа
+      </div>
+
+      <div class="location-actions">
+        <a href="https://yandex.ru/maps/?text=Сильно+Красиво+Ростов+Текучева+121" target="_blank" class="location-btn">
+          Яндекс Карты
+        </a>
+        <a href="https://2gis.ru/rostov/search/Текучева%20121" target="_blank" class="location-btn">
+          2ГИС
+        </a>
+        <a href="tel:+79381621629" class="location-btn">
+          Позвонить
+        </a>
+      </div>
+    </section>
+
+    <!-- Demo Project Notice -->
+    <div class="codec-badge">
+      <h5>Концепт-проект студии CODEC</h5>
+      <p>
+        Демонстрационный сайт разработан специально для салона «Сильно Красиво».
+        Разработка аналогичного сайта под ключ: <strong>5 500 ₽</strong> (100% постоплата после личной проверки на телефоне).
+      </p>
+      <p style="margin-top: 6px;">
+        WhatsApp: <a href="https://wa.me/79871318810">+7 (987) 131-88-10</a> • Telegram: <a href="https://t.me/codec_web">@codec_web</a>
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Sticky Mobile Action Bar -->
+  <div class="sticky-bar">
+    <div class="sticky-bar-inner">
+      <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20в%20салон%20«Сильно%20Красиво»" class="btn-wa">
+        <span>WhatsApp</span>
+      </a>
+      <a href="https://wa.me/79381621629?text=Здравствуйте!%20Хочу%20записаться%20на%20окрашивание%20в%20салон%20«Сильно%20Красиво»" class="btn-main-cta">
+        <span>Записаться онлайн</span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function switchCategory(catId, btn) {
+      document.querySelectorAll('.price-list').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      
+      const target = document.getElementById('cat-' + catId);
+      if (target) target.style.display = 'flex';
+      btn.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
