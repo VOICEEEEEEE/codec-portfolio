@@ -1018,6 +1018,7 @@
         </div>
         <div class="filter-nav">
             <button class="filter-btn active" onclick="filterCases('all', this)">Все работы</button>
+            <button class="filter-btn" onclick="filterCases('gastro', this)">Кофейни & Кафе</button>
             <button class="filter-btn" onclick="filterCases('barber', this)">Барбершопы</button>
             <button class="filter-btn" onclick="filterCases('beauty', this)">Салоны красоты</button>
             <button class="filter-btn" onclick="filterCases('remont', this)">Ремонт & Интерьер</button>
@@ -1025,6 +1026,54 @@
 
         <!-- Cases Grid -->
         <section class="cases-grid">
+            <!-- Case: Carmelo Coffee -->
+            <div class="case-card" data-cat="gastro">
+                <div class="case-preview">
+                    <iframe src="./carmelo/index.html" loading="lazy"></iframe>
+                    <div class="case-overlay">
+                        <span class="case-badge" style="background: rgba(26,71,54,0.92);">Концепт-кейс (Казань)</span>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <h3 class="case-title">CARMELO COFFEE • Сеть кофеен</h3>
+                    <p class="case-desc">Атмосферный мобильный сайт для сети кофеен с турецким вкусом. 3 филиала в Казани с маршрутами на картах, интерактивное меню завтраков весь день, авторского кофе и форма предзаказа в WhatsApp.</p>
+                    <p style="font-size: 0.8rem; color: #64748b; margin-top: 8px; font-style: italic;">Инициативный концепт мобильного сайта студии CODEC специально для сети Carmelo Coffee.</p>
+                    <div class="case-tags">
+                        <span class="tag">Сеть кофеен</span>
+                        <span class="tag">Меню & Цены</span>
+                        <span class="tag">3 филиала</span>
+                        <span class="tag">Предзаказ To-Go</span>
+                    </div>
+                    <div class="case-actions">
+                        <a href="./carmelo/index.html" target="_blank" class="btn-live">Открыть сайт ➔</a>
+                        <button class="btn-modal" onclick="openDeviceStudio('./carmelo/index.html', 'CARMELO COFFEE • Сеть кофеен')"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-2px; margin-right:5px;"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>Смартфон</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case: Silno Krasivo -->
+            <div class="case-card" data-cat="beauty">
+                <div class="case-preview">
+                    <iframe src="./silno-krasivo/index.html" loading="lazy"></iframe>
+                    <div class="case-overlay">
+                        <span class="case-badge" style="background: rgba(212,175,55,0.92); color: #0a090c;">Премиум-концепт</span>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <h3 class="case-title">СИЛЬНО КРАСИВО • Салон колористики</h3>
+                    <p class="case-desc">Роскошный мобильный сайт для премиум-салона сложных техник окрашивания (Ростов-на-Дону). Рейтинг 5.0, интерактивный прайс с фильтрами, расчет стоимости по длине волос и запись в WhatsApp.</p>
+                    <p style="font-size: 0.8rem; color: #64748b; margin-top: 8px; font-style: italic;">Инициативный концепт мобильного сайта студии CODEC специально для салона «Сильно Красиво».</p>
+                    <div class="case-tags">
+                        <span class="tag">Салон красоты</span>
+                        <span class="tag">Калькулятор окрашивания</span>
+                        <span class="tag">Премиум-дизайн</span>
+                    </div>
+                    <div class="case-actions">
+                        <a href="./silno-krasivo/index.html" target="_blank" class="btn-live">Открыть сайт ➔</a>
+                        <button class="btn-modal" onclick="openDeviceStudio('./silno-krasivo/index.html', 'СИЛЬНО КРАСИВО • Салон колористики')"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-2px; margin-right:5px;"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>Смартфон</button>
+                    </div>
+                </div>
+            </div>
                         <!-- Case: Blackwood Barbershop -->
             <div class="case-card" data-cat="barber">
                 <div class="case-preview">
