@@ -147,23 +147,108 @@
       gap: 8px;
     }
 
-    .header-wa-btn {
+    .header-call-btn {
       display: flex;
       align-items: center;
       gap: 5px;
-      background: #25D366;
+      background: var(--green-brand);
       color: #FFFFFF;
-      padding: 6px 12px;
+      padding: 6px 14px;
       border-radius: var(--radius-full);
       font-size: 12px;
       font-weight: 600;
       text-decoration: none;
-      box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
+      box-shadow: 0 2px 8px rgba(26, 71, 54, 0.25);
       transition: var(--transition);
     }
 
-    .header-wa-btn:active {
+    .header-call-btn:active {
       transform: scale(0.96);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      font-family: inherit;
+      font-size: 13px;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-input:focus {
+      border-color: var(--green-brand);
+      box-shadow: 0 0 0 3px rgba(26, 71, 54, 0.1);
+    }
+
+    .booking-success-view {
+      display: none;
+      text-align: center;
+      padding: 6px 0 10px;
+    }
+
+    .booking-success-view.active {
+      display: block;
+    }
+
+    .success-badge-icon {
+      width: 52px;
+      height: 52px;
+      background: #22C55E;
+      color: #FFF;
+      font-size: 26px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      box-shadow: 0 6px 20px rgba(34, 197, 94, 0.3);
+    }
+
+    .success-heading {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .success-summary-box {
+      background: var(--bg-sand);
+      border: 1px solid rgba(36, 23, 18, 0.08);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      margin: 12px 0;
+      text-align: left;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .success-summary-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed rgba(36, 23, 18, 0.1);
+      padding: 4px 0;
+    }
+
+    .success-summary-row:last-child {
+      border-bottom: none;
+    }
+
+    .success-proto-note {
+      background: var(--green-soft);
+      border: 1px solid rgba(26, 71, 54, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-size: 11px;
+      color: var(--green-brand);
+      line-height: 1.45;
+      text-align: left;
+      margin-bottom: 12px;
     }
 
     /* Hero */
@@ -702,8 +787,8 @@
         </div>
       </a>
       <div class="header-right">
-        <a href="https://wa.me/79600747116?text=Здравствуйте!%20Хочу%20уточнить%20по%20меню%20в%20Carmelo%20Coffee" class="header-wa-btn">
-          <span>WhatsApp</span>
+        <a href="tel:+79600747116" class="header-call-btn">
+          <span>📞 Позвонить</span>
         </a>
       </div>
     </div>
@@ -745,7 +830,7 @@
           <span>🍽 Смотреть меню с ценами ↓</span>
         </button>
         <button onclick="openBookingModal('Островского, 116', 'Предзаказ с собой (To Go)')" class="btn btn-sand">
-          <span>⚡ Сделать предзаказ навынос / Столик</span>
+          <span>⚡ Онлайн-запись & Предзаказ (демо)</span>
         </button>
       </div>
     </section>
@@ -1138,10 +1223,10 @@
       <p class="cta-banner-desc">Закажите напитки навынос к вашему приходу или забронируйте любимый столик</p>
       <div class="cta-banner-btns">
         <button onclick="openBookingModal('Островского, 116', 'Предзаказ с собой (To Go)')" class="btn btn-terracotta" style="flex: 1.2;">
-          <span>⚡ Сделать предзаказ</span>
+          <span>⚡ Онлайн-запись</span>
         </button>
-        <a href="https://wa.me/79600747116?text=Здравствуйте!%20Хочу%20уточнить%20по%20меню%20в%20Carmelo%20Coffee" class="btn btn-sand" style="flex: 1;">
-          <span>WhatsApp</span>
+        <a href="tel:+79600747116" class="btn btn-sand" style="flex: 1;">
+          <span>📞 Позвонить</span>
         </a>
       </div>
     </section>
@@ -1166,42 +1251,95 @@
   <div id="bookingModal" class="modal-overlay" onclick="closeModalOnBackdrop(event)">
     <div class="modal-sheet">
       <div class="modal-head">
-        <h3 class="modal-title">Предзаказ & Столик</h3>
+        <h3 class="modal-title">Онлайн-запись & Предзаказ</h3>
         <button class="modal-close" onclick="closeBookingModal()">✕</button>
       </div>
 
-      <div class="form-group">
-        <label class="form-label">Тип обращения:</label>
-        <div class="choice-pills" id="orderTypePills">
-          <div class="choice-pill active" onclick="selectOrderType(this, 'Предзаказ навынос (To Go)')">☕ Кофе и еда навынос</div>
-          <div class="choice-pill" onclick="selectOrderType(this, 'Бронь столика')">🪑 Бронь столика</div>
+      <!-- Booking Form View -->
+      <div id="bookingFormView">
+        <div class="form-group">
+          <label class="form-label">Тип обращения:</label>
+          <div class="choice-pills" id="orderTypePills">
+            <div class="choice-pill active" onclick="selectOrderType(this, 'Кофе и еда навынос (To-Go)')">☕ Кофе и еда навынос</div>
+            <div class="choice-pill" onclick="selectOrderType(this, 'Бронь столика в зале')">🪑 Бронь столика</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Выберите филиал в Казани:</label>
+          <div class="choice-pills" id="branchPills">
+            <div class="choice-pill active" onclick="selectBranch(this, 'ул. Островского, 116 (Центр)')">Островского, 116</div>
+            <div class="choice-pill" onclick="selectBranch(this, 'Проспект Победы, 141 (МЕГА)')">Победы, 141</div>
+            <div class="choice-pill" onclick="selectBranch(this, 'Проспект Ямашева, 46 (Квартал)')">Ямашева, 46</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">К какому времени:</label>
+          <div class="choice-pills" id="timePills">
+            <div class="choice-pill active" onclick="selectTime(this, 'Через 15–20 мин')">Через 15–20 мин</div>
+            <div class="choice-pill" onclick="selectTime(this, 'Через 40–50 мин')">Через 40–50 мин</div>
+            <div class="choice-pill" onclick="selectTime(this, 'Сегодня к 18:00')">Сегодня к 18:00</div>
+            <div class="choice-pill" onclick="selectTime(this, 'Завтра утром')">Завтра утром</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Контактные данные:</label>
+          <input type="text" id="custName" class="form-input" placeholder="Ваше имя (например, Динара)">
+          <input type="tel" id="custPhone" class="form-input" placeholder="Номер телефона (+7 ...)">
+        </div>
+
+        <button onclick="submitOnlineBooking()" class="btn btn-green" style="margin-top: 6px;">
+          <span>⚡ Подтвердить онлайн-запись</span>
+        </button>
+        <p style="font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 8px;">
+          Мгновенная отправка в систему кофейни без ожидания
+        </p>
+      </div>
+
+      <!-- Success View (Prototype demo state) -->
+      <div id="bookingSuccessView" class="booking-success-view">
+        <div class="success-badge-icon">✓</div>
+        <h4 class="success-heading">Заявка принята!</h4>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
+          Бариста уже видит вашу бронь на планшете
+        </p>
+
+        <div class="success-summary-box">
+          <div class="success-summary-row">
+            <span style="color: var(--text-muted);">Тип:</span>
+            <strong id="resType">Кофе навынос</strong>
+          </div>
+          <div class="success-summary-row">
+            <span style="color: var(--text-muted);">Филиал:</span>
+            <strong id="resBranch">ул. Островского, 116</strong>
+          </div>
+          <div class="success-summary-row">
+            <span style="color: var(--text-muted);">Время:</span>
+            <strong id="resTime">Через 15–20 мин</strong>
+          </div>
+          <div class="success-summary-row">
+            <span style="color: var(--text-muted);">Гость:</span>
+            <strong id="resGuest">Гость</strong>
+          </div>
+        </div>
+
+        <div class="success-proto-note">
+          💡 <strong>Интерактивный прототип студии CODEC:</strong><br>
+          В боевой версии сайта заказ падает в Telegram-бот управляющего или интегрируется напрямую с кассой (iiko / r_keeper / Syrve) с автоматическим SMS-уведомлением гостю.
+        </div>
+
+        <div style="display: flex; gap: 8px;">
+          <a href="tel:+79600747116" class="btn btn-green" style="flex: 1.2; padding: 12px;">
+            <span>📞 Позвонить в заведение</span>
+          </a>
+          <button onclick="resetBookingForm()" class="btn btn-sand" style="flex: 1; padding: 12px;">
+            <span>Новая бронь</span>
+          </button>
         </div>
       </div>
 
-      <div class="form-group">
-        <label class="form-label">Выберите филиал в Казани:</label>
-        <div class="choice-pills" id="branchPills">
-          <div class="choice-pill active" onclick="selectBranch(this, 'ул. Островского, 116 (Центр)')">Островского, 116</div>
-          <div class="choice-pill" onclick="selectBranch(this, 'Проспект Победы, 141')">Победы, 141</div>
-          <div class="choice-pill" onclick="selectBranch(this, 'Проспект Ямашева, 46')">Ямашева, 46</div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">К какому времени:</label>
-        <div class="choice-pills" id="timePills">
-          <div class="choice-pill active" onclick="selectTime(this, 'Через 15-20 минут')">Через 15–20 мин</div>
-          <div class="choice-pill" onclick="selectTime(this, 'Через 40-50 минут')">Через 40–50 мин</div>
-          <div class="choice-pill" onclick="selectTime(this, 'Ко времени (уточню)')">Ко времени</div>
-        </div>
-      </div>
-
-      <button onclick="submitCarmeloWhatsApp()" class="btn btn-green" style="margin-top: 10px;">
-        <span>Отправить в WhatsApp бариста ➔</span>
-      </button>
-      <p style="font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 8px;">
-        Сообщение откроется в WhatsApp с заполненными параметрами
-      </p>
     </div>
   </div>
 
@@ -1270,15 +1408,24 @@
       selectedTime = time;
     }
 
-    function submitCarmeloWhatsApp() {
-      const text = encodeURIComponent(
-        `Здравствуйте! Хочу сделать ${selectedOrderType} в Carmelo Coffee:\n` +
-        `📍 Филиал: ${selectedBranch}\n` +
-        `⏰ Время: ${selectedTime}\n` +
-        `Подскажите, пожалуйста, по наличию блюд и времени готовности)`
-      );
-      window.open(`https://wa.me/79600747116?text=${text}`, '_blank');
-      closeBookingModal();
+    function submitOnlineBooking() {
+      const name = document.getElementById('custName').value.trim() || 'Гость';
+      const phone = document.getElementById('custPhone').value.trim() || '+7 (960) 074-71-16';
+
+      document.getElementById('resType').innerText = selectedOrderType;
+      document.getElementById('resBranch').innerText = selectedBranch;
+      document.getElementById('resTime').innerText = selectedTime;
+      document.getElementById('resGuest').innerText = `${name} (${phone})`;
+
+      document.getElementById('bookingFormView').style.display = 'none';
+      document.getElementById('bookingSuccessView').classList.add('active');
+    }
+
+    function resetBookingForm() {
+      document.getElementById('bookingFormView').style.display = 'block';
+      document.getElementById('bookingSuccessView').classList.remove('active');
+      document.getElementById('custName').value = '';
+      document.getElementById('custPhone').value = '';
     }
   </script>
 </body>
