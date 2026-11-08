@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Kant Barber’s | Барбершоп в Казани на Павлюхина, 99</title>
+  <meta name="description" content="Мужские стрижки и уход за бородой в Казани. Ул. Павлюхина, 99. Онлайн-запись через YCLIENTS за 30 секунд. Рейтинг 5.0 «Хорошее место 2026».">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kant Barber’s — Барбершоп Казань | Павлюхина, 99">
+  <meta property="og:description" content="Мужская стрижка и уход за бородой как ритуал с характером. Онлайн-запись через YCLIENTS.">
+  <meta property="og:image" content="images/hero_barber.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Brown & White Luxury Palette */
+      --bg-body: #FAF7F2;
+      --bg-white: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-warm-tint: #F4EFE6;
+      --bg-dark: #19110B;
+      --bg-dark-card: #241A13;
+      --bg-dark-leather: #2D1E16;
+
+      --text-main: #1C130D;
+      --text-muted: #6B5B51;
+      --text-subtle: #968375;
+      --text-on-dark: #FBF8F5;
+      --text-muted-dark: #BFAEA3;
+
+      --primary-brown: #3E291C;
+      --primary-hover: #291B12;
+      --accent-gold: #C99A5E;
+      --accent-gold-light: #DFBA7F;
+      --accent-gold-dark: #9E743A;
+      --accent-gold-gradient: linear-gradient(135deg, #DFBA7F 0%, #C99A5E 50%, #9E743A 100%);
+
+      --border-light: rgba(62, 41, 28, 0.1);
+      --border-dark: rgba(223, 186, 127, 0.22);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+
+      --shadow-soft: 0 4px 20px rgba(33, 21, 14, 0.05);
+      --shadow-md: 0 10px 30px rgba(33, 21, 14, 0.08);
+      --shadow-hover: 0 14px 36px rgba(33, 21, 14, 0.14);
+      --shadow-gold: 0 8px 24px rgba(201, 154, 94, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 74px; /* for sticky mobile bar */
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    /* Typography */
+    h1, h2, h3, .serif-font {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-font {
+      font-family: 'Cinzel', Georgia, serif;
+      letter-spacing: 0.08em;
+    }
+
+    /* Top Announcement Ribbon */
+    .top-ribbon {
+      background: var(--bg-dark);
+      color: var(--accent-gold-light);
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      padding: 8px 12px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border-bottom: 1px solid rgba(223, 186, 127, 0.15);
+    }
+    .top-ribbon span.badge-award {
+      background: rgba(223, 186, 127, 0.18);
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      font-size: 10.5px;
+      color: #fff;
+    }
+
+    /* Sticky Navigation Header */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: rgba(250, 247, 242, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      transition: all 0.2s ease;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--bg-dark);
+      border: 1.5px solid var(--accent-gold);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .logo-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo-text-title {
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--primary-brown);
+      line-height: 1.1;
+    }
+    .logo-text-sub {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-icon-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-brown);
+      font-size: 16px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.15s, background-color 0.15s;
+    }
+    .btn-icon-circle:hover {
+      background: var(--bg-warm-tint);
+      transform: scale(1.05);
+    }
+    .btn-icon-circle.wa-btn {
+      color: #25D366;
+    }
+
+    .btn-header-cta {
+      background: var(--accent-gold-gradient);
+      color: #19110B;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      padding: 9px 15px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: transform 0.15s, filter 0.15s;
+    }
+    .btn-header-cta:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: radial-gradient(ellipse at 50% 0%, #352115 0%, #1a110a 100%);
+      color: var(--text-on-dark);
+      padding: 36px 0 32px;
+      position: relative;
+      overflow: hidden;
+      border-bottom-left-radius: 28px;
+      border-bottom-right-radius: 28px;
+      box-shadow: 0 12px 36px rgba(25, 17, 11, 0.2);
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('images/hero_barber.jpg') center/cover no-repeat;
+      opacity: 0.18;
+      mix-blend-mode: luminosity;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(223, 186, 127, 0.16);
+      border: 1px solid var(--border-dark);
+      color: var(--accent-gold-light);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #FFF;
+      line-height: 1.12;
+      margin-bottom: 10px;
+    }
+
+    .hero-title span {
+      background: var(--accent-gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-size: 14.5px;
+      color: var(--text-muted-dark);
+      line-height: 1.45;
+      max-width: 460px;
+      margin: 0 auto 24px;
+      font-weight: 400;
+    }
+
+    .hero-chips-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .chip-item {
+      background: rgba(45, 30, 22, 0.72);
+      border: 1px solid rgba(223, 186, 127, 0.15);
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .chip-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .chip-text-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+    .chip-text-sub {
+      font-size: 10.5px;
+      color: var(--accent-gold-light);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-main-booking {
+      background: var(--accent-gold-gradient);
+      color: #19110B;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.03em;
+      padding: 16px 24px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      transition: all 0.2s ease;
+    }
+    .btn-main-booking:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+      box-shadow: 0 10px 30px rgba(201, 154, 94, 0.45);
+    }
+    .btn-main-booking:active {
+      transform: translateY(0);
+    }
+
+    .btn-secondary-action {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #FFF;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 13px 20px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background-color 0.2s;
+    }
+    .btn-secondary-action:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    /* Philosophy Quote Card */
+    .section-spacing {
+      padding: 32px 0;
+    }
+
+    .card-philosophy {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+    .card-philosophy::before {
+      content: "“";
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      font-family: 'Playfair Display', serif;
+      font-size: 80px;
+      color: rgba(201, 154, 94, 0.18);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .quote-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 16px;
+      font-style: italic;
+      color: var(--primary-brown);
+      line-height: 1.6;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .quote-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .quote-author-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+    }
+    .quote-author-name {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* Section Headers */
+    .section-head {
+      margin-bottom: 18px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    .section-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-gold-dark);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .section-title {
+      font-size: 24px;
+      color: var(--primary-brown);
+      line-height: 1.15;
+    }
+
+    /* Filter Tabs */
+    .tabs-scroll-wrap {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      margin-bottom: 8px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .tabs-scroll-wrap::-webkit-scrollbar {
+      display: none;
+    }
+    .tab-pill {
+      flex-shrink: 0;
+      padding: 9px 16px;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-full);
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-pill.active {
+      background: var(--primary-brown);
+      color: #FFF;
+      border-color: var(--primary-brown);
+      box-shadow: 0 4px 14px rgba(45, 30, 22, 0.2);
+    }
+
+    /* Service Cards */
+    .services-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .service-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+    }
+    .service-card:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(201, 154, 94, 0.35);
+    }
+
+    .service-card.highlight {
+      border: 1.5px solid var(--accent-gold);
+      background: linear-gradient(180deg, #FFFFFF 0%, #FDFBF8 100%);
+      position: relative;
+    }
+    .card-badge-hit {
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      background: var(--accent-gold-gradient);
+      color: #19110B;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .service-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .service-name {
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--primary-brown);
+      line-height: 1.25;
+    }
+    .service-price {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--accent-gold-dark);
+      white-space: nowrap;
+    }
+    .service-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+    .service-bottom-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px dashed rgba(62, 41, 28, 0.08);
+      padding-top: 10px;
+      margin-top: 2px;
+    }
+    .service-meta-time {
+      font-size: 11.5px;
+      color: var(--text-subtle);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .btn-service-book {
+      background: var(--bg-warm-tint);
+      color: var(--primary-brown);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(62, 41, 28, 0.12);
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+    .btn-service-book:hover {
+      background: var(--primary-brown);
+      color: #FFF;
+      border-color: var(--primary-brown);
+    }
+
+    /* Master Card Section */
+    .master-card-container {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      padding: 20px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .master-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .master-item:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .master-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 2px solid var(--accent-gold);
+      box-shadow: var(--shadow-soft);
+      background: var(--bg-dark);
+    }
+    .master-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .master-info {
+      flex: 1;
+    }
+    .master-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary-brown);
+      margin-bottom: 2px;
+    }
+    .master-role {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-gold-dark);
+      margin-bottom: 6px;
+      display: inline-block;
+      background: rgba(201, 154, 94, 0.12);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+    }
+    .master-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    .master-btn-book {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary-brown);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .master-notice-box {
+      background: var(--bg-warm-tint);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Photo Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .gallery-card {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      background: var(--bg-dark);
+      box-shadow: var(--shadow-soft);
+    }
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .gallery-card:hover img {
+      transform: scale(1.04);
+    }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 18px 10px 8px;
+      background: linear-gradient(180deg, transparent 0%, rgba(20, 13, 8, 0.85) 100%);
+      color: #FFF;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .gallery-award-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #E83838;
+      color: #FFF;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 3px 6px;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    /* Reviews Section */
+    .review-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      border: 1px solid var(--border-light);
+      margin-bottom: 10px;
+      box-shadow: var(--shadow-soft);
+    }
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .review-author {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--primary-brown);
+    }
+    .review-stars {
+      color: #F5A623;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+    .review-text {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+    .review-date {
+      font-size: 10.5px;
+      color: var(--text-subtle);
+      margin-top: 6px;
+    }
+
+    /* Contacts & Location */
+    .contacts-card {
+      background: var(--bg-dark-card);
+      color: var(--text-on-dark);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(223, 186, 127, 0.2);
+    }
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .contact-row:last-child {
+      margin-bottom: 0;
+    }
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(223, 186, 127, 0.14);
+      color: var(--accent-gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .contact-label {
+      font-size: 11px;
+      color: var(--accent-gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 2px;
+      font-weight: 600;
+    }
+    .contact-val {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #FFF;
+      line-height: 1.35;
+    }
+    .contact-hint {
+      font-size: 11.5px;
+      color: var(--text-muted-dark);
+      margin-top: 2px;
+    }
+
+    .map-buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .btn-map {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #FFF;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 11px 12px;
+      border-radius: var(--radius-md);
+      text-align: center;
+      transition: background-color 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn-map:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    /* Footer */
+    footer.site-footer {
+      text-align: center;
+      padding: 30px 18px 20px;
+      font-size: 11.5px;
+      color: var(--text-subtle);
+    }
+    .footer-brand {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      color: var(--primary-brown);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    /* Fixed Sticky Mobile Bottom Bar */
+    .mobile-bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(25, 17, 11, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(223, 186, 127, 0.25);
+      padding: 10px 18px 12px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    }
+    .mobile-bar-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-bar-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .btn-bar-cta {
+      flex: 1;
+      height: 44px;
+      background: var(--accent-gold-gradient);
+      color: #19110B;
+      font-weight: 700;
+      font-size: 13.5px;
+      letter-spacing: 0.04em;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: var(--shadow-gold);
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Yclients Embed Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999;
+      background: rgba(15, 10, 6, 0.78);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-overlay.open {
+      display: flex;
+    }
+    .modal-dialog {
+      background: #FFF;
+      width: 100%;
+      max-width: 520px;
+      height: 90vh;
+      max-height: 720px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      position: relative;
+    }
+    .modal-header {
+      background: var(--bg-dark);
+      color: #FFF;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(223, 186, 127, 0.2);
+    }
+    .modal-header-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--accent-gold-light);
+    }
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: #FFF;
+      font-size: 20px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+    }
+    .modal-body {
+      flex: 1;
+      position: relative;
+      background: #FFF;
+    }
+    .modal-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+
+  <!-- Yclients Official Widget Script -->
+  <script type="text/javascript" src="https://w2742254.yclients.com/widgetJS" charset="UTF-8"></script>
+</head>
+<body>
+
+  <!-- Top Announcement Ribbon -->
+  <div class="top-ribbon">
+    <span>⭐️ Рейтинг 5.0 на Яндекс Картах</span>
+    <span>•</span>
+    <span class="badge-award">🏆 «Хорошее место 2026»</span>
+    <span>•</span>
+    <span>Казань, Павлюхина, 99</span>
+  </div>
+
+  <!-- Sticky Site Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#" class="logo-group">
+          <div class="logo-avatar">
+            <img src="images/logo_raw_hd.jpg" alt="Kant Barber's Logo" onerror="this.src='images/logo.svg'">
+          </div>
+          <div>
+            <div class="logo-text-title">KANT</div>
+            <div class="logo-text-sub">BARBER’S • КАЗАНЬ</div>
+          </div>
+        </a>
+
+        <div class="header-actions">
+          <a href="https://wa.me/79274108823?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20Kant%20Barber%27s" target="_blank" class="btn-icon-circle wa-btn" title="Написать в WhatsApp">
+            💬
+          </a>
+          <a href="tel:+79274108823" class="btn-icon-circle" title="Позвонить">
+            📞
+          </a>
+          <a href="https://n2742254.yclients.ru/" class="btn-header-cta ms_booking" onclick="openBooking(event)">
+            <span>Запись</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>📍 Казань, ул. Павлюхина, 99 (KazanMall)</span>
+        </div>
+
+        <h1 class="hero-title">
+          KANT BARBER’S
+          <span>МУЖСКИЕ СТРИЖКИ</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Ритуал с характером в Казани. Баланс строгой классики и современных текстур под ваш тип лица и структуру волос.
+        </p>
+
+        <!-- Feature Chips -->
+        <div class="hero-chips-grid">
+          <div class="chip-item">
+            <div class="chip-icon">⚡️</div>
+            <div>
+              <div class="chip-text-title">Запись за 30 сек</div>
+              <div class="chip-text-sub">Без звонков в YCLIENTS</div>
+            </div>
+          </div>
+
+          <div class="chip-item">
+            <div class="chip-icon">🏆</div>
+            <div>
+              <div class="chip-text-title">Рейтинг 5.0</div>
+              <div class="chip-text-sub">«Хорошее место 2026»</div>
+            </div>
+          </div>
+
+          <div class="chip-item">
+            <div class="chip-icon">☕️</div>
+            <div>
+              <div class="chip-text-title">Зерновой кофе</div>
+              <div class="chip-text-sub">Чай и отдых включены</div>
+            </div>
+          </div>
+
+          <div class="chip-item">
+            <div class="chip-icon">🚇</div>
+            <div>
+              <div class="chip-text-title">Суконная слобода</div>
+              <div class="chip-text-sub">Вход: копицентр Holland</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Action Buttons -->
+        <div class="hero-actions">
+          <a href="https://n2742254.yclients.ru/" class="btn-main-booking ms_booking" onclick="openBooking(event)">
+            <span>🗓 Записаться онлайн через YCLIENTS</span>
+          </a>
+          <a href="#prices" class="btn-secondary-action">
+            <span>Посмотреть прайс-лист и услуги ↓</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Card -->
+  <section class="section-spacing">
+    <div class="container">
+      <div class="card-philosophy">
+        <p class="quote-text">
+          «Kant Barber’s — это место, где мужская стрижка и уход за бородой — не просто услуга, а ритуал с характером. В основе философии — баланс классики и современных трендов: чёткие линии, проработанные текстуры и индивидуальный подход к форме. Сюда приходят не „подровнять чёлку“, а получить готовый цельный образ.»
+        </p>
+        <div class="quote-author">
+          <div class="quote-author-dot"></div>
+          <div class="quote-author-name">ФИЛОСОФИЯ И СТАНДАРТЫ KANT BARBER’S</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Price List -->
+  <section id="prices" class="section-spacing" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="section-tag">ЧЕСТНЫЙ И ПРОЗРАЧНЫЙ</span>
+          <h2 class="section-title">Прайс-лист услуг</h2>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Филиал на Павлюхина, 99</span>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="tabs-scroll-wrap">
+        <button class="tab-pill active" onclick="filterServices('all', this)">Все услуги (7)</button>
+        <button class="tab-pill" onclick="filterServices('hair', this)">Стрижки</button>
+        <button class="tab-pill" onclick="filterServices('beard', this)">Борода & Усы</button>
+        <button class="tab-pill" onclick="filterServices('combo', this)">Комплексы</button>
+        <button class="tab-pill" onclick="filterServices('care', this)">Уход</button>
+      </div>
+
+      <!-- Services List -->
+      <div class="services-list" id="servicesList">
+
+        <!-- 1. Комплекс (ХИТ) -->
+        <div class="service-card highlight" data-cat="combo hair beard">
+          <div class="card-badge-hit">★ ПОПУЛЯРНОЕ</div>
+          <div class="service-top-row">
+            <div class="service-name">Мужская стрижка + борода</div>
+            <div class="service-price">1 900 ₽</div>
+          </div>
+          <div class="service-desc">
+            Полное преображение за один визит: создание идеальной геометрии стрижки и моделирование бороды с помощью триммера, шейвера и бритья лезвием. Чёткие контуры и свежий образ.
+          </div>
+          <div class="service-bottom-row">
+            <div class="service-meta-time">⏱ ~1 час 15 мин • Мытьё в 2 этапа и укладка</div>
+            <a href="https://n2742254.yclients.ru/" class="btn-service-book ms_booking" onclick="openBooking(event)">Записаться</a>
+          </div>
+        </div>
+
+        <!-- 2. Мужская стрижка -->
+        <div class="service-card" data-cat="hair">
+          <div class="service-top-row">
+            <div class="service-name">Мужская стрижка</div>
+            <div class="service-price">1 300 ₽</div>
+          </div>
+          <div class="service-desc">
+            Используем ножницы и машинку для создания идеальной формы под строение черепа и рост волос. Услуга включает мытьё головы в два этапа, сушку и стильную текстурную укладку.
+          </div>
+          <div class="service-bottom-row">
+            <div class="service-meta-time">⏱ ~50 мин • Индивидуальный подбор формы</div>
+            <a href="https://n2742254.yclients.ru/" class="btn-service-book ms_booking" onclick="openBooking(event)">Записаться</a>
+          </div>
+        </div>
+
+        <!-- 3. Детская стрижка -->
+        <div class="service-card" data-cat="hair">
+          <div class="service-top-row">
+            <div class="service-name">Детская стрижка (до 12 лет)</div>
+            <div class="service-price">1 100 ₽</div>
+          </div>
+          <div class="service-desc">
+            Бережно подстрижём ножницами и машинкой — без спешки и стресса. Мытьё головы, мягкая сушка и лёгкая укладка, чтобы ребёнок выглядел аккуратно и чувствовал себя спокойно.
+          </div>
+          <div class="service-bottom-row">
+            <div class="service-meta-time">⏱ ~40 мин • Спокойный подход к детям</div>
+            <a href="https://n2742254.yclients.ru/" class="btn-service-book ms_booking" onclick="openBooking(event)">Записаться</a>
+          </div>
+        </div>
+
+        <!-- 4. Оформление бороды -->
+        <div class="service-card" data-cat="beard">
+          <div class="service-top-row">
+            <div class="service-name">Оформление бороды</div>
+            <div class="service-price">700 ₽</div>
+          </div>
+          <div class="service-desc">
+            Создаём выразительный силуэт бороды с помощью триммера и шейвера. Очищение, распаривание, тщательная проработка линий и финальная укладка профессиональным маслом.
+          </div>
+          <div class="service-bottom-row">
+            <div class="service-meta-time">⏱ ~35 мин • Контуринг и уход за кожей</div>
+            <a href="https://n2742254.yclients.ru/" class="btn-service-book ms_booking" onclick="openBooking(event)">Записаться</a>
+          </div>
+        </div>
+
+        <!-- 5. Стрижка одной насадкой -->
+        <div class="service-card" data-cat="hair">
+          <div class="service-top-row">
+            <div class="service-name">Стрижка одной насадкой</div>
+            <div class="service-price">700 ₽</div>
+          </div>
+          <div class="service-desc">
+            Практичная и быстрая стрижка: ровная аккуратная длина по всей голове, мытьё, сушка и чёткая проработка краёв шейвером.
+          </div>
+          <div class="service-bottom-row">
+            <div class="service-meta-time">⏱ ~25 мин • Быстро и опрятно</div>
+            <a href="https://n2742254.yclients.ru/" class="btn-service-book ms_booking" onclick="openBooking(event)">Записаться</a>
+          </div>
+        </div>
+
+        <!-- 6. Окантовка -->
+        <div class="service-card" data-cat="hair beard">
+          <div class="service-top-row">
+            <div class="service-name">Окантовка стрижки</div>
+            <div class="service-price">600 ₽</div>
+          </div>
+          <div class="service-desc">
+            Чёткие контуры за короткое время: прорабатываем линию роста волос, виски и шею ножницами и триммером для свежего подтянутого силуэта между стрижками.
+          </div>
+          <div class="service-bottom-row">
+            <div class="service-meta-time">⏱ ~20 мин • Экспресс-освежение</div>
+            <a href="https://n2742254.yclients.ru/" class="btn-service-book ms_booking" onclick="openBooking(event)">Записаться</a>
+          </div>
+        </div>
+
+        <!-- 7. Воск -->
+        <div class="service-card" data-cat="care">
+          <div class="service-top-row">
+            <div class="service-name">Удаление волос воском (1 зона)</div>
+            <div class="service-price">300 ₽</div>
+          </div>
+          <div class="service-desc">
+            Деликатное удаление нежелательных волос в зоне носа, ушей или между бровей качественным гипоаллергенным воском с защитным уходом до и после.
+          </div>
+          <div class="service-bottom-row">
+            <div class="service-meta-time">⏱ ~10 мин • Безопасно и гладко</div>
+            <a href="https://n2742254.yclients.ru/" class="btn-service-book ms_booking" onclick="openBooking(event)">Записаться</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Masters Section -->
+  <section class="section-spacing" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="section-tag">КОМАНДА ПРОФЕССИОНАЛОВ</span>
+          <h2 class="section-title">Мастера Kant Barber’s</h2>
+        </div>
+      </div>
+
+      <div class="master-card-container">
+        <!-- Master Adel -->
+        <div class="master-item">
+          <div class="master-photo">
+            <img src="images/master_adel.jpg" alt="Барбер Адель">
+          </div>
+          <div class="master-info">
+            <div class="master-name">Адель</div>
+            <div class="master-role">Барбер / Топ-мастер</div>
+            <div class="master-desc">
+              Специализируется на современных текстурированных стрижках, технике Fade любой сложности и идеальной геометрии бороды.
+            </div>
+            <a href="https://n2742254.yclients.ru/" class="master-btn-book ms_booking" onclick="openBooking(event)">
+              Записаться к Аделю →
+            </a>
+          </div>
+        </div>
+
+        <!-- Master Muhammad -->
+        <div class="master-item">
+          <div class="master-photo">
+            <img src="images/master_muhammad.jpg" alt="Барбер Мухаммад">
+          </div>
+          <div class="master-info">
+            <div class="master-name">Мухаммад</div>
+            <div class="master-role">Барбер</div>
+            <div class="master-desc">
+              Классические строгие формы, чистое бритьё лезвием, работа с бородой и деликатные детские стрижки.
+            </div>
+            <a href="https://n2742254.yclients.ru/" class="master-btn-book ms_booking" onclick="openBooking(event)">
+              Записаться к Мухаммаду →
+            </a>
+          </div>
+        </div>
+
+        <div class="master-notice-box">
+          <span style="font-size: 16px;">🔄</span>
+          <span><strong>Синхронизация через Yclients:</strong> Вы можете выбрать удобное свободное время конкретного мастера или нажать «К любому мастеру».</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section-spacing" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="section-tag">АТМОСФЕРА И РАБОТЫ</span>
+          <h2 class="section-title">Интерьер и стрижки</h2>
+        </div>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <img src="images/interior_1_hd.jpg" alt="Рабочее место и зеркало Kant Barber's">
+          <div class="gallery-caption">Рабочее место мастера</div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/yandex_award_hd.jpg" alt="Награда Яндекс Хорошее Место 2026">
+          <div class="gallery-award-badge">ЯНДЕКС 2026</div>
+          <div class="gallery-caption">Награда «Хорошее место»</div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/interior_2_hd.jpg" alt="Зона отдыха и свет">
+          <div class="gallery-caption">Зона ожидания и отдыха</div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/haircut_fade.jpg" alt="Мужская стрижка Fade">
+          <div class="gallery-caption">Текстурный Fade</div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/haircut_beard.jpg" alt="Моделирование бороды">
+          <div class="gallery-caption">Оформление бороды</div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/haircut_classic.jpg" alt="Классическая стрижка">
+          <div class="gallery-caption">Классический стиль</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="section-spacing" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="section-tag">ЧТО ГОВОРЯТ ГОСТИ</span>
+          <h2 class="section-title">Отзывы на 5.0 из 5</h2>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-author">Тимур С.</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-text">
+          «Отличный барбершоп! Стригусь здесь регулярно. Мастер Адель всегда чётко понимает задачу, делает ровнейший фейд и аккуратную бороду. Атмосфера очень спокойная и приятная, отдельный респект за хороший кофе!»
+        </div>
+        <div class="review-date">Яндекс Карты • проверенный отзыв</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-author">Дамир Валиев</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-text">
+          «Привёл сына на стрижку, переживал, что будет крутиться, но мастер нашёл подход за две минуты. Стрижка аккуратная, быстро и без лишней суеты. Теперь будем ходить только сюда!»
+        </div>
+        <div class="review-date">Яндекс Карты • проверенный отзыв</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-author">Артур К.</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-text">
+          «Удобное расположение прямо возле KazanMall. Записался через онлайн-запись за 20 секунд, пришёл ко времени — сразу приняли без задержек. Результатом более чем доволен, цена полностью оправдана.»
+        </div>
+        <div class="review-date">Яндекс Карты • проверенный отзыв</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Contacts -->
+  <section class="section-spacing" style="padding-top: 0;">
+    <div class="container">
+      <div class="contacts-card">
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Адрес в Казани</div>
+            <div class="contact-val">ул. Павлюхина, 99</div>
+            <div class="contact-hint">Ориентир: вход через копицентр «Holland» (рядом ТЦ KazanMall, ст. м. «Суконная слобода»)</div>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-icon">🕒</div>
+          <div>
+            <div class="contact-label">Время работы</div>
+            <div class="contact-val">Ежедневно с 10:00 до 21:00</div>
+            <div class="contact-hint">Без перерывов и выходных дней</div>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Телефон для связи / WhatsApp</div>
+            <div class="contact-val">
+              <a href="tel:+79274108823" style="color: var(--accent-gold-light);">+7 (927) 410-88-23</a>
+            </div>
+            <div class="contact-hint">Всегда ответим на вопросы и поможем сориентироваться</div>
+          </div>
+        </div>
+
+        <div class="map-buttons-grid">
+          <a href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9F%D0%B0%D0%B2%D0%BB%D1%8E%D1%85%D0%B8%D0%BD%D0%B0%2C%2099" target="_blank" class="btn-map">
+            🧭 Яндекс Карты
+          </a>
+          <a href="https://2gis.ru/kazan/search/%D0%9F%D0%B0%D0%B2%D0%BB%D1%8E%D1%85%D0%B8%D0%BD%D0%B0%2099" target="_blank" class="btn-map">
+            🗺 2GIS Маршрут
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-brand">KANT BARBER’S</div>
+      <p style="margin-bottom: 8px;">Мужской барбершоп • Казань, ул. Павлюхина, 99</p>
+      <p style="font-size: 10px; opacity: 0.6;">Онлайн-запись поддерживается системой YCLIENTS • Разработано студией CODEC</p>
+    </div>
+  </footer>
+
+  <!-- Fixed Sticky Mobile Bottom Bar -->
+  <div class="mobile-bottom-bar">
+    <div class="mobile-bar-inner">
+      <a href="tel:+79274108823" class="btn-bar-icon" title="Позвонить">
+        📞
+      </a>
+      <a href="https://wa.me/79274108823" target="_blank" class="btn-bar-icon" style="color: #25D366;" title="WhatsApp">
+        💬
+      </a>
+      <a href="https://n2742254.yclients.ru/" class="btn-bar-cta ms_booking" onclick="openBooking(event)">
+        <span>⚡️ Записаться онлайн</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Yclients Modal / Fullscreen Drawer -->
+  <div class="modal-overlay" id="bookingModal" onclick="closeBooking(event)">
+    <div class="modal-dialog" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div class="modal-header-title">ОНЛАЙН-ЗАПИСЬ • KANT BARBER’S</div>
+        <button class="modal-close-btn" onclick="closeBookingDirect()">✕</button>
+      </div>
+      <div class="modal-body">
+        <iframe src="https://n2742254.yclients.ru/" class="modal-iframe" title="Онлайн-запись YCLIENTS"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Category tabs filter
+    function filterServices(cat, btn) {
+      document.querySelectorAll('.tab-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.service-card');
+      cards.forEach(card => {
+        if (cat === 'all') {
+          card.style.display = 'flex';
+        } else {
+          const cats = card.getAttribute('data-cat') || '';
+          if (cats.includes(cat)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    }
+
+    // Modal booking controls (as fallback if Yclients native popup is not initialized)
+    function openBooking(e) {
+      // If Yclients widgetJS opened its own widget, do nothing extra
+      if (window.YClients && typeof window.YClients.openWidget === 'function') {
+        // native widget handles it
+        return;
+      }
+      // On mobile devices, opening direct URL is often the smoothest UX
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        // Let normal link action navigate directly to Yclients
+        return;
+      }
+      e.preventDefault();
+      document.getElementById('bookingModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBookingDirect() {
+      document.getElementById('bookingModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function closeBooking(e) {
+      if (e.target.id === 'bookingModal') {
+        closeBookingDirect();
+      }
+    }
+  </script>
+</body>
+</html>
