@@ -1706,6 +1706,21 @@
       .hero-title { font-size: 56px; }
     }
   
+    @media (max-width: 768px) {
+      .btn-theme-header { display: none !important; }
+      .header-actions .wa-btn,
+      .header-actions .phone-btn { display: none !important; }
+      .btn-header-cta {
+        padding: 7px 11px !important;
+        font-size: 11px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+      }
+    }
+    @media (max-width: 359px) {
+      .header-actions .tg-btn { display: none !important; }
+    }
+
     /* ═══════════════════════════════════
        NEW STYLES: DUAL BOOKING & MESSENGERS
        ═══════════════════════════════════ */
