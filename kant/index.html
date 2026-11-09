@@ -2050,7 +2050,260 @@
       color: var(--text-muted);
       margin-top: 2px;
     }
-    </style>
+    
+    /* ═══════════════════════════════════
+       MAX MODAL & BOTTOM BAR POLISH
+       ═══════════════════════════════════ */
+    .modal-dialog.max-dialog {
+      height: auto !important;
+      max-height: 90vh;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+    }
+    .modal-dialog.max-dialog .modal-header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 18px;
+    }
+    .max-modal-body {
+      background: transparent !important;
+      padding: 22px 20px;
+    }
+    .max-modal-desc {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .max-phone-box {
+      background: rgba(201, 160, 96, 0.08);
+      border: 1.5px solid var(--gold);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .max-phone-info {
+      text-align: left;
+    }
+    .max-phone-label {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .max-phone-val {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: 0.04em;
+      font-family: 'Cinzel', serif;
+    }
+    .btn-copy-number {
+      background: var(--gold-gradient);
+      color: var(--bg-body);
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 9px 13px;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+      transition: all var(--transition);
+      box-shadow: 0 2px 10px rgba(201, 160, 96, 0.25);
+    }
+    .btn-copy-number:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(201, 160, 96, 0.4);
+    }
+    .max-action-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .btn-open-max {
+      width: 100%;
+      justify-content: center;
+      padding: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      gap: 8px;
+    }
+    .max-action-buttons .btn-secondary {
+      width: 100%;
+      justify-content: center;
+      padding: 11px;
+      font-size: 12.5px;
+    }
+    .max-modal-alt-title {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .max-modal-alts {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .alt-channel {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 600;
+      transition: all var(--transition);
+    }
+    .alt-channel.tg {
+      background: rgba(34, 158, 217, 0.12);
+      border: 1px solid rgba(34, 158, 217, 0.3);
+      color: #229ED9;
+    }
+    .alt-channel.tg:hover { background: rgba(34, 158, 217, 0.22); transform: translateY(-1px); }
+    .alt-channel.wa {
+      background: rgba(37, 211, 102, 0.12);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      color: #25D366;
+    }
+    .alt-channel.wa:hover { background: rgba(37, 211, 102, 0.22); transform: translateY(-1px); }
+    .alt-channel.phone {
+      background: rgba(201, 160, 96, 0.12);
+      border: 1px solid rgba(201, 160, 96, 0.3);
+      color: var(--gold);
+    }
+    .alt-channel.phone:hover { background: rgba(201, 160, 96, 0.22); transform: translateY(-1px); }
+
+    /* Bottom Bar Icon refinements */
+    .btn-bar-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--text-primary);
+      transition: all var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-bar-icon:hover {
+      transform: scale(1.08);
+      border-color: var(--border-hover);
+    }
+    .btn-bar-icon.phone-btn { color: var(--gold); }
+    .btn-bar-icon.phone-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+    .btn-bar-icon.max-btn { padding: 0; }
+    .btn-bar-icon.tg-btn { color: #229ED9; }
+    .btn-bar-icon.tg-btn:hover { border-color: #229ED9; box-shadow: 0 0 10px rgba(34, 158, 217, 0.4); }
+    .btn-bar-icon.wa-btn { color: #25D366; }
+    .btn-bar-icon.wa-btn:hover { border-color: #25D366; box-shadow: 0 0 10px rgba(37, 211, 102, 0.4); }
+
+    .bottom-bar-inner {
+      gap: 6px;
+      padding: 0;
+    }
+    .btn-bar-cta {
+      flex: 1;
+      height: 38px;
+      background: var(--gold-gradient);
+      color: var(--bg-body);
+      font-weight: 800;
+      font-size: 12.5px;
+      letter-spacing: 0.03em;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      box-shadow: var(--shadow-gold);
+      cursor: pointer;
+      white-space: nowrap;
+      min-width: 0;
+      padding: 0 10px;
+    }
+
+    /* Light Theme specifics */
+    [data-theme="light"] .bottom-bar {
+      background: rgba(255, 255, 255, 0.96) !important;
+      border-top: 1px solid rgba(44, 24, 14, 0.12) !important;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08) !important;
+    }
+    [data-theme="light"] .btn-bar-icon {
+      background: #FFFFFF !important;
+      border: 1px solid rgba(44, 24, 14, 0.14) !important;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06) !important;
+    }
+    [data-theme="light"] .btn-bar-icon.phone-btn {
+      color: #936037 !important;
+      background: rgba(201, 160, 96, 0.12) !important;
+      border-color: rgba(201, 160, 96, 0.35) !important;
+    }
+    [data-theme="light"] .btn-bar-icon.tg-btn {
+      color: #229ED9 !important;
+      background: rgba(34, 158, 217, 0.12) !important;
+      border-color: rgba(34, 158, 217, 0.35) !important;
+    }
+    [data-theme="light"] .btn-bar-icon.wa-btn {
+      color: #128C7E !important;
+      background: rgba(37, 211, 102, 0.12) !important;
+      border-color: rgba(37, 211, 102, 0.35) !important;
+    }
+    [data-theme="light"] .btn-bar-cta {
+      color: #1A0E08 !important;
+    }
+    [data-theme="light"] .modal-dialog.max-dialog {
+      background: #FFFFFF !important;
+      border: 1px solid rgba(44, 24, 14, 0.14) !important;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2) !important;
+    }
+    [data-theme="light"] .modal-dialog.max-dialog .modal-header {
+      background: #FDFBF7 !important;
+      border-bottom: 1px solid rgba(44, 24, 14, 0.1) !important;
+    }
+    [data-theme="light"] .max-phone-box {
+      background: rgba(201, 160, 96, 0.1) !important;
+      border-color: rgba(147, 96, 55, 0.45) !important;
+    }
+    [data-theme="light"] .max-phone-label {
+      color: #936037 !important;
+    }
+    [data-theme="light"] .max-phone-val {
+      color: #20130B !important;
+    }
+    [data-theme="light"] .btn-copy-number {
+      color: #1A0E08 !important;
+    }
+    [data-theme="light"] .btn-open-max {
+      color: #1A0E08 !important;
+    }
+    [data-theme="light"] .max-action-buttons .btn-secondary {
+      background: #F5EFEB !important;
+      border-color: rgba(44, 24, 14, 0.2) !important;
+      color: #20130B !important;
+    }
+
+  </style>
 </head>
 <body>
 
@@ -2094,7 +2347,7 @@
           <span id="headerThemeText">Светлая</span>
         </button>
         <a href="tel:+79274108823" class="header-phone-text">+7 (927) 410-88-23</a>
-        <a href="https://max.ru/" target="_blank" class="btn-icon-header max-btn" title="Написать в MAX">
+        <a href="#" onclick="handleMaxClick(event)" class="btn-icon-header max-btn" title="Написать в MAX">
           <img src="images/max_logo.svg" alt="MAX" style="width: 22px; height: 22px; border-radius: 5px; display: block;">
         </a>
         <a href="https://t.me/+79274108823" target="_blank" class="btn-icon-header tg-btn" title="Написать в Telegram">
@@ -2106,7 +2359,7 @@
         <a href="tel:+79274108823" class="btn-icon-header phone-btn" title="Позвонить">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
         </a>
-        <a href="https://max.ru/" target="_blank" class="btn-header-cta btn-glow-gold">
+        <a href="#" onclick="handleMaxClick(event)" class="btn-header-cta btn-glow-gold">
           <span class="cta-mobile-text">⚡ Запись</span>
           <span class="cta-desktop-text">⚡ Записаться</span>
         </a>
@@ -2126,10 +2379,10 @@
         <!-- Hero Theme Segmented Switcher -->
         <div class="hero-theme-switcher reveal">
           <button type="button" class="hero-theme-btn" id="btnThemeLight" onclick="setTheme('light')">
-            <span>☀️</span> Коричнево-белая
+            <span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;display:inline-block;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span> Коричнево-белая
           </button>
           <button type="button" class="hero-theme-btn active" id="btnThemeDark" onclick="setTheme('dark')">
-            <span>🌙</span> Тёмно-золотая
+            <span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;display:inline-block;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span> Тёмно-золотая
           </button>
         </div>
 
@@ -2165,7 +2418,7 @@
         <!-- Dual Booking Buttons with Icons -->
         <div class="hero-actions reveal">
           <div class="hero-booking-dual">
-            <a href="https://max.ru/" target="_blank" class="btn-primary btn-glow-gold btn-booking-max">
+            <a href="#" onclick="handleMaxClick(event)" class="btn-primary btn-glow-gold btn-booking-max">
               <img src="images/max_logo.svg" alt="MAX" class="btn-channel-icon" style="vertical-align: middle; margin-right: 6px;">
               Записаться в MAX
             </a>
@@ -2274,7 +2527,7 @@
             <strong>Индивидуальный приём:</strong> Работает по предварительной записи — без очередей и ожидания.
           </div>
           <div class="master-booking-group">
-            <a href="https://max.ru/" target="_blank" class="btn-master-book btn-glow-gold btn-booking-max">
+            <a href="#" onclick="handleMaxClick(event)" class="btn-master-book btn-glow-gold btn-booking-max">
               <img src="images/max_logo.svg" alt="MAX" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 6px;"> Запись в MAX
             </a>
             <a href="https://t.me/+79274108823" target="_blank" class="btn-master-book btn-glow-gold btn-booking-tg">
@@ -2671,7 +2924,7 @@
             <!-- Social Channels & Messengers Grid -->
             <div class="social-channels-title">Запись в мессенджерах и соцсетях:</div>
             <div class="social-channels-grid">
-              <a href="https://max.ru/" target="_blank" class="channel-card max">
+              <a href="#" onclick="handleMaxClick(event)" class="channel-card max">
                 <div class="channel-icon-box max-bg">
                   <img src="images/max_logo.svg" alt="MAX" style="width: 24px; height: 24px; border-radius: 6px;">
                 </div>
@@ -2742,16 +2995,30 @@
     </div>
   </footer>
 
-  <!-- ═══ MOBILE BOTTOM BAR (HIDDEN ON DESKTOP) ═══ -->
+    <!-- ═══ MOBILE BOTTOM BAR (HIDDEN ON DESKTOP) ═══ -->
   <div class="bottom-bar">
     <div class="bottom-bar-inner">
-      <a href="tel:+79274108823" class="btn-bar-icon" title="Позвонить">📞</a>
-      <button type="button" class="btn-bar-icon" id="bottomThemeBtn" onclick="toggleTheme()" title="Переключить тему">
-        <span id="bottomThemeIcon">☀️</span>
-      </button>
-      <a href="https://wa.me/79274108823?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20Kant%20Barber%27s" target="_blank" class="btn-bar-icon wa" title="WhatsApp">💬</a>
+      <a href="tel:+79274108823" class="btn-bar-icon phone-btn" title="Позвонить">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+      </a>
+      <a href="#" onclick="handleMaxClick(event)" class="btn-bar-icon max-btn" title="Записаться в MAX">
+        <img src="images/max_logo.svg" alt="MAX" style="width: 22px; height: 22px; border-radius: 5px; display: block;">
+      </a>
+      <a href="https://t.me/+79274108823" target="_blank" class="btn-bar-icon tg-btn" title="Написать в Telegram">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+        </svg>
+      </a>
+      <a href="https://wa.me/79274108823?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20Kant%20Barber%27s" target="_blank" class="btn-bar-icon wa-btn" title="Написать в WhatsApp">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.188 8.188 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.181 8.181 0 012.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.17 1.73 2.65 4.2 3.71.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/>
+        </svg>
+      </a>
       <a href="https://n2742254.yclients.ru/" class="btn-bar-cta btn-glow-gold ms_booking" onclick="openBooking(event)">
-        ⚡ Записаться онлайн
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="flex-shrink:0;"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <span>Записаться</span>
       </a>
     </div>
   </div>
@@ -2920,7 +3187,7 @@
       var headerIcon = document.getElementById('headerThemeIcon');
       var headerText = document.getElementById('headerThemeText');
       if (headerIcon) {
-        headerIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+        headerIcon.innerHTML = theme === 'light' ? '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;display:inline-block;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>' : '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;display:inline-block;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
       }
       if (headerText) {
         headerText.textContent = theme === 'light' ? 'Тёмная' : 'Светлая';
@@ -2939,11 +3206,7 @@
         }
       }
 
-      // Update Mobile Bottom Bar Button
-      var bottomIcon = document.getElementById('bottomThemeIcon');
-      if (bottomIcon) {
-        bottomIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-      }
+
     }
 
     function toggleTheme() {
@@ -2964,6 +3227,153 @@
         applyTheme(initTheme);
       });
     })();
+
+  // ═══ MAX MESSENGER HANDLING ═══
+  var MAX_PROFILE_URL = ""; // Сюда вставляется ссылка из приложения MAX (https://max.ru/u/...)
+
+  function handleMaxClick(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    if (MAX_PROFILE_URL && MAX_PROFILE_URL.trim() !== "" && MAX_PROFILE_URL !== "https://max.ru/") {
+      window.open(MAX_PROFILE_URL, '_blank');
+    } else {
+      openMaxModal();
+    }
+  }
+
+  function openMaxModal(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    var m = document.getElementById('maxModal');
+    if (m) {
+      m.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeMaxModal(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    var m = document.getElementById('maxModal');
+    if (m) {
+      m.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function copyMaxNumber(btn) {
+    var phone = "+79274108823";
+    function onCopied() {
+      var txt = btn.querySelector('.copy-text');
+      var orig = txt ? txt.textContent : 'Скопировать';
+      btn.style.background = '#25D366';
+      btn.style.color = '#FFF';
+      if (txt) txt.textContent = '✓ Скопировано!';
+      setTimeout(function() {
+        btn.style.background = '';
+        btn.style.color = '';
+        if (txt) txt.textContent = orig;
+      }, 2500);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(phone).then(onCopied).catch(function() {
+        fallbackCopy(phone, onCopied);
+      });
+    } else {
+      fallbackCopy(phone, onCopied);
+    }
+  }
+
+  function fallbackCopy(text, cb) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      if (cb) cb();
+    } catch(err) {
+      alert("Номер барбершопа: " + text);
+    }
+    document.body.removeChild(ta);
+  }
+
+  function openMaxApp() {
+    if (MAX_PROFILE_URL && MAX_PROFILE_URL.trim() !== "" && MAX_PROFILE_URL !== "https://max.ru/") {
+      window.open(MAX_PROFILE_URL, '_blank');
+      return;
+    }
+    // Deep-link attempt with fallback
+    var now = Date.now();
+    window.location.href = "max://max.ru";
+    setTimeout(function() {
+      if (Date.now() - now < 1500) {
+        window.open("https://max.ru/", "_blank");
+      }
+    }, 800);
+  }
+
 </script>
+  <!-- ═══ MAX MESSENGER MODAL ═══ -->
+  <div class="modal-overlay" id="maxModal" onclick="closeMaxModal(event)">
+    <div class="modal-dialog max-dialog" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <img src="images/max_logo.svg" alt="MAX" style="width: 28px; height: 28px; border-radius: 7px; display:block;">
+          <div>
+            <div class="modal-header-title">Запись через MAX</div>
+            <div style="font-size:11px; color:var(--text-secondary); letter-spacing:0.02em;">Мессенджер MAX • KANT Barber's</div>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeMaxModal(event)" aria-label="Закрыть">✕</button>
+      </div>
+      <div class="modal-body max-modal-body">
+        <p class="max-modal-desc">
+          Для быстрой записи через <strong>MAX</strong> найдите наш барбершоп по номеру телефона мастера или откройте приложение:
+        </p>
+
+        <!-- Phone copy box -->
+        <div class="max-phone-box">
+          <div class="max-phone-info">
+            <span class="max-phone-label">Номер барбершопа в MAX</span>
+            <span class="max-phone-val">+7 (927) 410-88-23</span>
+          </div>
+          <button type="button" class="btn-copy-number" onclick="copyMaxNumber(this)">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span class="copy-text">Скопировать</span>
+          </button>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="max-action-buttons">
+          <button type="button" class="btn-primary btn-glow-gold btn-open-max" onclick="openMaxApp()">
+            <img src="images/max_logo.svg" alt="MAX" style="width: 18px; height: 18px; border-radius: 4px; vertical-align: middle;">
+            Открыть приложение MAX
+          </button>
+          <a href="https://n2742254.yclients.ru/" class="btn-secondary ms_booking" onclick="closeMaxModal(); openBooking(event);">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Записаться онлайн через YCLIENTS
+          </a>
+        </div>
+
+        <!-- Quick alternative channels -->
+        <div class="max-modal-alt-title">Или напишите в другие мессенджеры:</div>
+        <div class="max-modal-alts">
+          <a href="https://t.me/+79274108823" target="_blank" class="alt-channel tg">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            Telegram
+          </a>
+          <a href="https://wa.me/79274108823?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20Kant%20Barber%27s" target="_blank" class="alt-channel wa">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.188 8.188 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.181 8.181 0 012.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.17 1.73 2.65 4.2 3.71.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/></svg>
+            WhatsApp
+          </a>
+          <a href="tel:+79274108823" class="alt-channel phone">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            Позвонить
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
