@@ -1870,7 +1870,13 @@
       .container { max-width: 1180px; }
       .hero-title { font-size: 56px; }
     }
-  </style>
+  
+    @media (max-width: 768px) {
+      .btn-theme-header {
+        display: none !important;
+      }
+    }
+</style>
 </head>
 <body>
 
@@ -1931,6 +1937,16 @@
       <div class="hero-content">
         <div class="hero-badge reveal">
           <span>📍 Казань, ул. Павлюхина, 99 • ст. м. «Суконная слобода»</span>
+        </div>
+
+        <!-- Hero Theme Segmented Switcher -->
+        <div class="hero-theme-switcher reveal">
+          <button type="button" class="hero-theme-btn" id="btnThemeLight" onclick="setTheme('light')">
+            <span>☀️</span> Коричнево-белая
+          </button>
+          <button type="button" class="hero-theme-btn active" id="btnThemeDark" onclick="setTheme('dark')">
+            <span>🌙</span> Тёмно-золотая
+          </button>
         </div>
 
         <div class="hero-logo-circle reveal reveal-delay-1">
