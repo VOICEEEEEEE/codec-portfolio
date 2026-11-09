@@ -2303,6 +2303,175 @@
       color: #20130B !important;
     }
 
+  
+    /* ═══════════════════════════════════
+       MASTERS GRID & CARDS (2 BARBERS)
+       ═══════════════════════════════════ */
+    .masters-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    @media (min-width: 820px) {
+      .masters-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+    .master-card {
+      background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .master-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-lg), 0 0 24px var(--gold-glow);
+      transform: translateY(-2px);
+    }
+    .master-card-inner {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .master-card-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+      padding: 24px 20px 16px;
+    }
+    @media (min-width: 480px) {
+      .master-card-top {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 20px;
+      }
+    }
+    .master-portrait {
+      width: 120px;
+      height: 145px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 2px solid var(--gold);
+      box-shadow: var(--shadow-gold);
+      flex-shrink: 0;
+      transition: transform var(--transition);
+    }
+    .master-card:hover .master-portrait {
+      transform: scale(1.03);
+    }
+    .master-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+    }
+    .master-card-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+    .master-card-cta {
+      margin-top: auto;
+      padding: 14px 20px 20px;
+    }
+    .btn-master-staff-book {
+      width: 100%;
+      height: 42px;
+      background: var(--gold-gradient);
+      color: var(--bg-body);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.03em;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: var(--shadow-gold);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .btn-master-staff-book:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 160, 96, 0.4);
+    }
+    .masters-messenger-banner {
+      max-width: 1040px;
+      margin: 24px auto 0;
+      padding: 16px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      .masters-messenger-banner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+    .masters-messenger-text {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    .masters-messenger-text strong {
+      color: var(--gold);
+    }
+    .masters-messenger-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Light Theme specifics for Masters Grid */
+    [data-theme="light"] .master-card {
+      background: #FFFFFF !important;
+      border: 1.5px solid rgba(44, 24, 14, 0.12) !important;
+      box-shadow: 0 6px 24px rgba(44, 24, 14, 0.08) !important;
+    }
+    [data-theme="light"] .master-card:hover {
+      border-color: rgba(147, 96, 55, 0.4) !important;
+      box-shadow: 0 10px 32px rgba(44, 24, 14, 0.14) !important;
+    }
+    [data-theme="light"] .master-title-name {
+      color: #20130B !important;
+    }
+    [data-theme="light"] .master-experience {
+      color: #936037 !important;
+    }
+    [data-theme="light"] .master-bio {
+      color: #4A3528 !important;
+    }
+    [data-theme="light"] .btn-master-staff-book {
+      color: #1A0E08 !important;
+    }
+    [data-theme="light"] .masters-messenger-banner {
+      background: #FFFFFF !important;
+      border-color: rgba(44, 24, 14, 0.12) !important;
+      box-shadow: 0 4px 18px rgba(44, 24, 14, 0.06) !important;
+    }
+    [data-theme="light"] .masters-messenger-text {
+      color: #4A3528 !important;
+    }
+
   </style>
 </head>
 <body>
@@ -2456,7 +2625,7 @@
         <div class="feature-chip reveal reveal-delay-2">
           <div class="feature-icon">☕</div>
           <div>
-            <div class="feature-title">Чай и угощения</div>
+            <div class="feature-title">Вкусные угощения</div>
             <div class="feature-desc">Чай и отдых включены</div>
           </div>
         </div>
@@ -2490,7 +2659,7 @@
 
   <div class="divider"></div>
 
-  <!-- ═══ MASTER MUHAMMAD ═══ -->
+    <!-- ═══ MASTERS TEAM SECTION ═══ -->
   <section class="section" id="master">
     <div class="container">
       <div class="section-head reveal">
@@ -2499,41 +2668,86 @@
         <p class="section-subtitle">Опытные мастера мужского стиля и выверенной геометрии</p>
       </div>
 
-      <div class="master-exclusive-card reveal-scale">
-        <div class="master-top-grid">
-          <div class="master-portrait">
-            <img src="images/hero_barber.jpg" alt="Мастера Kant Barber’s" loading="lazy">
-          </div>
-          <div class="master-details">
-            <div class="master-badge-role">БАРБЕРЫ • KANT</div>
-            <h3 class="master-title-name">Команда мастеров</h3>
-            <div class="master-experience">Опыт работы более 3 лет • Рейтинг 5.0 ★ на Яндекс Картах</div>
-            <p class="master-bio">
-              Специализируются на выверенной мужской геометрии: безупречные переходы любой длины (Fade, Crop, Buzz), классические стрижки, моделирование бороды с распариванием и бритьём лезвием.
-            </p>
+      <div class="masters-grid">
+        <!-- Master 1: Muhammad -->
+        <div class="master-card reveal">
+          <div class="master-card-inner">
+            <div class="master-card-top">
+              <div class="master-portrait">
+                <img src="images/master_muhammad.jpg" alt="Барбер Мухаммад" loading="lazy" onerror="this.src='images/hero_barber.jpg'">
+              </div>
+              <div class="master-card-info">
+                <div class="master-badge-role">БАРБЕР • KANT</div>
+                <h3 class="master-title-name">Мухаммад</h3>
+                <div class="master-experience">Опыт работы более 3 лет • Рейтинг 5.0 ★</div>
+                <p class="master-bio">
+                  Специализируется на выверенной мужской классике: безупречные переходы Fade, архитектура и моделирование бороды с распариванием и бритьём опасным лезвием.
+                </p>
+              </div>
+            </div>
+
+            <div class="master-skills-row">
+              <span class="skill-tag">✓ Fade любой сложности</span>
+              <span class="skill-tag">✓ Моделирование бороды</span>
+              <span class="skill-tag">✓ Бритьё опасным лезвием</span>
+              <span class="skill-tag">✓ Классический стиль</span>
+            </div>
+
+            <div class="master-card-cta">
+              <a href="https://n2742254.yclients.ru/company/2151126/select-services?o=m5869290" class="btn-master-staff-book btn-glow-gold ms_booking" onclick="openBooking(event)">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                <span>Записаться к Мухаммаду</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="master-skills-row">
-          <span class="skill-tag">✓ Fade любой сложности</span>
-          <span class="skill-tag">✓ Моделирование бороды</span>
-          <span class="skill-tag">✓ Бритьё опасным лезвием</span>
-          <span class="skill-tag">✓ Классический стиль</span>
-          <span class="skill-tag">✓ Детские стрижки без слёз</span>
-        </div>
+        <!-- Master 2: Khadzhy -->
+        <div class="master-card reveal reveal-delay-1">
+          <div class="master-card-inner">
+            <div class="master-card-top">
+              <div class="master-portrait">
+                <img src="images/master_khadzhy.jpg" alt="Барбер Хаджы" loading="lazy" onerror="this.src='images/hero_barber.jpg'">
+              </div>
+              <div class="master-card-info">
+                <div class="master-badge-role">БАРБЕР • KANT</div>
+                <h3 class="master-title-name">Хаджы</h3>
+                <div class="master-experience">Опытный мастер • Рейтинг 5.0 ★</div>
+                <p class="master-bio">
+                  Специализируется на современных текстурных стрижках (Crop, Buzz Cut), чётких геометрических контурах, моделировании бороды и комплексном уходе.
+                </p>
+              </div>
+            </div>
 
-        <div class="master-cta-bar">
-          <div class="master-cta-hint">
-            <strong>Индивидуальный приём:</strong> Работает по предварительной записи — без очередей и ожидания.
+            <div class="master-skills-row">
+              <span class="skill-tag">✓ Текстурный Crop & Fade</span>
+              <span class="skill-tag">✓ Моделирование бороды</span>
+              <span class="skill-tag">✓ Чёткая геометрия контуров</span>
+              <span class="skill-tag">✓ Мужские и детские стрижки</span>
+            </div>
+
+            <div class="master-card-cta">
+              <a href="https://n2742254.yclients.ru/company/2151126/select-services?o=m6369515" class="btn-master-staff-book btn-glow-gold ms_booking" onclick="openBooking(event)">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                <span>Записаться к Хаджы</span>
+              </a>
+            </div>
           </div>
-          <div class="master-booking-group">
-            <a href="https://max.ru/u/f9LHodD0cOKmESFjdeyaOf0SWULEz4adcmClkceNlOZRxMezHdqC6ouCxoY" target="_blank" class="btn-master-book btn-glow-gold btn-booking-max">
-              <img src="images/max_logo.svg" alt="MAX" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 6px;"> Запись в MAX
-            </a>
-            <a href="https://t.me/Kant_Barbers" target="_blank" class="btn-master-book btn-glow-gold btn-booking-tg">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg> Запись в Telegram
-            </a>
-          </div>
+        </div>
+      </div>
+
+      <!-- Quick messengers row below masters -->
+      <div class="masters-messenger-banner reveal">
+        <div class="masters-messenger-text">
+          <strong>Индивидуальный приём:</strong> Запись через мессенджеры без очередей и ожидания:
+        </div>
+        <div class="masters-messenger-actions">
+          <a href="https://max.ru/u/f9LHodD0cOKmESFjdeyaOf0SWULEz4adcmClkceNlOZRxMezHdqC6ouCxoY" target="_blank" class="btn-master-book btn-glow-gold btn-booking-max">
+            <img src="images/max_logo.svg" alt="MAX" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 6px;"> Запись в MAX
+          </a>
+          <a href="https://t.me/Kant_Barbers" target="_blank" class="btn-master-book btn-glow-gold btn-booking-tg">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg> Запись в Telegram
+          </a>
         </div>
       </div>
     </div>
