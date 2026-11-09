@@ -383,8 +383,9 @@
     .slider-badge-label {
       position: absolute;
       top: 14px;
-      padding: 4px 12px;
-      background: rgba(20, 18, 16, 0.65);
+      z-index: 25;
+      padding: 5px 12px;
+      background: rgba(20, 18, 16, 0.72);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       color: #FFF;
@@ -394,6 +395,7 @@
       text-transform: uppercase;
       border-radius: var(--radius-full);
       pointer-events: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
     }
     .badge-left { left: 14px; }
     .badge-right { right: 14px; }
@@ -848,13 +850,15 @@
         <div class="comparison-slider-wrap" id="sliderWrap">
           <!-- Before (Full Background) -->
           <img src="images/slider_before.jpg" alt="До окрашивания" class="slider-img">
-          <div class="slider-badge-label badge-left">ДО: НЕРАВНОМЕРНАЯ БАЗА</div>
 
           <!-- After (Curtain Wrapper) -->
           <div class="slider-after-wrap" id="sliderAfter">
             <img src="images/slider_after.jpg" alt="После Airtouch Mirt" id="sliderAfterImg">
-            <div class="slider-badge-label badge-right">ПОСЛЕ: CASHMERE BLOND</div>
           </div>
+
+          <!-- Static Pinned Badges (Both pinned to top corners, neither moves) -->
+          <div class="slider-badge-label badge-left">ДО: ИСХОДНАЯ БАЗА</div>
+          <div class="slider-badge-label badge-right">ПОСЛЕ: CASHMERE BLOND</div>
 
           <!-- Drag Handle -->
           <div class="slider-handle-line" id="sliderHandle">
