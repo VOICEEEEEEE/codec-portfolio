@@ -103,6 +103,7 @@
       --bg-section: #FAF7F2;
       --bg-card: #FFFFFF;
       --bg-card-hover: #FFFFFF;
+    --bg-card-subtle: rgba(201, 160, 96, 0.08);
       --bg-elevated: #F3ECE2;
 
       --text-primary: #20130B;
@@ -509,6 +510,7 @@
       transition: color var(--transition), text-shadow var(--transition);
       position: relative;
       padding: 6px 0;
+      white-space: nowrap;
     }
     .nav-link:hover {
       color: var(--gold-light);
@@ -557,6 +559,8 @@
       border-color: rgba(37, 211, 102, 0.5);
     }
     .btn-icon-header.wa { color: #25D366; }
+    .btn-icon-header.phone-btn { color: var(--gold); }
+    .btn-icon-header.phone-btn:hover { border-color: var(--gold); color: var(--gold-light); }
 
     .header-phone-text {
       display: none;
@@ -1056,7 +1060,7 @@
 
     .master-cta-bar {
       padding: 14px 18px;
-      background: rgba(12, 8, 6, 0.6);
+      background: var(--bg-card-subtle, rgba(12, 8, 6, 0.6));
       border-top: 1px solid var(--border);
       display: flex;
       flex-direction: column;
@@ -1067,7 +1071,7 @@
     }
     .master-cta-hint {
       font-size: 11px;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       line-height: 1.35;
     }
     .btn-master-book {
@@ -1781,7 +1785,7 @@
       .stat-item { padding: 16px 12px; }
       .stat-number { font-size: 32px; }
       .stat-label { font-size: 11.5px; }
-      .hero-actions { flex-direction: row; max-width: 500px; gap: 14px; }
+      .hero-actions { flex-direction: column; align-items: center; max-width: 480px; gap: 12px; margin: 0 auto; }
 
       .features-scroll { padding: 14px 0 20px; }
       .features-track {
@@ -2018,19 +2022,22 @@
       border: 1px solid rgba(76, 81, 247, 0.25);
     }
     .channel-icon-box.tg-bg {
-      background: rgba(34, 158, 217, 0.12);
-      border: 1px solid rgba(34, 158, 217, 0.25);
-      color: #229ED9;
+      background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%) !important;
+      border: none !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 12px rgba(34, 158, 217, 0.35);
     }
     .channel-icon-box.wa-bg {
-      background: rgba(37, 211, 102, 0.12);
-      border: 1px solid rgba(37, 211, 102, 0.25);
-      color: #25D366;
+      background: linear-gradient(135deg, #25D366 0%, #1EBE5D 100%) !important;
+      border: none !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
     }
     .channel-icon-box.phone-bg {
-      background: rgba(201, 160, 96, 0.12);
-      border: 1px solid rgba(201, 160, 96, 0.25);
-      color: var(--gold-light);
+      background: var(--gold-gradient) !important;
+      border: none !important;
+      color: var(--bg-body) !important;
+      box-shadow: 0 4px 12px rgba(201, 160, 96, 0.35);
     }
     .channel-name {
       font-size: 13px;
@@ -2155,11 +2162,18 @@
           </div>
         </div>
 
-        <!-- Buttons with Glow -->
+        <!-- Dual Booking Buttons with Icons -->
         <div class="hero-actions reveal">
-          <a href="https://n2742254.yclients.ru/" class="btn-primary btn-glow-gold ms_booking" onclick="openBooking(event)">
-            🗓 Записаться онлайн за 30 секунд
-          </a>
+          <div class="hero-booking-dual">
+            <a href="https://max.ru/" target="_blank" class="btn-primary btn-glow-gold btn-booking-max">
+              <img src="images/max_logo.svg" alt="MAX" class="btn-channel-icon" style="vertical-align: middle; margin-right: 6px;">
+              Записаться в MAX
+            </a>
+            <a href="https://t.me/+79274108823" target="_blank" class="btn-primary btn-glow-gold btn-booking-tg">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" class="btn-channel-icon" style="vertical-align: middle; margin-right: 6px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              Записаться в Telegram
+            </a>
+          </div>
           <a href="#prices" class="btn-secondary">
             Прайс-лист и услуги ↓
           </a>
@@ -2242,7 +2256,7 @@
             <h3 class="master-title-name">Команда мастеров</h3>
             <div class="master-experience">Опыт работы более 3 лет • Рейтинг 5.0 ★ на Яндекс Картах</div>
             <p class="master-bio">
-              Специализируется на выверенной мужской геометрии: безупречные переходы любой длины (Fade, Crop, Buzz), классические стрижки, моделирование бороды с распариванием и бритьём лезвием.
+              Специализируются на выверенной мужской геометрии: безупречные переходы любой длины (Fade, Crop, Buzz), классические стрижки, моделирование бороды с распариванием и бритьём лезвием.
             </p>
           </div>
         </div>
@@ -2350,7 +2364,7 @@
           <img src="images/interior_lounge_hq.jpg" alt="Зона отдыха KANT Barber's" loading="lazy">
           <div class="gallery-overlay">
             <div class="gallery-title">Зона ожидания и отдыха</div>
-            <div class="gallery-sub">Зерновой кофе, чай и спокойная атмосфера</div>
+            <div class="gallery-sub">Чай, угощения и спокойная атмосфера</div>
           </div>
         </div>
 
@@ -2682,7 +2696,7 @@
 
               <a href="tel:+79274108823" class="channel-card phone">
                 <div class="channel-icon-box phone-bg">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="#FFFFFF"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                 </div>
                 <div>
                   <div class="channel-name">Позвонить</div>
