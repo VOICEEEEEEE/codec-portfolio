@@ -845,15 +845,15 @@
 
       <div class="slider-container-box">
         <div class="comparison-slider-wrap" id="sliderWrap">
-          <!-- Before (Full Background) -->
-          <img src="images/slider_before.jpg" alt="До окрашивания" class="slider-img">
+          <!-- Background (Full Width): AFTER (Blonde Result) -->
+          <img src="images/slider_after.jpg" alt="После окрашивания Airtouch" class="slider-img">
 
-          <!-- After (Curtain Wrapper) -->
+          <!-- Curtain (From Left): BEFORE (Natural / Dark Base) -->
           <div class="slider-after-wrap" id="sliderAfter">
-            <img src="images/slider_after.jpg" alt="После Airtouch Mirt" id="sliderAfterImg">
+            <img src="images/slider_before.jpg" alt="До окрашивания" id="sliderAfterImg">
           </div>
 
-          <!-- Static Pinned Badges with IDs for smart edge fade -->
+          <!-- Static Pinned Badges -->
           <div class="slider-badge-label badge-left" id="badgeBefore">ДО</div>
           <div class="slider-badge-label badge-right" id="badgeAfter">ПОСЛЕ</div>
 
@@ -1160,11 +1160,13 @@
       sliderAfterImg.style.width = rect.width + 'px';
       sliderAfterImg.style.height = rect.height + 'px';
 
-      // Dynamic label fade at boundaries
+      // Dynamic label fade at boundaries:
       const bBefore = document.getElementById('badgeBefore');
       const bAfter = document.getElementById('badgeAfter');
-      if (bBefore) bBefore.style.opacity = (percentage > 80) ? '0' : '1';
-      if (bAfter) bAfter.style.opacity = (percentage < 20) ? '0' : '1';
+      // When dragged to far left (< 15%), curtain is closed, showing 100% ПОСЛЕ -> hide ДО
+      if (bBefore) bBefore.style.opacity = (percentage < 15) ? '0' : '1';
+      // When dragged to far right (> 85%), curtain covers whole screen, showing 100% ДО -> hide ПОСЛЕ
+      if (bAfter) bAfter.style.opacity = (percentage > 85) ? '0' : '1';
     }
 
     function syncImgWidth() {
