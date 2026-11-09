@@ -2516,9 +2516,9 @@
             </div>
 
             <div class="master-card-cta">
-              <a href="https://n2742254.yclients.ru/company/2151126/personal/select-time?o=m5869290" target="_blank" class="btn-master-staff-book btn-glow-gold" onclick="openBooking(event, 'https://n2742254.yclients.ru/company/2151126/personal/select-time?o=m5869290')">
+              <a href="https://n2742254.yclients.ru/" class="btn-master-staff-book btn-glow-gold ms_booking" onclick="openBooking(event)">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                <span>Записаться к Мухаммаду</span>
+                <span>Записаться</span>
               </a>
             </div>
           </div>
@@ -2549,9 +2549,9 @@
             </div>
 
             <div class="master-card-cta">
-              <a href="https://n2742254.yclients.ru/company/2151126/personal/select-time?o=m6369515" target="_blank" class="btn-master-staff-book btn-glow-gold" onclick="openBooking(event, 'https://n2742254.yclients.ru/company/2151126/personal/select-time?o=m6369515')">
+              <a href="https://n2742254.yclients.ru/" class="btn-master-staff-book btn-glow-gold ms_booking" onclick="openBooking(event)">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                <span>Записаться к Хаджы</span>
+                <span>Записаться</span>
               </a>
             </div>
           </div>
@@ -3191,25 +3191,16 @@
       if (e.key === 'Escape') closeLightbox();
     });
 
-    // ── Booking Modal fallback ──
-        function openBooking(e, customUrl) {
-      var url = customUrl || "https://n2742254.yclients.ru/";
+        // ── Booking Modal fallback ──
+    function openBooking(e) {
+      if (window.YClients && typeof window.YClients.openWidget === 'function') return;
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      if (isMobile) {
-        if (e && e.preventDefault) e.preventDefault();
-        window.open(url, '_blank');
-        return;
-      }
-      if (e && e.preventDefault) e.preventDefault();
+      if (isMobile) return;
+      e.preventDefault();
       var iframe = document.getElementById('bookingIframe');
-      if (iframe) {
-        iframe.src = url;
-      }
-      var modal = document.getElementById('bookingModal');
-      if (modal) {
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
+      if (iframe) iframe.src = "https://n2742254.yclients.ru/";
+      document.getElementById('bookingModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
     }
     function closeBookingDirect() {
       document.getElementById('bookingModal').classList.remove('open');
