@@ -6,584 +6,740 @@
   <title>О! Мебель — Мебель на заказ (Набережные Челны)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=JetBrains+Mono:wght@500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #FFFFFF;
-      --surface: #F4F5F7;
-      --surface-tint: #F8F3EE;
-      --ink: #18181B;
-      --muted: #6B7280;
-      --border: #E5E7EB;
-      --accent: #9A5B32;
-      --helper: #2E6F40;
-      --radius-lg: 24px;
-      --radius-md: 16px;
+      --bg: #FAF7F2;
+      --surface: #EFEAE1;
+      --surface-alt: #E5DDD0;
+      --ink: #1C1917;
+      --ink-deep: #221B17;
+      --muted: #665E55;
+      --border: #E3DDD2;
+      --accent: #8C4A27;
+      --accent-soft: #B06840;
+      --head-font: 'Cormorant Garamond', Georgia, serif;
+      --head-weight: 600;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; overflow-x: clip; }
     body {
       background: var(--bg);
       color: var(--ink);
-      font-family: 'Onest', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 16px;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       overflow-x: clip;
     }
-    .offers-split > *, .story-split > *, .social-banner > *, .gal-grid > *, .calc-layout > * { min-width: 0; }
+    .hero-split > *, .atelier-split > *, .timber-top > *, .bento-grid > *,
+    .craft-split > *, .calc-layout > *, .loc-grid > *, .gal-mosaic > * { min-width: 0; }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
-    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+    .container { width: 100%; max-width: 1260px; margin: 0 auto; padding: 0 20px; }
     @media (min-width: 900px) { .container { padding: 0 32px; } }
 
-    /* Header */
+    /* Top Header */
     .navbar {
       position: sticky;
       top: 0;
       z-index: 40;
-      background: rgba(255, 255, 255, 0.94);
+      background: var(--bg);
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid #F0F1F4;
+      border-bottom: 1px solid var(--border);
     }
     .nav-inner {
       height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
+      gap: 12px;
     }
-    .brand {
-      display: flex;
+    .brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
+    .brand-crest {
+      width: 40px;
+      height: 40px;
+      border-radius: 11px;
+      background: var(--ink-deep);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      display: inline-flex;
       align-items: center;
-      gap: 11px;
-      min-width: 0;
-    }
-    .brand-mark {
-      width: 34px;
-      height: 34px;
+      justify-content: center;
       flex-shrink: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4px;
-      padding: 5px;
-      border-radius: 10px;
-      background: var(--surface);
+      position: relative;
+      overflow: hidden;
     }
-    .brand-mark span {
-      border-radius: 3px;
-      background: var(--ink);
+    .brand-crest::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 12px;
+      height: 4px;
+      background: var(--accent-soft);
     }
-    .brand-mark span:nth-child(2) { background: var(--helper); }
-    .brand-mark span:nth-child(3) { background: var(--accent); }
     .brand-text { min-width: 0; }
     .brand-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
       letter-spacing: -0.02em;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 52vw;
     }
     .brand-sub {
-      font-size: 11.5px;
+      font-size: 12px;
       color: var(--muted);
-      line-height: 1.1;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .nav-links {
-      display: none;
-      align-items: center;
-      gap: 28px;
-      font-size: 14.5px;
-      font-weight: 500;
-      color: #3F3F46;
-    }
+    .nav-links { display: none; gap: 24px; font-size: 14px; font-weight: 500; color: var(--muted); }
+    .nav-links a { transition: color 0.16s; }
     .nav-links a:hover { color: var(--ink); }
-    @media (min-width: 960px) { .nav-links { display: flex; } }
+    @media (min-width: 980px) { .nav-links { display: flex; } }
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-shrink: 0;
-    }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
     .nav-phone {
       display: none;
       align-items: center;
-      gap: 6px;
-      font-size: 14.5px;
-      font-weight: 500;
-      color: var(--ink);
-      white-space: nowrap;
-    }
-    @media (min-width: 680px) { .nav-phone { display: inline-flex; } }
-    .pill-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: var(--ink);
-      color: #FFFFFF;
+      gap: 7px;
       font-size: 14px;
       font-weight: 600;
-      padding: 11px 20px;
+    }
+    @media (min-width: 720px) { .nav-phone { display: inline-flex; } }
+
+    .pill-btn-nav {
+      background: var(--ink-deep);
+      color: #FFFFFF;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 10px 18px;
       border-radius: 999px;
       white-space: nowrap;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.18s ease, background 0.18s ease;
+      transition: transform 0.16s, background 0.16s;
     }
-    .pill-btn:hover { background: #2D2D33; transform: translateY(-1px); }
-    .pill-btn-nav { padding: 9px 18px; font-size: 13.5px; }
+    .pill-btn-nav:hover { background: var(--accent); transform: translateY(-1px); }
 
-    /* Hero Stage */
-    .hero-sec { padding-top: 16px; padding-bottom: 24px; }
-    .hero-frame {
-      position: relative;
-      border-radius: 26px;
-      overflow: hidden;
-      height: 440px;
-      background: #1D2024;
-    }
-    @media (min-width: 900px) { .hero-frame { height: 540px; border-radius: 28px; } }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: opacity 0.35s ease;
-    }
-    .hero-scrim {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(100deg, rgba(16, 18, 22, 0.72) 0%, rgba(16, 18, 22, 0.38) 54%, rgba(16, 18, 22, 0.16) 100%);
-    }
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 28px 24px;
-    }
-    @media (min-width: 900px) { .hero-inner { padding: 48px 52px 32px; } }
-
-    .hero-copy { max-width: 680px; margin-top: auto; margin-bottom: auto; }
-    .hero-title-row {
-      display: flex;
-      flex-wrap: wrap;
+    /* Shared Buttons & Typo */
+    .hero-sec { padding: 28px 0 32px; }
+    @media (min-width: 900px) { .hero-sec { padding: 42px 0 44px; } }
+    .status-pill {
+      display: inline-flex;
       align-items: center;
-      gap: 14px;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #16A34A;
+      flex-shrink: 0;
+    }
+    .kicker-line {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--accent);
       margin-bottom: 14px;
     }
     .hero-h1 {
-      font-size: clamp(28px, 4.1vw, 52px);
-      line-height: 1.07;
+      color: var(--ink);
+      line-height: 1.04;
+      margin-bottom: 16px;
+      overflow-wrap: break-word;
+    }
+    .hero-h1-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
       font-weight: 600;
-      letter-spacing: -0.025em;
-      color: #FFFFFF;
+      font-size: clamp(31px, 4.6vw, 58px);
+      letter-spacing: -0.015em;
     }
-    .hero-arrow-circle {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(255, 255, 255, 0.55);
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(8px);
-      color: #FFFFFF;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: background 0.2s ease, transform 0.2s ease;
+    .hero-h1-sans {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: clamp(27px, 3.9vw, 48px);
+      letter-spacing: -0.03em;
     }
-    .hero-arrow-circle:hover { background: rgba(255,255,255,0.28); transform: scale(1.06); }
-    .hero-sub {
-      font-size: clamp(14.5px, 1.4vw, 18px);
-      color: rgba(255, 255, 255, 0.9);
-      font-weight: 400;
-      max-width: 520px;
+    .hero-lead {
+      font-size: clamp(15px, 1.3vw, 17.5px);
+      color: var(--muted);
+      line-height: 1.55;
+      max-width: 530px;
     }
-
-    .hero-tabs {
+    .hero-lead-light { color: rgba(255, 255, 255, 0.88); }
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px 14px;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .btn-primary, .btn-accent {
+      background: var(--ink-deep);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 600;
+      padding: 14px 24px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 46px;
+      transition: transform 0.16s, background 0.16s;
+    }
+    .btn-accent { background: var(--accent); }
+    .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+    .btn-accent:hover { filter: brightness(1.08); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--border);
+      font-size: 14.5px;
+      font-weight: 600;
+      padding: 13px 22px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 46px;
+      transition: border-color 0.16s, background 0.16s;
+    }
+    .btn-outline:hover { border-color: var(--ink); background: var(--surface); }
+    .btn-glass {
+      background: rgba(255,255,255,0.14);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      border: 1px solid rgba(255,255,255,0.34);
+      font-size: 14.5px;
+      font-weight: 600;
+      padding: 13px 22px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      min-height: 46px;
+      transition: background 0.16s;
+    }
+    .btn-glass:hover { background: rgba(255,255,255,0.24); }
+
+    .seg-bar {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      background: var(--surface);
+      padding: 6px;
+      border-radius: 16px;
+      margin-top: 24px;
       max-width: 100%;
     }
     .hero-tab {
-      background: none;
+      background: transparent;
       border: none;
-      color: rgba(255, 255, 255, 0.72);
+      color: var(--muted);
       font-family: inherit;
-      font-size: 12.5px;
-      font-weight: 500;
-      padding: 6px 0 8px;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.24);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 14px;
+      border-radius: 11px;
       cursor: pointer;
-      white-space: nowrap;
-      transition: color 0.2s, border-color 0.2s;
+      transition: all 0.16s ease;
+      white-space: normal;
+      text-align: center;
     }
     .hero-tab.active {
-      color: #FFFFFF;
-      border-bottom-color: #FFFFFF;
+      background: #FFFFFF;
+      color: var(--ink);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
 
-    /* Cutout Notch Badge on Desktop */
-    .hero-notch {
-      display: none;
-    }
-    @media (min-width: 860px) {
-      .hero-notch {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        z-index: 3;
-        background: var(--bg);
-        border-top-left-radius: 26px;
-        padding: 18px 24px 16px 20px;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        min-width: 280px;
-      }
-      .hero-notch-img {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        object-fit: cover;
-        flex-shrink: 0;
-      }
-      .hero-notch-lbl { font-size: 12px; color: var(--muted); }
-      .hero-notch-val { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); line-height: 1.2; }
-      .hero-notch-link { font-size: 13px; font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 4px; margin-top: 2px; }
-    }
-
-    .mobile-trust-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      background: var(--surface);
-      border-radius: 16px;
-      padding: 12px 16px;
-      margin-top: 12px;
-    }
-    @media (min-width: 860px) { .mobile-trust-bar { display: none; } }
-    .mtb-val { font-size: 15px; font-weight: 700; }
-    .mtb-sub { font-size: 12px; color: var(--muted); }
-
-    /* Generic Section */
-    .sec { padding: 42px 0; }
-    @media (min-width: 900px) { .sec { padding: 64px 0; } }
-    .sec-h2 {
-      font-size: clamp(26px, 3vw, 38px);
-      font-weight: 600;
-      letter-spacing: -0.025em;
-      line-height: 1.12;
-      margin-bottom: 24px;
-    }
-
-    /* Section 2: Best Offers + Map */
-    .offers-split {
+    /* Layout 1: Glamping Botanical Split */
+    .hero-split {
       display: grid;
       grid-template-columns: 1fr;
       gap: 28px;
       align-items: center;
     }
-    @media (min-width: 940px) {
-      .offers-split { grid-template-columns: 1fr 1.12fr; gap: 44px; }
+    @media (min-width: 920px) {
+      .hero-split { grid-template-columns: 1fr 1.05fr; gap: 48px; }
     }
-    .offer-list { display: flex; flex-direction: column; }
-    .offer-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 18px 4px;
-      border-bottom: 1px solid #ECEEF1;
-      cursor: pointer;
-      transition: background 0.16s ease;
-    }
-    .offer-row:first-child { border-top: 1px solid #ECEEF1; }
-    .offer-row:hover { background: #FAFAFB; }
-    .offer-left { display: flex; align-items: center; gap: 16px; min-width: 0; }
-    .offer-thumb {
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
+    .hero-right-media {
+      position: relative;
+      border-radius: 26px;
+      overflow: hidden;
+      height: 320px;
       background: var(--surface);
     }
-    .offer-info { min-width: 0; }
-    .offer-title { font-size: 15.5px; font-weight: 600; color: var(--ink); line-height: 1.25; }
-    .offer-sub { font-size: 13px; color: var(--muted); margin-top: 3px; line-height: 1.35; }
-    .offer-price { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; margin-top: 6px; }
-    .offer-price span { font-size: 14px; font-weight: 500; color: var(--muted); }
-    .circle-arrow-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: none;
-      background: var(--ink);
+    @media (min-width: 920px) { .hero-right-media { height: 470px; } }
+    .hero-photo-card { width: 100%; height: 100%; object-fit: cover; }
+    .hero-caption-pill {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      background: rgba(22, 38, 30, 0.78);
+      backdrop-filter: blur(10px);
       color: #FFFFFF;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 9px 15px;
+      border-radius: 999px;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      cursor: pointer;
-      transition: transform 0.18s ease, background 0.18s ease;
+      gap: 8px;
     }
-    .offer-row:hover .circle-arrow-btn { transform: scale(1.07); background: var(--accent); }
 
-    /* Interactive Map Box */
-    .map-stage {
+    /* Layout 2: Detailing Studio Telemetry */
+    .tele-frame {
       position: relative;
       border-radius: 24px;
       overflow: hidden;
-      height: 360px;
-      background: linear-gradient(135deg, #EEF2F0 0%, #E5EBE8 100%);
-      border: 1px solid #E5E7EB;
+      min-height: 410px;
+      background: #10141C;
     }
-    @media (min-width: 900px) { .map-stage { height: 420px; } }
-    .map-fallback {
+    @media (min-width: 900px) { .tele-frame { min-height: 470px; } }
+    .tele-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .tele-scrim {
       position: absolute;
       inset: 0;
+      background: linear-gradient(110deg, rgba(10, 14, 22, 0.84) 0%, rgba(10, 14, 22, 0.56) 55%, rgba(10, 14, 22, 0.25) 100%);
+    }
+    .tele-inner {
+      position: relative;
+      z-index: 2;
+      min-height: 410px;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      padding: 24px;
-      background-image: radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px);
-      background-size: 22px 22px;
-      pointer-events: none;
+      justify-content: space-between;
+      padding: 24px 20px;
     }
-    .map-pill {
-      background: #FFFFFF;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 12.5px;
+    @media (min-width: 900px) { .tele-inner { min-height: 470px; padding: 36px 44px; } }
+    .tele-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+    .mono-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(10.5px, 2.4vw, 11.5px);
       font-weight: 600;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .map-iframe {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    .helper-card {
-      position: absolute;
-      right: 14px;
-      bottom: 14px;
-      z-index: 3;
-      background: var(--helper);
       color: #FFFFFF;
-      border-radius: 18px;
-      padding: 16px 18px;
-      max-width: 268px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.16);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      backdrop-filter: blur(8px);
+      padding: 6px 11px;
+      border-radius: 8px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
     }
-    .helper-title { font-size: 14.5px; font-weight: 700; line-height: 1.25; }
-    .helper-sub { font-size: 12px; opacity: 0.94; margin-top: 4px; line-height: 1.35; }
-    .helper-btn {
-      display: inline-flex;
-      align-items: center;
+    .mono-badge.subtle { color: rgba(255,255,255,0.8); }
+    .tele-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 28px;
+    }
+    @media (min-width: 920px) {
+      .tele-bottom { flex-direction: row; align-items: flex-end; justify-content: space-between; }
+    }
+    .tele-bottom .hero-h1-sans { color: #FFFFFF; max-width: 660px; }
+    .tele-rail {
+      display: flex;
+      flex-wrap: wrap;
       gap: 6px;
-      margin-top: 10px;
+    }
+    @media (min-width: 920px) { .tele-rail { flex-direction: column; align-items: stretch; min-width: 210px; } }
+    .tele-rail .hero-tab {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.82);
+      border: 1px solid rgba(255,255,255,0.16);
+      text-align: left;
+    }
+    .tele-rail .hero-tab.active {
       background: #FFFFFF;
-      color: var(--ink);
-      font-size: 12.5px;
-      font-weight: 700;
-      padding: 8px 14px;
-      border-radius: 10px;
+      color: #0F141E;
+      border-color: #FFFFFF;
     }
 
-    /* Section 3: Asymmetric Arch + Story Tabs */
-    .story-split {
+    /* Layout 3: Kitchen Lookbook Collage */
+    .atelier-split {
       display: grid;
       grid-template-columns: 1fr;
       gap: 32px;
       align-items: center;
     }
-    @media (min-width: 900px) {
-      .story-split { grid-template-columns: 1fr 1fr; gap: 60px; }
+    @media (min-width: 920px) { .atelier-split { grid-template-columns: 1fr 1.08fr; gap: 48px; } }
+    .atelier-collage {
+      position: relative;
+      padding: 0 0 28px 0;
     }
-    .arch-wrap { position: relative; }
-    .arch-photo {
+    @media (min-width: 520px) { .atelier-collage { padding: 0 0 36px 36px; } }
+    .collage-main {
       width: 100%;
       aspect-ratio: 4 / 3;
       object-fit: cover;
-      border-radius: 20px 150px 20px 20px;
+      border-radius: 22px;
       background: var(--surface);
     }
-    @media (min-width: 900px) { .arch-photo { border-radius: 22px 200px 22px 22px; } }
-    .spark-top {
+    .collage-inset-wrap {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg);
+      padding: 8px 14px 8px 8px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    }
+    @media (min-width: 520px) {
+      .collage-inset-wrap {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        margin-top: 0;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 8px;
+        width: 188px;
+      }
+    }
+    .collage-inset {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+    @media (min-width: 520px) { .collage-inset { width: 100%; height: 112px; } }
+    .collage-tag {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ink);
+      padding-top: 4px;
+      text-align: center;
+    }
+
+    /* Layout 4: Banya Timber Panoramic Strip */
+    .timber-top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+    @media (min-width: 900px) { .timber-top { grid-template-columns: 1.25fr 0.75fr; gap: 40px; } }
+    .timber-stage {
+      border-radius: 24px;
+      overflow: hidden;
+      height: 300px;
+      background: var(--surface);
+    }
+    @media (min-width: 900px) { .timber-stage { height: 430px; } }
+    .timber-photo { width: 100%; height: 100%; object-fit: cover; }
+    .timber-thumbs {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    @media (min-width: 640px) { .timber-thumbs { grid-template-columns: repeat(3, 1fr); } }
+    .thumb-tab {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--surface);
+      border: 1.5px solid transparent;
+      border-radius: 14px;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    .thumb-tab img {
+      width: 48px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .thumb-tab.active {
+      border-color: var(--accent);
+      background: #FFFFFF;
+    }
+
+    /* Trust Metrics Bar */
+    .metrics-strip {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    @media (min-width: 740px) { .metrics-strip { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+    .metric-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 15px 18px;
+    }
+    .metric-k { font-size: 14px; font-weight: 700; color: var(--ink); }
+    .metric-v { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    /* Sections Shared Headings */
+    .sec { padding: 44px 0; }
+    @media (min-width: 900px) { .sec { padding: 66px 0; } }
+    .sec-head { margin-bottom: 28px; }
+    .sec-h2 {
+      font-family: var(--head-font);
+      font-weight: var(--head-weight);
+      font-size: clamp(28px, 3.2vw, 42px);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+
+    /* Section 2: 3-Col Bento Offers */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 820px) { .bento-grid { grid-template-columns: repeat(3, 1fr); gap: 22px; } }
+    .bento-offer {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    .bento-offer:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.07);
+      border-color: var(--accent);
+    }
+    .bento-media {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .bento-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease; }
+    .bento-offer:hover .bento-media img { transform: scale(1.04); }
+    .bento-num {
       position: absolute;
-      top: 18px;
-      right: 12px;
-      color: var(--helper);
-      pointer-events: none;
+      top: 12px;
+      left: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.92);
+      color: var(--ink);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .bento-body {
+      padding: 20px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .bento-title { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); }
+    .bento-sub { font-size: 14px; color: var(--muted); margin-top: 6px; line-height: 1.45; flex: 1; }
+    .bento-foot {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .bento-price { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); }
+    .bento-price span { font-size: 12.5px; font-weight: 500; color: var(--muted); }
+    .bento-btn {
+      background: var(--surface);
+      color: var(--ink);
+      border: none;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: background 0.16s, color 0.16s;
+    }
+    .bento-offer:hover .bento-btn { background: var(--ink-deep); color: #FFFFFF; }
+
+    /* Section 3: Craft Switcher Card */
+    .craft-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px 20px;
+    }
+    @media (min-width: 900px) { .craft-card { padding: 40px 44px; } }
+    .craft-split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+    @media (min-width: 900px) { .craft-split { grid-template-columns: 0.95fr 1.05fr; gap: 48px; } }
+    .craft-photo-box {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: var(--surface-alt);
+    }
+    .craft-photo-box img { width: 100%; height: 100%; object-fit: cover; }
+    .craft-float-badge {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      background: #FFFFFF;
+      color: var(--ink);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 7px 12px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     }
     .story-tabs {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 8px;
       margin-bottom: 20px;
-      border-bottom: 1px solid #ECEEF1;
-      padding-bottom: 10px;
     }
     .story-tab {
-      background: none;
-      border: none;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      color: var(--muted);
       font-family: inherit;
-      font-size: 15px;
-      font-weight: 500;
-      color: #9CA3AF;
-      cursor: pointer;
-      padding: 4px 0;
-      transition: color 0.18s ease;
-    }
-    .story-tab.active { color: var(--ink); font-weight: 700; }
-    .story-h3 {
-      font-size: clamp(26px, 3vw, 36px);
+      font-size: 13.5px;
       font-weight: 600;
-      line-height: 1.14;
+      padding: 9px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+    .story-tab.active {
+      background: var(--ink-deep);
+      color: #FFFFFF;
+      border-color: var(--ink-deep);
+    }
+    .story-h3 {
+      font-family: var(--head-font);
+      font-weight: var(--head-weight);
+      font-size: clamp(26px, 2.8vw, 38px);
+      line-height: 1.12;
       letter-spacing: -0.02em;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .story-desc {
       font-size: 16px;
-      color: #4B5563;
-      margin-bottom: 26px;
-      max-width: 480px;
-    }
-
-    /* Section 4: Social Strip + Showcase Gallery */
-    .social-banner {
-      background: var(--surface);
-      border-radius: 24px;
-      padding: 28px 24px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      align-items: center;
-      margin-bottom: 44px;
-    }
-    @media (min-width: 860px) {
-      .social-banner {
-        grid-template-columns: 1.15fr 0.85fr;
-        padding: 36px 44px;
-      }
-    }
-    .social-h3 {
-      font-size: clamp(22px, 2.5vw, 30px);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.18;
-      margin-bottom: 8px;
-    }
-    .social-sub { font-size: 15px; color: var(--muted); margin-bottom: 20px; }
-    .social-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
-    .social-circle {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      border: 1px solid #D1D5DB;
-      background: #FFFFFF;
-      color: var(--ink);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: border-color 0.18s, transform 0.18s;
-    }
-    .social-circle:hover { border-color: var(--ink); transform: translateY(-2px); }
-    .social-media {
-      border-radius: 18px;
-      overflow: hidden;
-      aspect-ratio: 16 / 10;
-      background: #E5E7EB;
-    }
-    .social-media img { width: 100%; height: 100%; object-fit: cover; }
-
-    /* Gallery 2-col */
-    .gal-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-    }
-    @media (min-width: 760px) { .gal-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
-    .gal-head { margin-bottom: 14px; }
-    .gal-kicker { font-size: 13px; color: var(--muted); font-weight: 500; }
-    .gal-title { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin-top: 2px; }
-    .gal-loc {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
       color: var(--muted);
-      margin-top: 4px;
+      margin-bottom: 24px;
+      line-height: 1.6;
     }
-    .gal-photo {
-      border-radius: 20px;
+
+    /* Section 4: Editorial Lightbox Mosaic Gallery */
+    .gal-mosaic {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 720px) {
+      .gal-mosaic { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .gal-wide { grid-column: span 2; aspect-ratio: 21 / 10 !important; }
+    }
+    .gal-card {
+      position: relative;
+      border-radius: 22px;
       overflow: hidden;
       aspect-ratio: 16 / 10;
       background: var(--surface);
+      cursor: zoom-in;
     }
-    .gal-photo img {
+    .gal-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.35s ease;
     }
-    .gal-item:hover .gal-photo img { transform: scale(1.03); }
-
-    /* Section 5: Architectural Configurator */
-    .calc-band {
-      background: var(--surface);
-      border-radius: 28px;
-      padding: 28px 20px;
+    .gal-card:hover img { transform: scale(1.03); }
+    .gal-cap {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 28px 18px 16px;
+      background: linear-gradient(180deg, transparent 0%, rgba(12, 16, 20, 0.72) 100%);
+      color: #FFFFFF;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 14.5px;
+      font-weight: 600;
     }
-    @media (min-width: 900px) { .calc-band { padding: 48px 44px; } }
+    .gal-zoom {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(6px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Section 5: Two-Tone Studio Configurator */
+    .calc-section-wrap {
+      border: 1px solid var(--border);
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 26px 18px;
+    }
+    @media (min-width: 900px) { .calc-section-wrap { padding: 44px; } }
     .calc-layout {
       display: grid;
       grid-template-columns: 1fr;
       gap: 28px;
       align-items: start;
+      margin-top: 24px;
     }
-    @media (min-width: 920px) {
-      .calc-layout { grid-template-columns: 1.25fr 0.95fr; gap: 40px; }
-    }
+    @media (min-width: 920px) { .calc-layout { grid-template-columns: 1.2fr 0.85fr; gap: 36px; } }
     .calc-grp { margin-bottom: 22px; }
     .calc-grp:last-child { margin-bottom: 0; }
     .calc-lbl {
-      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
       font-weight: 600;
       color: var(--muted);
       margin-bottom: 10px;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
     }
     .calc-opts {
       display: grid;
       grid-template-columns: 1fr;
       gap: 10px;
     }
-    @media (min-width: 540px) { .calc-opts { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); } }
+    @media (min-width: 540px) { .calc-opts { grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); } }
     .calc-opt {
-      background: #FFFFFF;
-      border: 1.5px solid #E5E7EB;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
       border-radius: 14px;
       padding: 14px 16px;
       text-align: left;
@@ -595,70 +751,166 @@
       transition: all 0.16s ease;
     }
     .calc-opt span { font-size: 14px; font-weight: 600; color: var(--ink); }
-    .calc-opt strong { font-size: 13px; font-weight: 500; color: var(--muted); }
+    .calc-opt strong { font-size: 13px; font-weight: 600; color: var(--muted); }
     .calc-opt.active {
-      background: var(--ink);
-      border-color: var(--ink);
+      border-color: var(--accent);
+      background: var(--surface-alt);
     }
-    .calc-opt.active span { color: #FFFFFF; }
-    .calc-opt.active strong { color: rgba(255,255,255,0.75); }
+    .calc-opt.active span { color: var(--ink); }
+    .calc-opt.active strong { color: var(--accent); }
 
     .calc-receipt {
-      background: #FFFFFF;
+      background: var(--ink-deep);
+      color: #FFFFFF;
       border-radius: 22px;
-      padding: 26px;
-      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
-      border: 1px solid #ECEEF1;
+      padding: 26px 24px;
     }
-    .rc-kicker { font-size: 13px; color: var(--muted); font-weight: 500; }
+    .rc-kicker { font-size: 13px; color: rgba(255,255,255,0.68); font-weight: 500; }
     .rc-total {
-      font-size: 40px;
-      font-weight: 700;
+      font-size: clamp(32px, 4vw, 42px);
+      font-weight: 800;
       letter-spacing: -0.03em;
-      color: var(--ink);
+      color: #FFFFFF;
       line-height: 1.1;
-      margin: 6px 0 10px;
+      margin: 6px 0 12px;
     }
     .rc-summary {
       font-size: 14px;
-      color: var(--muted);
+      color: rgba(255,255,255,0.82);
       padding-bottom: 18px;
       margin-bottom: 18px;
-      border-bottom: 1px solid #F0F1F4;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
     }
-    .rc-cta { width: 100%; padding: 15px 16px; font-size: 14px; white-space: normal; text-align: center; }
+    .rc-cta {
+      width: 100%;
+      padding: 15px 16px;
+      background: #FFFFFF;
+      color: var(--ink-deep);
+      border-radius: 999px;
+      font-size: 14.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+      white-space: normal;
+      transition: transform 0.16s;
+    }
+    .rc-cta:hover { transform: translateY(-1px); }
     .rc-tel {
       display: block;
       text-align: center;
-      margin-top: 12px;
+      margin-top: 14px;
       font-size: 13.5px;
-      color: var(--muted);
+      color: rgba(255,255,255,0.74);
       font-weight: 500;
     }
 
+    /* Section 6: Studio Location & Contacts */
+    .loc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    @media (min-width: 900px) { .loc-grid { grid-template-columns: 0.85fr 1.15fr; gap: 28px; } }
+    .loc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .loc-addr { font-size: 16.5px; font-weight: 600; color: var(--ink); margin-top: 10px; }
+    .loc-rating { font-size: 14px; font-weight: 700; color: var(--accent); margin-top: 6px; }
+    .loc-note { font-size: 14px; color: var(--muted); margin-top: 12px; line-height: 1.5; }
+    .contact-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .contact-chip {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      color: var(--ink);
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 11px 16px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: border-color 0.16s, background 0.16s;
+    }
+    .contact-chip:hover { border-color: var(--ink); }
+    .contact-chip.primary { background: var(--ink-deep); color: #FFFFFF; border-color: var(--ink-deep); }
+    .map-box {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      min-height: 320px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      background-image: radial-gradient(color-mix(in srgb, var(--ink) 7%, transparent) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    @media (min-width: 900px) { .map-box { min-height: 380px; } }
+    .map-fallback-inner {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+    .map-fallback-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      color: var(--ink);
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+    .map-iframe {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      border: 0;
+      display: block;
+    }
+    @media (min-width: 900px) { .map-iframe { min-height: 380px; } }
+
     /* Footer */
     .footer {
-      border-top: 1px solid #ECEEF1;
-      margin-top: 56px;
-      padding: 32px 0 44px;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      padding: 28px 0 42px;
     }
     .footer-inner {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
     }
-    @media (min-width: 760px) {
-      .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; }
-    }
-    .footer-meta { font-size: 14px; color: var(--muted); line-height: 1.5; }
-    .footer-meta strong { color: var(--ink); font-weight: 600; }
-    .footer-tag { font-size: 12.5px; color: #9CA3AF; }
+    @media (min-width: 760px) { .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; } }
+    .footer-meta { font-size: 13.5px; color: var(--muted); }
+    .footer-meta strong { color: var(--ink); }
+    .footer-tag { font-size: 12.5px; color: var(--muted); opacity: 0.78; }
 
-    /* Subtle Floating Action Icon */
+    /* Floating WhatsApp Icon */
     .wa-fab {
       position: fixed;
-      right: 20px;
-      bottom: 20px;
+      right: 18px;
+      bottom: 18px;
       z-index: 50;
       width: 54px;
       height: 54px;
@@ -672,6 +924,44 @@
       transition: transform 0.2s ease;
     }
     .wa-fab:hover { transform: scale(1.07); }
+
+    /* Lightbox Modal */
+    .lb-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      background: rgba(12, 16, 20, 0.92);
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .lb-modal.open { display: flex; }
+    .lb-img {
+      max-width: 92vw;
+      max-height: 76vh;
+      border-radius: 16px;
+      object-fit: contain;
+    }
+    .lb-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #FFFFFF;
+      font-size: 14px;
+    }
+    .lb-btn {
+      background: rgba(255,255,255,0.16);
+      border: none;
+      color: #FFFFFF;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -679,7 +969,7 @@
   <header class="navbar">
     <div class="container nav-inner">
       <a href="#" class="brand">
-        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="brand-crest" aria-hidden="true">ОМ</div>
         <div class="brand-text">
           <div class="brand-title">О! Мебель</div>
           <div class="brand-sub">Набережные Челны · Мебель на заказ</div>
@@ -687,146 +977,136 @@
       </a>
       <nav class="nav-links" aria-label="Навигация">
         <a href="#offers">Предложения</a>
-        <a href="#advantages">Преимущества</a>
+        <a href="#craft">Преимущества</a>
         <a href="#gallery">Фотографии</a>
         <a href="#calculator">Калькулятор</a>
+        <a href="#location">Контакты</a>
       </nav>
       <div class="nav-right">
         <a href="tel:+79061174747" class="nav-phone">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>+7 (906) 117-47-47</span>
         </a>
-        <a href="#calculator" class="pill-btn pill-btn-nav">Рассчитать кухню</a>
+        <a href="#calculator" class="pill-btn-nav">Рассчитать проект</a>
       </div>
     </div>
   </header>
 
-  <section class="hero-sec">
+  
+  <section class="hero-sec hero-atelier-sec">
     <div class="container">
-      <div class="hero-frame">
-        <img id="heroImg" src="images/photo_2.jpg" alt="О! Мебель" class="hero-bg">
-        <div class="hero-scrim"></div>
-        <div class="hero-inner">
-          <div class="hero-copy">
-            <div class="hero-title-row">
-              <h1 class="hero-h1" id="heroTitle">Кухни и мебель точно под ваш интерьер</h1>
-              <a href="#calculator" class="hero-arrow-circle" aria-label="Перейти к расчёту">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-            <p class="hero-sub" id="heroSub">Собственное производство, точный замер и монтаж за 1 день</p>
+      <div class="atelier-split">
+        <div class="atelier-copy">
+          <div class="kicker-line">СОБСТВЕННОЕ ПРОИЗВОДСТВО · НАБЕРЕЖНЫЕ ЧЕЛНЫ</div>
+          <h1 class="hero-h1 hero-h1-serif" id="heroTitle">Кухни и мебель точно под ваш интерьер</h1>
+          <p class="hero-lead" id="heroSub">Делаем на собственной фабрике без наценки торговых залов — фиксируем цену и сроки в договоре.</p>
+          <div class="hero-actions">
+            <a href="#calculator" class="btn-primary">Рассчитать проект</a>
+            <a href="https://wa.me/79061174747?text=Здравствуйте!%20Подскажите%20по%20стоимости%20кухни%20в%20«%D0%9E%21%20%D0%9C%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C»" target="_blank" rel="noopener" class="btn-outline">Вызвать замерщика</a>
           </div>
-          <div class="hero-tabs">
-            <button type="button" class="hero-tab active" onclick="setHeroSlide(0)">01 · Условия и фото</button>
-            <button type="button" class="hero-tab" onclick="setHeroSlide(1)">02 · Детали подхода</button>
-            <button type="button" class="hero-tab" onclick="setHeroSlide(2)">03 · Расчёт цены</button>
+          <div class="seg-bar hero-seg">
+            <button type="button" class="hero-tab active" onclick="setHeroSlide(0)">01 · Интерьер</button>
+            <button type="button" class="hero-tab" onclick="setHeroSlide(1)">02 · Замер и 3D</button>
+            <button type="button" class="hero-tab" onclick="setHeroSlide(2)">03 · Сборка</button>
           </div>
         </div>
-        <div class="hero-notch">
-          <img src="images/photo_3.jpg" alt="О! Мебель" class="hero-notch-img">
-          <div>
-            <div class="hero-notch-lbl">Доверие клиентов</div>
-            <div class="hero-notch-val">★ 4,9 в Яндексе</div>
-            <a href="#offers" class="hero-notch-link">Смотреть варианты →</a>
+        <div class="atelier-collage">
+          <img id="heroImg" src="images/photo_2.jpg" alt="О! Мебель" class="collage-main">
+          <div class="collage-inset-wrap">
+            <img src="images/photo_3.jpg" alt="О! Мебель детали" class="collage-inset">
+            <div class="collage-tag">★ 4,9 · Замер 0 ₽</div>
           </div>
         </div>
       </div>
-
-      <div class="mobile-trust-bar">
-        <div>
-          <div class="mtb-val">★ 4,9 на Яндекс Картах</div>
-          <div class="mtb-sub">Московский просп., 128А, Набережные Челны</div>
-        </div>
-        <a href="tel:+79061174747" class="pill-btn pill-btn-nav">Позвонить</a>
+      <div class="metrics-strip">
+        <div class="metric-item"><div class="metric-k">Без салона 0%</div><div class="metric-v">Прямая цена фабрики без аренды ТЦ</div></div><div class="metric-item"><div class="metric-k">Замер до 1 мм</div><div class="metric-v">Учитываем трубы, розетки и геометрию стен</div></div><div class="metric-item"><div class="metric-k">Монтаж 1 день</div><div class="metric-v">Врезка мойки, техники и уборка упаковки</div></div>
       </div>
     </div>
   </section>
 
   <section class="sec" id="offers">
     <div class="container">
-      <h2 class="sec-h2">Популярные форматы</h2>
-      <div class="offers-split">
-        <div class="offer-list">
-          
-        <div class="offer-row" onclick="applyPreset(0, 0)">
-          <div class="offer-left">
-            <img src="images/photo_3.jpg" alt="Прямая кухня до 3 м" class="offer-thumb">
-            <div class="offer-info">
-              <div class="offer-title">Прямая кухня до 3 м</div>
-              <div class="offer-sub">ЛДСП / пластик, доводчики и влагостойкая столешница</div>
-              <div class="offer-price">85 000 ₽ <span>/ комплект</span></div>
+      <div class="sec-head">
+        <div class="kicker-line">ТИПОВЫЕ ПРОЕКТЫ</div>
+        <h2 class="sec-h2">Популярные конфигурации кухонь</h2>
+      </div>
+      <div class="bento-grid">
+        
+        <article class="bento-offer" onclick="applyPreset(0, 0)">
+          <div class="bento-media">
+            <img src="images/photo_3.jpg" alt="Прямая кухня до 3 м">
+            <span class="bento-num">01</span>
+          </div>
+          <div class="bento-body">
+            <h3 class="bento-title">Прямая кухня до 3 м</h3>
+            <p class="bento-sub">Практичный пластик / ЛДСП, доводчики и свет</p>
+            <div class="bento-foot">
+              <div class="bento-price">85 000 ₽ <span>/ проект</span></div>
+              <button type="button" class="bento-btn" aria-label="Выбрать Прямая кухня до 3 м">
+                <span>Выбрать</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </div>
           </div>
-          <button type="button" class="circle-arrow-btn" aria-label="Выбрать Прямая кухня до 3 м">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </div>
-        <div class="offer-row" onclick="applyPreset(1, 1)">
-          <div class="offer-left">
-            <img src="images/photo_4.jpg" alt="Угловая кухня в матовой эмали" class="offer-thumb">
-            <div class="offer-info">
-              <div class="offer-title">Угловая кухня в матовой эмали</div>
-              <div class="offer-sub">Фасады МДФ эмаль/плёнка, встроенная подсветка и пенал</div>
-              <div class="offer-price">140 000 ₽ <span>/ комплект</span></div>
+        </article>
+        <article class="bento-offer" onclick="applyPreset(1, 1)">
+          <div class="bento-media">
+            <img src="images/photo_4.jpg" alt="Угловая в матовой эмали">
+            <span class="bento-num">02</span>
+          </div>
+          <div class="bento-body">
+            <h3 class="bento-title">Угловая в матовой эмали</h3>
+            <p class="bento-sub">Фасады МДФ без ручек, пенал под технику</p>
+            <div class="bento-foot">
+              <div class="bento-price">140 000 ₽ <span>/ проект</span></div>
+              <button type="button" class="bento-btn" aria-label="Выбрать Угловая в матовой эмали">
+                <span>Выбрать</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </div>
           </div>
-          <button type="button" class="circle-arrow-btn" aria-label="Выбрать Угловая кухня в матовой эмали">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </div>
-        <div class="offer-row" onclick="applyPreset(2, 2)">
-          <div class="offer-left">
-            <img src="images/photo_5.jpg" alt="П-образная / с островом + Blum" class="offer-thumb">
-            <div class="offer-info">
-              <div class="offer-title">П-образная / с островом + Blum</div>
-              <div class="offer-sub">Премиум шпон и австрийская фурнитура под ключ</div>
-              <div class="offer-price">190 000 ₽ <span>/ проект</span></div>
+        </article>
+        <article class="bento-offer" onclick="applyPreset(2, 2)">
+          <div class="bento-media">
+            <img src="images/photo_5.jpg" alt="Кухня с островом + Blum">
+            <span class="bento-num">03</span>
+          </div>
+          <div class="bento-body">
+            <h3 class="bento-title">Кухня с островом + Blum</h3>
+            <p class="bento-sub">Натуральный шпон, кварц и австрийская фурнитура</p>
+            <div class="bento-foot">
+              <div class="bento-price">190 000 ₽ <span>/ проект</span></div>
+              <button type="button" class="bento-btn" aria-label="Выбрать Кухня с островом + Blum">
+                <span>Выбрать</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </div>
           </div>
-          <button type="button" class="circle-arrow-btn" aria-label="Выбрать П-образная / с островом + Blum">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </div>
-        </div>
-        <div class="map-stage">
-          <div class="map-fallback">
-            <a href="https://yandex.ru/maps/org/o_mebel/106900547327/" target="_blank" rel="noopener" class="map-pill" style="pointer-events:auto; z-index:2;">
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Московский просп., 128А, Набережные Челны</span>
-            </a>
-          </div>
-          <iframe class="map-iframe" title="Расположение О! Мебель" src="https://yandex.ru/map-widget/v1/?text=%D0%9E%21%20%D0%9C%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF.%2C%20128%D0%90%2C%20%D0%9D%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%A7%D0%B5%D0%BB%D0%BD%D1%8B&z=13"></iframe>
-          <div class="helper-card">
-            <div class="helper-title">Трудный выбор? Есть вопрос?</div>
-            <div class="helper-sub">Ответим в WhatsApp за пару минут и подберём лучший вариант</div>
-            <a href="https://wa.me/79061174747?text=Здравствуйте!%20Пишу%20с%20сайта%20%D0%9E%21%20%D0%9C%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C" target="_blank" rel="noopener" class="helper-btn">
-              Написать нам →
-            </a>
-          </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="advantages">
+  <section class="sec" id="craft">
     <div class="container">
-      <div class="story-split">
-        <div class="arch-wrap">
-          <img id="storyImg" src="images/photo_4.jpg" alt="О! Мебель" class="arch-photo">
-          <svg class="spark-top" viewBox="0 0 48 48" width="44" height="44" fill="currentColor" aria-hidden="true">
-            <path d="M24 2l4.8 14.8L44 22l-15.2 5.2L24 42l-4.8-14.8L4 22l15.2-5.2L24 2z"/>
-          </svg>
-        </div>
-        <div>
-          <div class="story-tabs">
-            <button type="button" class="story-tab active" onclick="setStoryTab(0)">Производство</button><button type="button" class="story-tab" onclick="setStoryTab(1)">3D-замер</button><button type="button" class="story-tab" onclick="setStoryTab(2)">Фурнитура</button><button type="button" class="story-tab" onclick="setStoryTab(3)">Монтаж</button>
+      <div class="craft-card">
+        <div class="craft-split">
+          <div class="craft-photo-box">
+            <img id="storyImg" src="images/photo_4.jpg" alt="О! Мебель">
+            <div class="craft-float-badge" id="storyCounter">01 / 04 · Производство</div>
           </div>
-          <h2 class="story-h3" id="storyTitle">Напрямую с фабрики без наценки салона</h2>
-          <p class="story-desc" id="storyDesc">Не платите за аренду дорогих ТЦ — весь бюджет идёт в качественные плиты, кромку и фурнитуру.</p>
-          <a href="#calculator" class="pill-btn">
-            <span>Вызвать замерщика бесплатно</span>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+          <div>
+            <div class="kicker-line">ПОДХОД АТЕЛЬЕ</div>
+            <div class="story-tabs">
+              <button type="button" class="story-tab active" onclick="setStoryTab(0)">01 · Производство</button><button type="button" class="story-tab" onclick="setStoryTab(1)">02 · 3D-проект</button><button type="button" class="story-tab" onclick="setStoryTab(2)">03 · Фурнитура</button><button type="button" class="story-tab" onclick="setStoryTab(3)">04 · Чистый монтаж</button>
+            </div>
+            <h2 class="story-h3" id="storyTitle">Весь бюджет уходит в материалы</h2>
+            <p class="story-desc" id="storyDesc">Вы не переплачиваете за аренду стенда в мебельном молле — платите за плиту, кромку и механику.</p>
+            <a href="#calculator" class="btn-primary">
+              <span>Получить смету по своим размерам</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -834,92 +1114,58 @@
 
   <section class="sec" id="gallery">
     <div class="container">
-      <div class="social-banner">
-        <div>
-          <h3 class="social-h3">Предварительный просчёт по размерам</h3>
-          <p class="social-sub">Пришлите эскиз или размеры стен в WhatsApp — посчитаем бюджет за час</p>
-          <div class="social-row">
-            <a href="https://wa.me/79061174747?text=Здравствуйте!%20Подскажите%20по%20стоимости%20и%20свободным%20датам" target="_blank" rel="noopener" class="social-circle" title="WhatsApp" aria-label="WhatsApp">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-            </a>
-            <a href="tel:+79061174747" class="social-circle" title="Позвонить" aria-label="Позвонить">
-              <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </a>
-            <a href="https://yandex.ru/maps/org/o_mebel/106900547327/" target="_blank" rel="noopener" class="social-circle" title="Яндекс Карты" aria-label="Яндекс Карты">
-              <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </a>
-            
-          </div>
-        </div>
-        <div class="social-media">
-          <img src="images/photo_3.jpg" alt="О! Мебель">
-        </div>
+      <div class="sec-head">
+        <div class="kicker-line">РЕАЛИЗОВАННЫЕ ИНТЕРЬЕРЫ</div>
+        <h2 class="sec-h2">Готовые проекты у заказчиков</h2>
       </div>
-
-      <h2 class="sec-h2">Реализованные интерьеры</h2>
-      <div class="gal-grid">
+      <div class="gal-mosaic">
         
-        <article class="gal-item">
-          <div class="gal-head">
-            <div class="gal-kicker">Мебель на заказ</div>
-            <h3 class="gal-title">Кухонный проект под размеры</h3>
-            <div class="gal-loc">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Московский просп., 128А, Набережные Челны</span>
-            </div>
-          </div>
-          <div class="gal-photo">
-            <img src="images/photo_5.jpg" alt="О! Мебель фото 1">
-          </div>
-        </article>
-        <article class="gal-item">
-          <div class="gal-head">
-            <div class="gal-kicker">Мебель на заказ</div>
-            <h3 class="gal-title">Выполненный монтаж · Набережные Челны</h3>
-            <div class="gal-loc">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Московский просп., 128А, Набережные Челны</span>
-            </div>
-          </div>
-          <div class="gal-photo">
-            <img src="images/photo_6.jpg" alt="О! Мебель фото 2">
-          </div>
-        </article>
-        <article class="gal-item">
-          <div class="gal-head">
-            <div class="gal-kicker">Мебель на заказ</div>
-            <h3 class="gal-title">Эргономика фасадов и фурнитуры</h3>
-            <div class="gal-loc">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Московский просп., 128А, Набережные Челны</span>
-            </div>
-          </div>
-          <div class="gal-photo">
-            <img src="images/photo_7.jpg" alt="О! Мебель фото 3">
-          </div>
-        </article>
-        <article class="gal-item">
-          <div class="gal-head">
-            <div class="gal-kicker">Мебель на заказ</div>
-            <h3 class="gal-title">Современная зона готовки</h3>
-            <div class="gal-loc">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Московский просп., 128А, Набережные Челны</span>
-            </div>
-          </div>
-          <div class="gal-photo">
-            <img src="images/photo_8.jpg" alt="О! Мебель фото 4">
-          </div>
-        </article>
+        <figure class="gal-card" onclick="openLightbox(0)">
+          <img src="images/photo_5.jpg" alt="О! Мебель — Современная кухня под потолок без лишних зазоров">
+          <figcaption class="gal-cap">
+            <span>Современная кухня под потолок без лишних зазоров</span>
+            <span class="gal-zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </span>
+          </figcaption>
+        </figure>
+        <figure class="gal-card" onclick="openLightbox(1)">
+          <img src="images/photo_6.jpg" alt="О! Мебель — Продуманная эргономика рабочей зоны и хранения">
+          <figcaption class="gal-cap">
+            <span>Продуманная эргономика рабочей зоны и хранения</span>
+            <span class="gal-zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </span>
+          </figcaption>
+        </figure>
+        <figure class="gal-card" onclick="openLightbox(2)">
+          <img src="images/photo_7.jpg" alt="О! Мебель — Точная стыковка фасадов и встроенной техники">
+          <figcaption class="gal-cap">
+            <span>Точная стыковка фасадов и встроенной техники</span>
+            <span class="gal-zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </span>
+          </figcaption>
+        </figure>
+        <figure class="gal-card" onclick="openLightbox(3)">
+          <img src="images/photo_8.jpg" alt="О! Мебель — Тёплые оттенки и надёжная фурнитура каждый день">
+          <figcaption class="gal-cap">
+            <span>Тёплые оттенки и надёжная фурнитура каждый день</span>
+            <span class="gal-zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </span>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
   <section class="sec" id="calculator">
     <div class="container">
-      <div class="calc-band">
-        <h2 class="sec-h2" style="margin-bottom: 8px;">Онлайн-расчёт стоимости кухни</h2>
-        <p style="color: var(--muted); margin-bottom: 28px;">Подберите конфигурацию и класс фасадов</p>
+      <div class="calc-section-wrap">
+        <div class="kicker-line">ОНЛАЙН-РАСЧЁТ</div>
+        <h2 class="sec-h2" style="margin-bottom: 8px;">Предварительный расчёт кухни</h2>
+        <p style="color: var(--muted);">Подберите форму гарнитура и материал фасадов — покажем вилку бюджета до замера.</p>
         <div class="calc-layout">
           <div>
             <div class="calc-grp">
@@ -935,7 +1181,7 @@
             <div class="rc-kicker">Ориентировочная стоимость</div>
             <div class="rc-total" id="calcTotal">от 85 000 ₽</div>
             <div class="rc-summary" id="calcSummary">Прямая (до 3 м) · ЛДСП / Пластик</div>
-            <a href="https://wa.me/79061174747" id="calcSendBtn" target="_blank" rel="noopener" class="pill-btn rc-cta">
+            <a href="https://wa.me/79061174747" id="calcSendBtn" target="_blank" rel="noopener" class="rc-cta">
               <span>Отправить расчёт в WhatsApp</span>
               <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
@@ -946,23 +1192,62 @@
     </div>
   </section>
 
+  <section class="sec" id="location">
+    <div class="container">
+      <div class="loc-grid">
+        <div class="loc-card">
+          <div>
+            <div class="kicker-line">АДРЕС И КОНТАКТЫ</div>
+            <h2 class="sec-h2" style="font-size: clamp(24px, 2.5vw, 32px);">Замер и предварительный расчёт</h2>
+            <div class="loc-addr">Московский просп., 128А, Набережные Челны</div>
+            <div class="loc-rating">★ 4,9 в Яндекс Картах</div>
+            <p class="loc-note">Пришлите эскиз от руки или размеры стен в WhatsApp — подготовим расчёт и 3 варианта планировки.</p>
+          </div>
+          <div class="contact-chips">
+            <a href="https://wa.me/79061174747?text=Здравствуйте!%20Пишу%20с%20сайта%20«%D0%9E%21%20%D0%9C%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C»" target="_blank" rel="noopener" class="contact-chip primary">Написать в WhatsApp</a>
+            <a href="tel:+79061174747" class="contact-chip">+7 (906) 117-47-47</a>
+            <a href="https://yandex.ru/maps/org/o_mebel/106900547327/" target="_blank" rel="noopener" class="contact-chip">Открыть в Яндекс Картах →</a>
+            
+          </div>
+        </div>
+        <div class="map-box">
+          <div class="map-fallback-inner">
+            <a href="https://yandex.ru/maps/org/o_mebel/106900547327/" target="_blank" rel="noopener" class="map-fallback-pill">Московский просп., 128А, Набережные Челны · Яндекс Карты →</a>
+          </div>
+          <iframe class="map-iframe" title="Карта О! Мебель" src="https://yandex.ru/map-widget/v1/?text=%D0%9E%21%20%D0%9C%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF.%2C%20128%D0%90%2C%20%D0%9D%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%A7%D0%B5%D0%BB%D0%BD%D1%8B&z=13"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-meta">
-        <strong>О! Мебель</strong> · ★ 4,9 на Яндекс Картах<br>
-        Московский просп., 128А, Набережные Челны · <a href="tel:+79061174747">+7 (906) 117-47-47</a>
+        <strong>О! Мебель</strong> · Московский просп., 128А, Набережные Челны · <a href="tel:+79061174747">+7 (906) 117-47-47</a>
       </div>
-      <div class="footer-tag">Демо-концепт сайта подготовлен в CODEC Studio</div>
+      <div class="footer-tag">Авторский концепт разработан в CODEC Studio</div>
     </div>
   </footer>
 
-  <a href="https://wa.me/79061174747?text=Здравствуйте!%20Пишу%20с%20сайта%20%D0%9E%21%20%D0%9C%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C" target="_blank" rel="noopener" class="wa-fab" title="Написать в WhatsApp" aria-label="Написать в WhatsApp">
+  <a href="https://wa.me/79061174747?text=Здравствуйте!%20Пишу%20с%20сайта%20«%D0%9E%21%20%D0%9C%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C»" target="_blank" rel="noopener" class="wa-fab" title="Написать в WhatsApp" aria-label="Написать в WhatsApp">
     <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
   </a>
 
+  <div class="lb-modal" id="lbModal" onclick="if(event.target===this) closeLightbox()">
+    <img id="lbImg" src="images/photo_2.jpg" alt="О! Мебель" class="lb-img">
+    <div class="lb-bar">
+      <button type="button" class="lb-btn" onclick="stepLightbox(-1)" aria-label="Предыдущее фото">←</button>
+      <span id="lbCaption"></span>
+      <button type="button" class="lb-btn" onclick="stepLightbox(1)" aria-label="Следующее фото">→</button>
+      <button type="button" class="lb-btn" onclick="closeLightbox()" aria-label="Закрыть">✕</button>
+    </div>
+  </div>
+
   <script>
-    var heroSlides = [{"title": "Кухни и мебель точно под ваш интерьер", "sub": "Собственное производство, точный замер и монтаж за 1 день", "img": "images/photo_2.jpg"}, {"title": "3D-проект с образцами материалов бесплатно", "sub": "Фурнитура с доводчиками, фиксация цены в договоре", "img": "images/photo_3.jpg"}, {"title": "Узнайте ориентировочный бюджет за 15 секунд", "sub": "Выберите планировку и материалы фасадов в калькуляторе", "img": "images/photo_4.jpg"}];
-    var storyTabsData = [{"title": "Напрямую с фабрики без наценки салона", "desc": "Не платите за аренду дорогих ТЦ — весь бюджет идёт в качественные плиты, кромку и фурнитуру.", "img": "images/photo_4.jpg"}, {"title": "Выезд дизайнера с каталогом образцов", "desc": "Лазерный замер до миллиметра с учётом розеток, вытяжки, газовых труб и неровностей стен.", "img": "images/photo_2.jpg"}, {"title": "Надёжные системы доводчиков", "desc": "Ящики открываются плавно и тихо даже при полной загрузке посудой и техникой.", "img": "images/photo_5.jpg"}, {"title": "Аккуратная сборка и чистота после работ", "desc": "Установим мебель, врежем мойку, подключим подсветку и вынесем упаковочный мусор.", "img": "images/photo_3.jpg"}];
+    var heroSlides = [{"title": "Кухни и мебель точно под ваш интерьер", "sub": "Делаем на собственной фабрике без наценки торговых залов — фиксируем цену и сроки в договоре.", "img": "images/photo_2.jpg", "num": "01 / 03"}, {"title": "Выездной лазерный замер с образцами фасадов", "sub": "Дизайнер привезёт реальные декоры эмали, шпона и столешниц прямо к вам на объект.", "img": "images/photo_3.jpg", "num": "02 / 03"}, {"title": "Рассчитайте ориентировочный бюджет заранее", "sub": "Выберите планировку кухни и уровень фурнитуры в конфигураторе ниже за 15 секунд.", "img": "images/photo_4.jpg", "num": "03 / 03"}];
+    var storyTabsData = [{"num": "01 / 04", "label": "Производство", "title": "Весь бюджет уходит в материалы", "desc": "Вы не переплачиваете за аренду стенда в мебельном молле — платите за плиту, кромку и механику.", "img": "images/photo_4.jpg"}, {"num": "02 / 04", "label": "3D-проект", "title": "Видите готовую кухню до распила", "desc": "Проектируем эргономику ящиков и подсветки, подбираем сочетания оттенков при вашем освещении.", "img": "images/photo_2.jpg"}, {"num": "03 / 04", "label": "Фурнитура", "title": "Плавное закрывание с запасом ресурса", "desc": "Ставим надёжные направляющие и петли с доводчиками даже при полной нагрузке посудой.", "img": "images/photo_5.jpg"}, {"num": "04 / 04", "label": "Чистый монтаж", "title": "Аккуратная сборка собственной бригадой", "desc": "Выставляем зазоры по уровню, подключаем вытяжку, варочную панель и оставляем порядок.", "img": "images/photo_3.jpg"}];
+    var galleryLightbox = [{"src": "images/photo_5.jpg", "caption": "Современная кухня под потолок без лишних зазоров"}, {"src": "images/photo_6.jpg", "caption": "Продуманная эргономика рабочей зоны и хранения"}, {"src": "images/photo_7.jpg", "caption": "Точная стыковка фасадов и встроенной техники"}, {"src": "images/photo_8.jpg", "caption": "Тёплые оттенки и надёжная фурнитура каждый день"}];
+    var lbIndex = 0;
     var g1Val = 85000;
     var g1Lbl = "Прямая (до 3 м)";
     var g2Val = 0;
@@ -976,6 +1261,8 @@
       document.getElementById("heroImg").src = s.img;
       document.getElementById("heroTitle").textContent = s.title;
       document.getElementById("heroSub").textContent = s.sub;
+      var cnt = document.getElementById("heroSlideCounter");
+      if (cnt) cnt.textContent = s.num;
       document.querySelectorAll(".hero-tab").forEach(function(el, i) {
         el.classList.toggle("active", i === idx);
       });
@@ -987,6 +1274,8 @@
       document.getElementById("storyTitle").textContent = item.title;
       document.getElementById("storyDesc").textContent = item.desc;
       document.getElementById("storyImg").src = item.img;
+      var c = document.getElementById("storyCounter");
+      if (c) c.textContent = item.num + " · " + item.label;
       document.querySelectorAll(".story-tab").forEach(function(el, i) {
         el.classList.toggle("active", i === idx);
       });
@@ -1021,6 +1310,17 @@
       if (b2) selectOpt(b2);
       document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
     }
+
+    function openLightbox(idx) {
+      if (!galleryLightbox.length) return;
+      lbIndex = (idx + galleryLightbox.length) % galleryLightbox.length;
+      document.getElementById("lbImg").src = galleryLightbox[lbIndex].src;
+      document.getElementById("lbCaption").textContent = galleryLightbox[lbIndex].caption;
+      document.getElementById("lbModal").classList.add("open");
+    }
+    function stepLightbox(delta) { openLightbox(lbIndex + delta); }
+    function closeLightbox() { document.getElementById("lbModal").classList.remove("open"); }
+    document.addEventListener("keydown", function(e) { if (e.key === "Escape") closeLightbox(); });
 
     updateCalc();
   </script>
