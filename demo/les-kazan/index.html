@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Лес Казань | Казань</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #120E0A;
+      --card: #1D1712;
+      --accent: #DC9652;
+      --text: #FAF5EE;
+      --muted: #A6998C;
+      --btn-txt: #120D08;
+      --border: rgba(255,255,255,0.09);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    html { overflow-x: hidden; scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      overflow-x: hidden;
+      padding-bottom: 84px;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+    /* Top Concept Notice */
+    .concept-bar {
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      padding: 7px 12px;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+    .concept-bar strong { color: var(--accent); }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(13, 15, 16, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 58vw;
+    }
+    .brand-sub {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .header-cta {
+      background: var(--accent);
+      color: var(--btn-txt);
+      font-weight: 800;
+      font-size: 12px;
+      padding: 9px 15px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .header-cta:active { transform: scale(0.97); }
+
+    /* Hero */
+    .hero { padding: 28px 0 32px; }
+    .hero-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .rating-pill { color: var(--accent); font-weight: 700; }
+    .hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 7vw, 52px);
+      line-height: 1.08;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .hero-h1 span { color: var(--accent); font-style: italic; }
+    .hero-desc {
+      font-size: 14.5px;
+      color: var(--muted);
+      max-width: 600px;
+      margin-bottom: 22px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    @media (min-width: 600px) {
+      .hero-actions { flex-direction: row; }
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--btn-txt);
+      font-weight: 800;
+      font-size: 14px;
+      padding: 15px 24px;
+      border-radius: 999px;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-outline {
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 15px 24px;
+      border-radius: 999px;
+      text-align: center;
+    }
+    .hero-media {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 4 / 3;
+      background: var(--card);
+    }
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Sections */
+    .section { padding: 28px 0; }
+    .sec-head { margin-bottom: 18px; }
+    .sec-tag {
+      font-size: 10.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .sec-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      line-height: 1.15;
+    }
+
+    /* Benefits */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 720px) {
+      .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .benefit-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .benefit-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-bottom: 10px;
+    }
+    .benefit-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .benefit-card p { font-size: 13px; color: var(--muted); }
+
+    /* Gallery */
+    .gal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (min-width: 720px) {
+      .gal-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    }
+    .gal-card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 4 / 3;
+      background: var(--card);
+    }
+    .gal-card img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Calculator */
+    .calc-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px 18px;
+    }
+    .calc-group { margin-bottom: 18px; }
+    .calc-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .calc-opts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .calc-opt {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+    .calc-opt.active {
+      background: var(--accent);
+      color: var(--btn-txt);
+      border-color: var(--accent);
+      font-weight: 800;
+    }
+    .calc-result {
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    @media (min-width: 600px) {
+      .calc-result { flex-direction: row; align-items: center; justify-content: space-between; }
+    }
+    .calc-price-label { font-size: 11.5px; color: var(--muted); }
+    .calc-price-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.1;
+    }
+
+    /* Contacts Card */
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .contact-row { display: flex; flex-direction: column; gap: 2px; }
+    .contact-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .contact-val { font-size: 15px; font-weight: 600; }
+
+    /* Sticky Mobile Bar */
+    .mobile-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      background: rgba(13, 15, 16, 0.94);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+      display: flex;
+      gap: 8px;
+    }
+    @media (min-width: 768px) { .mobile-bar { display: none; } body { padding-bottom: 24px; } }
+    .bar-call {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+    .bar-cta {
+      flex: 1;
+      height: 44px;
+      background: var(--accent);
+      color: var(--btn-txt);
+      font-weight: 800;
+      font-size: 13.5px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="concept-bar">
+    Персональный демо-концепт для <strong>«Лес Казань»</strong> • CODEC Studio
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <div>
+          <div class="brand-name">Лес Казань</div>
+          <div class="brand-sub">Казань • БАНИ И ДОМА ПОД КЛЮЧ</div>
+        </div>
+        <a href="#calc" class="header-cta">Рассчитать</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-meta">
+        <span class="rating-pill">★ 5.0</span>
+        <span>•</span>
+        <span>ул. Журналистов, 97, корп. 7, Казань</span>
+      </div>
+      <h1 class="hero-h1">Надежная баня под ключ от <span>«Лес Казань»</span></h1>
+      <p class="hero-desc">Строим тёплые каркасные, модульные бани и дома из сухой древесины. Полная комплектация с печью, полоками и электрикой.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/79534025973?text=Здравствуйте!%20Хочу%20уточнить%20по%20услугам%20«Лес Казань»" target="_blank" class="btn-primary">
+          Получить смету и каталог в WhatsApp
+        </a>
+        <a href="tel:+79534025973" class="btn-outline">Позвонить +7 (953) 402-59-73</a>
+      </div>
+      <div class="hero-media"><img src="images/photo_1.jpg" alt="Лес Казань" loading="eager"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="benefits-grid">
+        
+        <div class="benefit-card">
+          <div class="benefit-dot"></div>
+          <h3>Быстрый монтаж</h3>
+          <p>Готовая модульная баня устанавливается на участке за 1–2 дня без мусора</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-dot"></div>
+          <h3>Правильная теплоизоляция</h3>
+          <p>Быстрый прогрев зимой до 90°C и долгое удержание мягкого пара</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-dot"></div>
+          <h3>Под ключ с печью</h3>
+          <p>Камни, дымоход, полоки из липы, свет и электрика уже включены</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  
+        <section class="section">
+          <div class="container">
+            <div class="sec-head">
+              <div class="sec-tag">Фотогалерея</div>
+              <h2 class="sec-title">Атмосфера и реальные фото</h2>
+            </div>
+            <div class="gal-grid">
+              <div class="gal-card"><img src="images/photo_1.jpg" alt="Лес Казань" loading="lazy"></div>
+<div class="gal-card"><img src="images/photo_2.jpg" alt="Лес Казань" loading="lazy"></div>
+<div class="gal-card"><img src="images/photo_3.jpg" alt="Лес Казань" loading="lazy"></div>
+
+            </div>
+          </div>
+        </section>
+        
+
+  <section class="section" id="calc">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-tag">Онлайн-калькулятор</div>
+        <h2 class="sec-title">Рассчитайте стоимость бани</h2>
+        <p style="font-size:13.5px;color:var(--muted);margin-top:4px;">Соберите комплектацию под ваш участок</p>
+      </div>
+      <div class="calc-box">
+        <div class="calc-group">
+          <div class="calc-label">Размер строения</div>
+          <div class="calc-opts"><button type="button" class="calc-opt active" data-group="1" data-val="390000" data-label="Компакт 4 × 2.3 м" onclick="selectOpt(this)">Компакт 4 × 2.3 м</button>
+<button type="button" class="calc-opt " data-group="1" data-val="520000" data-label="Стандарт 6 × 2.3 м" onclick="selectOpt(this)">Стандарт 6 × 2.3 м</button>
+<button type="button" class="calc-opt " data-group="1" data-val="740000" data-label="С комнатой отдыха 6 × 4 м" onclick="selectOpt(this)">С комнатой отдыха 6 × 4 м</button>
+</div>
+        </div>
+        <div class="calc-group">
+          <div class="calc-label">Опции комфорта</div>
+          <div class="calc-opts"><button type="button" class="calc-opt active" data-group="2" data-val="0" data-label="Базовая комплектация" onclick="selectOpt(this)">Базовая комплектация</button>
+<button type="button" class="calc-opt " data-group="2" data-val="35000" data-label="+ Панорамное окно" onclick="selectOpt(this)">+ Панорамное окно</button>
+<button type="button" class="calc-opt " data-group="2" data-val="95000" data-label="+ Терраса и купель" onclick="selectOpt(this)">+ Терраса и купель</button>
+</div>
+        </div>
+        <div class="calc-result">
+          <div>
+            <div class="calc-price-label">Ориентировочная стоимость</div>
+            <div class="calc-price-val" id="calcTotal">от 390 000 ₽</div>
+          </div>
+          <a href="https://wa.me/79534025973" id="calcSendBtn" target="_blank" class="btn-primary">Отправить расчет в WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-tag">Контакты</div>
+        <h2 class="sec-title">Ждем вас в «Лес Казань»</h2>
+      </div>
+      <div class="contact-card">
+        <div class="contact-row">
+          <span class="contact-lbl">Адрес</span>
+          <span class="contact-val">ул. Журналистов, 97, корп. 7, Казань</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-lbl">Телефон и WhatsApp</span>
+          <a href="tel:+79534025973" class="contact-val" style="color:var(--accent);">+7 (953) 402-59-73</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-lbl">Рейтинг на Яндекс Картах</span>
+          <span class="contact-val">★ 5.0 (Проверенная организация)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mobile-bar">
+    <a href="tel:+79534025973" class="bar-call" title="Позвонить" aria-label="Позвонить">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+    <a href="https://wa.me/79534025973?text=Здравствуйте!%20Пишу%20с%20сайта%20Лес Казань" target="_blank" class="bar-cta">Получить смету и каталог</a>
+  </div>
+
+  <script>
+    var g1Val = 390000;
+    var g1Lbl = "Компакт 4 × 2.3 м";
+    var g2Val = 0;
+    var g2Lbl = "Базовая комплектация";
+    var basePhone = "79534025973";
+    var brandName = "Лес Казань";
+
+    function updateCalc() {
+      var total = g1Val + g2Val;
+      var formatted = total.toString().replace(/\B(?=(\d{3})+(?=$))/g, " ");
+      document.getElementById("calcTotal").textContent = "от " + formatted + " ₽";
+      var msg = "Здравствуйте! Сделал расчет на сайте «" + brandName + "»: " + g1Lbl + " + " + g2Lbl + " (~" + formatted + " ₽). Подскажите по ближайшим окнам и точным условиям.";
+      document.getElementById("calcSendBtn").href = "https://wa.me/" + basePhone + "?text=" + encodeURIComponent(msg);
+    }
+
+    function selectOpt(btn) {
+      var grp = btn.getAttribute("data-group");
+      document.querySelectorAll('.calc-opt[data-group="' + grp + '"]').forEach(function(el) {
+        el.classList.remove("active");
+      });
+      btn.classList.add("active");
+      var val = parseInt(btn.getAttribute("data-val"), 10);
+      var lbl = btn.getAttribute("data-label");
+      if (grp === "1") { g1Val = val; g1Lbl = lbl; }
+      else { g2Val = val; g2Lbl = lbl; }
+      updateCalc();
+    }
+    updateCalc();
+  </script>
+</body>
+</html>
