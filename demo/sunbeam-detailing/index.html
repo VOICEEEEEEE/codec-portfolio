@@ -2,486 +2,967 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Sunbeam Detailing | Самара</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunbeam Detailing — Детейлинг-студия (Самара)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #090A0D;
-      --card: #13151B;
-      --accent: #D4AF6A;
-      --text: #F7F7F8;
-      --muted: #9499A6;
-      --btn-txt: #0D0B07;
-      --border: rgba(255,255,255,0.09);
+      --bg: #FFFFFF;
+      --surface: #F4F5F7;
+      --surface-tint: #EFF4FF;
+      --ink: #18181B;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --accent: #1D4ED8;
+      --helper: #1D4ED8;
+      --radius-lg: 24px;
+      --radius-md: 16px;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-    html { overflow-x: hidden; scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
-      color: var(--text);
-      line-height: 1.55;
-      overflow-x: hidden;
-      padding-bottom: 84px;
+      color: var(--ink);
+      font-family: 'Onest', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
     }
-    img { max-width: 100%; display: block; }
+    .offers-split > *, .story-split > *, .social-banner > *, .gal-grid > *, .calc-layout > * { min-width: 0; }
     a { color: inherit; text-decoration: none; }
-    .container { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 16px; }
-
-    /* Top Concept Notice */
-    .concept-bar {
-      background: rgba(255,255,255,0.04);
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-      padding: 7px 12px;
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-    }
-    .concept-bar strong { color: var(--accent); }
+    img { display: block; max-width: 100%; }
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+    @media (min-width: 900px) { .container { padding: 0 32px; } }
 
     /* Header */
-    .site-header {
+    .navbar {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(13, 15, 16, 0.88);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
+      z-index: 40;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #F0F1F4;
     }
-    .header-inner {
-      height: 62px;
+    .nav-inner {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      padding: 5px;
+      border-radius: 10px;
+      background: var(--surface);
+    }
+    .brand-mark span {
+      border-radius: 3px;
+      background: var(--ink);
+    }
+    .brand-mark span:nth-child(2) { background: var(--helper); }
+    .brand-mark span:nth-child(3) { background: var(--accent); }
+    .brand-text { min-width: 0; }
+    .brand-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 52vw;
+    }
+    .brand-sub {
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 28px;
+      font-size: 14.5px;
+      font-weight: 500;
+      color: #3F3F46;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    @media (min-width: 960px) { .nav-links { display: flex; } }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+    .nav-phone {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    @media (min-width: 680px) { .nav-phone { display: inline-flex; } }
+    .pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--ink);
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 11px 20px;
+      border-radius: 999px;
+      white-space: nowrap;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+    .pill-btn:hover { background: #2D2D33; transform: translateY(-1px); }
+    .pill-btn-nav { padding: 9px 18px; font-size: 13.5px; }
+
+    /* Hero Stage */
+    .hero-sec { padding-top: 16px; padding-bottom: 24px; }
+    .hero-frame {
+      position: relative;
+      border-radius: 26px;
+      overflow: hidden;
+      height: 440px;
+      background: #1D2024;
+    }
+    @media (min-width: 900px) { .hero-frame { height: 540px; border-radius: 28px; } }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.35s ease;
+    }
+    .hero-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, rgba(16, 18, 22, 0.72) 0%, rgba(16, 18, 22, 0.38) 54%, rgba(16, 18, 22, 0.16) 100%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 24px;
+    }
+    @media (min-width: 900px) { .hero-inner { padding: 48px 52px 32px; } }
+
+    .hero-copy { max-width: 680px; margin-top: auto; margin-bottom: auto; }
+    .hero-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .hero-h1 {
+      font-size: clamp(28px, 4.1vw, 52px);
+      line-height: 1.07;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: #FFFFFF;
+    }
+    .hero-arrow-circle {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .hero-arrow-circle:hover { background: rgba(255,255,255,0.28); transform: scale(1.06); }
+    .hero-sub {
+      font-size: clamp(14.5px, 1.4vw, 18px);
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+      max-width: 520px;
+    }
+
+    .hero-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      max-width: 100%;
+    }
+    .hero-tab {
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.72);
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 500;
+      padding: 6px 0 8px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.24);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .hero-tab.active {
+      color: #FFFFFF;
+      border-bottom-color: #FFFFFF;
+    }
+
+    /* Cutout Notch Badge on Desktop */
+    .hero-notch {
+      display: none;
+    }
+    @media (min-width: 860px) {
+      .hero-notch {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 3;
+        background: var(--bg);
+        border-top-left-radius: 26px;
+        padding: 18px 24px 16px 20px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        min-width: 280px;
+      }
+      .hero-notch-img {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+      .hero-notch-lbl { font-size: 12px; color: var(--muted); }
+      .hero-notch-val { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); line-height: 1.2; }
+      .hero-notch-link { font-size: 13px; font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 4px; margin-top: 2px; }
+    }
+
+    .mobile-trust-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 12px 16px;
+      margin-top: 12px;
     }
-    .brand-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 21px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--text);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 58vw;
-    }
-    .brand-sub {
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 700;
-    }
-    .header-cta {
-      background: var(--accent);
-      color: var(--btn-txt);
-      font-weight: 800;
-      font-size: 12px;
-      padding: 9px 15px;
-      border-radius: 999px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-    .header-cta:active { transform: scale(0.97); }
+    @media (min-width: 860px) { .mobile-trust-bar { display: none; } }
+    .mtb-val { font-size: 15px; font-weight: 700; }
+    .mtb-sub { font-size: 12px; color: var(--muted); }
 
-    /* Hero */
-    .hero { padding: 28px 0 32px; }
-    .hero-meta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 11.5px;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-    .rating-pill { color: var(--accent); font-weight: 700; }
-    .hero-h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(32px, 7vw, 52px);
-      line-height: 1.08;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-    .hero-h1 span { color: var(--accent); font-style: italic; }
-    .hero-desc {
-      font-size: 14.5px;
-      color: var(--muted);
-      max-width: 600px;
-      margin-bottom: 22px;
-    }
-    .hero-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    /* Generic Section */
+    .sec { padding: 42px 0; }
+    @media (min-width: 900px) { .sec { padding: 64px 0; } }
+    .sec-h2 {
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.12;
       margin-bottom: 24px;
     }
-    @media (min-width: 600px) {
-      .hero-actions { flex-direction: row; }
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: var(--btn-txt);
-      font-weight: 800;
-      font-size: 14px;
-      padding: 15px 24px;
-      border-radius: 999px;
-      text-align: center;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-    .btn-outline {
-      border: 1px solid var(--border);
-      background: var(--card);
-      color: var(--text);
-      font-weight: 600;
-      font-size: 14px;
-      padding: 15px 24px;
-      border-radius: 999px;
-      text-align: center;
-    }
-    .hero-media {
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      aspect-ratio: 4 / 3;
-      background: var(--card);
-    }
-    .hero-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
 
-    /* Sections */
-    .section { padding: 28px 0; }
-    .sec-head { margin-bottom: 18px; }
-    .sec-tag {
-      font-size: 10.5px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-    .sec-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      line-height: 1.15;
-    }
-
-    /* Benefits */
-    .benefits-grid {
+    /* Section 2: Best Offers + Map */
+    .offers-split {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 28px;
+      align-items: center;
     }
-    @media (min-width: 720px) {
-      .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+    @media (min-width: 940px) {
+      .offers-split { grid-template-columns: 1fr 1.12fr; gap: 44px; }
     }
-    .benefit-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px;
-    }
-    .benefit-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      margin-bottom: 10px;
-    }
-    .benefit-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-    .benefit-card p { font-size: 13px; color: var(--muted); }
-
-    /* Gallery */
-    .gal-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    @media (min-width: 720px) {
-      .gal-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
-    }
-    .gal-card {
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      aspect-ratio: 4 / 3;
-      background: var(--card);
-    }
-    .gal-card img { width: 100%; height: 100%; object-fit: cover; }
-
-    /* Calculator */
-    .calc-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 22px 18px;
-    }
-    .calc-group { margin-bottom: 18px; }
-    .calc-label {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
-    }
-    .calc-opts {
+    .offer-list { display: flex; flex-direction: column; }
+    .offer-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .calc-opt {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: inherit;
-      transition: all 0.2s ease;
-    }
-    .calc-opt.active {
-      background: var(--accent);
-      color: var(--btn-txt);
-      border-color: var(--accent);
-      font-weight: 800;
-    }
-    .calc-result {
-      border-top: 1px solid var(--border);
-      padding-top: 16px;
-      margin-top: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    @media (min-width: 600px) {
-      .calc-result { flex-direction: row; align-items: center; justify-content: space-between; }
-    }
-    .calc-price-label { font-size: 11.5px; color: var(--muted); }
-    .calc-price-val {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--accent);
-      line-height: 1.1;
-    }
-
-    /* Contacts Card */
-    .contact-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 22px 18px;
-      display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
       gap: 14px;
+      padding: 18px 4px;
+      border-bottom: 1px solid #ECEEF1;
+      cursor: pointer;
+      transition: background 0.16s ease;
     }
-    .contact-row { display: flex; flex-direction: column; gap: 2px; }
-    .contact-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-    .contact-val { font-size: 15px; font-weight: 600; }
-
-    /* Sticky Mobile Bar */
-    .mobile-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 60;
-      background: rgba(13, 15, 16, 0.94);
-      backdrop-filter: blur(16px);
-      border-top: 1px solid var(--border);
-      padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
-      display: flex;
-      gap: 8px;
+    .offer-row:first-child { border-top: 1px solid #ECEEF1; }
+    .offer-row:hover { background: #FAFAFB; }
+    .offer-left { display: flex; align-items: center; gap: 16px; min-width: 0; }
+    .offer-thumb {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--surface);
     }
-    @media (min-width: 768px) { .mobile-bar { display: none; } body { padding-bottom: 24px; } }
-    .bar-call {
+    .offer-info { min-width: 0; }
+    .offer-title { font-size: 15.5px; font-weight: 600; color: var(--ink); line-height: 1.25; }
+    .offer-sub { font-size: 13px; color: var(--muted); margin-top: 3px; line-height: 1.35; }
+    .offer-price { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; margin-top: 6px; }
+    .offer-price span { font-size: 14px; font-weight: 500; color: var(--muted); }
+    .circle-arrow-btn {
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background: var(--card);
-      border: 1px solid var(--border);
-      display: flex;
+      border: none;
+      background: var(--ink);
+      color: #FFFFFF;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 17px;
       flex-shrink: 0;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease;
     }
-    .bar-cta {
-      flex: 1;
-      height: 44px;
-      background: var(--accent);
-      color: var(--btn-txt);
-      font-weight: 800;
-      font-size: 13.5px;
+    .offer-row:hover .circle-arrow-btn { transform: scale(1.07); background: var(--accent); }
+
+    /* Interactive Map Box */
+    .map-stage {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      height: 360px;
+      background: linear-gradient(135deg, #EEF2F0 0%, #E5EBE8 100%);
+      border: 1px solid #E5E7EB;
+    }
+    @media (min-width: 900px) { .map-stage { height: 420px; } }
+    .map-fallback {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 24px;
+      background-image: radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px);
+      background-size: 22px 22px;
+      pointer-events: none;
+    }
+    .map-pill {
+      background: #FFFFFF;
+      padding: 8px 14px;
       border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .map-iframe {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .helper-card {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      z-index: 3;
+      background: var(--helper);
+      color: #FFFFFF;
+      border-radius: 18px;
+      padding: 16px 18px;
+      max-width: 268px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.16);
+    }
+    .helper-title { font-size: 14.5px; font-weight: 700; line-height: 1.25; }
+    .helper-sub { font-size: 12px; opacity: 0.94; margin-top: 4px; line-height: 1.35; }
+    .helper-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      background: #FFFFFF;
+      color: var(--ink);
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 10px;
+    }
+
+    /* Section 3: Asymmetric Arch + Story Tabs */
+    .story-split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .story-split { grid-template-columns: 1fr 1fr; gap: 60px; }
+    }
+    .arch-wrap { position: relative; }
+    .arch-photo {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 20px 150px 20px 20px;
+      background: var(--surface);
+    }
+    @media (min-width: 900px) { .arch-photo { border-radius: 22px 200px 22px 22px; } }
+    .spark-top {
+      position: absolute;
+      top: 18px;
+      right: 12px;
+      color: var(--helper);
+      pointer-events: none;
+    }
+    .story-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ECEEF1;
+      padding-bottom: 10px;
+    }
+    .story-tab {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 500;
+      color: #9CA3AF;
+      cursor: pointer;
+      padding: 4px 0;
+      transition: color 0.18s ease;
+    }
+    .story-tab.active { color: var(--ink); font-weight: 700; }
+    .story-h3 {
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 600;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .story-desc {
+      font-size: 16px;
+      color: #4B5563;
+      margin-bottom: 26px;
+      max-width: 480px;
+    }
+
+    /* Section 4: Social Strip + Showcase Gallery */
+    .social-banner {
+      background: var(--surface);
+      border-radius: 24px;
+      padding: 28px 24px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 44px;
+    }
+    @media (min-width: 860px) {
+      .social-banner {
+        grid-template-columns: 1.15fr 0.85fr;
+        padding: 36px 44px;
+      }
+    }
+    .social-h3 {
+      font-size: clamp(22px, 2.5vw, 30px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.18;
+      margin-bottom: 8px;
+    }
+    .social-sub { font-size: 15px; color: var(--muted); margin-bottom: 20px; }
+    .social-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .social-circle {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid #D1D5DB;
+      background: #FFFFFF;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.18s, transform 0.18s;
+    }
+    .social-circle:hover { border-color: var(--ink); transform: translateY(-2px); }
+    .social-media {
+      border-radius: 18px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      background: #E5E7EB;
+    }
+    .social-media img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Gallery 2-col */
+    .gal-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    @media (min-width: 760px) { .gal-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    .gal-head { margin-bottom: 14px; }
+    .gal-kicker { font-size: 13px; color: var(--muted); font-weight: 500; }
+    .gal-title { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin-top: 2px; }
+    .gal-loc {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .gal-photo {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      background: var(--surface);
+    }
+    .gal-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .gal-item:hover .gal-photo img { transform: scale(1.03); }
+
+    /* Section 5: Architectural Configurator */
+    .calc-band {
+      background: var(--surface);
+      border-radius: 28px;
+      padding: 28px 20px;
+    }
+    @media (min-width: 900px) { .calc-band { padding: 48px 44px; } }
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    @media (min-width: 920px) {
+      .calc-layout { grid-template-columns: 1.25fr 0.95fr; gap: 40px; }
+    }
+    .calc-grp { margin-bottom: 22px; }
+    .calc-grp:last-child { margin-bottom: 0; }
+    .calc-lbl {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .calc-opts {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    @media (min-width: 540px) { .calc-opts { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); } }
+    .calc-opt {
+      background: #FFFFFF;
+      border: 1.5px solid #E5E7EB;
+      border-radius: 14px;
+      padding: 14px 16px;
+      text-align: left;
+      cursor: pointer;
+      font-family: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: all 0.16s ease;
+    }
+    .calc-opt span { font-size: 14px; font-weight: 600; color: var(--ink); }
+    .calc-opt strong { font-size: 13px; font-weight: 500; color: var(--muted); }
+    .calc-opt.active {
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+    .calc-opt.active span { color: #FFFFFF; }
+    .calc-opt.active strong { color: rgba(255,255,255,0.75); }
+
+    .calc-receipt {
+      background: #FFFFFF;
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+      border: 1px solid #ECEEF1;
+    }
+    .rc-kicker { font-size: 13px; color: var(--muted); font-weight: 500; }
+    .rc-total {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      line-height: 1.1;
+      margin: 6px 0 10px;
+    }
+    .rc-summary {
+      font-size: 14px;
+      color: var(--muted);
+      padding-bottom: 18px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid #F0F1F4;
+    }
+    .rc-cta { width: 100%; padding: 15px 16px; font-size: 14px; white-space: normal; text-align: center; }
+    .rc-tel {
+      display: block;
+      text-align: center;
+      margin-top: 12px;
+      font-size: 13.5px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid #ECEEF1;
+      margin-top: 56px;
+      padding: 32px 0 44px;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    @media (min-width: 760px) {
+      .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; }
+    }
+    .footer-meta { font-size: 14px; color: var(--muted); line-height: 1.5; }
+    .footer-meta strong { color: var(--ink); font-weight: 600; }
+    .footer-tag { font-size: 12.5px; color: #9CA3AF; }
+
+    /* Subtle Floating Action Icon */
+    .wa-fab {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 50;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+      transition: transform 0.2s ease;
     }
+    .wa-fab:hover { transform: scale(1.07); }
   </style>
 </head>
 <body>
 
-  <div class="concept-bar">
-    Персональный демо-концепт для <strong>«Sunbeam Detailing»</strong> • CODEC Studio
-  </div>
-
-  <header class="site-header">
-    <div class="container">
-      <div class="header-inner">
-        <div>
-          <div class="brand-name">Sunbeam Detailing</div>
-          <div class="brand-sub">Самара • ПРЕМИУМ ДЕТЕЙЛИНГ</div>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="brand-text">
+          <div class="brand-title">Sunbeam Detailing</div>
+          <div class="brand-sub">Самара · Детейлинг-студия</div>
         </div>
-        <a href="#calc" class="header-cta">Рассчитать</a>
+      </a>
+      <nav class="nav-links" aria-label="Навигация">
+        <a href="#offers">Предложения</a>
+        <a href="#advantages">Преимущества</a>
+        <a href="#gallery">Фотографии</a>
+        <a href="#calculator">Калькулятор</a>
+      </nav>
+      <div class="nav-right">
+        <a href="tel:+79272090556" class="nav-phone">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+7 (927) 209-05-56</span>
+        </a>
+        <a href="#calculator" class="pill-btn pill-btn-nav">Рассчитать стоимость</a>
       </div>
     </div>
   </header>
 
-  <section class="hero">
+  <section class="hero-sec">
     <div class="container">
-      <div class="hero-meta">
-        <span class="rating-pill">★ 5,0</span>
-        <span>•</span>
-        <span>ул. 22-го Партсъезда, 201Д, Самара</span>
-      </div>
-      <h1 class="hero-h1">Безупречная защита авто в <span>«Sunbeam Detailing»</span></h1>
-      <p class="hero-desc">Оклейка полиуретановой плёнкой, восстановительная полировка, керамика и глубокая химчистка с официальной гарантией.</p>
-      <div class="hero-actions">
-        <a href="https://wa.me/79272090556?text=Здравствуйте!%20Хочу%20уточнить%20по%20услугам%20«Sunbeam Detailing»" target="_blank" class="btn-primary">
-          Рассчитать защиту авто в WhatsApp
-        </a>
-        <a href="tel:+79272090556" class="btn-outline">Позвонить +7 (927) 209-05-56</a>
-      </div>
-      <div class="hero-media"><img src="images/photo_2.jpg" alt="Sunbeam Detailing" loading="eager"></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="benefits-grid">
-        
-        <div class="benefit-card">
-          <div class="benefit-dot"></div>
-          <h3>Чистый светлый бокс</h3>
-          <p>Соблюдаем строгий температурный режим и антипылевые стандарты</p>
-        </div>
-        
-        <div class="benefit-card">
-          <div class="benefit-dot"></div>
-          <h3>Топовые материалы</h3>
-          <p>Работаем премиальным полиуретаном и проверенной автохимией</p>
-        </div>
-        
-        <div class="benefit-card">
-          <div class="benefit-dot"></div>
-          <h3>Фотоотчет этапов</h3>
-          <p>Фиксируем каждый этап работы и даём гарантию на покрытие</p>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  
-        <section class="section">
-          <div class="container">
-            <div class="sec-head">
-              <div class="sec-tag">Фотогалерея</div>
-              <h2 class="sec-title">Атмосфера и реальные фото</h2>
+      <div class="hero-frame">
+        <img id="heroImg" src="images/photo_2.jpg" alt="Sunbeam Detailing" class="hero-bg">
+        <div class="hero-scrim"></div>
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <div class="hero-title-row">
+              <h1 class="hero-h1" id="heroTitle">Безупречная защита кузова и салона</h1>
+              <a href="#calculator" class="hero-arrow-circle" aria-label="Перейти к расчёту">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
             </div>
-            <div class="gal-grid">
-              <div class="gal-card"><img src="images/photo_2.jpg" alt="Sunbeam Detailing" loading="lazy"></div>
-<div class="gal-card"><img src="images/photo_3.jpg" alt="Sunbeam Detailing" loading="lazy"></div>
-<div class="gal-card"><img src="images/photo_4.jpg" alt="Sunbeam Detailing" loading="lazy"></div>
-
-            </div>
+            <p class="hero-sub" id="heroSub">Полиуретановая плёнка, керамика и глубокая полировка</p>
           </div>
-        </section>
-        
-
-  <section class="section" id="calc">
-    <div class="container">
-      <div class="sec-head">
-        <div class="sec-tag">Онлайн-калькулятор</div>
-        <h2 class="sec-title">Калькулятор стоимости работ</h2>
-        <p style="font-size:13.5px;color:var(--muted);margin-top:4px;">Узнайте ориентировочную цену под класс вашего автомобиля</p>
-      </div>
-      <div class="calc-box">
-        <div class="calc-group">
-          <div class="calc-label">Класс автомобиля</div>
-          <div class="calc-opts"><button type="button" class="calc-opt active" data-group="1" data-val="12000" data-label="Седан / Хэтчбек" onclick="selectOpt(this)">Седан / Хэтчбек</button>
-<button type="button" class="calc-opt " data-group="1" data-val="15000" data-label="Кроссовер" onclick="selectOpt(this)">Кроссовер</button>
-<button type="button" class="calc-opt " data-group="1" data-val="18000" data-label="Внедорожник" onclick="selectOpt(this)">Внедорожник</button>
-</div>
+          <div class="hero-tabs">
+            <button type="button" class="hero-tab active" onclick="setHeroSlide(0)">01 · Условия и фото</button>
+            <button type="button" class="hero-tab" onclick="setHeroSlide(1)">02 · Детали подхода</button>
+            <button type="button" class="hero-tab" onclick="setHeroSlide(2)">03 · Расчёт цены</button>
+          </div>
         </div>
-        <div class="calc-group">
-          <div class="calc-label">Пакет услуг</div>
-          <div class="calc-opts"><button type="button" class="calc-opt active" data-group="2" data-val="6000" data-label="Полировка + Керамика" onclick="selectOpt(this)">Полировка + Керамика</button>
-<button type="button" class="calc-opt " data-group="2" data-val="28000" data-label="Зона риска (пленка)" onclick="selectOpt(this)">Зона риска (пленка)</button>
-<button type="button" class="calc-opt " data-group="2" data-val="110000" data-label="Полная оклейка кузова" onclick="selectOpt(this)">Полная оклейка кузова</button>
-</div>
-        </div>
-        <div class="calc-result">
+        <div class="hero-notch">
+          <img src="images/photo_3.jpg" alt="Sunbeam Detailing" class="hero-notch-img">
           <div>
-            <div class="calc-price-label">Ориентировочная стоимость</div>
-            <div class="calc-price-val" id="calcTotal">от 18 000 ₽</div>
+            <div class="hero-notch-lbl">Оценка автовладельцев</div>
+            <div class="hero-notch-val">★ 5,0 в Яндексе</div>
+            <a href="#offers" class="hero-notch-link">Смотреть варианты →</a>
           </div>
-          <a href="https://wa.me/79272090556" id="calcSendBtn" target="_blank" class="btn-primary">Отправить расчет в WhatsApp</a>
         </div>
+      </div>
+
+      <div class="mobile-trust-bar">
+        <div>
+          <div class="mtb-val">★ 5,0 на Яндекс Картах</div>
+          <div class="mtb-sub">ул. 22-го Партсъезда, 201Д, Самара</div>
+        </div>
+        <a href="tel:+79272090556" class="pill-btn pill-btn-nav">Позвонить</a>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="sec" id="offers">
     <div class="container">
-      <div class="sec-head">
-        <div class="sec-tag">Контакты</div>
-        <h2 class="sec-title">Ждем вас в «Sunbeam Detailing»</h2>
-      </div>
-      <div class="contact-card">
-        <div class="contact-row">
-          <span class="contact-lbl">Адрес</span>
-          <span class="contact-val">ул. 22-го Партсъезда, 201Д, Самара</span>
+      <h2 class="sec-h2">Популярные комплексы</h2>
+      <div class="offers-split">
+        <div class="offer-list">
+          
+        <div class="offer-row" onclick="applyPreset(0, 0)">
+          <div class="offer-left">
+            <img src="images/photo_3.jpg" alt="Полировка + Керамика 9H" class="offer-thumb">
+            <div class="offer-info">
+              <div class="offer-title">Полировка + Керамика 9H</div>
+              <div class="offer-sub">Глубокий блеск, удаление паутинки и гидрофобный слой</div>
+              <div class="offer-price">18 000 ₽ <span>/ комплекс</span></div>
+            </div>
+          </div>
+          <button type="button" class="circle-arrow-btn" aria-label="Выбрать Полировка + Керамика 9H">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
-        <div class="contact-row">
-          <span class="contact-lbl">Телефон и WhatsApp</span>
-          <a href="tel:+79272090556" class="contact-val" style="color:var(--accent);">+7 (927) 209-05-56</a>
+        <div class="offer-row" onclick="applyPreset(0, 1)">
+          <div class="offer-left">
+            <img src="images/photo_4.jpg" alt="Зоны риска полиуретаном" class="offer-thumb">
+            <div class="offer-info">
+              <div class="offer-title">Зоны риска полиуретаном</div>
+              <div class="offer-sub">Бампер, капот, фары, стойки, кромки дверей под ключ</div>
+              <div class="offer-price">40 000 ₽ <span>/ комплекс</span></div>
+            </div>
+          </div>
+          <button type="button" class="circle-arrow-btn" aria-label="Выбрать Зоны риска полиуретаном">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
-        <div class="contact-row">
-          <span class="contact-lbl">Рейтинг на Яндекс Картах</span>
-          <span class="contact-val">★ 5,0 (Проверенная организация)</span>
+        <div class="offer-row" onclick="applyPreset(1, 2)">
+          <div class="offer-left">
+            <img src="images/photo_5.jpg" alt="Полная оклейка кузова PPF" class="offer-thumb">
+            <div class="offer-info">
+              <div class="offer-title">Полная оклейка кузова PPF</div>
+              <div class="offer-sub">Максимальная антигравийная защита нового или пробежного авто</div>
+              <div class="offer-price">125 000 ₽ <span>/ под ключ</span></div>
+            </div>
+          </div>
+          <button type="button" class="circle-arrow-btn" aria-label="Выбрать Полная оклейка кузова PPF">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        </div>
+        <div class="map-stage">
+          <div class="map-fallback">
+            <a href="https://yandex.ru/maps/org/sunbeam_detailing/93293249536/?ll=50.196133%2C53.234034&amp;mode=search&amp;sll=50.196133%2C53.234034&amp;text=Sunbeam%20Detailing%20%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%B0&amp;z=16" target="_blank" rel="noopener" class="map-pill" style="pointer-events:auto; z-index:2;">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>ул. 22-го Партсъезда, 201Д, Самара</span>
+            </a>
+          </div>
+          <iframe class="map-iframe" title="Расположение Sunbeam Detailing" src="https://yandex.ru/map-widget/v1/?ll=50.196133%2C53.234034&z=13&pt=50.196133%2C53.234034,pm2rdm"></iframe>
+          <div class="helper-card">
+            <div class="helper-title">Трудный выбор? Есть вопрос?</div>
+            <div class="helper-sub">Ответим в WhatsApp за пару минут и подберём лучший вариант</div>
+            <a href="https://wa.me/79272090556?text=Здравствуйте!%20Пишу%20с%20сайта%20Sunbeam%20Detailing" target="_blank" rel="noopener" class="helper-btn">
+              Написать нам →
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="mobile-bar">
-    <a href="tel:+79272090556" class="bar-call" title="Позвонить" aria-label="Позвонить">
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-    </a>
-    <a href="https://wa.me/79272090556?text=Здравствуйте!%20Пишу%20с%20сайта%20Sunbeam Detailing" target="_blank" class="bar-cta">Рассчитать защиту авто</a>
-  </div>
+  <section class="sec" id="advantages">
+    <div class="container">
+      <div class="story-split">
+        <div class="arch-wrap">
+          <img id="storyImg" src="images/photo_4.jpg" alt="Sunbeam Detailing" class="arch-photo">
+          <svg class="spark-top" viewBox="0 0 48 48" width="44" height="44" fill="currentColor" aria-hidden="true">
+            <path d="M24 2l4.8 14.8L44 22l-15.2 5.2L24 42l-4.8-14.8L4 22l15.2-5.2L24 2z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="story-tabs">
+            <button type="button" class="story-tab active" onclick="setStoryTab(0)">Материалы</button><button type="button" class="story-tab" onclick="setStoryTab(1)">Чистота бокса</button><button type="button" class="story-tab" onclick="setStoryTab(2)">Подход</button><button type="button" class="story-tab" onclick="setStoryTab(3)">Гарантия</button>
+          </div>
+          <h2 class="story-h3" id="storyTitle">Оригинальный полиуретан и керамика</h2>
+          <p class="story-desc" id="storyDesc">Работаем только с сертифицированными плёнками толщиной 190–210 мкм без желтизны и шагрени.</p>
+          <a href="#calculator" class="pill-btn">
+            <span>Записаться в студию</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="gallery">
+    <div class="container">
+      <div class="social-banner">
+        <div>
+          <h3 class="social-h3">Консультация мастера по фото</h3>
+          <p class="social-sub">Пришлите фото авто в WhatsApp — назовём точную цену и время работы</p>
+          <div class="social-row">
+            <a href="https://wa.me/79272090556?text=Здравствуйте!%20Подскажите%20по%20стоимости%20и%20свободным%20датам" target="_blank" rel="noopener" class="social-circle" title="WhatsApp" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+            <a href="tel:+79272090556" class="social-circle" title="Позвонить" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="https://yandex.ru/maps/org/sunbeam_detailing/93293249536/?ll=50.196133%2C53.234034&amp;mode=search&amp;sll=50.196133%2C53.234034&amp;text=Sunbeam%20Detailing%20%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%B0&amp;z=16" target="_blank" rel="noopener" class="social-circle" title="Яндекс Карты" aria-label="Яндекс Карты">
+              <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </a>
+            
+          </div>
+        </div>
+        <div class="social-media">
+          <img src="images/photo_3.jpg" alt="Sunbeam Detailing">
+        </div>
+      </div>
+
+      <h2 class="sec-h2">Работы и студия изнутри</h2>
+      <div class="gal-grid">
+        
+        <article class="gal-item">
+          <div class="gal-head">
+            <div class="gal-kicker">Детейлинг-студия</div>
+            <h3 class="gal-title">Подготовка и полировка кузова</h3>
+            <div class="gal-loc">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>ул. 22-го Партсъезда, 201Д, Самара</span>
+            </div>
+          </div>
+          <div class="gal-photo">
+            <img src="images/photo_5.jpg" alt="Sunbeam Detailing фото 1">
+          </div>
+        </article>
+        <article class="gal-item">
+          <div class="gal-head">
+            <div class="gal-kicker">Детейлинг-студия</div>
+            <h3 class="gal-title">Бокс студии · Самара</h3>
+            <div class="gal-loc">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>ул. 22-го Партсъезда, 201Д, Самара</span>
+            </div>
+          </div>
+          <div class="gal-photo">
+            <img src="images/photo_6.jpg" alt="Sunbeam Detailing фото 2">
+          </div>
+        </article>
+        <article class="gal-item">
+          <div class="gal-head">
+            <div class="gal-kicker">Детейлинг-студия</div>
+            <h3 class="gal-title">Глубокий глянец и защита</h3>
+            <div class="gal-loc">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>ул. 22-го Партсъезда, 201Д, Самара</span>
+            </div>
+          </div>
+          <div class="gal-photo">
+            <img src="images/photo_7.jpg" alt="Sunbeam Detailing фото 3">
+          </div>
+        </article>
+        <article class="gal-item">
+          <div class="gal-head">
+            <div class="gal-kicker">Детейлинг-студия</div>
+            <h3 class="gal-title">Аккуратная работа с деталями</h3>
+            <div class="gal-loc">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>ул. 22-го Партсъезда, 201Д, Самара</span>
+            </div>
+          </div>
+          <div class="gal-photo">
+            <img src="images/photo_8.jpg" alt="Sunbeam Detailing фото 4">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="calculator">
+    <div class="container">
+      <div class="calc-band">
+        <h2 class="sec-h2" style="margin-bottom: 8px;">Калькулятор детейлинга</h2>
+        <p style="color: var(--muted); margin-bottom: 28px;">Выберите класс автомобиля и нужный комплекс защиты</p>
+        <div class="calc-layout">
+          <div>
+            <div class="calc-grp">
+              <div class="calc-lbl">Класс автомобиля</div>
+              <div class="calc-opts"><button type="button" class="calc-opt active" data-group="1" data-idx="0" data-val="12000" data-label="Седан / Хэтчбек" onclick="selectOpt(this)"><span>Седан / Хэтчбек</span><strong>12 000 ₽</strong></button><button type="button" class="calc-opt" data-group="1" data-idx="1" data-val="15000" data-label="Кроссовер" onclick="selectOpt(this)"><span>Кроссовер</span><strong>15 000 ₽</strong></button><button type="button" class="calc-opt" data-group="1" data-idx="2" data-val="18000" data-label="Внедорожник" onclick="selectOpt(this)"><span>Внедорожник</span><strong>18 000 ₽</strong></button></div>
+            </div>
+            <div class="calc-grp">
+              <div class="calc-lbl">Пакет услуг</div>
+              <div class="calc-opts"><button type="button" class="calc-opt active" data-group="2" data-idx="0" data-val="6000" data-label="Полировка + Керамика" onclick="selectOpt(this)"><span>Полировка + Керамика</span><strong>+ 6 000 ₽</strong></button><button type="button" class="calc-opt" data-group="2" data-idx="1" data-val="28000" data-label="Зона риска (плёнка)" onclick="selectOpt(this)"><span>Зона риска (плёнка)</span><strong>+ 28 000 ₽</strong></button><button type="button" class="calc-opt" data-group="2" data-idx="2" data-val="110000" data-label="Полная оклейка кузова" onclick="selectOpt(this)"><span>Полная оклейка кузова</span><strong>+ 110 000 ₽</strong></button></div>
+            </div>
+          </div>
+          <div class="calc-receipt">
+            <div class="rc-kicker">Ориентировочная стоимость</div>
+            <div class="rc-total" id="calcTotal">от 18 000 ₽</div>
+            <div class="rc-summary" id="calcSummary">Седан / Хэтчбек · Полировка + Керамика</div>
+            <a href="https://wa.me/79272090556" id="calcSendBtn" target="_blank" rel="noopener" class="pill-btn rc-cta">
+              <span>Отправить расчёт в WhatsApp</span>
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="tel:+79272090556" class="rc-tel">или позвонить +7 (927) 209-05-56</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-meta">
+        <strong>Sunbeam Detailing</strong> · ★ 5,0 на Яндекс Картах<br>
+        ул. 22-го Партсъезда, 201Д, Самара · <a href="tel:+79272090556">+7 (927) 209-05-56</a>
+      </div>
+      <div class="footer-tag">Демо-концепт сайта подготовлен в CODEC Studio</div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/79272090556?text=Здравствуйте!%20Пишу%20с%20сайта%20Sunbeam%20Detailing" target="_blank" rel="noopener" class="wa-fab" title="Написать в WhatsApp" aria-label="Написать в WhatsApp">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
 
   <script>
+    var heroSlides = [{"title": "Безупречная защита кузова и салона", "sub": "Полиуретановая плёнка, керамика и глубокая полировка", "img": "images/photo_2.jpg"}, {"title": "Чистый светлый бокс с контролем качества", "sub": "Топовые составы, фотоотчёт и гарантия на работы", "img": "images/photo_3.jpg"}, {"title": "Рассчитайте цену под ваш автомобиль", "sub": "Узнайте стоимость и ближайшие окна за 15 секунд", "img": "images/photo_4.jpg"}];
+    var storyTabsData = [{"title": "Оригинальный полиуретан и керамика", "desc": "Работаем только с сертифицированными плёнками толщиной 190–210 мкм без желтизны и шагрени.", "img": "images/photo_4.jpg"}, {"title": "Отдельные зоны для мойки и оклейки", "desc": "Строгий свет, обеспыленный пол и контроль температуры — плёнка ложится чисто без соринок.", "img": "images/photo_2.jpg"}, {"title": "Подвороты без засветов и порезов лака", "desc": "Разбираем минимум элементов с сохранением дилерской гарантии и аккуратными кромками.", "img": "images/photo_5.jpg"}, {"title": "Фиксируем этапы и даём гарантию", "desc": "Присылаем фотоотчёт в процессе работы и выдаём рекомендации по первому уходу после выдачи.", "img": "images/photo_3.jpg"}];
     var g1Val = 12000;
     var g1Lbl = "Седан / Хэтчбек";
     var g2Val = 6000;
@@ -489,11 +970,34 @@
     var basePhone = "79272090556";
     var brandName = "Sunbeam Detailing";
 
+    function setHeroSlide(idx) {
+      var s = heroSlides[idx];
+      if (!s) return;
+      document.getElementById("heroImg").src = s.img;
+      document.getElementById("heroTitle").textContent = s.title;
+      document.getElementById("heroSub").textContent = s.sub;
+      document.querySelectorAll(".hero-tab").forEach(function(el, i) {
+        el.classList.toggle("active", i === idx);
+      });
+    }
+
+    function setStoryTab(idx) {
+      var item = storyTabsData[idx];
+      if (!item) return;
+      document.getElementById("storyTitle").textContent = item.title;
+      document.getElementById("storyDesc").textContent = item.desc;
+      document.getElementById("storyImg").src = item.img;
+      document.querySelectorAll(".story-tab").forEach(function(el, i) {
+        el.classList.toggle("active", i === idx);
+      });
+    }
+
     function updateCalc() {
       var total = g1Val + g2Val;
       var formatted = total.toString().replace(/\B(?=(\d{3})+(?=$))/g, " ");
       document.getElementById("calcTotal").textContent = "от " + formatted + " ₽";
-      var msg = "Здравствуйте! Сделал расчет на сайте «" + brandName + "»: " + g1Lbl + " + " + g2Lbl + " (~" + formatted + " ₽). Подскажите по ближайшим окнам и точным условиям.";
+      document.getElementById("calcSummary").textContent = g1Lbl + " · " + g2Lbl;
+      var msg = "Здравствуйте! Сделал расчёт на сайте «" + brandName + "»: " + g1Lbl + " + " + g2Lbl + " (~" + formatted + " ₽). Подскажите по ближайшим окнам и условиям.";
       document.getElementById("calcSendBtn").href = "https://wa.me/" + basePhone + "?text=" + encodeURIComponent(msg);
     }
 
@@ -503,12 +1007,21 @@
         el.classList.remove("active");
       });
       btn.classList.add("active");
-      var val = parseInt(btn.getAttribute("data-val"), 10);
-      var lbl = btn.getAttribute("data-label");
-      if (grp === "1") { g1Val = val; g1Lbl = lbl; }
-      else { g2Val = val; g2Lbl = lbl; }
+      g1Val = parseInt(document.querySelector('.calc-opt[data-group="1"].active').getAttribute("data-val"), 10);
+      g1Lbl = document.querySelector('.calc-opt[data-group="1"].active').getAttribute("data-label");
+      g2Val = parseInt(document.querySelector('.calc-opt[data-group="2"].active').getAttribute("data-val"), 10);
+      g2Lbl = document.querySelector('.calc-opt[data-group="2"].active').getAttribute("data-label");
       updateCalc();
     }
+
+    function applyPreset(g1Idx, g2Idx) {
+      var b1 = document.querySelector('.calc-opt[data-group="1"][data-idx="' + g1Idx + '"]');
+      var b2 = document.querySelector('.calc-opt[data-group="2"][data-idx="' + g2Idx + '"]');
+      if (b1) selectOpt(b1);
+      if (b2) selectOpt(b2);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    }
+
     updateCalc();
   </script>
 </body>
