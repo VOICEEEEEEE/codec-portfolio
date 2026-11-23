@@ -2307,6 +2307,176 @@
       color: #4A3528 !important;
     }
 
+  
+    /* Master Top Badge */
+    .master-badge-top {
+      background: rgba(201, 160, 96, 0.22) !important;
+      border: 1px solid var(--gold) !important;
+      color: var(--gold-light, #f0c987) !important;
+      box-shadow: 0 0 12px rgba(201, 160, 96, 0.25);
+      font-weight: 700;
+    }
+
+    /* Footer Requisites & 152-FZ Legal */
+    .footer-legal {
+      margin: 20px auto 16px;
+      padding: 16px 18px;
+      max-width: 540px;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(201, 160, 96, 0.15);
+      border-radius: var(--radius-md);
+      text-align: center;
+    }
+    [data-theme="light"] .footer-legal {
+      background: rgba(44, 24, 14, 0.035);
+      border-color: rgba(44, 24, 14, 0.12);
+    }
+    .footer-legal-title {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .footer-legal-entities {
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .legal-badge {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .legal-person {
+      display: inline-block;
+      margin: 2px 0;
+    }
+    .footer-links {
+      font-size: 11px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 10px;
+    }
+    .footer-links a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: opacity var(--transition);
+      cursor: pointer;
+    }
+    .footer-links a:hover {
+      opacity: 0.8;
+    }
+    .footer-dot {
+      color: var(--text-muted);
+    }
+    .footer-disclaimer {
+      font-size: 9.5px;
+      line-height: 1.45;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Privacy Policy Modal */
+    .modal-dialog.privacy-dialog {
+      max-width: 620px !important;
+      height: auto !important;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);
+    }
+    [data-theme="light"] .modal-dialog.privacy-dialog {
+      background: #FFFFFF !important;
+      border: 1px solid rgba(44, 24, 14, 0.14) !important;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2) !important;
+    }
+    .privacy-dialog .modal-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-surface);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    [data-theme="light"] .privacy-dialog .modal-header {
+      background: #FDFBF7 !important;
+    }
+    .privacy-header-content {
+      text-align: left;
+    }
+    .privacy-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+    .privacy-subtitle {
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+    .privacy-modal-body {
+      padding: 20px 22px;
+      overflow-y: auto;
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      text-align: left;
+    }
+    .privacy-section-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 16px 0 6px;
+    }
+    .privacy-section-title:first-child {
+      margin-top: 0;
+    }
+    .privacy-p {
+      margin-bottom: 10px;
+    }
+    .privacy-list {
+      padding-left: 18px;
+      margin-bottom: 10px;
+    }
+    .privacy-list li {
+      margin-bottom: 4px;
+    }
+    .privacy-modal-footer {
+      padding: 12px 20px;
+      border-top: 1px solid var(--border);
+      background: var(--bg-surface);
+      display: flex;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+    [data-theme="light"] .privacy-modal-footer {
+      background: #FDFBF7 !important;
+    }
+    .btn-privacy-ok {
+      padding: 8px 24px;
+      background: var(--gold-gradient);
+      color: #0A0A0B;
+      font-size: 12.5px;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      border: none;
+      transition: transform var(--transition);
+    }
+    .btn-privacy-ok:hover {
+      transform: translateY(-1px);
+    }
+
   </style>
 </head>
 <body>
@@ -2532,7 +2702,7 @@
                 <img src="images/master_khadzhy.jpg" alt="Барбер Хаджы" loading="lazy" onerror="this.src='images/hero_barber.jpg'">
               </div>
               <div class="master-card-info">
-                <div class="master-badge-role">БАРБЕР • KANT</div>
+                <div class="master-badge-role" master-badge-top>ТОП-МАСТЕР • KANT</div>
                 <h3 class="master-title-name">Хаджы</h3>
                 <div class="master-experience">Опытный мастер • Рейтинг 5.0 ★</div>
                 <p class="master-bio">
@@ -3022,11 +3192,32 @@
     </div>
   </section>
 
-  <!-- ═══ FOOTER ═══ -->
+    <!-- ═══ FOOTER ═══ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-brand">KANT BARBER’S</div>
       <p class="footer-info">Мужской барбершоп в Казани • ул. Павлюхина, 99</p>
+
+      <!-- Requisites & 152-FZ Compliance -->
+      <div class="footer-legal">
+        <div class="footer-requisites">
+          <div class="footer-legal-title">Барбершоп «KANT BARBER’S» • Казань, ул. Павлюхина, 99</div>
+          <div class="footer-legal-entities">
+            <span class="legal-badge">Плательщики НПД (самозанятые):</span><br>
+            <span class="legal-person">• ФИО совладельца 1 • ИНН (вносится по запросу)</span><br>
+            <span class="legal-person">• ФИО совладельца 2 • ИНН (вносится по запросу)</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="#privacy" onclick="openPrivacyModal(event)">Политика конфиденциальности</a>
+          <span class="footer-dot">•</span>
+          <a href="#privacy" onclick="openPrivacyModal(event)">Согласие на обработку данных (152-ФЗ)</a>
+        </div>
+        <p class="footer-disclaimer">
+          Нажимая кнопки онлайн-записи или связи, вы даёте согласие на обработку персональных данных в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных». Онлайн-запись и защита персональных данных осуществляются на базе сертифицированной платформы YCLIENTS.
+        </p>
+      </div>
+
       <p class="footer-credit">KANT Barber’s • Онлайн-запись • Разработано студией CODEC</p>
     </div>
   </footer>
@@ -3056,6 +3247,74 @@
         <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="flex-shrink:0;"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         <span>Записаться</span>
       </a>
+    </div>
+  </div>
+
+    <!-- ═══ PRIVACY POLICY MODAL (152-ФЗ) ═══ -->
+  <div class="modal-overlay" id="privacyModal" onclick="closePrivacyModal(event)">
+    <div class="modal-dialog privacy-dialog" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div class="privacy-header-content">
+          <div class="privacy-title">Политика конфиденциальности</div>
+          <div class="privacy-subtitle">Соблюдение Федерального закона № 152-ФЗ «О персональных данных»</div>
+        </div>
+        <button class="modal-close-btn" onclick="closePrivacyModalDirect()" aria-label="Закрыть">✕</button>
+      </div>
+      <div class="modal-body privacy-modal-body">
+        <div class="privacy-section-title">1. Общие положения</div>
+        <p class="privacy-p">
+          Настоящая Политика обработки персональных данных (далее — «Политика») определяет порядок сбора, обработки и защиты персональных данных пользователей сайта барбершопа «KANT BARBER’S» (г. Казань, ул. Павлюхина, 99) в строгом соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».
+        </p>
+
+        <div class="privacy-section-title">2. Операторы персональных данных</div>
+        <p class="privacy-p">
+          Операторами персональных данных выступают владельцы барбершопа «KANT BARBER’S» (плательщики налога на профессиональный доход / самозанятые):<br>
+          • Совладелец 1 (ФИО и ИНН)<br>
+          • Совладелец 2 (ФИО и ИНН)<br>
+          Фактический адрес оказания услуг: 420059, Республика Татарстан, г. Казань, ул. Павлюхина, 99.<br>
+          Контактный телефон: +7 (927) 410-88-23.
+        </p>
+
+        <div class="privacy-section-title">3. Перечень обрабатываемых данных</div>
+        <p class="privacy-p">
+          При использовании форм онлайн-записи и каналов связи барбершопа могут обрабатываться следующие данные:
+        </p>
+        <ul class="privacy-list">
+          <li>Имя клиента;</li>
+          <li>Номер контактного телефона;</li>
+          <li>Выбранные услуги, дата и время визита, назначенный мастер (Хаджы, Мухаммад);</li>
+          <li>История посещений и комментарии к бронированию.</li>
+        </ul>
+
+        <div class="privacy-section-title">4. Цели обработки данных</div>
+        <p class="privacy-p">
+          Сбор и обработка персональных данных осуществляются исключительно в целях:
+        </p>
+        <ul class="privacy-list">
+          <li>Бронирования времени визита и оказания парикмахерских услуг;</li>
+          <li>Информирования и подтверждения записи посредством SMS, звонков и мессенджеров (Telegram, WhatsApp, MAX);</li>
+          <li>Улучшения качества сервиса и обработки обращений гостей.</li>
+        </ul>
+
+        <div class="privacy-section-title">5. Безопасность и хранение данных (сервис YCLIENTS)</div>
+        <p class="privacy-p">
+          Онлайн-запись и хранение информации осуществляются с использованием защищенного сервиса YCLIENTS (ООО «Уайклаентс», включенного в Реестр операторов персональных данных Роскомнадзора). Данные защищены современными протоколами шифрования (SSL) и размещаются на серверах, физически расположенных на территории Российской Федерации.
+        </p>
+        <p class="privacy-p">
+          Операторы гарантируют конфиденциальность полученных данных и обязуются не передавать их третьим лицам без согласия субъекта, за исключением случаев, предусмотренных законодательством РФ.
+        </p>
+
+        <div class="privacy-section-title">6. Согласие и права пользователя</div>
+        <p class="privacy-p">
+          Нажимая кнопку «Записаться» или переходя в мессенджеры для связи, пользователь подтверждает свое добровольное согласие с настоящей Политикой. Согласие действует бессрочно до момента его отзыва.
+        </p>
+        <p class="privacy-p">
+          Пользователь имеет право в любой момент отозвать свое согласие, направив обращение администратору барбершопа по телефону: <strong>+7 (927) 410-88-23</strong> либо лично по адресу: <strong>г. Казань, ул. Павлюхина, 99</strong>.
+        </p>
+      </div>
+      <div class="privacy-modal-footer">
+        <button type="button" class="btn-privacy-ok" onclick="closePrivacyModalDirect()">Понятно</button>
+      </div>
     </div>
   </div>
 
@@ -3188,10 +3447,29 @@
       document.body.style.overflow = '';
     }
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'Escape') { closeLightbox(); closePrivacyModalDirect(); }
     });
 
         // ── Booking Modal fallback ──
+    
+    // ── Privacy Policy Modal (152-ФЗ) ──
+    function openPrivacyModal(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      var modal = document.getElementById('privacyModal');
+      if (modal) modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePrivacyModalDirect() {
+      var modal = document.getElementById('privacyModal');
+      if (modal) modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function closePrivacyModal(e) {
+      if (e && e.target && e.target.id === 'privacyModal') {
+        closePrivacyModalDirect();
+      }
+    }
+
     function openBooking(e) {
       if (window.YClients && typeof window.YClients.openWidget === 'function') return;
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
