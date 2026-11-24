@@ -29,9 +29,41 @@
       buttonColor: 'transparent',
       buttonAnimation: false
     };
+  
+    // ── Cookie Banner Logic (152-ФЗ) ──
+    function acceptCookies() {
+      try { localStorage.setItem('kant_cookies_accepted', '1'); } catch(e){}
+      var b = document.getElementById('cookieBanner');
+      if (b) b.style.display = 'none';
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      try {
+        if (!localStorage.getItem('kant_cookies_accepted')) {
+          var b = document.getElementById('cookieBanner');
+          if (b) b.style.display = 'flex';
+        }
+      } catch(e){}
+    });
+
   </script>
   <!-- Yclients Widget Script -->
-  <script type="text/javascript" src="https://w2742254.yclients.com/widgetJS" charset="UTF-8"></script>
+  <script type="text/javascript" src="https://w2742254.yclients.com/widgetJS" charset="UTF-8">
+    // ── Cookie Banner Logic (152-ФЗ) ──
+    function acceptCookies() {
+      try { localStorage.setItem('kant_cookies_accepted', '1'); } catch(e){}
+      var b = document.getElementById('cookieBanner');
+      if (b) b.style.display = 'none';
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      try {
+        if (!localStorage.getItem('kant_cookies_accepted')) {
+          var b = document.getElementById('cookieBanner');
+          if (b) b.style.display = 'flex';
+        }
+      } catch(e){}
+    });
+
+  </script>
 
   <style>
     /* ═══════════════════════════════════
@@ -2980,6 +3012,72 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
     }
 
+  
+    /* ── Cookie Banner (152-ФЗ compliance) ── */
+    .cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 16px;
+      right: 16px;
+      max-width: 520px;
+      margin: 0 auto;
+      background: rgba(22, 13, 8, 0.96);
+      border: 1px solid rgba(212, 163, 115, 0.45);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      z-index: 9999;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(12px);
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .cookie-content {
+      font-size: 11.5px;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 12px;
+    }
+    .cookie-content a {
+      color: var(--gold-light);
+      text-decoration: underline;
+    }
+    .btn-cookie-accept {
+      background: var(--gold-gradient);
+      color: #1A0E08;
+      border: none;
+      padding: 7px 15px;
+      font-size: 11.5px;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--transition);
+      flex-shrink: 0;
+    }
+    .btn-cookie-accept:hover {
+      box-shadow: 0 2px 10px var(--gold-glow);
+      transform: translateY(-1px);
+    }
+    [data-theme="light"] .cookie-banner {
+      background: rgba(255, 255, 255, 0.96);
+      border-color: rgba(138, 90, 43, 0.35);
+      box-shadow: 0 10px 30px rgba(74, 53, 40, 0.2);
+    }
+    [data-theme="light"] .cookie-content {
+      color: #382417;
+    }
+    @media (max-width: 768px) {
+      .cookie-banner {
+        bottom: 76px; /* Above mobile bottom bar */
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -3685,7 +3783,69 @@
     </div>
   </section>
 
-    <!-- ═══ FOOTER ═══ -->
+  <!-- ═══ CONTACTS & LOCATION (Закон РФ № 2300-1 ст. 9) ═══ -->
+  <section class="section" id="contacts">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">КАК НАС НАЙТИ</div>
+        <h2 class="section-title">Контакты и адрес</h2>
+        <p class="section-subtitle">Ждем вас каждый день в Казани на Павлюхина, 99</p>
+      </div>
+
+      <div class="contacts-card reveal">
+        <div class="contacts-split">
+          <div class="contacts-info-side">
+            <!-- Address Row -->
+            <div class="contact-row">
+              <div class="contact-icon-circle">📍</div>
+              <div>
+                <div class="contact-label">Адрес барбершопа</div>
+                <div class="contact-val">г. Казань, ул. Павлюхина, 99</div>
+                <div class="contact-hint">ст. м. «Суконная слобода» • 1-й этаж, отдельный вход</div>
+              </div>
+            </div>
+
+            <!-- Working Hours Row (Закон о ЗПП ст. 9) -->
+            <div class="contact-row">
+              <div class="contact-icon-circle">⏱</div>
+              <div>
+                <div class="contact-label">Режим работы</div>
+                <div class="contact-val">Ежедневно с 10:00 до 22:00</div>
+                <div class="contact-hint">Без перерывов и выходных дней</div>
+              </div>
+            </div>
+
+            <!-- Phone Row -->
+            <div class="contact-row">
+              <div class="contact-icon-circle">📞</div>
+              <div>
+                <div class="contact-label">Телефон для связи и записи</div>
+                <div class="contact-val"><a href="tel:+79274108823" style="color: inherit;">+7 (927) 410-88-23</a></div>
+                <div class="contact-hint">Звонки, WhatsApp, Telegram, MAX</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contacts-map-side">
+            <div class="map-embed">
+              <iframe src="https://yandex.ru/map-widget/v1/?ll=49.143714%2C55.772590&z=16&pt=49.143714%2C55.772590%2Cpm2rdm" width="100%" height="190" frameborder="0" allowfullscreen="true" style="position:relative;"></iframe>
+            </div>
+            <div class="map-buttons">
+              <a href="https://yandex.ru/maps/-/CDuWvF3K" target="_blank" class="btn-map">
+                <span>🗺 Яндекс Карты</span>
+              </a>
+              <a href="https://yandex.ru/maps/?rtext=~55.772590%2C49.143714&rtt=auto" target="_blank" class="btn-map">
+                <span>🚗 Маршрут</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+      <!-- ═══ FOOTER ═══ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-brand">KANT BARBER’S</div>
@@ -3707,7 +3867,7 @@
           <a href="#privacy" onclick="openPrivacyModal(event)">Согласие на обработку данных (152-ФЗ)</a>
         </div>
         <p class="footer-disclaimer">
-          Нажимая кнопки онлайн-записи или связи, вы даёте согласие на обработку персональных данных в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных». Онлайн-запись и защита персональных данных осуществляются на базе сертифицированной платформы YCLIENTS.
+          Нажимая кнопки онлайн-записи или связи, вы даёте согласие на обработку персональных данных в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных». Онлайн-запись и защита персональных данных осуществляются на базе сертифицированной платформы YCLIENTS. Все материалы и цены, размещённые на сайте, носят информационный характер и не являются публичной офертой (ст. 437 ГК РФ).
         </p>
       </div>
 
@@ -4121,7 +4281,23 @@
     }, 800);
   }
 
-</script>
+
+    // ── Cookie Banner Logic (152-ФЗ) ──
+    function acceptCookies() {
+      try { localStorage.setItem('kant_cookies_accepted', '1'); } catch(e){}
+      var b = document.getElementById('cookieBanner');
+      if (b) b.style.display = 'none';
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      try {
+        if (!localStorage.getItem('kant_cookies_accepted')) {
+          var b = document.getElementById('cookieBanner');
+          if (b) b.style.display = 'flex';
+        }
+      } catch(e){}
+    });
+
+  </script>
   <!-- ═══ MAX MESSENGER MODAL ═══ -->
   <div class="modal-overlay" id="maxModal" onclick="closeMaxModal(event)">
     <div class="modal-dialog max-dialog" onclick="event.stopPropagation()">
@@ -4181,6 +4357,14 @@
           </a>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ═══ COOKIE BANNER (152-ФЗ) ═══ -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+      <span>🍪 Мы используем файлы cookie и аналитику для удобства пользователей в соответствии с <a href="#privacy" onclick="openPrivacyModal(event)">Политикой конфиденциальности</a>.</span>
+      <button type="button" class="btn-cookie-accept" onclick="acceptCookies()">Принять</button>
     </div>
   </div>
 
