@@ -189,10 +189,11 @@
       color: #20130B !important;
     }
     [data-theme="light"] .gallery-title {
-      color: #20130B;
+      color: #FFFFFF !important;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.95);
     }
     [data-theme="light"] .lightbox-close {
-      color: #20130B;
+      color: #FFFFFF !important;
     }
     [data-theme="light"] .btn-bar-cta {
       color: #1A0E08;
@@ -2953,6 +2954,31 @@
     .hero::before { display: none !important; }
     .hero .container { position: relative; z-index: 10; }
     .hero-content { position: relative; z-index: 11 !important; }
+
+  
+    /* Gallery overlay text permanent high contrast (photos always need white text) */
+    .gallery-overlay {
+      background: linear-gradient(180deg, transparent 35%, rgba(10, 6, 4, 0.5) 65%, rgba(10, 6, 4, 0.94) 100%) !important;
+    }
+    .gallery-title,
+    [data-theme="light"] .gallery-title {
+      color: #FFFFFF !important;
+      font-weight: 700 !important;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.8) !important;
+    }
+    .gallery-sub,
+    [data-theme="light"] .gallery-sub {
+      color: #FFD494 !important;
+      font-weight: 500 !important;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95) !important;
+    }
+    .gallery-badge,
+    [data-theme="light"] .gallery-badge {
+      background: #D4A373 !important;
+      color: #1A0E08 !important;
+      font-weight: 800 !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+    }
 
   </style>
 </head>
